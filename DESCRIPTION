@@ -1,6 +1,6 @@
 Package: ICD
 Title: ICD metadata processing
-Version: 0.2
+Version: 0.3
 Authors@R: "Ewan Donnachie <ewan@donnachie.net> [aut, cre]"
 Description: ICD metadata processing and historization
 Depends: R (>= 3.1.2)

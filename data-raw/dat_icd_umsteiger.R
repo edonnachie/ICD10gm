@@ -3,7 +3,7 @@ read_umsteiger <- function(file, year, header=FALSE, sep=";"){
 		year - 1, year,
 		read.table(file, header=header, sep=sep, as.is = TRUE)[, 1:3]
 	)
-	names(um) <- c("year_from", "year_to", 
+	names(um) <- c("year_from", "year_to",
 								 "icd_from", "icd_to", "auto")
 	return(um)
 }
@@ -19,7 +19,8 @@ icd_hist <- rbind(
 	read_umsteiger("data-raw/transition/umsteiger_icd10gmsyst2010_icd10gmsyst2011.txt", 2011),
 	read_umsteiger("data-raw/transition/umsteiger_icd10gmsyst2011_icd10gmsyst2012.txt", 2012),
 	read_umsteiger("data-raw/transition/icd10gm2013syst_umsteiger_2012_2013.txt", 2013),
-	read_umsteiger("data-raw/transition/icd10gm2014syst_umsteiger_2013_2014.txt", 2014)
+	read_umsteiger("data-raw/transition/icd10gm2014syst_umsteiger_2013_2014.txt", 2014),
+	read_umsteiger("data-raw/transition/icd10gm2015syst_umsteiger_2014_2015.txt", 2015)
 	)
 
 icd_hist <- within(icd_hist, {

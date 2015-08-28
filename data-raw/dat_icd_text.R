@@ -1,5 +1,5 @@
 read_icd_labels <- function(year, file){
-	if(year %in% 2012:2014){
+	if(year >= 2012){
 		out <- cbind(
 			year = year,
 			read.csv2(file, skip = 1, header = FALSE,
@@ -26,6 +26,7 @@ read_icd_labels <- function(year, file){
 }
 
 icd_labels <- rbind(
+	read_icd_labels(2015, "data-raw/labels/icd10gm2015syst.txt"),
 	read_icd_labels(2014, "data-raw/labels/icd10gm2014syst.txt"),
 	read_icd_labels(2013, "data-raw/labels/icd10gm2014syst.txt"),
 	read_icd_labels(2012, "data-raw/labels/icd10gm2014syst.txt"),

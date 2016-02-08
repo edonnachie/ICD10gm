@@ -3,21 +3,24 @@ read_icd_labels <- function(year, file){
 		out <- cbind(
 			year = year,
 			read.csv2(file, skip = 1, header = FALSE,
-								stringsAsFactors = FALSE)
+								stringsAsFactors = FALSE,
+								encoding = "UTF-8")
 			)
 	}
 	if(year %in% 2011){
 		out <- cbind(
 			year = year,
 			read.csv2(file, header = FALSE,
-								stringsAsFactors = FALSE)[, c(6, 9)]
+								stringsAsFactors = FALSE,
+								encoding = "UTF-8")[, c(6, 9)]
 			)
 	}
 	if(year %in% 2009:2010){
 		out <- cbind(
 			year = year,
 			read.csv2(file, header = FALSE,
-								stringsAsFactors = FALSE)[, 6:7]
+								stringsAsFactors = FALSE,
+								encoding = "UTF-8")[, 6:7]
 			)
 	}
 	names(out) <- c("YEAR", "ICD_CODE", "ICD_LABEL")
@@ -25,6 +28,7 @@ read_icd_labels <- function(year, file){
 	return(out)
 }
 
+a <-	read_icd_labels(2015, "data-raw/labels/icd10gm2015syst.txt")
 icd_labels <- rbind(
 	read_icd_labels(2015, "data-raw/labels/icd10gm2015syst.txt"),
 	read_icd_labels(2014, "data-raw/labels/icd10gm2014syst.txt"),

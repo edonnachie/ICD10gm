@@ -1,0 +1,82 @@
+UNDEF;Undefiniert
+2-001;Cholera
+2-002;Diarrhoe und Gastroenteritis, vermutlich infektiösen Ursprungs
+2-003;Sonstige infektiöse Darmkrankheiten
+2-004;Tuberkulose der Atmungsorgane
+2-005;Sonstige Tuberkulose
+2-006;Pest
+2-007;Tetanus
+2-008;Diphtherie
+2-009;Keuchhusten
+2-010;Meningokokkeninfektion
+2-011;Sepsis
+2-012;Infektionen, die vorwiegend durch Geschlechtsverkehr übertragen werden
+2-013;Akute Poliomyelitis
+2-014;Tollwut
+2-015;Gelbfieber
+2-016;Sonstige durch Arthropoden übertragene Viruskrankheiten und virale hämorrhagische Fieber
+2-017;Masern
+2-018;Virushepatitis
+2-019;HIV-Krankheit [Humane Immundefizienz-Viruskrankheit]
+2-020;Malaria
+2-021;Leishmaniose
+2-022;Trypanosomiasis
+2-023;Schistosomiasis [Bilharziose]
+2-024;Übrige infektiöse und parasitäre Krankheiten
+2-025;Bösartige Neubildung der Lippe, der Mundhöhle und des Pharynx
+2-026;Bösartige Neubildung des Ösophagus
+2-027;Bösartige Neubildung des Magens
+2-028;Bösartige Neubildung des Dickdarmes, des Rektums und des Anus
+2-029;Bösartige Neubildung der Leber und der intrahepatischen Gallengänge
+2-030;Bösartige Neubildung des Pankreas
+2-031;Bösartige Neubildung des Larynx
+2-032;Bösartige Neubildung der Trachea, der Bronchien und der Lunge
+2-033;Bösartiges Melanom der Haut
+2-034;Bösartige Neubildung der Brustdrüse
+2-035;Bösartige Neubildung der Cervix uteri
+2-036;Bösartige Neubildung sonstiger und nicht näher bezeichneter Teile des Uterus
+2-037;Bösartige Neubildung des Ovars
+2-038;Bösartige Neubildung der Prostata
+2-039;Bösartige Neubildung der Harnblase
+2-040;Bösartige Neubildung der Meningen, des Gehirns und anderer Teile des Zentralnervensystems
+2-041;Non-Hodgkin-Lymphom
+2-042;Plasmozytom und bösartige Plasmazellen-Neubildungen
+2-043;Leukämie
+2-044;Übrige bösartige Neubildungen
+2-045;Anämien
+2-046;Diabetes mellitus
+2-047;Mangelernährung
+2-048;Psychische und Verhaltensstörungen durch pyschotrope Substanzen
+2-049;Meningitis
+2-050;Alzheimer-Krankheit
+2-051;Akutes rheumatisches Fieber und chronische rheumatische Herzkrankheiten
+2-052;Hypertonie [Hochdruckkrankheit]
+2-053;Ischämische Herzkrankheiten
+2-054;Sonstige Herzkrankheiten
+2-055;Zerebrovaskuläre Krankheiten
+2-056;Atherosklerose
+2-057;Übrige Krankheiten des Kreislaufsystems
+2-058;Grippe
+2-059;Pneumonie
+2-060;Sonstige akute Infektionen der unteren Atemwege
+2-061;Chronische Krankheiten der unteren Atemwege
+2-062;Übrige Krankheiten des Atmungssystems
+2-063;Ulcus ventriculi und Ulcus duodeni
+2-064;Krankheiten der Leber
+2-065;Glomeruläre und tubulointerstitielle Nierenkrankheiten
+2-066;Schwangerschaft mit abortivem Ausgang
+2-067;Sonstige direkt gestationsbedingte Sterbefälle
+2-068;Indirekt gestationsbedingte Sterbefälle
+2-069;Bestimmte Zustände, die ihren Ursprung in der Perinatalperiode haben
+2-070;Angeborene Fehlbildungen, Deformitäten und Chromosomenanomalien
+2-071;Symptome und abnorme klinische und Laborbefunde, die anderenorts nicht klassifiziert sind
+2-072;Alle sonstigen Krankheiten
+2-073;Transportmittelunfälle
+2-074;Stürze
+2-075;Unfälle durch Ertrinken und Untergehen
+2-076;Exposition gegenüber Rauch, Feuer und Flammen
+2-077;Akzidentelle Vergiftung durch und Exposition gegenüber schädliche(n) Substanzen
+2-078;Vorsätzliche Selbstbeschädigung
+2-079;Tätlicher Angriff
+2-080;Alle sonstigen äußeren Ursachen
+2-901;SARS

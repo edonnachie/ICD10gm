@@ -1,0 +1,53 @@
+UNDEF;Undefiniert
+4-001;Diarrhoe und Gastroenteritis, vermutlich infektiösen Ursprungs
+4-002;Sonstige infektiöse Darmkrankheiten
+4-003;Tuberkulose
+4-004;Tetanus
+4-005;Diphtherie
+4-006;Keuchhusten
+4-007;Meningokokkeninfektion
+4-008;Sepsis
+4-009;Akute Poliomyelitis
+4-010;Masern
+4-011;HIV-Krankheit [Humane Immundefizienz-Viruskrankheit]
+4-012;Sonstige Viruskrankheiten
+4-013;Malaria
+4-014;Übrige bestimmte infektiöse und parasitäre Krankheiten
+4-015;Leukämie
+4-016;Übrige bösartige Neubildungen
+4-017;Anämien
+4-018;Übrige Krankheiten des Blutes, der blutbildenden Organe sowie bestimmte Störungen mit Beteiligung des Immunsystems
+4-019;Mangelernährung und sonstige alimentäre Mangelzustände
+4-020;Meningitis
+4-021;Übrige Krankheiten des Nervensystems
+4-022;Pneumonie
+4-023;Sonstige akute Infektionen der Atemwege
+4-024;Krankheiten des Verdauungssystems
+4-025;Schädigung des Feten und Neugeborenen durch mütterliche Faktoren und durch Komplikationen bei Schwangerschaft, Wehentätigkeit und Entbindung
+4-026;Störungen im Zusammenhang mit der Schwangerschaftsdauer und dem fetalen Wachstum
+4-027;Geburtstrauma
+4-028;Intrauterine Hypoxie und Asphyxie unter der Geburt
+4-029;Atemnot [Respiratory distress] beim Neugeborenen
+4-030;Angeborene Pneumonie
+4-031;Sonstige Atemstörungen beim Neugeborenen
+4-032;Bakterielle Sepsis beim Neugeborenen
+4-033;Omphalitis beim Neugeborenen mit oder ohne leichte Blutung
+4-034;Hämorrhagische und hämatologische Krankheiten beim Feten und Neugeborenen
+4-035;Übrige perinatale Zustände
+4-036;Angeborener Hydrozephalus und Spina bifida
+4-037;Sonstige angeborene Fehlbildungen des Nervensystems
+4-038;Angeborene Fehlbildungen des Herzens
+4-039;Sonstige angeborene Fehlbildungen des Kreislaufsystems
+4-040;Down-Syndrom und sonstige Chromosomenanomalien
+4-041;Sonstige angeborene Fehlbildungen
+4-042;Plötzlicher Kindstod
+4-043;Sonstige Symptome und abnorme klinische und Laborbefunde, die anderenorts nicht klassifiziert sind
+4-044;Alle sonstigen Krankheiten
+4-045;Transportmittelunfälle
+4-046;Unfälle durch Ertrinken und Untergehen
+4-047;Sonstige unfallbedingte Gefährdung der Atmung
+4-048;Exposition gegenüber Rauch, Feuer und Flammen
+4-049;Akzidentelle Vergiftung durch und Exposition gegenüber schädliche(n) Substanzen
+4-050;Tätlicher Angriff
+4-051;Alle sonstigen äußeren Ursachen
+4-901;SARS

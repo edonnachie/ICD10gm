@@ -1,0 +1,22 @@
+01;Bestimmte infektiöse und parasitäre Krankheiten
+02;Neubildungen
+03;Krankheiten des Blutes und der blutbildenden Organe sowie bestimmte Störungen mit Beteiligung des Immunsystems
+04;Endokrine, Ernährungs- und Stoffwechselkrankheiten
+05;Psychische und Verhaltensstörungen
+06;Krankheiten des Nervensystems
+07;Krankheiten des Auges und der Augenanhangsgebilde
+08;Krankheiten des Ohres und des Warzenfortsatzes
+09;Krankheiten des Kreislaufsystems
+10;Krankheiten des Atmungssystems
+11;Krankheiten des Verdauungssystems
+12;Krankheiten der Haut und der Unterhaut
+13;Krankheiten des Muskel-Skelett-Systems und des Bindegewebes
+14;Krankheiten des Urogenitalsystems
+15;Schwangerschaft, Geburt und Wochenbett
+16;Bestimmte Zustände, die ihren Ursprung in der Perinatalperiode haben
+17;Angeborene Fehlbildungen, Deformitäten und Chromosomenanomalien
+18;Symptome und abnorme klinische und Laborbefunde, die anderenorts nicht klassifiziert sind
+19;Verletzungen, Vergiftungen und bestimmte andere Folgen äußerer Ursachen
+20;Äußere Ursachen von Morbidität und Mortalität
+21;Faktoren, die den Gesundheitszustand beeinflussen und zur Inanspruchnahme des Gesundheitswesens führen
+22;Schlüsselnummern für besondere Zwecke

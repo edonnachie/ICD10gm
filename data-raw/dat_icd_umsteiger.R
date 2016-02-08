@@ -1,7 +1,7 @@
 read_umsteiger <- function(file, year, header=FALSE, sep=";"){
 	um <- cbind(
 		year - 1, year,
-		read.table(file, header=header, sep=sep, as.is = TRUE)[, 1:3]
+		read.table(file, header=header,sep=sep, as.is = TRUE)[, 1:3]
 	)
 	names(um) <- c("year_from", "year_to",
 								 "icd_from", "icd_to", "auto")

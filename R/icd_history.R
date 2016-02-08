@@ -6,7 +6,7 @@
 icd_history <- function(icd_expand, years){
 	stopifnot(
 						all(grepl("^\\d{4}$", years)),
-						all(years %in% icd_hist$YEAR),
+						all(years %in% unique(c(icd_hist$year_to, icd_hist$year_from))),
 						all(c("YEAR", "ICD_CODE") %in% names(icd_expand))
 						)
 

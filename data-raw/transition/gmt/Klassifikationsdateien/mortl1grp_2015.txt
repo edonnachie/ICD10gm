@@ -1,0 +1,21 @@
+UNDEF;Undefiniert
+1-001;Bestimmte infektiöse und parasitäre Krankheiten
+1-026;Neubildungen
+1-048;Krankheiten des Blutes und der blutbildenden Organe sowie bestimmte Störungen mit Beteiligung des Immunsystems
+1-051;Endokrine, Ernährungs- und Stoffwechselkrankheiten
+1-055;Psychische und Verhaltensstörungen
+1-058;Krankheiten des Nervensystems
+1-062;Krankheiten des Auges und der Augenanhangsgebilde
+1-063;Krankheiten des Ohres und des Warzenfortsatzes
+1-064;Krankheiten des Kreislaufsystems
+1-072;Krankheiten des Atmungssystems
+1-078;Krankheiten des Verdauungssystems
+1-082;Krankheiten der Haut und der Unterhaut
+1-083;Krankheiten des Muskel-Skelett-Systems und des Bindegewebes
+1-084;Krankheiten des Urogenitalsystems
+1-087;Schwangerschaft, Geburt und Wochenbett
+1-092;Bestimmte Zustände, die ihren Ursprung in der Perinatalperiode haben
+1-093;Angeborene Fehlbildungen, Deformitäten und Chromosomenanomalien
+1-094;Symptome und abnorme klinische und Laborbefunde, die anderenorts nicht klassifiziert sind
+1-095;Äußere Ursachen von Morbidität und Mortalität
+1-901;SARS

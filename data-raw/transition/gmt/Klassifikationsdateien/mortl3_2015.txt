@@ -1,0 +1,59 @@
+UNDEF;UNDEF;Undefiniert
+3-002;3-001;Diarrhoe und Gastroenteritis, vermutlich infektiösen Ursprungs
+3-003;3-001;Sonstige infektiöse Darmkrankheiten
+3-004;3-001;Tuberkulose
+3-005;3-001;Tetanus
+3-006;3-001;Diphtherie
+3-007;3-001;Keuchhusten
+3-008;3-001;Meningokokkeninfektion
+3-009;3-001;Sepsis
+3-010;3-001;Akute Poliomyelitis
+3-011;3-001;Masern
+3-012;3-001;HIV-Krankheit [Humane Immundefizienz-Viruskrankheit]
+3-013;3-001;Sonstige Viruskrankheiten
+3-014;3-001;Malaria
+3-015;3-001;Übrige bestimmte infektiöse und parasitäre Krankheiten
+3-017;3-016;Leukämie
+3-018;3-016;Übrige bösartige Neubildungen
+3-019;3-016;Übrige Neubildungen
+3-021;3-020;Anämien
+3-022;3-020;Übrige Krankheiten des Blutes, der blutbildenden Organe sowie bestimmte Störungen mit Beteiligung des Immunsystems
+3-024;3-023;Mangelernährung und sonstige alimentäre Mangelzustände
+3-025;3-023;Übrige endokrine, Ernährungs- und Stoffwechselkrankheiten
+3-027;3-026;Meningitis
+3-028;3-026;Übrige Krankheiten des Nervensystems
+3-032;3-031;Pneumonie
+3-033;3-031;Sonstige akute Infektionen der Atemwege
+3-034;3-031;Übrige Krankheiten des Atmungssystems
+3-038;3-037;Schädigung des Feten und Neugeborenen durch mütterliche Faktoren und durch Komplikationen bei Schwangerschaft, Wehentätigkeit und Entbindung
+3-039;3-037;Störungen im Zusammenhang mit der Schwangerschaftsdauer und dem fetalen Wachstum
+3-040;3-037;Geburtstrauma
+3-041;3-037;Intrauterine Hypoxie und Asphyxie unter der Geburt
+3-042;3-037;Atemnot [Respiratory distress] beim Neugeborenen
+3-043;3-037;Angeborene Pneumonie
+3-044;3-037;Sonstige Atemstörungen beim Neugeborenen
+3-045;3-037;Bakterielle Sepsis beim Neugeborenen
+3-046;3-037;Omphalitis beim Neugeborenen mit oder ohne leichte Blutung
+3-047;3-037;Hämorrhagische und hämatologische Krankheiten beim Feten und Neugeborenen
+3-048;3-037;Übrige perinatale Zustände
+3-050;3-049;Angeborener Hydrozephalus und Spina bifida
+3-051;3-049;Sonstige angeborene Fehlbildungen des Nervensystems
+3-052;3-049;Angeborene Fehlbildungen des Herzens
+3-053;3-049;Sonstige angeborene Fehlbildungen des Kreislaufsystems
+3-054;3-049;Down-Syndrom und sonstige Chromosomenanomalien
+3-055;3-049;Sonstige angeborene Fehlbildungen
+3-057;3-056;Plötzlicher Kindstod
+3-058;3-056;Sonstige Symptome und abnorme klinische und Laborbefunde, die anderenorts nicht klassifiziert sind
+3-061;3-060;Transportmittelunfälle
+3-062;3-060;Unfälle durch Ertrinken und Untergehen
+3-063;3-060;Sonstige unfallbedingte Gefährdung der Atmung
+3-064;3-060;Exposition gegenüber Rauch, Feuer und Flammen
+3-065;3-060;Akzidentelle Vergiftung durch und Exposition gegenüber schädliche(n) Substanzen
+3-066;3-060;Tätlicher Angriff
+3-067;3-060;Alle sonstigen äußeren Ursachen
+3-029;3-029;Krankheiten des Ohres und des Warzenfortsatzes
+3-030;3-030;Krankheiten des Kreislaufsystems
+3-035;3-035;Krankheiten des Verdauungssytems
+3-036;3-036;Krankheiten des Urogenitalsystems
+3-059;3-059;Alle sonstigen Krankheiten
+3-901;3-901;SARS

@@ -43,7 +43,7 @@
 #' @return data.frame(YEAR, ICD_CODE, ICD_LABEL), see icd_labels
 #' @export
 get_icd_labels <- function(year = NULL, icd_code = NULL, icd_label = NULL, ...){
-  out <- icd_labels
+  out <- ICD::icd_labels
 
   if(!is.null(year) & all(grepl("^\\d{4}$", year)))
     out <- subset(out, YEAR %in% year)
@@ -67,7 +67,7 @@ get_icd_labels <- function(year = NULL, icd_code = NULL, icd_label = NULL, ...){
 #' @return data.frame, see icd_hist
 #' @export
 get_icd_history <- function(year_from = NULL, icd_code = NULL){
-  out <- icd_history
+  out <- ICD::icd_hist
 
   if(!is.null(year) & all(grepl("^\\d{4}$", year)))
     out <- subset(out, year_from %in% year)

@@ -30,3 +30,51 @@
 #'   \item{icd_kapitel}{ICD chapter (A-Z)}
 #'   }
 "icd_hist"
+
+#' Returns a data frame with ICD metadata, consisting of
+#' year, ICD code and label. Optional arguments allow selection of
+#' entries by year, code or label. This is beneficial because the
+#' entire history is relatively large and rarely required in full.
+#'
+#' @param year Year or years to get (numeric or character vector)
+#' @param icd_code (optional) ICD codes to select (regular expression, matched exactly using grep)
+#' @param icd_label (optional) ICD to search for using fuzzy matching (agrep)
+#' @param ... (optional) Further arguments passed to agrep when searching with icd_label
+#' @return data.frame(YEAR, ICD_CODE, ICD_LABEL), see icd_labels
+#' @export
+get_icd_labels <- function(year = NULL, icd_code = NULL, icd_label = NULL, ...){
+  out <- icd_labels
+
+  if(!is.null(year) & all(grepl("^\\d{4}$", year)))
+    out <- subset(out, YEAR %in% year)
+
+  if(!is.null(icd_code) & all(grepl("^[A-Za-z]\\d{2}", icd_code)))
+    out <- out[grepl(icd_code, out$ICD_CODE), ]
+
+  if(!is.null(icd_label) & is.character(icd_label))
+    out <- out[agrep(icd_label, out$ICD_LABEL, ...), ]
+
+   return(out)
+}
+
+#' Returns a data frame with ICD transition history, consisting of
+#' year, ICD code and label. Optional arguments allow selection of
+#' entries by year or ICD code. This is beneficial because the
+#' entire history is relatively large and rarely required in full.
+#'
+#' @param year_from Year or years to get (numeric or character vector)
+#' @param icd_code (optional) ICD codes to select (regular expression, matched exactly using grep)
+#' @return data.frame, see icd_hist
+#' @export
+get_icd_history <- function(year_from = NULL, icd_code = NULL){
+  out <- icd_history
+
+  if(!is.null(year) & all(grepl("^\\d{4}$", year)))
+    out <- subset(out, year_from %in% year)
+
+  if(!is.null(icd_code) & all(grepl("^[A-Za-z]\\d{2}", icd_code)))
+    out <- out[grepl(icd_from, out$ICD_CODE) |
+                 grepl(icd_to, out$ICD_CODE), ]
+
+   return(out)
+}

@@ -10,6 +10,11 @@ icd_history <- function(icd_expand, years){
 						all(c("YEAR", "ICD_CODE") %in% names(icd_expand))
 						)
 
+  # We are not in the tidyverse!
+  # Make sure icd_expand is not a tibble,
+  # otherwise merge will return error
+  icd_expand <- as.data.frame(icd_expand)
+
 	icd_back <- function(icd_expand, icd_hist){
 		out <- merge(icd_expand, icd_hist,
 					by.x = c("YEAR", "ICD_CODE"),

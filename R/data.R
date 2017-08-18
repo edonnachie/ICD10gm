@@ -62,15 +62,15 @@ get_icd_labels <- function(year = NULL, icd_code = NULL, icd_label = NULL, ...){
 #' entries by year or ICD code. This is beneficial because the
 #' entire history is relatively large and rarely required in full.
 #'
-#' @param year_from Year or years to get (numeric or character vector)
+#' @param year_icd Year or years to get (numeric or character vector)
 #' @param icd_code (optional) ICD codes to select (regular expression, matched exactly using grep)
 #' @return data.frame, see icd_hist
 #' @export
-get_icd_history <- function(year_from = NULL, icd_code = NULL){
+get_icd_history <- function(year_icd = NULL, icd_code = NULL){
   out <- icd_hist
 
-  if(!is.null(year) & all(grepl("^\\d{4}$", year)))
-    out <- subset(out, year_from %in% year)
+  if(!is.null(year_icd) & all(grepl("^\\d{4}$", year_icd)))
+    out <- subset(out, year %in% year_icd)
 
   if(!is.null(icd_code) & all(grepl("^[A-Za-z]\\d{2}", icd_code)))
     out <- out[grepl(icd_from, out$ICD_CODE) |

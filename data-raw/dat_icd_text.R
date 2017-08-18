@@ -24,12 +24,13 @@ read_icd_labels <- function(year, file){
 			)
 	}
 	names(out) <- c("YEAR", "ICD_CODE", "ICD_LABEL")
-	out$ICD_CODE <- gsub("\\.?[-!X]", "", out$ICD_CODE)
+	out$ICD_CODE <- gsub("\\.?[-!]", "", out$ICD_CODE)
 	return(out)
 }
 
 a <-	read_icd_labels(2015, "data-raw/labels/icd10gm2015syst.txt")
 icd_labels <- rbind(
+	read_icd_labels(2016, "data-raw/labels/icd10gm2016syst.txt"),
 	read_icd_labels(2015, "data-raw/labels/icd10gm2015syst.txt"),
 	read_icd_labels(2014, "data-raw/labels/icd10gm2014syst.txt"),
 	read_icd_labels(2013, "data-raw/labels/icd10gm2014syst.txt"),

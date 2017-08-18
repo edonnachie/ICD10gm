@@ -20,7 +20,8 @@ icd_hist <- rbind(
 	read_umsteiger("data-raw/transition/umsteiger_icd10gmsyst2011_icd10gmsyst2012.txt", 2012),
 	read_umsteiger("data-raw/transition/icd10gm2013syst_umsteiger_2012_2013.txt", 2013),
 	read_umsteiger("data-raw/transition/icd10gm2014syst_umsteiger_2013_2014.txt", 2014),
-	read_umsteiger("data-raw/transition/icd10gm2015syst_umsteiger_2014_2015.txt", 2015)
+	read_umsteiger("data-raw/transition/icd10gm2015syst_umsteiger_2014_2015.txt", 2015),
+	read_umsteiger("data-raw/transition/icd10gm2016syst_umsteiger_2015_2016.txt", 2016)
 	)
 
 icd_hist <- within(icd_hist, {

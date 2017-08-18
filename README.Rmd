@@ -22,4 +22,4 @@ The package was created primarily for personal use but is under active developme
 
 ## Related Packages
 
-The [icd package}(https://cran.r-project.org/web/packages/icd/) on CRAN has similar aims but has a slightly different approach and focusses on the US version of the ICD-10 system.
+The [icd package](https://cran.r-project.org/web/packages/icd/) on CRAN has similar aims but has a slightly different approach and focusses on the US version of the ICD-10 system.

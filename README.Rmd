@@ -1,5 +1,5 @@
 # ICDGM
-R Package for Working with the German Modification of the International Statistical Classification of Diseases and Related Health Problems
+An R Package for Working with the German Modification of the International Statistical Classification of Diseases and Related Health Problems
 
 The ICD-10 classification of diseases and related health problems (ICD-10) is an international standard for the coding of health service data. In Germany the [German Instutite of Medical Documentation and Information (DIMDI)](https://www.dimdi.de/static/en/dimdi/index.htm) releases a German Modification (ICD-10-GM) of the classification that forms a compulsory part of all remuneration claims in the ambulatory and hospital sectors.
 
@@ -19,6 +19,10 @@ The package was created primarily for personal use but is under active developme
 
 ### Historise an ICD specification
 
+
+## Copyright
+
+The underlying ICD-10-GM metadata is copyright of the [German Instutite of Medical Documentation and Information (DIMDI)](https://www.dimdi.de/static/en/dimdi/index.htm). The underlying files are available free of charge from the [DIMDI Download Centre](http://www.dimdi.de/dynamic/de/klassi/downloadcenter/). I believe that their use in this package is compatible with the copyright restrictions.
 
 ## Related Packages
 

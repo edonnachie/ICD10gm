@@ -1,8 +1,8 @@
-Package: ICD
+Package: ICDgm
 Title: ICD metadata processing
 Version: 0.19
 Authors@R: "Ewan Donnachie <ewan@donnachie.net> [aut, cre]"
-Description: ICD metadata processing and historization
+Description: A package for working with the German Modification of the International Statistical Classification of Diseases and Related Health Problems (ICD)
 Depends:
     R (>= 3.1.2)
 License: Creative Commons Attribution-ShareAlike 3.0 Unported License

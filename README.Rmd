@@ -1,0 +1,25 @@
+# ICDGM
+R Package for Working with the German Modification of the International Statistical Classification of Diseases and Related Health Problems
+
+The ICD-10 classification of diseases and related health problems (ICD-10) is an international standard for the coding of health service data. In Germany the [German Instutite of Medical Documentation and Information (DIMDI)](https://www.dimdi.de/static/en/dimdi/index.htm) releases a German Modification (ICD-10-GM) of the classification that forms a compulsory part of all remuneration claims in the ambulatory and hospital sectors.
+
+This package was created to facilitate the analysis of data coded using the ICD-10-GM. In particular, it has three aims:
+
+1. To provide a convenient interface to the historized ICD-10 metadata
+2. To facilitate the specification of ICD groups, utilising the ICD hierarchy
+3. To enable the historization of ICD specifications by applying automatic code transitions and displaying problematic codes
+
+The package was created primarily for personal use but is under active development and has been used in several scientific papers.
+
+## Basic Use
+
+### Access ICD-10-GM metadata 
+
+### Expand a ICD specification down the hierarchy
+
+### Historise an ICD specification
+
+
+## Related Packages
+
+The [icd package}(https://cran.r-project.org/web/packages/icd/) on CRAN has similar aims but has a slightly different approach and focusses on the US version of the ICD-10 system.

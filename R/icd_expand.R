@@ -11,30 +11,30 @@ icd_expand <- function (icd_in, year, col_icd = "ICD", col_meta = NULL)
 {
   stopifnot(is.data.frame(icd_in), col_icd %in% names(icd_in),
             all(sapply(col_meta, function(x) x %in% names(icd_in))),
-            as.integer(year) > 1992, as.integer(year) <= as.integer(substr(Sys.Date(),
-                                                                           1, 4)))
+            as.integer(year) > 2003,
+            as.integer(year) <= as.integer(substr(Sys.Date(), 1, 4)))
   # Which columns from icd_in should be kept
-  cols_keep <- as.list(c("ICD_SPEC", col_meta))
+  cols_keep <- as.list(c("icd_spec", col_meta))
 
   # Cleanup input specification
   icd_in <- icd_in %>%
-    dplyr::rename_(.dots = list(ICD_SPEC = col_icd)) %>%
+    dplyr::rename_(.dots = list(icd_spec = col_icd)) %>%
     dplyr::select_(.dots = cols_keep) %>%
-    dplyr::filter(!is.na(ICD_SPEC)) %>%
+    dplyr::filter(!is.na(icd_spec)) %>%
     dplyr::distinct()
 
   # ICD Metadata
-  icd_labels <- ICD::get_icd_labels(year = year) %>%
-    dplyr::mutate(
-      ICD_SUB = sub("\\.", "", ICD_CODE),
-      YEAR = as.integer(YEAR)
-    )
+  icd_labels <- ICD::get_icd_labels(year = year)
+    # dplyr::mutate(
+    #   ICD_SUB = sub("\\.", "", ICD_CODE),
+    #   YEAR = as.integer(YEAR)
+    # )
 
 
   # Expand input specification,
   # retrieving all ICD codes that match specification
   do_expand <- function(icd_spec){
-    i <- grep(icd_spec, icd_labels$ICD_CODE)
+    i <- grep(icd_spec, icd_labels$icd_code)
     if (is.na(i) || length(i) == 0){
       warning("Incorrect ICD specification: ", icd_spec)
       return(data.frame())
@@ -46,7 +46,7 @@ icd_expand <- function (icd_in, year, col_icd = "ICD", col_meta = NULL)
   icd_expand <- icd_in %>%
     dplyr::group_by_(.dots = cols_keep) %>%
     tidyr::nest() %>%
-    dplyr::mutate(data = purrr::map(ICD_SPEC, do_expand)) %>%
+    dplyr::mutate(data = purrr::map(icd_spec, do_expand)) %>%
     tidyr::unnest()
 
   return(icd_expand)

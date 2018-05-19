@@ -4,49 +4,59 @@
 #' @return data.frame with columns YEAR, ICD_CODE, ICD_COMPRESSED, ICD_LABEL and, if specified, DIAG_GROUP
 #' @export
 icd_history <- function(icd_expand, years){
+  icd_hist <- ICD::icd_meta_transition[,
+    c("year_from", "year_to",
+      "icd_from", "icd_to",
+      "automatic_forward", "automatic_backward")]
+
 	stopifnot(
 						all(grepl("^\\d{4}$", years)),
 						all(years %in% unique(c(icd_hist$year_to, icd_hist$year_from))),
-						all(c("YEAR", "ICD_CODE") %in% names(icd_expand))
+						all(c("year", "icd_code") %in% names(icd_expand))
 						)
 
   # We are not in the tidyverse!
   # Make sure icd_expand is not a tibble,
-  # otherwise merge will return error
+  # otherwise merge might return error
+  # (shoud be fixed in current tibble versions, but better safe than sorry)
   icd_expand <- as.data.frame(icd_expand)
 
 	icd_back <- function(icd_expand, icd_hist){
-		out <- merge(icd_expand, icd_hist,
-					by.x = c("YEAR", "ICD_CODE"),
-					by.y = c("year_to", "icd_to"),
-					all.x = TRUE, all.y = FALSE)
+		out <- merge(
+		  icd_expand,
+		  subset(icd_hist, automatic_backward == "A"),
+			by.x = c("year", "icd_code"),
+			by.y = c("year_to", "icd_to"),
+			all.x = TRUE, all.y = FALSE)
 
 		# Replace YEAR with year_from
 		# and ICD_CODE with icd_from
-		out <- out[, which(!(names(out) %in% c("YEAR", "ICD_CODE")))]
-		names(out)[which(names(out) == "year_from")] <- "YEAR"
-		names(out)[which(names(out) == "icd_from")] <- "ICD_CODE"
+		out <- out[, which(!(names(out) %in% c("year", "icd_code")))]
+		names(out)[which(names(out) == "year_from")] <- "year"
+		names(out)[which(names(out) == "icd_from")] <- "icd_code"
+		# out <- merge(out, ICD::icd_meta_codes[, c("year", "icd_code", "icd_normcode", "icd_sub", "icd3", "label")])
 		out <- out[, names(icd_expand)]
 		return(unique(out))
 	}
 
 	icd_forward <- function(icd_expand, icd_hist){
-		out <- merge(icd_expand, icd_hist,
-					by.x = c("YEAR", "ICD_CODE"),
+		out <- merge(icd_expand,
+		             subset(icd_hist, automatic_forward == TRUE),
+					by.x = c("year", "icd_code"),
 					by.y = c("year_from", "icd_from"),
 					all.x = TRUE, all.y = FALSE)
 
 		# Replace YEAR with year_to
 		# and ICD_CODE with icd_to
-		out <- out[, which(!(names(out) %in% c("YEAR", "ICD_CODE")))]
-		names(out)[which(names(out) == "year_to")] <- "YEAR"
-		names(out)[which(names(out) == "icd_to")] <- "ICD_CODE"
+		out <- out[, which(!(names(out) %in% c("year", "icd_code")))]
+		names(out)[which(names(out) == "year_to")] <- "year"
+		names(out)[which(names(out) == "icd_to")] <- "icd_code"
 		out <- out[, names(icd_expand)]
 		return(unique(out))
 	}
 
 	# Determine starting year from input data
-	year_init <- icd_expand[1, "YEAR"]
+	year_init <- icd_expand[1, "year"]
 
 	# Initialise output list
 	icd_hist_out <- list()
@@ -70,8 +80,7 @@ icd_history <- function(icd_expand, years){
 
 	# Return data frame with alternative coding for the ICD
 	# (without ".", e.g. for InBA grouper)
-	out <- subset(do.call("rbind", icd_hist_out), !is.na(YEAR))
-	out$ICD_COMPRESSED <- sub("\\.", "", out$ICD_CODE)
-	out$YEAR <- as.integer(out$YEAR)
+	out <- subset(do.call("rbind", icd_hist_out), !is.na(year))
+	out$year <- as.integer(out$year)
 	return(out)
 }

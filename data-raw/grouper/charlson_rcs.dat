@@ -1,0 +1,122 @@
+Disease_Category;ICD_SPEC
+Myocardial infarction;I21
+Myocardial infarction;I22
+Myocardial infarction;I23
+Myocardial infarction;I252
+Congestive cardiac failure;I11
+Congestive cardiac failure;I13
+Congestive cardiac failure;I255
+Congestive cardiac failure;I42
+Congestive cardiac failure;I43
+Congestive cardiac failure;I50
+Congestive cardiac failure;I517
+Peripheral vascular disease;I70
+Peripheral vascular disease;I71
+Peripheral vascular disease;I72
+Peripheral vascular disease;I73
+Peripheral vascular disease;I770
+Peripheral vascular disease;I771
+Peripheral vascular disease;K551
+Peripheral vascular disease;K558
+Peripheral vascular disease;K559
+Peripheral vascular disease;R02
+Peripheral vascular disease;Z958
+Peripheral vascular disease;Z959
+Cerebrovascular disease;G45
+Cerebrovascular disease;G46
+Cerebrovascular disease;I6
+Dementia;A810
+Dementia;F00–F03
+Dementia;F051
+Dementia;G30
+Dementia;G31
+Chronic pulmonary disease;I26
+Chronic pulmonary disease;I27
+Chronic pulmonary disease;J40
+Chronic pulmonary disease;J41
+Chronic pulmonary disease;J42
+Chronic pulmonary disease;J43
+Chronic pulmonary disease;J44
+Chronic pulmonary disease;J45
+Chronic pulmonary disease;J46
+Chronic pulmonary disease;J47
+Chronic pulmonary disease;J60
+Chronic pulmonary disease;J61
+Chronic pulmonary disease;J62
+Chronic pulmonary disease;J63
+Chronic pulmonary disease;J64
+Chronic pulmonary disease;J65
+Chronic pulmonary disease;J66
+Chronic pulmonary disease;J67
+Chronic pulmonary disease;J684
+Chronic pulmonary disease;J701
+Chronic pulmonary disease;J703
+Rheumatological disease;M05
+Rheumatological disease;M06
+Rheumatological disease;M09
+Rheumatological disease;M120
+Rheumatological disease;M315
+Rheumatological disease;M32
+Rheumatological disease;M33
+Rheumatological disease;M34
+Rheumatological disease;M35
+Rheumatological disease;M36
+Liver disease;B18
+Liver disease;I85
+Liver disease;I864
+Liver disease;I982
+Liver disease;K70
+Liver disease;K71
+Liver disease;K721
+Liver disease;K729
+Liver disease;K76
+Liver disease;R162
+Liver disease;Z944
+Diabetes mellitus;E10
+Diabetes mellitus;E11
+Diabetes mellitus;E12
+Diabetes mellitus;E13
+Diabetes mellitus;E14
+Hemiplegia or paraplegia;G114
+Hemiplegia or paraplegia;G81
+Hemiplegia or paraplegia;G82
+Hemiplegia or paraplegia;G83
+Renal disease;I12
+Renal disease;I13
+Renal disease;N01
+Renal disease;N03
+Renal disease;N05
+Renal disease;N07
+Renal disease;N08
+Renal disease;N171
+Renal disease;N172
+Renal disease;N18
+Renal disease;N19
+Renal disease;N25
+Renal disease;Z49
+Renal disease;Z940
+Renal disease;Z992
+Any malignancy;C0
+Any malignancy;C1
+Any malignancy;C2
+Any malignancy;C3
+Any malignancy;C4
+Any malignancy;C5
+Any malignancy;C6
+Any malignancy;C70
+Any malignancy;C71
+Any malignancy;C72
+Any malignancy;C73
+Any malignancy;C74
+Any malignancy;C75
+Any malignancy;C76
+Any malignancy;C8
+Any malignancy;C9
+Metastatic solid tumour;C77
+Metastatic solid tumour;C78
+Metastatic solid tumour;C79
+AIDS/HIV infection;B20
+AIDS/HIV infection;B21
+AIDS/HIV infection;B22
+AIDS/HIV infection;B23
+AIDS/HIV infection;B24

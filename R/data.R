@@ -1,35 +1,100 @@
-#' List of all ICD codes with labels
+#' Metadata for all ICD-10-GM codes
 #'
-#' Includes all valid levels of the hierarchy
-#' Example:
-#'   E11 ""Diabetes mellitus, Typ 2"
-#'   E11.2 "Diabetes mellitus, Typ 2: Mit Nierenkomplikationen"
+#' DIMDI provide a CSV file with metadata on all valid codes. This table is
+#' read in with only minor modifications to facilitate changes betwen versions.
 #'
-#' @format A data frame with three columns:
+#' This metadata is not suitable for operative coding and does not include all
+#' relevant information concerning the codes. For example, the file contains
+#' neither the inclusion and exclusion notes nor the detailed definitions
+#' (where present, mainly in Chapter V). DIMDI provide additional reference
+#' material for operative coding and detailed research.
+#'
+#'
+#' @format A data.frame containing the following variables:
 #' \describe{
-#'   \item{YEAR}{Year of validity}
-#'   \item{ICD_CODE}{ICD Code}
-#'   \item{ICD_LABEL}{ICD label with UTF-8 encoding}}
-"icd_labels"
+#'   \item{year}{Year of validity (from 2004)}
+#'   \item{level}{Level of the hierarchy (3, 4 or 5 digits)}
+#'   \item{terminal}{Whether the code is a terminal code (i.e. with no further subcodes) (T: yes; N: no)}
+#'   \item{subcode_type}{Whether the subcode is pre- or postcombinated (X: precombinated; S: postcombinated). Precombinated codes are listed directly under the three-digit ICD code, whereas postcombinated codes are lists of possible values for the fourth and fifth digits that are not specific to the particular code (e.g. the group E10-E14 shares a common list of postcombinated fourth and fifth digits)}
+#'   \item{chapter_nr}{Chapter number (arabic digits 1-22)}
+#'   \item{icd_block_first}{First code in the respective ICD block, can be used to join with the table ICD::icd_meta_blocks}
+#'   \item{icd_code}{Full icd code (up to 7 characters) with all symbols except the "dagger" (for aetiological codes that can be combined with an "asterisk" code to denote the manifestation)}
+#'   \item{icd_normcode}{The ICD "normcode", consisting of up to 6 characers and without all symbols except the period (e.g. E11.30)}
+#'   \item{icd_sub}{The ICD "normcode", consisting of up to 5 characers and without any symbols (e.g. E1130)}
+#'   \item{label}{ICD label for the complete code.}
+#'   \item{label_icd3}{ICD label for the three-digit ICD code.}
+#'   \item{label_icd4}{ICD label for fourth digit of the ICD code.}
+#'   \item{label_icd5}{ICD label for the fifth digit of the ICD code.}
+#'   \item{usage_295}{Usage of the code in the ambulatory sector (Paragraph 295 SGB V) (P: primary code; O: only as a "star" code in conjunction with a "dagger" code for aetiology; Z: only an optional "!" code in conjunction with a primary code; V: not to be used for coding)}
+#'   \item{usage_301}{Usage of the code in the stationary (hostpital) sector (Paragraph 301 SGB V) (P: primary code; O: only as a "star" code in conjunction with a "dagger" code for aetiology; Z: only an optional "!" code in conjunction with a primary code; V: not to be used for coding)}
+#'   \item{mort_list1}{Key to join with the WHO mortality list 1}
+#'   \item{mort_list2}{Key to join with the WHO mortality list 2}
+#'   \item{mort_list3}{Key to join with the WHO mortality list 3}
+#'   \item{mort_list4}{Key to join with the WHO mortality list 4}
+#'   \item{morb_list}{Key to join with the WHO morbidity list}
+#'   \item{gender_specific}{Whether the diagnosis is gender specific (M: male; W: female; 9: Not gender specific)}
+#'   \item{gender_error_type}{Type of error implied by the field \code{gender_specific} (9: irrelevant; K: possible error)}
+#'   \item{age_min}{Minimum age for which the diagnosis is plausible (T001: from one day; Y005: from five years)}
+#'   \item{age_max}{Maximum age for which the diagnosis is plausible (T010: up to 10 days; Y005: up to five years)}
+#'   \item{age_error_type}{Type of error resulting from implausible age (9: irrelevant; M: always an error ("Muss-Fehler"); K: possible error ("Kann-Fehler"))}
+#'   \item{rare_in_central_europe}{Indicates whether the diagnosis is rare in central europe (J: yes; N: no)}
+#'   \item{code_with_content}{Indicates whether the code has content associated with it (J: yes; N: no, leads to an error)}
+#'   \item{notifiable}{Indicates whether the diagnosis is notifiable in Germany (J: yes; N: no)}
+#'   \item{notifiable_lab}{Indicates whether the diagnosis is notifiable for laboratories in Germany (J: yes; N: no)}
+#' }
+#'
+#' @source The source data was downloaded from the official download centre
+#' of the German Institute for Medical Documentation and Information (DIMDI).
+#' See also \url{https://www.dimdi.de/static/en/klassi/icd-10-gm/systematik/metadaten.htm}
+"icd_meta_codes"
 
-#' ICD History with transitions from one year to the next
-#' Stable codes are included to enable the convertion
-#' of a code list from one version to the next
+#' Metadata for the ICD-10-GM code blocks
 #'
-#' @format A data frame:
+#' The ICD blocks (German: "Gruppen") constitute a level in the heirarchy
+#' between the chapters and the three-digit categories.
+#' Sequential codes are grouped to form 240 groups that
+#' represent similar aetiological diagnoses. Unlike other grouper systems,
+#' the ICD blocks do not consider similar diagnoses from different chapters of
+#' the ICD classification, for example chronic pain as a unspecific symptom
+#' (R52.1) and as a somatoform disorder (F45.4).
+#'
 #' \describe{
-#'   \item{year_from}{Year of old version}
-#'   \item{year_to}{Year of new version}
-#'   \item{icd_from}{Old ICD code}
-#'   \item{icd_to}{New ICD code}
-#'   \item{auto}{"A", if transition is automatic, else null if the transition is not clear-cut (e.g. changes in classification that require additional logic)}
-#'   \item{change_5}{TRUE, if the five-digit code has changed}
-#'   \item{change_4}{TRUE, if the four-digit code has changed}
-#'   \item{change_3}{TRUE, if the three-digit code has changed}
-#'   \item{change}{TRUE, if the code has changed}
-#'   \item{icd_kapitel}{ICD chapter (A-Z)}
-#'   }
-"icd_hist"
+#'   \item{year}{Year of validity (from 2004)}
+#'   \item{icd_block_first}{First three-digit ICD code in the block}
+#'   \item{icd_block_last}{Last three-digit ICD code in the block}
+#'   \item{chapter}{ICD-10 chapter to which the block belongs}
+#'   \item{block_label}{Label for the block}
+#'   \item{block_id}{Short label for the block in format "A00-A09"}
+#' }
+#'
+#' @source The source data was downloaded from the official download centre
+#' of the German Institute for Medical Documentation and Information (DIMDI).
+#' See also \url{https://www.dimdi.de/static/en/klassi/icd-10-gm/systematik/systematik.htm}
+"icd_meta_blocks"
+
+
+#' Metadata for the ICD-10-GM chapters
+#'
+#' The ICD chapters group codes according to their aetiology.
+#'
+#' \describe{
+#'   \item{year}{Year of validity (from 2004)}
+#'   \item{chapter}{Chapter number (arabic numerals)}
+#'   \item{chapter_roman}{Chapter number (Roman numerals)}
+#'   \item{chapter_label}{Label for the chapter}
+#' }
+#'
+#' @source The source data was downloaded from the official download centre
+#' of the German Institute for Medical Documentation and Information (DIMDI).
+#' See also \url{https://www.dimdi.de/static/en/klassi/icd-10-gm/systematik/systematik.htm}
+"icd_meta_chapters"
+
+
+#' @source The source data was downloaded from the official download centre
+#' of the German Institute for Medical Documentation and Information (DIMDI).
+#' See also \url{https://www.dimdi.de/static/en/klassi/icd-10-gm/systematik/ueberleitung.htm}
+"icd_meta_transition"
+
 
 #' Returns a data frame with ICD metadata, consisting of
 #' year, ICD code and label. Optional arguments allow selection of
@@ -37,22 +102,23 @@
 #' entire history is relatively large and rarely required in full.
 #'
 #' @param year Year or years to get (numeric or character vector)
-#' @param icd_code (optional) ICD codes to select (regular expression, matched exactly using grep)
-#' @param icd_label (optional) ICD to search for using fuzzy matching (agrep)
+#' @param icd3 (optional) ICD codes to select (regular expression, matched exactly using grep)
+#' @param search (optional) A string to search for in the label column using fuzzy matching (agrep)
 #' @param ... (optional) Further arguments passed to agrep when searching with icd_label
-#' @return data.frame(YEAR, ICD_CODE, ICD_LABEL), see icd_labels
+#' @return data.frame(year, icd3, icd_code, icd_normcode, icd_sub, label), see icd_labels
 #' @export
-get_icd_labels <- function(year = NULL, icd_code = NULL, icd_label = NULL, ...){
-  out <- icd_labels
+get_icd_labels <- function(year = NULL, icd3 = NULL, search = NULL, ...){
+  out <- ICD::icd_meta_codes[, c("year", "icd3", "icd_code",
+                                 "icd_normcode", "icd_sub", "label")]
 
   if(!is.null(year) & all(grepl("^\\d{4}$", year)))
-    out <- subset(out, YEAR %in% year)
+    out <- out[out$year %in% year, ]
 
-  if(!is.null(icd_code) & all(grepl("^[A-Za-z]\\d{2}", icd_code)))
-    out <- out[grepl(icd_code, out$ICD_CODE), ]
+  if(!is.null(icd3) & all(grepl("^[A-Za-z]\\d{2}", icd3)))
+    out <- out[grepl(icd3, out$icd3), ]
 
-  if(!is.null(icd_label) & is.character(icd_label))
-    out <- out[agrep(icd_label, out$ICD_LABEL, ...), ]
+  if(!is.null(search) & is.character(search))
+    out <- out[agrep(search, out$label, ...), ]
 
    return(out)
 }
@@ -62,19 +128,18 @@ get_icd_labels <- function(year = NULL, icd_code = NULL, icd_label = NULL, ...){
 #' entries by year or ICD code. This is beneficial because the
 #' entire history is relatively large and rarely required in full.
 #'
-#' @param year_icd Year or years to get (numeric or character vector)
-#' @param icd_code (optional) ICD codes to select (regular expression, matched exactly using grep)
+#' @param year Year or years to get (numeric or character vector)
+#' @param icd3 (optional) ICD codes to select (regular expression, matched exactly using grep)
 #' @return data.frame, see icd_hist
 #' @export
-get_icd_history <- function(year_icd = NULL, icd_code = NULL){
-  out <- icd_hist
+get_icd_history <- function(year = NULL, icd3 = NULL){
+  out <- ICD::icd_meta_transition
 
-  if(!is.null(year_icd) & all(grepl("^\\d{4}$", year_icd)))
-    out <- subset(out, year %in% year_icd)
+  if(!is.null(year) & all(grepl("^\\d{4}$", year)))
+    out <- out[out$year %in% year, ]
 
-  if(!is.null(icd_code) & all(grepl("^[A-Za-z]\\d{2}", icd_code)))
-    out <- out[grepl(icd_from, out$ICD_CODE) |
-                 grepl(icd_to, out$ICD_CODE), ]
+  if(!is.null(icd3) & all(grepl("^[A-Za-z]\\d{2}", icd3)))
+    out <- out[grepl(icd3, out$icd_from) | grepl(icd3, out$icd_to), ]
 
    return(out)
 }

@@ -1,14 +1,15 @@
-#' Show all changes in ICD history relating to the 
+#' Show all changes in ICD history relating to the
 #' 3-digit codes contained in a given vector icd
 #'
-#' @param icd Vector of three-digit ICD codes
+#' @param icd3 Vector of three-digit ICD codes
 #' @return data.frame with columns YEAR, ICD_CODE, ICD_LABEL and, if specified, DIAG_GROUP
 #' @export
-icd_showchanges_icd3 <- function(icd3_in){
-	subset(icd_hist, icd3 %in% icd3_in & change == TRUE)
+icd_showchanges_icd3 <- function(icd3){
+	out <- get_icd_history(icd3 = icd3)
+	out[out$change == TRUE]
 }
 
-#' Show all changes in ICD history relating to the 
+#' Show all changes in ICD history relating to the
 #' 3-digit codes contained in the data.frame icd_in.
 #' The output of icd_expand can be passed directly to this
 #' function to display relevant changes.

@@ -3,4 +3,4 @@
 *.Rd
 data-raw/2*
 data-raw/dimdi
-.Rcheck
+..Rcheck

@@ -24,7 +24,7 @@ icd_expand <- function (icd_in, year, col_icd = "ICD", col_meta = NULL)
     dplyr::distinct()
 
   # ICD Metadata
-  icd_labels <- ICD::get_icd_labels(year = year)
+  icd_labels <- ICD10gm::get_icd_labels(year = year)
     # dplyr::mutate(
     #   ICD_SUB = sub("\\.", "", ICD_CODE),
     #   YEAR = as.integer(YEAR)

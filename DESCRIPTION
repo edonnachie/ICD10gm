@@ -1,10 +1,13 @@
 Package: ICD10gm
 Title: Metadata processing for the German modification of the ICD-10 coding system
 Version: 0.9
-Authors@R: "Ewan Donnachie <ewan@donnachie.net> [aut, cre]"
+Authors@R: c(
+    person("Ewan", "Donnachie", , "ewan@donnachie.net", c("aut", "cre"))
+  )
 Description: This package provides pre-processed metadata from the German modification of the ICD-10 coding system. Further, it provides funcitons to facilitate the specification and historisation of ICD codes. Its intended use is the analysis of routinely collected data in the context of medical and health services research.
 Depends:
     R (>= 3.1.2)
-License: Creative Commons Attribution-ShareAlike 3.0 Unported License
+License: GPL-3
+URL: https://github.com/edonnachie/ICD10gm
 LazyData: true
 RoxygenNote: 6.0.1

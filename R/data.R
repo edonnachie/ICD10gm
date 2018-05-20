@@ -17,7 +17,7 @@
 #'   \item{terminal}{Whether the code is a terminal code (i.e. with no further subcodes) (T: yes; N: no)}
 #'   \item{subcode_type}{Whether the subcode is pre- or postcombinated (X: precombinated; S: postcombinated). Precombinated codes are listed directly under the three-digit ICD code, whereas postcombinated codes are lists of possible values for the fourth and fifth digits that are not specific to the particular code (e.g. the group E10-E14 shares a common list of postcombinated fourth and fifth digits)}
 #'   \item{chapter_nr}{Chapter number (arabic digits 1-22)}
-#'   \item{icd_block_first}{First code in the respective ICD block, can be used to join with the table ICD::icd_meta_blocks}
+#'   \item{icd_block_first}{First code in the respective ICD block, can be used to join with the table ICD10gm::icd_meta_blocks}
 #'   \item{icd_code}{Full icd code (up to 7 characters) with all symbols except the "dagger" (for aetiological codes that can be combined with an "asterisk" code to denote the manifestation)}
 #'   \item{icd_normcode}{The ICD "normcode", consisting of up to 6 characers and without all symbols except the period (e.g. E11.30)}
 #'   \item{icd_sub}{The ICD "normcode", consisting of up to 5 characers and without any symbols (e.g. E1130)}
@@ -108,7 +108,7 @@
 #' @return data.frame(year, icd3, icd_code, icd_normcode, icd_sub, label), see icd_labels
 #' @export
 get_icd_labels <- function(year = NULL, icd3 = NULL, search = NULL, ...){
-  out <- ICD::icd_meta_codes[, c("year", "icd3", "icd_code",
+  out <- ICD10gm::icd_meta_codes[, c("year", "icd3", "icd_code",
                                  "icd_normcode", "icd_sub", "label")]
 
   if(!is.null(year) & all(grepl("^\\d{4}$", year)))
@@ -133,7 +133,7 @@ get_icd_labels <- function(year = NULL, icd3 = NULL, search = NULL, ...){
 #' @return data.frame, see icd_hist
 #' @export
 get_icd_history <- function(year = NULL, icd3 = NULL){
-  out <- ICD::icd_meta_transition
+  out <- ICD10gm::icd_meta_transition
 
   if(!is.null(year) & all(grepl("^\\d{4}$", year)))
     out <- out[out$year %in% year, ]

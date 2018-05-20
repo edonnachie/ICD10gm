@@ -4,7 +4,7 @@
 #' @return data.frame with columns YEAR, ICD_CODE, ICD_COMPRESSED, ICD_LABEL and, if specified, DIAG_GROUP
 #' @export
 icd_history <- function(icd_expand, years){
-  icd_hist <- ICD::icd_meta_transition[,
+  icd_hist <- ICD10gm::icd_meta_transition[,
     c("year_from", "year_to",
       "icd_from", "icd_to",
       "automatic_forward", "automatic_backward")]
@@ -34,7 +34,7 @@ icd_history <- function(icd_expand, years){
 		out <- out[, which(!(names(out) %in% c("year", "icd_code")))]
 		names(out)[which(names(out) == "year_from")] <- "year"
 		names(out)[which(names(out) == "icd_from")] <- "icd_code"
-		# out <- merge(out, ICD::icd_meta_codes[, c("year", "icd_code", "icd_normcode", "icd_sub", "icd3", "label")])
+		# out <- merge(out, ICD10gm::icd_meta_codes[, c("year", "icd_code", "icd_normcode", "icd_sub", "icd3", "label")])
 		out <- out[, names(icd_expand)]
 		return(unique(out))
 	}

@@ -5,19 +5,33 @@ The ICD-10 classification of diseases and related health problems (ICD-10) is an
 
 This package was created to facilitate the analysis of data coded using the ICD-10-GM. In particular, it has three aims:
 
-1. To provide a convenient interface to the historized ICD-10 metadata
-2. To facilitate the specification of ICD groups, utilising the ICD hierarchy
-3. To enable the historization of ICD specifications by applying automatic code transitions and displaying problematic codes
+1. To provide convenient to the extended ICD-10-GM metadata
+2. To facilitate the specification of ICD codes for analysis, utilising the ICD hierarchy (e.g. given the specification "A0" return all subcodes in the range "A01" to "A09")
+3. To enable the historization of ICD specifications by applying the automatic code transitions provided by DIMDI and identifying potentially problematic codes
 
-The package was created primarily for personal use but is under active development and has been used in several scientific papers.
+ICD10gm is designed for use in the context of medical and health services research using routinely collected claims data. It is not suitable for use in operative coding as it does not include all relevant metadata (e.g. inclusion and exclusion notes and the detailed definitions of psychiatric diagnoses). The metadata provided in the ICD10gm package is not intended to replace the [official DIMDI documentation](https://www.dimdi.de/static/en/klassi/icd-10-gm/index.htm), which should always be consulted when specifying ICD codes for analysis.
 
 ## Basic Use
 
 ### Access ICD-10-GM metadata 
 
+The ICD-10-GM metadaa are provided in four data.frames as follows:
+
+- `icd_meta_chapters`: A list of ICD-10 chapters
+- `icd_meta_blocks`: Specification of the ICD-10 blocks, each containing a sequence of related ICD-10 codes
+- `icd_meta_codes`: Extended metadata for all ICD-10-GM codes
+- `icd_meta_transitions`: The "crosswalk" table specifying old and new ICD-10-GM codes for successive annual versions.
+
+A helper function `get_icd_labels` returns only the ICD subcodes and labels for specified codes and years.
+
+
 ### Expand a ICD specification down the hierarchy
 
+The function `icd_expand` takes a data.frame containing ICD codes and optional metadata as input. It returns a data.frame containing all ICD codes at or below the specified level of the hierarchy (e.g. the specification "E11" is expanded to include all three, four and five-digit codes beginning with E11). Expansion is done within a specified version of the ICD-10-GM (e.g. year 2018).
+
 ### Historise an ICD specification
+
+The function `icd_history` takes the result of `icd_expand`, specified for a particular year, and returns a data.frame containing all corresponding codes for the specified years (from 2003). To do this, it applies the ICD-10-GM transition tables to map codes between successive ICD-10-GM versions. Only automatic transitions are followed.
 
 
 ## Copyright

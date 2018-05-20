@@ -1,5 +1,11 @@
 #' Expand list of ICD codes to include all possible subcodes
 #'
+#' The function `icd_expand` takes a data.frame containing ICD codes 
+#' and optional metadata as input. It returns a data.frame containing 
+#' all ICD codes at or below the specified level of the hierarchy
+#' (e.g. the specification "E11" is expanded to include all three,
+#' four and five-digit codes beginning with E11).
+#'
 #' @param icd_in Data frame defining ICD codes of interest
 #' @param year ICD 10 version
 #' @param col_icd Column of icd_in containing ICD codes (Default: ICD)

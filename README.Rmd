@@ -1,4 +1,5 @@
-# ICDGM
+# ICD10gm
+
 An R Package for Working with the German Modification of the International Statistical Classification of Diseases and Related Health Problems
 
 The ICD-10 classification of diseases and related health problems (ICD-10) is an international standard for the coding of health service data. In Germany the [German Instutite of Medical Documentation and Information (DIMDI)](https://www.dimdi.de/static/en/dimdi/index.htm) releases a German Modification (ICD-10-GM) of the classification that forms a compulsory part of all remuneration claims in the ambulatory and hospital sectors.

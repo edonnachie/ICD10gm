@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • ICD10gm</title>
+<title>Metadata for the ICD-10-GM chapters — icd_meta_chapters • ICD10gm</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -28,7 +28,10 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Metadata for the ICD-10-GM chapters — icd_meta_chapters" />
+
+<meta property="og:description" content="The ICD chapters group codes according to their aetiology." />
+<meta name="twitter:card" content="summary" />
 
 
 <!-- mathjax -->
@@ -43,7 +46,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -89,99 +92,53 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Metadata for the ICD-10-GM chapters</h1>
+    <small class="dont-index">Source: <a href='https://github.com/edonnachie/ICD10gm/blob/master/R/data.R'><code>R/data.R</code></a></small>
+    <div class="hidden name"><code>icd_meta_chapters.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    
+    <p>The ICD chapters group codes according to their aetiology.</p>
+    
+    </div>
 
-    <colgroup>
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='no'>icd_meta_chapters</span></pre>
+        
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      <tr>
-        <!--  -->
-        <td>
-          <p><code><a href="get_icd_history.html">get_icd_history()</a></code> </p>
-        </td>
-        <td><p>Returns a data frame with ICD transition history, consisting of
-year, ICD code and label. Optional arguments allow selection of
-entries by year or ICD code. This is beneficial because the
-entire history is relatively large and rarely required in full.</p></td>
-      </tr><tr>
-        <!--  -->
-        <td>
-          <p><code><a href="get_icd_labels.html">get_icd_labels()</a></code> </p>
-        </td>
-        <td><p>Returns a data frame with ICD metadata, consisting of
-year, ICD code and label. Optional arguments allow selection of
-entries by year, code or label. This is beneficial because the
-entire history is relatively large and rarely required in full.</p></td>
-      </tr><tr>
-        <!--  -->
-        <td>
-          <p><code><a href="icd_expand.html">icd_expand()</a></code> </p>
-        </td>
-        <td><p>Expand list of ICD codes to include all possible subcodes</p></td>
-      </tr><tr>
-        <!--  -->
-        <td>
-          <p><code><a href="icd_history.html">icd_history()</a></code> </p>
-        </td>
-        <td><p>Historize a list of ICD codes to cover the specified years</p></td>
-      </tr><tr>
-        <!--  -->
-        <td>
-          <p><code><a href="icd_meta_blocks.html">icd_meta_blocks</a></code> </p>
-        </td>
-        <td><p>Metadata for the ICD-10-GM code blocks</p></td>
-      </tr><tr>
-        <!--  -->
-        <td>
-          <p><code><a href="icd_meta_chapters.html">icd_meta_chapters</a></code> </p>
-        </td>
-        <td><p>Metadata for the ICD-10-GM chapters</p></td>
-      </tr><tr>
-        <!--  -->
-        <td>
-          <p><code><a href="icd_meta_codes.html">icd_meta_codes</a></code> </p>
-        </td>
-        <td><p>Metadata for all ICD-10-GM codes</p></td>
-      </tr><tr>
-        <!--  -->
-        <td>
-          <p><code><a href="icd_showchanges.html">icd_showchanges()</a></code> </p>
-        </td>
-        <td><p>Show all changes in ICD history relating to the
-3-digit codes contained in the data.frame icd_in.
-The output of icd_expand can be passed directly to this
-function to display relevant changes.</p></td>
-      </tr><tr>
-        <!--  -->
-        <td>
-          <p><code><a href="icd_showchanges_icd3.html">icd_showchanges_icd3()</a></code> </p>
-        </td>
-        <td><p>Show all changes in ICD history relating to the
-3-digit codes contained in a given vector icd</p></td>
-      </tr>
-    </tbody>
-    </table>
+    <p>An object of class <code>data.frame</code> with 315 rows and 4 columns.</p>
+    
+    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
+
+    <p>The source data was downloaded from the official download centre
+of the German Institute for Medical Documentation and Information (DIMDI).
+See also <a href='https://www.dimdi.de/static/en/klassi/icd-10-gm/systematik/systematik.htm'>https://www.dimdi.de/static/en/klassi/icd-10-gm/systematik/systematik.htm</a></p>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <dl class='dl-horizontal'>
+  <dt>year</dt><dd><p>Year of validity (from 2004)</p></dd>
+  <dt>chapter</dt><dd><p>Chapter number (arabic numerals)</p></dd>
+  <dt>chapter_roman</dt><dd><p>Chapter number (Roman numerals)</p></dd>
+  <dt>chapter_label</dt><dd><p>Label for the chapter</p></dd>
+</dl>
+    
+
   </div>
-
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
-    </ul>
+      
+      <li><a href="#format">Format</a></li>
+
+      <li><a href="#source">Source</a></li>
+
+      <li><a href="#details">Details</a></li>
+          </ul>
+
   </div>
 </div>
 

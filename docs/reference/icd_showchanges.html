@@ -6,7 +6,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • ICD10gm</title>
+<title>Show all changes in ICD history relating to the
+3-digit codes contained in the data.frame icd_in.
+The output of icd_expand can be passed directly to this
+function to display relevant changes. — icd_showchanges • ICD10gm</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -28,7 +31,16 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Show all changes in ICD history relating to the
+3-digit codes contained in the data.frame icd_in.
+The output of icd_expand can be passed directly to this
+function to display relevant changes. — icd_showchanges" />
+
+<meta property="og:description" content="Show all changes in ICD history relating to the
+3-digit codes contained in the data.frame icd_in.
+The output of icd_expand can be passed directly to this
+function to display relevant changes." />
+<meta name="twitter:card" content="summary" />
 
 
 <!-- mathjax -->
@@ -43,7 +55,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -89,99 +101,54 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
-    </div>
-
-    <table class="ref-index">
-
-    <colgroup>
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
-
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      <tr>
-        <!--  -->
-        <td>
-          <p><code><a href="get_icd_history.html">get_icd_history()</a></code> </p>
-        </td>
-        <td><p>Returns a data frame with ICD transition history, consisting of
-year, ICD code and label. Optional arguments allow selection of
-entries by year or ICD code. This is beneficial because the
-entire history is relatively large and rarely required in full.</p></td>
-      </tr><tr>
-        <!--  -->
-        <td>
-          <p><code><a href="get_icd_labels.html">get_icd_labels()</a></code> </p>
-        </td>
-        <td><p>Returns a data frame with ICD metadata, consisting of
-year, ICD code and label. Optional arguments allow selection of
-entries by year, code or label. This is beneficial because the
-entire history is relatively large and rarely required in full.</p></td>
-      </tr><tr>
-        <!--  -->
-        <td>
-          <p><code><a href="icd_expand.html">icd_expand()</a></code> </p>
-        </td>
-        <td><p>Expand list of ICD codes to include all possible subcodes</p></td>
-      </tr><tr>
-        <!--  -->
-        <td>
-          <p><code><a href="icd_history.html">icd_history()</a></code> </p>
-        </td>
-        <td><p>Historize a list of ICD codes to cover the specified years</p></td>
-      </tr><tr>
-        <!--  -->
-        <td>
-          <p><code><a href="icd_meta_blocks.html">icd_meta_blocks</a></code> </p>
-        </td>
-        <td><p>Metadata for the ICD-10-GM code blocks</p></td>
-      </tr><tr>
-        <!--  -->
-        <td>
-          <p><code><a href="icd_meta_chapters.html">icd_meta_chapters</a></code> </p>
-        </td>
-        <td><p>Metadata for the ICD-10-GM chapters</p></td>
-      </tr><tr>
-        <!--  -->
-        <td>
-          <p><code><a href="icd_meta_codes.html">icd_meta_codes</a></code> </p>
-        </td>
-        <td><p>Metadata for all ICD-10-GM codes</p></td>
-      </tr><tr>
-        <!--  -->
-        <td>
-          <p><code><a href="icd_showchanges.html">icd_showchanges()</a></code> </p>
-        </td>
-        <td><p>Show all changes in ICD history relating to the
+    <h1>Show all changes in ICD history relating to the
 3-digit codes contained in the data.frame icd_in.
 The output of icd_expand can be passed directly to this
-function to display relevant changes.</p></td>
-      </tr><tr>
-        <!--  -->
-        <td>
-          <p><code><a href="icd_showchanges_icd3.html">icd_showchanges_icd3()</a></code> </p>
-        </td>
-        <td><p>Show all changes in ICD history relating to the
-3-digit codes contained in a given vector icd</p></td>
-      </tr>
-    </tbody>
-    </table>
-  </div>
+function to display relevant changes.</h1>
+    <small class="dont-index">Source: <a href='https://github.com/edonnachie/ICD10gm/blob/master/R/icd_showchanges.R'><code>R/icd_showchanges.R</code></a></small>
+    <div class="hidden name"><code>icd_showchanges.Rd</code></div>
+    </div>
 
+    <div class="ref-description">
+    
+    <p>Show all changes in ICD history relating to the
+3-digit codes contained in the data.frame icd_in.
+The output of icd_expand can be passed directly to this
+function to display relevant changes.</p>
+    
+    </div>
+
+    <pre class="usage"><span class='fu'>icd_showchanges</span>(<span class='no'>icd_in</span>, <span class='kw'>col_icd</span> <span class='kw'>=</span> <span class='st'>"ICD"</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>icd_in</th>
+      <td><p>Data frame defining ICD codes of interest</p></td>
+    </tr>
+    <tr>
+      <th>col_icd</th>
+      <td><p>Column of icd_in containing ICD codes (Default: ICD)</p></td>
+    </tr>
+    </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>data.frame with columns YEAR, ICD_CODE, ICD_LABEL and, if specified, DIAG_GROUP</p>
+    
+
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
-    </ul>
+      <li><a href="#arguments">Arguments</a></li>
+      
+      <li><a href="#value">Value</a></li>
+          </ul>
+
   </div>
 </div>
 

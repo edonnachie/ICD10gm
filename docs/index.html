@@ -79,6 +79,17 @@
 <li>To enable the historization of ICD specifications by applying the automatic code transitions provided by DIMDI and identifying potentially problematic codes</li>
 </ol>
 <p>ICD10gm is designed for use in the context of medical and health services research using routinely collected claims data. It is not suitable for use in operative coding as it does not include all relevant metadata (e.g. inclusion and exclusion notes and the detailed definitions of psychiatric diagnoses). The metadata provided in the ICD10gm package is not intended to replace the <a href="https://www.dimdi.de/static/en/klassi/icd-10-gm/index.htm">official DIMDI documentation</a>, which should always be consulted when specifying ICD codes for analysis.</p>
+<p>The packge is functional and is in active use, but minor bugs may be present. In preparation for a possible CRAN release, current effort is focussed on documentation and minor convenience features.</p>
+<div id="getting-started" class="section level2">
+<h2 class="hasAnchor">
+<a href="#getting-started" class="anchor"></a>Getting Started</h2>
+<p>The package is not (yet) available from CRAN but can be installed from github as follows:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Install the devtools package if not already installed</span>
+<span class="cf">if</span> (<span class="op">!</span>(<span class="st">"devtools"</span> <span class="op">%in%</span><span class="st"> </span><span class="kw">.packages</span>(<span class="dt">all.available=</span><span class="ot">TRUE</span>))) <span class="kw">install.package</span>(<span class="st">"devtools"</span>)
+
+<span class="co"># Install ICD10gm package from github</span>
+devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"edonnache/ICD10gm"</span>)</code></pre></div>
+</div>
 <div id="basic-use" class="section level2">
 <h2 class="hasAnchor">
 <a href="#basic-use" class="anchor"></a>Basic Use</h2>

@@ -12,6 +12,20 @@ This package was created to facilitate the analysis of data coded using the ICD-
 
 ICD10gm is designed for use in the context of medical and health services research using routinely collected claims data. It is not suitable for use in operative coding as it does not include all relevant metadata (e.g. inclusion and exclusion notes and the detailed definitions of psychiatric diagnoses). The metadata provided in the ICD10gm package is not intended to replace the [official DIMDI documentation](https://www.dimdi.de/static/en/klassi/icd-10-gm/index.htm), which should always be consulted when specifying ICD codes for analysis.
 
+The packge is functional and is in active use, but minor bugs may be present. In preparation for a possible CRAN release, current effort is focussed on documentation and minor convenience features.
+
+## Getting Started
+
+The package is not (yet) available from CRAN but can be installed from github as follows:
+
+`r eval = FALSE`
+# Install the devtools package if not already installed
+if (!("devtools" %in% .packages(all.available=TRUE))) install.package("devtools")
+
+# Install ICD10gm package from github
+devtools::install_github("edonnache/ICD10gm")
+`
+
 ## Basic Use
 
 ### Access ICD-10-GM metadata 

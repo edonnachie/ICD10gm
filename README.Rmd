@@ -51,7 +51,19 @@ The function `icd_history` takes the result of `icd_expand`, specified for a par
 
 ## Copyright
 
-The underlying ICD-10-GM metadata is copyright of the [German Instutite of Medical Documentation and Information (DIMDI)](https://www.dimdi.de/static/en/dimdi/index.htm). The underlying files are available free of charge from the [DIMDI Download Centre](http://www.dimdi.de/dynamic/de/klassi/downloadcenter/). I believe that their use in this package is compatible with the copyright restrictions.
+The underlying ICD-10-GM metadata is copyright of the [German Instutite of Medical Documentation and Information (DIMDI)](https://www.dimdi.de/static/en/dimdi/index.htm). The source files are available free of charge from the [DIMDI Download Centre](http://www.dimdi.de/dynamic/de/klassi/downloadcenter/). I believe that their use in this package is compatible with the copyright restrictions. In particular:
+
+- The distribution of an "added-value product" derived from the original DIMDI classification files is expressly permitted.
+
+- Distribution of the original classification files is forbidden. Consequently, this package distributes only the code required to process these files. Those wishing to compile the data from scratch must download the files from the DIMDI download centre and agree to the copyright restrictions.
+
+- The package does not modify the ICD-10-GM codes, texts or other metadata in any way other than to restructure the data into a convenient form.
+
+- The package does not contain any commercial advertising.
+
+- The source of the data is clearly stated, both here and in the package documentation.
+
+
 
 ## Related Packages
 

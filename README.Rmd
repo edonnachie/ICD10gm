@@ -30,16 +30,23 @@ devtools::install_github("edonnache/ICD10gm")
 
 ### Access ICD-10-GM metadata 
 
-The ICD-10-GM metadaa are provided in four data.frames as follows:
+The ICD-10-GM metadata are provided by four data.frames that form the core of the ICD10gm package:
 
-- `icd_meta_chapters`: A list of ICD-10 chapters
+- `icd_meta_chapters`: Specification of the ICD-10-GM chapters with label and number (Arabic and Roman numerals)
 - `icd_meta_blocks`: Specification of the ICD-10 blocks, each containing a sequence of related ICD-10 codes
 - `icd_meta_codes`: Extended metadata for all ICD-10-GM codes
 - `icd_meta_transitions`: The "crosswalk" table specifying old and new ICD-10-GM codes for successive annual versions.
 
-A helper function `get_icd_labels` returns only the ICD subcodes and labels for specified codes and years.
+N.B. While column names have been translated into English, the ICD-10-GM labels are written in German.
 
+### Utility functions
 
+Several utility functions are provided to perform common queries on the metadata:
+
+- `get_icd_labels` queries `icd_meta_codes` and returns only the ICD subcodes and labels for specified codes and years.
+- `get_icd_history` queries `icd_meta_transitions` and returns only the mappings for specified codes and years.
+- `icd_showchanges` and `icd_showchanges_icd3` query `icd_meta_transitions` and return entries that are affected by changes in the ICD-10-GM versions.
+ 
 ### Expand a ICD specification down the hierarchy
 
 The function `icd_expand` takes a data.frame containing ICD codes and optional metadata as input. It returns a data.frame containing all ICD codes at or below the specified level of the hierarchy (e.g. the specification "E11" is expanded to include all three, four and five-digit codes beginning with E11). Expansion is done within a specified version of the ICD-10-GM (e.g. year 2018).

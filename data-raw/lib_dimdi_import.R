@@ -183,5 +183,7 @@ read_icd_transitions <- function(version) {
   )
   names(out) <- c("year_from", "year_to", "icd_from", "icd_to",
                   "automatic_forward", "automatic_backward")
+  out$year_from <- as.integer(out$year_from)
+  out$year_to <- as.integer(out$year_to)
   return(out)
 }

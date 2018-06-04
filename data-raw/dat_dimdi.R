@@ -25,6 +25,7 @@ icd_meta_transition <- within(icd_meta_transition, {
 	change_5 <- (substr(icd_from, 1, 5) != substr(icd_to, 1, 5) &! change_3 &! change_4)
 })
 
+
 devtools::use_data(
   icd_meta_codes,
   icd_meta_blocks,

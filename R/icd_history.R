@@ -32,7 +32,7 @@ icd_history <- function(icd_expand, years){
 	icd_back <- function(icd_expand, icd_hist){
 		out <- merge(
 		  icd_expand,
-		  subset(icd_hist, automatic_backward == "A"),
+		  icd_hist[icd_hist$automatic_backward == "A", ],
 			by.x = c("year", "icd_code"),
 			by.y = c("year_to", "icd_to"),
 			all.x = TRUE, all.y = FALSE)
@@ -49,7 +49,7 @@ icd_history <- function(icd_expand, years){
 
 	icd_forward <- function(icd_expand, icd_hist){
 		out <- merge(icd_expand,
-		             subset(icd_hist, automatic_forward == "A"),
+		             icd_hist[icd_hist$automatic_forward == "A", ],
 					by.x = c("year", "icd_code"),
 					by.y = c("year_from", "icd_from"),
 					all.x = TRUE, all.y = FALSE)
@@ -89,6 +89,7 @@ icd_history <- function(icd_expand, years){
 	# Return data frame with alternative coding for the ICD
 	# (without ".", e.g. for InBA grouper)
 	out <- subset(do.call("rbind", icd_hist_out), !is.na(year))
+	out <- out[!is.na(out$year), ]
 	out$year <- as.integer(out$year)
 	return(out)
 }

@@ -6,7 +6,7 @@
 #' @export
 icd_showchanges_icd3 <- function(icd3){
 	out <- get_icd_history(icd3 = icd3)
-	out[out$change == TRUE]
+	out[out$change == TRUE, ]
 }
 
 #' Show all changes in ICD history relating to the

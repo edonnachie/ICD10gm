@@ -58,7 +58,7 @@ The function `icd_history` takes the result of `icd_expand`, specified for a par
 
 ## Copyright
 
-Program code is released under the [GNU General Purpose License v3](https://www.gnu.org/licenses/gpl-3.0.en.html) license.
+Program code is released under the [GNU General Purpose License v3](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
 The underlying ICD-10-GM metadata is copyright of the [German Instutite of Medical Documentation and Information (DIMDI)](https://www.dimdi.de). The source files are available free of charge from the [DIMDI Download Centre](https://www.dimdi.de/dynamic/de/klassifikationen/downloads/?dir=icd-10-gm). I believe that their use in this package is compatible with the copyright restrictions. In particular:
 

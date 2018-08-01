@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Metadata for the ICD-10-GM chapters — icd_meta_chapters • ICD10gm</title>
+<title>Test whether a string is an ICD code — is_icd_code • ICD10gm</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -28,9 +28,13 @@
 
 
 
-<meta property="og:title" content="Metadata for the ICD-10-GM chapters — icd_meta_chapters" />
+<meta property="og:title" content="Test whether a string is an ICD code — is_icd_code" />
 
-<meta property="og:description" content="The ICD chapters group codes according to their aetiology." />
+<meta property="og:description" content="An ICD code consists of a three digit code
+(i.e. one upper-case letter followed by
+two digits), optionally with a two digit
+subcode (which may or may not have a period
+separating the three-digit code and subcode)" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -94,49 +98,44 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Metadata for the ICD-10-GM chapters</h1>
-    <small class="dont-index">Source: <a href='https://github.com/edonnachie/ICD10gm/blob/master/R/data.R'><code>R/data.R</code></a></small>
-    <div class="hidden name"><code>icd_meta_chapters.Rd</code></div>
+    <h1>Test whether a string is an ICD code</h1>
+    <small class="dont-index">Source: <a href='https://github.com/edonnachie/ICD10gm/blob/master/R/icd_parse.R'><code>R/icd_parse.R</code></a></small>
+    <div class="hidden name"><code>is_icd_code.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>The ICD chapters group codes according to their aetiology.</p>
+    <p>An ICD code consists of a three digit code
+(i.e. one upper-case letter followed by
+two digits), optionally with a two digit
+subcode (which may or may not have a period
+separating the three-digit code and subcode)</p>
     
     </div>
 
-    <pre class="usage"><span class='no'>icd_meta_chapters</span></pre>
-        
-    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
-
-    <p>An object of class <code>data.frame</code> with 315 rows and 4 columns.</p>
+    <pre class="usage"><span class='fu'>is_icd_code</span>(<span class='no'>str</span>)</pre>
     
-    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
-
-    <p>The source data was downloaded from the official download centre
-of the German Institute for Medical Documentation and Information (DIMDI).
-See also <a href='https://www.dimdi.de/dynamic/en/classifications/icd/icd-10-gm/tabular-list/structure/'>https://www.dimdi.de/dynamic/en/classifications/icd/icd-10-gm/tabular-list/structure/</a></p>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>str</th>
+      <td><p>Character vector to be tested</p></td>
+    </tr>
+    </table>
     
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <dl class='dl-horizontal'>
-  <dt>year</dt><dd><p>Year of validity (from 2004)</p></dd>
-  <dt>chapter</dt><dd><p>Chapter number (arabic numerals)</p></dd>
-  <dt>chapter_roman</dt><dd><p>Chapter number (Roman numerals)</p></dd>
-  <dt>chapter_label</dt><dd><p>Label for the chapter</p></dd>
-</dl>
+    <p>Logical vector the same length as the character input</p>
     
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
+      <li><a href="#arguments">Arguments</a></li>
       
-      <li><a href="#format">Format</a></li>
-
-      <li><a href="#source">Source</a></li>
-
-      <li><a href="#details">Details</a></li>
+      <li><a href="#value">Value</a></li>
           </ul>
 
   </div>

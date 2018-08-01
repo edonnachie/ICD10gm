@@ -29,7 +29,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">ICD10gm</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.9</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.92</span>
       </span>
     </div>
 
@@ -71,14 +71,14 @@
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#icd10gm" class="anchor"></a>ICD10gm</h1></div>
 <p>An R Package for Working with the German Modification of the International Statistical Classification of Diseases and Related Health Problems</p>
-<p>The ICD-10 classification of diseases and related health problems (ICD-10) is an international standard for the coding of health service data. In Germany the <a href="https://www.dimdi.de/static/en/dimdi/index.htm">German Instutite of Medical Documentation and Information (DIMDI)</a> releases a German Modification (ICD-10-GM) of the classification that forms a compulsory part of all remuneration claims in the ambulatory and hospital sectors.</p>
+<p>The ICD-10 classification of diseases and related health problems (ICD-10) is an international standard for the coding of health service data. In Germany the <a href="https://www.dimdi.de">German Instutite of Medical Documentation and Information (DIMDI)</a> releases a German Modification (ICD-10-GM) of the classification that forms a compulsory part of all remuneration claims in the ambulatory and hospital sectors.</p>
 <p>This package was created to facilitate the analysis of data coded using the ICD-10-GM. In particular, it has three aims:</p>
 <ol style="list-style-type: decimal">
 <li>To provide convenient to the extended ICD-10-GM metadata</li>
 <li>To facilitate the specification of ICD codes for analysis, utilising the ICD hierarchy (e.g. given the specification “A0” return all subcodes in the range “A01” to “A09”)</li>
 <li>To enable the historization of ICD specifications by applying the automatic code transitions provided by DIMDI and identifying potentially problematic codes</li>
 </ol>
-<p>ICD10gm is designed for use in the context of medical and health services research using routinely collected claims data. It is not suitable for use in operative coding as it does not include all relevant metadata (e.g. inclusion and exclusion notes and the detailed definitions of psychiatric diagnoses). The metadata provided in the ICD10gm package is not intended to replace the <a href="https://www.dimdi.de/static/en/klassi/icd-10-gm/index.htm">official DIMDI documentation</a>, which should always be consulted when specifying ICD codes for analysis.</p>
+<p>ICD10gm is designed for use in the context of medical and health services research using routinely collected claims data. It is not suitable for use in operative coding as it does not include all relevant metadata (e.g. inclusion and exclusion notes and the detailed definitions of psychiatric diagnoses). The metadata provided in the ICD10gm package is not intended to replace the <a href="https://www.dimdi.de/dynamic/de/klassifikationen/icd/icd-10-gm/">official DIMDI documentation</a>, which should always be consulted when specifying ICD codes for analysis.</p>
 <p>The packge is functional and is in active use, but minor bugs may be present. In preparation for a possible CRAN release, current effort is focussed on documentation and minor convenience features.</p>
 <div id="getting-started" class="section level2">
 <h2 class="hasAnchor">
@@ -96,10 +96,10 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <div id="access-icd-10-gm-metadata" class="section level3">
 <h3 class="hasAnchor">
 <a href="#access-icd-10-gm-metadata" class="anchor"></a>Access ICD-10-GM metadata</h3>
-<p>The ICD-10-GM metadaa are provided in four data.frames as follows:</p>
+<p>The ICD-10-GM metadata are provided by four data.frames that form the core of the ICD10gm package:</p>
 <ul>
 <li>
-<code>icd_meta_chapters</code>: A list of ICD-10 chapters</li>
+<code>icd_meta_chapters</code>: Specification of the ICD-10-GM chapters with label and number (Arabic and Roman numerals)</li>
 <li>
 <code>icd_meta_blocks</code>: Specification of the ICD-10 blocks, each containing a sequence of related ICD-10 codes</li>
 <li>
@@ -107,7 +107,20 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <li>
 <code>icd_meta_transitions</code>: The “crosswalk” table specifying old and new ICD-10-GM codes for successive annual versions.</li>
 </ul>
-<p>A helper function <code>get_icd_labels</code> returns only the ICD subcodes and labels for specified codes and years.</p>
+<p>N.B. While column names have been translated into English, the ICD-10-GM labels are written in German.</p>
+</div>
+<div id="utility-functions" class="section level3">
+<h3 class="hasAnchor">
+<a href="#utility-functions" class="anchor"></a>Utility functions</h3>
+<p>Several utility functions are provided to perform common queries on the metadata:</p>
+<ul>
+<li>
+<code>get_icd_labels</code> queries <code>icd_meta_codes</code> and returns only the ICD subcodes and labels for specified codes and years.</li>
+<li>
+<code>get_icd_history</code> queries <code>icd_meta_transitions</code> and returns only the mappings for specified codes and years.</li>
+<li>
+<code>icd_showchanges</code> and <code>icd_showchanges_icd3</code> query <code>icd_meta_transitions</code> and return entries that are affected by changes in the ICD-10-GM versions.</li>
+</ul>
 </div>
 <div id="expand-a-icd-specification-down-the-hierarchy" class="section level3">
 <h3 class="hasAnchor">
@@ -123,7 +136,14 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <div id="copyright" class="section level2">
 <h2 class="hasAnchor">
 <a href="#copyright" class="anchor"></a>Copyright</h2>
-<p>The underlying ICD-10-GM metadata is copyright of the <a href="https://www.dimdi.de/static/en/dimdi/index.htm">German Instutite of Medical Documentation and Information (DIMDI)</a>. The underlying files are available free of charge from the <a href="http://www.dimdi.de/dynamic/de/klassi/downloadcenter/">DIMDI Download Centre</a>. I believe that their use in this package is compatible with the copyright restrictions.</p>
+<p>The underlying ICD-10-GM metadata is copyright of the <a href="https://www.dimdi.de">German Instutite of Medical Documentation and Information (DIMDI)</a>. The source files are available free of charge from the <a href="https://www.dimdi.de/dynamic/de/klassifikationen/downloads/?dir=icd-10-gm">DIMDI Download Centre</a>. I believe that their use in this package is compatible with the copyright restrictions. In particular:</p>
+<ul>
+<li><p>The distribution of an “added-value product” derived from the original DIMDI classification files is expressly permitted.</p></li>
+<li><p>Distribution of the original classification files is forbidden. Consequently, this package distributes only the code required to process these files. Those wishing to compile the data from scratch must download the files from the DIMDI download centre and agree to the copyright restrictions.</p></li>
+<li><p>The package does not modify the ICD-10-GM codes, texts or other metadata in any way other than to restructure the data into a convenient form.</p></li>
+<li><p>The package does not contain any commercial advertising.</p></li>
+<li><p>The source of the data is clearly stated, both here and in the package documentation.</p></li>
+</ul>
 </div>
 <div id="related-packages" class="section level2">
 <h2 class="hasAnchor">

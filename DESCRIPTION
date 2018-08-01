@@ -1,6 +1,6 @@
 Package: ICD10gm
 Title: Metadata processing for the German modification of the ICD-10 coding system
-Version: 0.91
+Version: 0.92
 Authors@R: c(
     person("Ewan", "Donnachie", , "ewan@donnachie.net", c("aut", "cre"))
   )
@@ -13,3 +13,5 @@ BugReports: https://github.com/edonnachie/ICD10gm/issues
 LazyData: true
 RoxygenNote: 6.0.1
 Imports: magrittr,dplyr,purrr,tidyr
+Suggests: 
+    testthat

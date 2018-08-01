@@ -39,7 +39,7 @@
 \source{
 The source data was downloaded from the official download centre
 of the German Institute for Medical Documentation and Information (DIMDI).
-See also \url{https://www.dimdi.de/static/en/klassi/icd-10-gm/systematik/metadaten.htm}
+See also \url{https://www.dimdi.de/dynamic/en/classifications/icd/icd-10-gm/tabular-list/#metadata}
 }
 \usage{
 icd_meta_codes

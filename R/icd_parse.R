@@ -28,7 +28,7 @@ regex_icd <- "([A-Z][0-9]{2})\\.?([0-9]{0,2})"
 #' @importFrom dplyr bind_rows
 #' @export
 icd_parse <- function (str, bind_rows = TRUE) {
-  out <- stringi:::stri_match_all_regex(str, pattern = regex_icd)
+  out <- stringi::stri_match_all_regex(str, pattern = regex_icd)
 
   if (bind_rows) {
     out <- lapply(out, as.data.frame, stringsAsFactors = FALSE)

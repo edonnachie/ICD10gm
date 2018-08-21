@@ -1,6 +1,6 @@
 # ICD10gm
 
-[![Travis build status](https://travis-ci.org/edonnachie/ICD10gm.svg?branch=master)](https://travis-ci.org/edonnachie/ICD10gm)
+[![Travis build status](https://travis-ci.org/edonnachie/ICD10gm.svg?branch=master)](https://travis-ci.org/edonnachie/ICD10gm) [![CRAN status](https://www.r-pkg.org/badges/version/ICD10gm)](https://cran.r-project.org/package=ICD10gm)
 
 An R Package for Working with the German Modification of the International Statistical Classification of Diseases and Related Health Problems
 

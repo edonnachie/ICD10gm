@@ -15,11 +15,7 @@ regex_icd_only <- paste0("^", regex_icd, "$")
 #' and the hypthen indicating an "incomplete" subcode,
 #' are optional. Finally, in the ambulatory system, an
 #' additional letter G, V, Z or A may be appended to
-<<<<<<< HEAD
 #' signify the status ("security") of the diagnosis.
-=======
-#' signify the status of the diagnosis.
->>>>>>> 54ec620c5ef3ece1d9f9d7090ac07dd9f925d4eb
 #'
 #' By default, the function returns a data.frame
 #' containing the matched codes and the standardised
@@ -57,11 +53,7 @@ icd_parse <- function (str, type = "bounded", bind_rows = TRUE) {
     out <- lapply(out, as.data.frame, stringsAsFactors = FALSE)
     out <- dplyr::bind_rows(out)
     names(out) <- c("icd_spec", "icd3", "icd_subcode",
-<<<<<<< HEAD
                     "icd_security")
-=======
-                    "icd_status")
->>>>>>> 54ec620c5ef3ece1d9f9d7090ac07dd9f925d4eb
     out[, "icd_spec"] <- str
     out$icd3[out$icd3 == ""] <- NA
     out$icd_subcode[out$icd_subcode == ""] <- NA
@@ -93,11 +85,7 @@ icd_parse <- function (str, type = "bounded", bind_rows = TRUE) {
 #' and the hypthen indicating an "incomplete" subcode,
 #' are optional. Finally, in the ambulatory system, an
 #' additional letter G, V, Z or A may be appended to
-<<<<<<< HEAD
 #' signify the status ("security") of the diagnosis.
-=======
-#' signify the status of the diagnosis.
->>>>>>> 54ec620c5ef3ece1d9f9d7090ac07dd9f925d4eb
 #'
 #' @param str Character vector to be tested
 #' @param year Year for which to test whether the specification is a valid code. Default: NULL (test whether `str` matches a code from any year since 2003)

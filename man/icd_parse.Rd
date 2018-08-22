@@ -28,7 +28,7 @@ separating the three-digit code from the subcode,
 and the hypthen indicating an "incomplete" subcode,
 are optional. Finally, in the ambulatory system, an
 additional letter G, V, Z or A may be appended to
-signify the status of the diagnosis.
+signify the status ("security") of the diagnosis.
 }
 \details{
 By default, the function returns a data.frame

@@ -3,12 +3,21 @@ context("test-icd_parse.R")
 
 test_that("Correctly identifies ICD codes", {
   expect_true(is_icd_code("R10"))
-  expect_true(is_icd_code("R101"))
-  expect_true(is_icd_code("R10.32"))
+  expect_true(is_icd_code("R104"))
+  expect_true(is_icd_code("R104", year = 2018))
+  expect_true(is_icd_code("R10.4", year = 2018))
 
   expect_false(is_icd_code("RD"))
   expect_false(is_icd_code("123.2"))
   expect_false(is_icd_code("R12.d"))
+  expect_false(is_icd_code("R105"))
+  expect_false(is_icd_code("R105", year = 2018))
+  expect_false(is_icd_code("R10.5", year = 2018))
+
+  expect_true(is_icd_code("R10.4G", year = 2018))
+  expect_false(is_icd_code("R10.4F", year = 2018))
+  expect_true(is_icd_code("E10.-", year = 2018))
+  expect_false(is_icd_code("E10.-F", year = 2018))
 })
 
 test_that("Single ICD codes are correctly parsed", {
@@ -16,19 +25,49 @@ test_that("Single ICD codes are correctly parsed", {
                data.frame(icd_spec = "E10.1",
                           icd3 = "E10",
                           icd_subcode = "1",
+                          icd_security = "",
                           icd_norm = "E10.1",
                           icd_sub = "E101",
                           stringsAsFactors = FALSE))
 
   expect_equal(icd_parse("E101"),
                data.frame(icd_spec = "E101", icd3 = "E10", icd_subcode = "1",
+                          icd_security = "",
                           icd_norm = "E10.1",
                           icd_sub = "E101",
                           stringsAsFactors = FALSE))
 
+  expect_equal(icd_parse("E101-"),
+               data.frame(icd_spec = "E101-", icd3 = "E10", icd_subcode = "1-",
+                          icd_security = "",
+                          icd_norm = "E10.1-",
+                          icd_sub = "E101",
+                          stringsAsFactors = FALSE))
+
+  expect_equal(icd_parse("E101-G"),
+               data.frame(icd_spec = "E101-G", icd3 = "E10", icd_subcode = "1-",
+                          icd_security = "G",
+                          icd_norm = "E10.1-",
+                          icd_sub = "E101",
+                          stringsAsFactors = FALSE))
+
+  expect_equal(icd_parse("E101G"),
+               data.frame(icd_spec = "E101G", icd3 = "E10", icd_subcode = "1",
+                          icd_security = "G",
+                          icd_norm = "E10.1",
+                          icd_sub = "E101",
+                          stringsAsFactors = FALSE))
+
+  expect_equal(icd_parse("E101-"),
+               data.frame(icd_spec = "E101-", icd3 = "E10", icd_subcode = "1-",
+                          icd_security = "",
+                          icd_norm = "E10.1-",
+                          icd_sub = "E101",
+                          stringsAsFactors = FALSE))
 
   expect_equal(icd_parse("EA"),
-               data.frame(icd_spec = NA_character_, icd3 = NA_character_, icd_subcode = NA_character_,
+               data.frame(icd_spec = "EA", icd3 = NA_character_, icd_subcode = NA_character_,
+                          icd_security = NA_character_,
                           icd_norm = NA_character_,
                           icd_sub = NA_character_,
                           stringsAsFactors = FALSE))
@@ -37,10 +76,11 @@ test_that("Single ICD codes are correctly parsed", {
 
 
 test_that("icd_parsed is vectorised", {
-  expect_equal(icd_parse(c("E10.1", "E10", "E1012")),
-               data.frame(icd_spec = c("E10.1", "E10", "E1012"),
+  expect_equal(icd_parse(c("E10.1", "E10 V", "E1012")),
+               data.frame(icd_spec = c("E10.1", "E10 V", "E1012"),
                           icd3 = rep("E10", 3),
                           icd_subcode = c("1", NA_character_, "12"),
+                          icd_security = c("", "V", ""),
                           icd_norm = c("E10.1", "E10", "E10.12"),
                           icd_sub = c("E101", "E10", "E1012"),
                           stringsAsFactors = FALSE)

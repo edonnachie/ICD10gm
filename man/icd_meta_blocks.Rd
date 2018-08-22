@@ -24,12 +24,12 @@ the ICD classification, for example chronic pain as a unspecific symptom
 }
 \details{
 \describe{
-  \item{year}{Year of validity (from 2004)}
-  \item{icd_block_first}{First three-digit ICD code in the block}
-  \item{icd_block_last}{Last three-digit ICD code in the block}
-  \item{chapter}{ICD-10 chapter to which the block belongs}
-  \item{block_label}{Label for the block}
-  \item{block_id}{Short label for the block in format "A00-A09"}
+\item{year}{Year of validity (from 2004)}
+\item{icd_block_first}{First three-digit ICD code in the block}
+\item{icd_block_last}{Last three-digit ICD code in the block}
+\item{chapter}{ICD-10 chapter to which the block belongs}
+\item{block_label}{Label for the block}
+\item{block_id}{Short label for the block in format "A00-A09"}
 }
 }
 \keyword{datasets}

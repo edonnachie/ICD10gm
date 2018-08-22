@@ -2,20 +2,31 @@
 % Please edit documentation in R/icd_parse.R
 \name{is_icd_code}
 \alias{is_icd_code}
-\title{Test whether a string is an ICD code}
+\title{Test whether a string is a valid ICD code}
 \usage{
-is_icd_code(str)
+is_icd_code(str, year = NULL, parse = TRUE)
 }
 \arguments{
 \item{str}{Character vector to be tested}
+
+\item{year}{Year for which to test whether the specification is a valid code. Default: NULL (test whether \code{str} matches a code from any year since 2003)}
+
+\item{parse}{logical. Whether to first parse the input \code{str} using \code{icd_parse} (Default: TRUE). If FALSE, assumes that \code{str} is already formatted as \code{icd_sub} (i.e. without separating period or other punctuation)}
 }
 \value{
 Logical vector the same length as the character input
 }
 \description{
-An ICD code consists of a three digit code
+An ICD code consists of, at a minimum,
+a three digit ICD-10 code
 (i.e. one upper-case letter followed by
-two digits), optionally with a two digit
-subcode (which may or may not have a period
-separating the three-digit code and subcode)
+two digits). This may optionally be followed
+by a two digit subcode, selected punctuation symbols
+(cross "*", dagger "\U2020" or
+exclamation mark "!"). Both the period
+separating the three-digit code from the subcode,
+and the hypthen indicating an "incomplete" subcode,
+are optional. Finally, in the ambulatory system, an
+additional letter G, V, Z or A may be appended to
+signify the status of the diagnosis.
 }

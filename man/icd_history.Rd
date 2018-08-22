@@ -15,7 +15,7 @@ icd_history(icd_expand, years)
 data.frame with columns YEAR, ICD_CODE, ICD_COMPRESSED, ICD_LABEL and, if specified, DIAG_GROUP
 }
 \description{
-The function `icd_history` takes the result of `icd_expand`,
+The function \code{icd_history} takes the result of \code{icd_expand},
 specified for a particular year, and returns a data.frame
 containing all corresponding codes for the specified years
 (from 2003). To do this, it applies the ICD-10-GM transition

@@ -20,17 +20,17 @@ transitioning forwards or backwards
 }
 \details{
 \describe{
-  \item{year_from}{Year of validity of the old code (from 2004)}
-  \item{year_to}{Year of validity of the new code (from 2005)}
-  \item{icd_from}{Old ICD code}
-  \item{icd_to}{New ICD code}
-  \item{automatic_forward}{Whether the transition is automatic in the forward direction (i.e. the old code can always be converted to the new code). (A: autmatic, otherwise NA)}
-  \item{automatic_backward}{Whether the transition is automatic in the forward direction (i.e. the new code can always be converted to the old code) (A: autmatic, otherwise NA)}
-  \item{change_5}{Whether the change relates to the fifth digit of the ICD-10 code (TRUE/FALSE).}
-  \item{change_4}{Whether the change relates to the fourth digit of the ICD-10 code (TRUE/FALSE).}
-  \item{change_3}{Whether the change relates to the three-digit ICD-10 code (TRUE/FALSE).}
-  \item{icd3}{The first three digits of `icd_from`.}
-  \item{icd_chapter}{The first character of `icd_from` (i.e. the letter denoting the chapter).}
+\item{year_from}{Year of validity of the old code (from 2004)}
+\item{year_to}{Year of validity of the new code (from 2005)}
+\item{icd_from}{Old ICD code}
+\item{icd_to}{New ICD code}
+\item{automatic_forward}{Whether the transition is automatic in the forward direction (i.e. the old code can always be converted to the new code). (A: autmatic, otherwise NA)}
+\item{automatic_backward}{Whether the transition is automatic in the forward direction (i.e. the new code can always be converted to the old code) (A: autmatic, otherwise NA)}
+\item{change_5}{Whether the change relates to the fifth digit of the ICD-10 code (TRUE/FALSE).}
+\item{change_4}{Whether the change relates to the fourth digit of the ICD-10 code (TRUE/FALSE).}
+\item{change_3}{Whether the change relates to the three-digit ICD-10 code (TRUE/FALSE).}
+\item{icd3}{The first three digits of \code{icd_from}.}
+\item{icd_chapter}{The first character of \code{icd_from} (i.e. the letter denoting the chapter).}
 }
 }
 \keyword{datasets}

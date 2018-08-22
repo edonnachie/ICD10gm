@@ -4,7 +4,8 @@
 \alias{icd_expand}
 \title{Expand list of ICD codes to include all possible subcodes}
 \usage{
-icd_expand(icd_in, year, col_icd = "ICD", col_meta = NULL)
+icd_expand(icd_in, year, col_icd = "ICD", col_meta = NULL,
+  type = "strict", ignore_icd_errors = FALSE)
 }
 \arguments{
 \item{icd_in}{Data frame defining ICD codes of interest}
@@ -14,13 +15,17 @@ icd_expand(icd_in, year, col_icd = "ICD", col_meta = NULL)
 \item{col_icd}{Column of icd_in containing ICD codes (Default: ICD)}
 
 \item{col_meta}{(Optional) Columns containing meta information to retain (e.g. Grouper, age or other criteria for later use). If left NULL, only col_icd is retained.}
+
+\item{type}{A character string determining how strictly matching should be performed, passed to \code{icd_parse}. This must be one of "strict" (\code{str} contains a ICD code with no extraneous characters), \code{bounded} (\code{str} contains an ICD code with a word boundary on both sides) or \code{weak} (ICD codes are extracted even if they are contained within a word, e.g. "E10Diabetes" would return "E10"). Default: \code{strict}.}
+
+\item{ignore_icd_errors}{logical. Whether to ignore incorrectly specified input (potentially leading to incomplete output) or stop if any ICD specification does not correspond to a valid ICD code. Default: \code{FALSE}, stop on error.}
 }
 \value{
 data.frame with columns YEAR, ICD_CODE, ICD_COMPRESSED, ICD_LABEL and, if specified, columns specified by col_meta
 }
 \description{
-The function `icd_expand` takes a data.frame containing ICD codes 
-and optional metadata as input. It returns a data.frame containing 
+The function \code{icd_expand} takes a data.frame containing ICD codes
+and optional metadata as input. It returns a data.frame containing
 all ICD codes at or below the specified level of the hierarchy
 (e.g. the specification "E11" is expanded to include all three,
 four and five-digit codes beginning with E11).

@@ -18,10 +18,10 @@ The ICD chapters group codes according to their aetiology.
 }
 \details{
 \describe{
-  \item{year}{Year of validity (from 2004)}
-  \item{chapter}{Chapter number (arabic numerals)}
-  \item{chapter_roman}{Chapter number (Roman numerals)}
-  \item{chapter_label}{Label for the chapter}
+\item{year}{Year of validity (from 2004)}
+\item{chapter}{Chapter number (arabic numerals)}
+\item{chapter_roman}{Chapter number (Roman numerals)}
+\item{chapter_label}{Label for the chapter}
 }
 }
 \keyword{datasets}

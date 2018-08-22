@@ -4,32 +4,41 @@
 \alias{icd_parse}
 \title{Extract all ICD codes from a character vector}
 \usage{
-icd_parse(str, bind_rows = TRUE)
+icd_parse(str, type = "bounded", bind_rows = TRUE)
 }
 \arguments{
 \item{str}{Character vector from which to extract all ICD codes}
 
-\item{bind_rows}{Whether to convert the matrix output of `stirngi::stri_match_all` to a data.frame, with additional `icd_norm` and `icd_sub`}
+\item{type}{A character string determining how strictly matching should be performed. This must be one of "strict" (\code{str} contains a ICD code with no extraneous characters), \code{bounded} (\code{str} contains an ICD code with a word boundary on both sides) or \code{weak} (ICD codes are extracted even if they are contained within a word, e.g. "E10Diabetes" would return "E10"). Default: \code{bounded}.}
+
+\item{bind_rows}{logical. Whether to convert the matrix output of \code{stirngi::stri_match_all} to a data.frame, with additional \code{icd_norm} and \code{icd_sub}}
 }
 \value{
 data.frame (if bind_rows = TRUE) or matrix
 }
 \description{
-An ICD code consists of a three digit code
+An ICD code consists of, at a minimum,
+a three digit ICD-10 code
 (i.e. one upper-case letter followed by
-two digits), optionally with a two digit
-subcode (which may or may not have a period
-separating the three-digit code and subcode)
+two digits). This may optionally be followed
+by a two digit subcode, selected punctuation symbols
+(cross "*", dagger "\U2020" or
+exclamation mark "!"). Both the period
+separating the three-digit code from the subcode,
+and the hypthen indicating an "incomplete" subcode,
+are optional. Finally, in the ambulatory system, an
+additional letter G, V, Z or A may be appended to
+signify the status of the diagnosis.
 }
 \details{
 By default, the function returns a data.frame
 containing the matched codes and the standardised
-three digit code (`icd3`), subcode (`icd_subcode`),
-normcode (`icd_norm`) and code without period (`icd_sub`).
+three digit code (\code{icd3}), subcode (\code{icd_subcode}),
+normcode (\code{icd_norm}) and code without period (\code{icd_sub}).
 
-If `bind_rows = FALSE`, the list output of
-`stringi::stri_match_all_regex` is returned.
+If \code{bind_rows = FALSE}, the list output of
+\code{stringi::stri_match_all_regex} is returned.
 This is particularly useful to retrieve the
-matches from each element of the `str` vector
+matches from each element of the \code{str} vector
 separately.
 }

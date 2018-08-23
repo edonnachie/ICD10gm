@@ -2,7 +2,7 @@ Package: ICD10gm
 Title: Metadata processing for the German modification of the ICD-10 coding system
 Version: 0.93
 Authors@R: c(
-    person("Ewan", "Donnachie", , "ewan@donnachie.net", c("aut", "cre"))
+    person("Ewan", "Donnachie", , "ewan@donnachie.net", c("aut", "cre"), , comment = c(ORCID = "0000-0002-0668-0049"))
   )
 Description: This package provides pre-processed metadata from the German modification of the ICD-10 coding system. Further, it provides funcitons to facilitate the specification and historisation of ICD codes. Its intended use is the analysis of routinely collected data in the context of medical and health services research.
 Depends:

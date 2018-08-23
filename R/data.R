@@ -121,7 +121,7 @@
 #' entire history is relatively large and rarely required in full.
 #'
 #' @param year Year or years to get (numeric or character vector)
-#' @param icd3 (optional) ICD codes to select (regular expression, matched exactly using grep)
+#' @param icd3 A character vector of three-digit ICD-10 codes to select
 #' @param search (optional) A string to search for in the label column using fuzzy matching (agrep)
 #' @param ... (optional) Further arguments passed to agrep when searching with icd_label
 #' @return data.frame(year, icd3, icd_code, icd_normcode, icd_sub, label), see icd_labels
@@ -134,7 +134,7 @@ get_icd_labels <- function(year = NULL, icd3 = NULL, search = NULL, ...){
     out <- out[out$year %in% year, ]
 
   if(!is.null(icd3) & all(grepl("^[A-Za-z]\\d{2}", icd3)))
-    out <- out[grepl(icd3, out$icd3), ]
+    out <- out[out$icd3 %in% icd3, ]
 
   if(!is.null(search) & is.character(search))
     out <- out[agrep(search, out$label, ...), ]

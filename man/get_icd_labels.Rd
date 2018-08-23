@@ -12,7 +12,7 @@ get_icd_labels(year = NULL, icd3 = NULL, search = NULL, ...)
 \arguments{
 \item{year}{Year or years to get (numeric or character vector)}
 
-\item{icd3}{(optional) ICD codes to select (regular expression, matched exactly using grep)}
+\item{icd3}{A character vector of three-digit ICD-10 codes to select}
 
 \item{search}{(optional) A string to search for in the label column using fuzzy matching (agrep)}
 

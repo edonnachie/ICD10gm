@@ -22,7 +22,7 @@ a three digit ICD-10 code
 (i.e. one upper-case letter followed by
 two digits). This may optionally be followed
 by a two digit subcode, selected punctuation symbols
-(cross "*", dagger "\U2020" or
+(cross "*", dagger "U2020" or
 exclamation mark "!"). Both the period
 separating the three-digit code from the subcode,
 and the hypthen indicating an "incomplete" subcode,

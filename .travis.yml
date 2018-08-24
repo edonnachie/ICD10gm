@@ -3,10 +3,3 @@
 language: R
 sudo: false
 cache: packages
-r_binary_packages:
-  - r-cran-stringi
-  - r-cran-knitr
-  - r-cran-testthat
-  - r-cran-dplyr
-  - r-cran-purrr
-  - r-cran-tidyr

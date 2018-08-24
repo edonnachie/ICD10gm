@@ -1,4 +1,16 @@
-regex_icd <- "([A-Z][0-9]{2})\\.?([0-9\\-]{0,2}) ?[*!\U2020]? ?([GVZA]{0,1})"
+regex_icd3 <- "\\b([A-Z][0-9]{2})"
+regex_icd <- paste0(
+  # Match a 3-digit ICD code
+  regex_icd3,
+  # An optional one- or two-digit subcode (captured),
+  # optionally with period (not captured)
+  "(?:\\.?([0-9]{1,2}))?",
+  # Optional punctuation, not captured (hypthen, star, dagger)
+  "(?:\\.?-? ?[*!\U2020]?)?",
+  # Optional security code G, V, A, Z,
+  # but not the start of a new word
+  " ?([GVZA]{0,1}\\b)?"
+  )
 regex_icd_bounded <- paste0("\\b", regex_icd, "[^\\w]?")
 regex_icd_only <- paste0("^", regex_icd, "$")
 
@@ -30,7 +42,7 @@ regex_icd_only <- paste0("^", regex_icd, "$")
 #'
 #' @param str Character vector from which to extract all ICD codes
 #' @param type A character string determining how strictly matching should be performed. This must be one of "strict" (`str` contains a ICD code with no extraneous characters), `bounded` (`str` contains an ICD code with a word boundary on both sides) or `weak` (ICD codes are extracted even if they are contained within a word, e.g. "E10Diabetes" would return "E10"). Default: `bounded`.
-#' @param bind_rows logical. Whether to convert the matrix output of `stirngi::stri_match_all` to a data.frame, with additional `icd_norm` and `icd_sub`
+#' @param bind_rows logical. Whether to convert the matrix output of `stirngi::stri_match_all` to a data.frame, with additional `icd_sub` to uniquely represent the code and allow lookup of the code
 #' @return data.frame (if bind_rows = TRUE) or matrix
 #' @importFrom stringi stri_match_all_regex
 #' @importFrom dplyr bind_rows
@@ -55,11 +67,11 @@ icd_parse <- function (str, type = "bounded", bind_rows = TRUE) {
     names(out) <- c("icd_spec", "icd3", "icd_subcode",
                     "icd_security")
     out[, "icd_spec"] <- str
-    out$icd3[out$icd3 == ""] <- NA
-    out$icd_subcode[out$icd_subcode == ""] <- NA
-    out$icd_norm = ifelse(!is.na(out$icd3),
-                          gsub("\\.?NA", "", paste(out$icd3, out$icd_subcode, sep = ".")),
-                          NA_character_)
+    # NA is reserved for strings that aree not ICD codes
+    out$icd_subcode[is.na(out$icd_subcode) & !(out$icd3 == "")] <- ""
+    out$icd_security[is.na(out$icd_security) & !(out$icd3 == "")] <- ""
+    out$icd3[out$icd3 == ""] <- NA_character_
+    out$icd_subcode[out$icd3 == ""] <- NA_character_
     out$icd_sub = ifelse(!is.na(out$icd3),
                          gsub("\\.?NA", "",
                               paste(out$icd3,
@@ -98,7 +110,7 @@ is_icd_code <- function(str, year = NULL, parse = TRUE) {
   matches_pattern <- grepl(regex_icd_only, str)
 
   if (parse)
-    str <- ICD10gm::icd_parse(str, type = "strict")$icd_sub
+    str <- icd_parse(str, type = "strict")$icd_sub
 
   if (is.null(year) || !(year > 2003 & year < 2100)) {
     valid_codes <- unique(ICD10gm::icd_meta_codes$icd_sub)

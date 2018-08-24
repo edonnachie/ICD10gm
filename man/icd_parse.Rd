@@ -11,7 +11,7 @@ icd_parse(str, type = "bounded", bind_rows = TRUE)
 
 \item{type}{A character string determining how strictly matching should be performed. This must be one of "strict" (\code{str} contains a ICD code with no extraneous characters), \code{bounded} (\code{str} contains an ICD code with a word boundary on both sides) or \code{weak} (ICD codes are extracted even if they are contained within a word, e.g. "E10Diabetes" would return "E10"). Default: \code{bounded}.}
 
-\item{bind_rows}{logical. Whether to convert the matrix output of \code{stirngi::stri_match_all} to a data.frame, with additional \code{icd_norm} and \code{icd_sub}}
+\item{bind_rows}{logical. Whether to convert the matrix output of \code{stirngi::stri_match_all} to a data.frame, with additional \code{icd_sub} to uniquely represent the code and allow lookup of the code}
 }
 \value{
 data.frame (if bind_rows = TRUE) or matrix

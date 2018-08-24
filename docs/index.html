@@ -8,8 +8,8 @@
 <title>Metadata processing for the German modification of the ICD-10 coding system • ICD10gm</title>
 <!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="jquery.sticky-kit.min.js"></script><script src="pkgdown.js"></script><meta property="og:title" content="Metadata processing for the German modification of the ICD-10 coding system">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
+<script src="pkgdown.js"></script><meta property="og:title" content="Metadata processing for the German modification of the ICD-10 coding system">
 <meta property="og:description" content="This package provides pre-processed metadata from the German modification of the ICD-10 coding system. Further, it provides funcitons to facilitate the specification and historisation of ICD codes. Its intended use is the analysis of routinely collected data in the context of medical and health services research.">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!--[if lt IE 9]>
@@ -29,7 +29,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">ICD10gm</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.92</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.94</span>
       </span>
     </div>
 
@@ -43,6 +43,18 @@
 </li>
 <li>
   <a href="reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+<li>
+      <a href="articles/icd10gm_intro.html">Introduction to the ICD10gm Package</a>
+    </li>
+  </ul>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
@@ -70,16 +82,22 @@
 <div id="icd10gm" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#icd10gm" class="anchor"></a>ICD10gm</h1></div>
+
 <p>An R Package for Working with the German Modification of the International Statistical Classification of Diseases and Related Health Problems</p>
-<p>The ICD-10 classification of diseases and related health problems (ICD-10) is an international standard for the coding of health service data. In Germany the <a href="https://www.dimdi.de">German Instutite of Medical Documentation and Information (DIMDI)</a> releases a German Modification (ICD-10-GM) of the classification that forms a compulsory part of all remuneration claims in the ambulatory and hospital sectors.</p>
-<p>This package was created to facilitate the analysis of data coded using the ICD-10-GM. In particular, it has three aims:</p>
+<div id="about-this-package" class="section level2">
+<h2 class="hasAnchor">
+<a href="#about-this-package" class="anchor"></a>About this Package</h2>
+<p>The ICD-10 classification of diseases and related health problems (ICD-10) is an international standard for the coding of health service data. In Germany, the <a href="https://www.dimdi.de">German Instutite of Medical Documentation and Information (DIMDI)</a> releases a German Modification (ICD-10-GM) of the classification that forms a compulsory part of all remuneration claims in the ambulatory and hospital sectors.</p>
+<p>This package was created to facilitate the analysis of data coded using the ICD-10-GM. In particular, it has the following aims:</p>
 <ol style="list-style-type: decimal">
-<li>To provide convenient to the extended ICD-10-GM metadata</li>
-<li>To facilitate the specification of ICD codes for analysis, utilising the ICD hierarchy (e.g. given the specification “A0” return all subcodes in the range “A01” to “A09”)</li>
-<li>To enable the historization of ICD specifications by applying the automatic code transitions provided by DIMDI and identifying potentially problematic codes</li>
+<li>Provide convenient access to the extended ICD-10-GM metadata</li>
+<li>Identify and extract ICD-10 codes from character strings</li>
+<li>Facilitate the specification of ICD codes for analysis, utilising the ICD hierarchy (e.g. given the specification “A0” return all subcodes in the range “A01” to “A09”)</li>
+<li>Enable the historization of ICD specifications by applying the automatic code transitions provided by DIMDI, identifying potentially problematic codes</li>
 </ol>
 <p>ICD10gm is designed for use in the context of medical and health services research using routinely collected claims data. It is not suitable for use in operative coding as it does not include all relevant metadata (e.g. inclusion and exclusion notes and the detailed definitions of psychiatric diagnoses). The metadata provided in the ICD10gm package is not intended to replace the <a href="https://www.dimdi.de/dynamic/de/klassifikationen/icd/icd-10-gm/">official DIMDI documentation</a>, which should always be consulted when specifying ICD codes for analysis.</p>
-<p>The packge is functional and is in active use, but minor bugs may be present. In preparation for a possible CRAN release, current effort is focussed on documentation and minor convenience features.</p>
+<p>The packge is functional and is in active use, but minor bugs may be present. In preparation for a possible CRAN release, current effort is focussed on documentation, testing and minor convenience features.</p>
+</div>
 <div id="getting-started" class="section level2">
 <h2 class="hasAnchor">
 <a href="#getting-started" class="anchor"></a>Getting Started</h2>
@@ -93,50 +111,12 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <div id="basic-use" class="section level2">
 <h2 class="hasAnchor">
 <a href="#basic-use" class="anchor"></a>Basic Use</h2>
-<div id="access-icd-10-gm-metadata" class="section level3">
-<h3 class="hasAnchor">
-<a href="#access-icd-10-gm-metadata" class="anchor"></a>Access ICD-10-GM metadata</h3>
-<p>The ICD-10-GM metadata are provided by four data.frames that form the core of the ICD10gm package:</p>
-<ul>
-<li>
-<code>icd_meta_chapters</code>: Specification of the ICD-10-GM chapters with label and number (Arabic and Roman numerals)</li>
-<li>
-<code>icd_meta_blocks</code>: Specification of the ICD-10 blocks, each containing a sequence of related ICD-10 codes</li>
-<li>
-<code>icd_meta_codes</code>: Extended metadata for all ICD-10-GM codes</li>
-<li>
-<code>icd_meta_transitions</code>: The “crosswalk” table specifying old and new ICD-10-GM codes for successive annual versions.</li>
-</ul>
-<p>N.B. While column names have been translated into English, the ICD-10-GM labels are written in German.</p>
-</div>
-<div id="utility-functions" class="section level3">
-<h3 class="hasAnchor">
-<a href="#utility-functions" class="anchor"></a>Utility functions</h3>
-<p>Several utility functions are provided to perform common queries on the metadata:</p>
-<ul>
-<li>
-<code>get_icd_labels</code> queries <code>icd_meta_codes</code> and returns only the ICD subcodes and labels for specified codes and years.</li>
-<li>
-<code>get_icd_history</code> queries <code>icd_meta_transitions</code> and returns only the mappings for specified codes and years.</li>
-<li>
-<code>icd_showchanges</code> and <code>icd_showchanges_icd3</code> query <code>icd_meta_transitions</code> and return entries that are affected by changes in the ICD-10-GM versions.</li>
-</ul>
-</div>
-<div id="expand-a-icd-specification-down-the-hierarchy" class="section level3">
-<h3 class="hasAnchor">
-<a href="#expand-a-icd-specification-down-the-hierarchy" class="anchor"></a>Expand a ICD specification down the hierarchy</h3>
-<p>The function <code>icd_expand</code> takes a data.frame containing ICD codes and optional metadata as input. It returns a data.frame containing all ICD codes at or below the specified level of the hierarchy (e.g. the specification “E11” is expanded to include all three, four and five-digit codes beginning with E11). Expansion is done within a specified version of the ICD-10-GM (e.g. year 2018).</p>
-</div>
-<div id="historise-an-icd-specification" class="section level3">
-<h3 class="hasAnchor">
-<a href="#historise-an-icd-specification" class="anchor"></a>Historise an ICD specification</h3>
-<p>The function <code>icd_history</code> takes the result of <code>icd_expand</code>, specified for a particular year, and returns a data.frame containing all corresponding codes for the specified years (from 2003). To do this, it applies the ICD-10-GM transition tables to map codes between successive ICD-10-GM versions. Only automatic transitions are followed.</p>
-</div>
+<p>The core functionality of the package is demonstrated in the <a href="https://edonnachie.github.io/ICD10gm/articles/icd10gm-intro.Rmd">accompanying vignette</a>.</p>
 </div>
 <div id="copyright" class="section level2">
 <h2 class="hasAnchor">
 <a href="#copyright" class="anchor"></a>Copyright</h2>
-<p>Program code is released under the <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GNU General Purpose License v3</a>.</p>
+<p>Program code is released under the <a href="https://edonnachie.github.io/ICD10gm/LICENSE-text.html">MIT license</a>.</p>
 <p>The underlying ICD-10-GM metadata is copyright of the <a href="https://www.dimdi.de">German Instutite of Medical Documentation and Information (DIMDI)</a>. The source files are available free of charge from the <a href="https://www.dimdi.de/dynamic/de/klassifikationen/downloads/?dir=icd-10-gm">DIMDI Download Centre</a>. I believe that their use in this package is compatible with the copyright restrictions. In particular:</p>
 <ul>
 <li><p>The distribution of an “added-value product” derived from the original DIMDI classification files is expressly permitted.</p></li>
@@ -167,17 +147,25 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <div class="license">
 <h2>License</h2>
 <ul class="list-unstyled">
-<li><a href="https://www.r-project.org/Licenses/GPL-3">GPL-3</a></li>
+<li><a href="LICENSE.html">Full license</a></li>
+<li><small><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
 </ul>
 </div>
 <div class="developers">
 <h2>Developers</h2>
 <ul class="list-unstyled">
-<li>Ewan Donnachie <br><small class="roles"> Author, maintainer </small>  </li>
+<li>Ewan Donnachie <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-0668-0049" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" height="16"></a> </li>
 </ul>
 </div>
 
-      </div>
+      <div class="dev-status">
+<h2>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://travis-ci.org/edonnachie/ICD10gm"><img src="https://travis-ci.org/edonnachie/ICD10gm.svg?branch=master" alt="Travis build status"></a></li>
+<li><a href="https://cran.r-project.org/package=ICD10gm"><img src="https://www.r-pkg.org/badges/version/ICD10gm" alt="CRAN status"></a></li>
+</ul>
+</div>
+</div>
 
 </div>
 

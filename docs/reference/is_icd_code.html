@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Test whether a string is an ICD code — is_icd_code • ICD10gm</title>
+<title>Test whether a string is a valid ICD code — is_icd_code • ICD10gm</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -21,21 +21,31 @@
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
 
 
 
-<meta property="og:title" content="Test whether a string is an ICD code — is_icd_code" />
+<meta property="og:title" content="Test whether a string is a valid ICD code — is_icd_code" />
 
-<meta property="og:description" content="An ICD code consists of a three digit code
+<meta property="og:description" content="An ICD code consists of, at a minimum,
+a three digit ICD-10 code
 (i.e. one upper-case letter followed by
-two digits), optionally with a two digit
-subcode (which may or may not have a period
-separating the three-digit code and subcode)" />
+two digits). This may optionally be followed
+by a two digit subcode, selected punctuation symbols
+(cross &quot;*&quot;, dagger &quot;U2020&quot; or
+exclamation mark &quot;!&quot;). Both the period
+separating the three-digit code from the subcode,
+and the hypthen indicating an &quot;incomplete&quot; subcode,
+are optional. Finally, in the ambulatory system, an
+additional letter G, V, Z or A may be appended to
+signify the status (&quot;security&quot;) of the diagnosis." />
 <meta name="twitter:card" content="summary" />
+
 
 
 <!-- mathjax -->
@@ -62,7 +72,7 @@ separating the three-digit code and subcode)" />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ICD10gm</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.92</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.94</span>
       </span>
     </div>
 
@@ -76,6 +86,18 @@ separating the three-digit code and subcode)" />
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/icd10gm_intro.html">Introduction to the ICD10gm Package</a>
+    </li>
+  </ul>
 </li>
       </ul>
       
@@ -98,22 +120,29 @@ separating the three-digit code and subcode)" />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Test whether a string is an ICD code</h1>
+    <h1>Test whether a string is a valid ICD code</h1>
     <small class="dont-index">Source: <a href='https://github.com/edonnachie/ICD10gm/blob/master/R/icd_parse.R'><code>R/icd_parse.R</code></a></small>
     <div class="hidden name"><code>is_icd_code.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>An ICD code consists of a three digit code
+    <p>An ICD code consists of, at a minimum,
+a three digit ICD-10 code
 (i.e. one upper-case letter followed by
-two digits), optionally with a two digit
-subcode (which may or may not have a period
-separating the three-digit code and subcode)</p>
+two digits). This may optionally be followed
+by a two digit subcode, selected punctuation symbols
+(cross "*", dagger "U2020" or
+exclamation mark "!"). Both the period
+separating the three-digit code from the subcode,
+and the hypthen indicating an "incomplete" subcode,
+are optional. Finally, in the ambulatory system, an
+additional letter G, V, Z or A may be appended to
+signify the status ("security") of the diagnosis.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>is_icd_code</span>(<span class='no'>str</span>)</pre>
+    <pre class="usage"><span class='fu'>is_icd_code</span>(<span class='no'>str</span>, <span class='kw'>year</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>parse</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -121,6 +150,14 @@ separating the three-digit code and subcode)</p>
     <tr>
       <th>str</th>
       <td><p>Character vector to be tested</p></td>
+    </tr>
+    <tr>
+      <th>year</th>
+      <td><p>Year for which to test whether the specification is a valid code. Default: NULL (test whether <code>str</code> matches a code from any year since 2003)</p></td>
+    </tr>
+    <tr>
+      <th>parse</th>
+      <td><p>logical. Whether to first parse the input <code>str</code> using <code>icd_parse</code> (Default: TRUE). If FALSE, assumes that <code>str</code> is already formatted as <code>icd_sub</code> (i.e. without separating period or other punctuation)</p></td>
     </tr>
     </table>
     

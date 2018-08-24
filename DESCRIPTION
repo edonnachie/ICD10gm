@@ -1,6 +1,7 @@
 Package: ICD10gm
 Title: Metadata processing for the German modification of the ICD-10 coding system
-Version: 0.93
+Version: 0.94
+Date: 2018-08-24
 Authors@R: c(
     person("Ewan", "Donnachie", , "ewan@donnachie.net", c("aut", "cre"), , comment = c(ORCID = "0000-0002-0668-0049"))
   )
@@ -17,6 +18,7 @@ Imports: magrittr,dplyr,purrr,tidyr,stringi
 Suggests: 
     testthat,
     knitr,
-    rmarkdown
+    rmarkdown,
+    rvest
 VignetteBuilder: knitr
 Encoding: UTF-8

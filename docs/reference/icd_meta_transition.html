@@ -21,9 +21,11 @@
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
 
 
@@ -34,6 +36,7 @@
 and information as to whether the transition is automatic when
 transitioning forwards or backwards" />
 <meta name="twitter:card" content="summary" />
+
 
 
 <!-- mathjax -->
@@ -60,7 +63,7 @@ transitioning forwards or backwards" />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ICD10gm</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.92</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.94</span>
       </span>
     </div>
 
@@ -74,6 +77,18 @@ transitioning forwards or backwards" />
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/icd10gm_intro.html">Introduction to the ICD10gm Package</a>
+    </li>
+  </ul>
 </li>
       </ul>
       
@@ -124,17 +139,17 @@ See also <a href='https://www.dimdi.de/dynamic/en/classifications/icd/icd-10-gm/
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <dl class='dl-horizontal'>
-  <dt>year_from</dt><dd><p>Year of validity of the old code (from 2004)</p></dd>
-  <dt>year_to</dt><dd><p>Year of validity of the new code (from 2005)</p></dd>
-  <dt>icd_from</dt><dd><p>Old ICD code</p></dd>
-  <dt>icd_to</dt><dd><p>New ICD code</p></dd>
-  <dt>automatic_forward</dt><dd><p>Whether the transition is automatic in the forward direction (i.e. the old code can always be converted to the new code). (A: autmatic, otherwise NA)</p></dd>
-  <dt>automatic_backward</dt><dd><p>Whether the transition is automatic in the forward direction (i.e. the new code can always be converted to the old code) (A: autmatic, otherwise NA)</p></dd>
-  <dt>change_5</dt><dd><p>Whether the change relates to the fifth digit of the ICD-10 code (TRUE/FALSE).</p></dd>
-  <dt>change_4</dt><dd><p>Whether the change relates to the fourth digit of the ICD-10 code (TRUE/FALSE).</p></dd>
-  <dt>change_3</dt><dd><p>Whether the change relates to the three-digit ICD-10 code (TRUE/FALSE).</p></dd>
-  <dt>icd3</dt><dd><p>The first three digits of `icd_from`.</p></dd>
-  <dt>icd_chapter</dt><dd><p>The first character of `icd_from` (i.e. the letter denoting the chapter).</p></dd>
+<dt>year_from</dt><dd><p>Year of validity of the old code (from 2004)</p></dd>
+<dt>year_to</dt><dd><p>Year of validity of the new code (from 2005)</p></dd>
+<dt>icd_from</dt><dd><p>Old ICD code</p></dd>
+<dt>icd_to</dt><dd><p>New ICD code</p></dd>
+<dt>automatic_forward</dt><dd><p>Whether the transition is automatic in the forward direction (i.e. the old code can always be converted to the new code). (A: autmatic, otherwise NA)</p></dd>
+<dt>automatic_backward</dt><dd><p>Whether the transition is automatic in the forward direction (i.e. the new code can always be converted to the old code) (A: autmatic, otherwise NA)</p></dd>
+<dt>change_5</dt><dd><p>Whether the change relates to the fifth digit of the ICD-10 code (TRUE/FALSE).</p></dd>
+<dt>change_4</dt><dd><p>Whether the change relates to the fourth digit of the ICD-10 code (TRUE/FALSE).</p></dd>
+<dt>change_3</dt><dd><p>Whether the change relates to the three-digit ICD-10 code (TRUE/FALSE).</p></dd>
+<dt>icd3</dt><dd><p>The first three digits of <code>icd_from</code>.</p></dd>
+<dt>icd_chapter</dt><dd><p>The first character of <code>icd_from</code> (i.e. the letter denoting the chapter).</p></dd>
 </dl>
     
 

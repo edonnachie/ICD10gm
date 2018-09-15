@@ -44,9 +44,10 @@ icd_expand <- function (icd_in,
   # and determine which are ICD codes (i.e. at least 3 digits)
   # and which are prefixes (e.g. "A" or "A0")
   spec_is_code <- is_icd_code(icd_in$icd_spec)
-  spec_is_prefix <- any(grepl(
-    paste0("^", icd_in$icd_spec),
-    icd_labels$icd_sub)) & !spec_is_code
+  spec_is_prefix <- vapply(
+    icd_in$icd_spec,
+    function(x) any(grepl(pattern = paste0("^", x), icd_labels$icd_sub)),
+    FUN.VALUE = TRUE) & !spec_is_code
 
   # Convert all ICD codes to icd_sub form
   # (leave prefixes alone)

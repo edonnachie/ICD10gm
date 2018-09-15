@@ -47,4 +47,13 @@ test_that("Expands down the hierarchy", {
     74L
   )
 
+  # A real-world example, mixing prefix specification "A0" etc and specific codes.
+  # This should expand without any warnings
+  expect_silent(
+    ICD10gm::icd_expand(
+      icd_in = read.csv2("fss_grouper.csv", stringsAsFactors = FALSE),
+      year = 2016,
+      col_icd = "ICD",
+      col_meta = c("DIAG_CATEGORY", "DIAG_GROUP", "ICD_SICHER_ID")
+  ))
 })

@@ -14,6 +14,8 @@
 #' @param ignore_icd_errors logical. Whether to ignore incorrectly specified input (potentially leading to incomplete output) or stop if any ICD specification does not correspond to a valid ICD code. Default: `FALSE`, stop on error.
 #' @return data.frame with columns YEAR, ICD_CODE, ICD_COMPRESSED, ICD_LABEL and, if specified, columns specified by col_meta
 #' @importFrom magrittr %>%
+#' @importFrom rlang .data
+#' @importFrom rlang !!!
 #' @export
 icd_expand <- function (icd_in,
                         year,
@@ -38,7 +40,7 @@ icd_expand <- function (icd_in,
     icd_in$icd_spec <- as.character(icd_in$icd_spec)
 
   icd_in <- icd_in[, cols_keep, drop = FALSE]
-  icd_in <- unique(subset(icd_in, !is.na(icd_spec)))
+  icd_in <- unique(icd_in[!is.na(icd_in$icd_spec), , drop = FALSE])
 
   # Validate Input
   # and determine which are ICD codes (i.e. at least 3 digits)
@@ -83,12 +85,13 @@ icd_expand <- function (icd_in,
     }
   }
 
-
   # Expand each specified code in turn
+  # The tidy evaluation with group_by is taken from here:
+  # https://stackoverflow.com/questions/47993471/tidyeval-with-list-of-column-names-in-a-function
   icd_expand <- icd_in %>%
-    dplyr::group_by_(.dots = as.list(cols_keep)) %>%
+    dplyr::group_by(!!!rlang::syms(as.list(cols_keep))) %>%
     tidyr::nest() %>%
-    dplyr::mutate(data = purrr::map(icd_spec, do_expand,
+    dplyr::mutate(data = purrr::map(.data$icd_spec, do_expand,
                                     icd_labels = icd_labels)) %>%
     tidyr::unnest()
 

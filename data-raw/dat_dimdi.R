@@ -42,6 +42,14 @@ cleanup_utf8 <- function(str) {
   str <- gsub("\xfc", "ü", str)
   str <- gsub("\xdc", "Ü", str)
   str <- gsub("\xdf", "ß", str)
+  # ANSI with \u00
+  str <- gsub("\u0084", "ä", str)
+  str <- gsub("\u008e", "Ä", str)
+  str <- gsub("\u0094", "ö", str)
+  str <- gsub("\u0099", "Ö", str)
+  str <- gsub("\u0081", "ü", str)
+  str <- gsub("\u009a", "Ü", str)
+  str <- gsub("\u00e1", "ß", str)
   str
 }
 
@@ -71,4 +79,5 @@ devtools::use_data(
   icd_meta_blocks,
   icd_meta_chapters,
   icd_meta_transition,
-  overwrite = TRUE)
+  overwrite = TRUE,
+  compress = "xz")

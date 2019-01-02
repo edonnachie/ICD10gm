@@ -88,7 +88,7 @@ icd_history <- function(icd_expand, years){
 
 	# Return data frame with alternative coding for the ICD
 	# (without ".", e.g. for InBA grouper)
-	out <- subset(do.call("rbind", icd_hist_out), !is.na(year))
+	out <- do.call("rbind", icd_hist_out)
 	out <- out[!is.na(out$year), ]
 	out$year <- as.integer(out$year)
 	return(out)

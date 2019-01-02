@@ -4,7 +4,7 @@
 \name{icd_meta_chapters}
 \alias{icd_meta_chapters}
 \title{Metadata for the ICD-10-GM chapters}
-\format{An object of class \code{data.frame} with 315 rows and 4 columns.}
+\format{An object of class \code{data.frame} with 336 rows and 4 columns.}
 \source{
 The source data was downloaded from the official download centre
 of the German Institute for Medical Documentation and Information (DIMDI).

@@ -4,7 +4,7 @@
 \name{icd_meta_blocks}
 \alias{icd_meta_blocks}
 \title{Metadata for the ICD-10-GM code blocks}
-\format{An object of class \code{data.frame} with 3591 rows and 6 columns.}
+\format{An object of class \code{data.frame} with 3831 rows and 6 columns.}
 \source{
 The source data was downloaded from the official download centre
 of the German Institute for Medical Documentation and Information (DIMDI).

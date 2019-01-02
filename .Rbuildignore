@@ -4,3 +4,4 @@
 ^.*\.o$
 ^\.travis\.yml$
 ^LICENSE\.md$
+^cran-comments\.md$

@@ -19,7 +19,8 @@ Imports: magrittr,
     purrr,
     tidyr,
     stringi,
-    rlang
+    rlang,
+    tibble
 Suggests: 
     testthat,
     knitr,

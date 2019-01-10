@@ -1,6 +1,6 @@
 Package: ICD10gm
 Title: Metadata processing for the German modification of the ICD-10 coding system
-Version: 0.9.9.9000
+Version: 1.0
 Date: 2019-01-02
 Authors@R: c(
     person("Ewan", "Donnachie", , "ewan@donnachie.net", c("aut", "cre"), , comment = c(ORCID = "0000-0002-0668-0049"))

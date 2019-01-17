@@ -45,7 +45,15 @@ icd_history <- function(icd_expand, years, custom_transitions = NULL){
 						all(c("year", "icd_code") %in% names(icd_expand))
 						)
 
-  # We are not in the tidyverse!
+	# Identify and store combination of icd_spec and col_meta
+	# col_meta contains any columns not returned by icd_expand() itself
+	col_meta <- names(icd_expand)[
+	  !(names(icd_expand) %in% c("icd_spec", "year", "icd3", "icd_code",
+	                             "icd_normcode", "icd_sub", "label"))
+	  ]
+	spec_meta <- unique(icd_expand[, c("icd_spec", col_meta)])
+
+
   # Make sure icd_expand is not a tibble, otherwise merge might return error
   # (shoud be fixed in current tibble versions, but better safe than sorry)
 	# Remote metadata so that codes are identified only through year and icd_code
@@ -110,12 +118,14 @@ icd_history <- function(icd_expand, years, custom_transitions = NULL){
 	# Return data frame with alternative coding for the ICD
 	# (without ".", e.g. for InBA grouper)
 	out <- do.call("rbind", icd_hist_out)
-	# Add metadata for codes
+	# Add ICD-10 metadata for codes
 	out <- merge(out, ICD10gm::icd_meta_codes[, c("year", "icd_code", "icd_normcode", "icd_sub", "icd3", "label")],
 	             by = c("year", "icd_code"))
+	# Add custom metadata (col_meta)
+	out <- merge(out, spec_meta, by = "icd_spec")
 	# Clean and return
 	out <- out[!is.na(out$year), ]
 	out$year <- as.integer(out$year)
-	return(tibble::as_tibble(out[, c("icd_spec", "year", "icd3", "icd_code",
+	return(tibble::as_tibble(out[, c("icd_spec", col_meta, "year", "icd3", "icd_code",
 	               "icd_normcode", "icd_sub", "label")]))
 }

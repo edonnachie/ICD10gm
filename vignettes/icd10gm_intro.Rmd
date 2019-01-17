@@ -1,6 +1,6 @@
 ---
 title: "Introduction to the ICD10gm Package"
-subtitle: "Status: Draft, incomplete"
+subtitle: "Motivation, Basic Usage and Examples"
 author: "Ewan Donnachie"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
@@ -22,14 +22,16 @@ knitr::opts_chunk$set(
 
 ICD10gm is an R Package for working with the German Modification of the International Statistical Classification of Diseases and Related Health Problems (ICD-10-GM).
 
-The ICD-10 classification is an international standard for the coding of health service data, widely used to document morbidity in healthcare systems, usually in the context of remuneration claims. It is also used to encode [mortality statistics](http://www.who.int/healthinfo/mortality_data/en/). In Germany, the [German Instutite of Medical Documentation and Information (DIMDI)](https://www.dimdi.de) releases a German Modification (ICD-10-GM) of the classification that forms a compulsory part of all remuneration claims in the ambulatory and hospital sectors. Further information and historical context can be found in, for example, [Graubner (2007)](https://doi.org/10.1007/s00103-007-0283-x) or [Jetté _et al_ (2010)](https://www.jstor.org/stable/25767019).
+The ICD-10 classification is an international standard for the coding of health service data. It is used widely both to document morbidity in healthcare systems, usually in the context of remuneration claims, and to encode [mortality statistics](http://www.who.int/healthinfo/mortality_data/en/). In Germany, the [German Instutite of Medical Documentation and Information (DIMDI)](https://www.dimdi.de) releases a German Modification (ICD-10-GM) of the classification that forms a compulsory part of all remuneration claims in the ambulatory and hospital sectors. Further information and historical context can be found in, for example, [Graubner (2007)](https://doi.org/10.1007/s00103-007-0283-x) or [Jetté _et al_ (2010)](https://www.jstor.org/stable/25767019).
+
+## Aims
 
 This package was created to facilitate the analysis of data coded using the ICD-10-GM. In particular, it has the following aims:
 
 1. Provide convenient access to the extended ICD-10-GM metadata
 2. Identify and extract ICD-10 codes from character strings
 3. Facilitate the specification of ICD codes for analysis, utilising the ICD hierarchy (e.g. given the specification "A0" return all subcodes in the range "A01" to "A09")
-3. Enable the historization of ICD specifications by applying the automatic code transitions provided by DIMDI, identifying potentially problematic codes
+3. Enable the historization of ICD specifications when analysing longitudinal claims data, applying the automatic code transitions provided by DIMDI, identifying potentially problematic codes and enabling the specification of custom transitions
 
 ICD10gm is designed for use in the context of medical and health services research using routinely collected claims data. It is not suitable for use in operative coding as it does not include all relevant metadata (e.g. inclusion and exclusion notes and the detailed definitions of psychiatric diagnoses). The metadata provided in the ICD10gm package is not intended to replace the [official DIMDI documentation](https://www.dimdi.de/dynamic/de/klassifikationen/icd/icd-10-gm/), which should always be consulted when specifying ICD codes for analysis.
 
@@ -98,7 +100,7 @@ get_icd_labels(icd3 = c("A09", "K52"), year = 2009:2010) %>%
   knitr::kable(row.names = FALSE)
 ```
 
-Prior to 2010, A09 had been reserved for gastroenteritis of presumed infectious origin (_vermutlich infektiösen Ursprungs_), with unspecified gastroenteritis coded by K52.9. Since 2010, A09.9 codes any unspecified gastroenteritis, with K52.9 reserved for cases determined to be non-infectious. The effect of this change is that A09.9 has replaced K52.9 as the unspecific code used to document the vast majority of routine cases in primary care. Failure to account for this would constitute a major error in medical or epidemiological research.
+Prior to 2010, A09 had been reserved for gastroenteritis of presumed infectious origin (German: _vermutlich infektiösen Ursprungs_), with unspecified gastroenteritis coded by K52.9. Since 2010, A09.9 codes any unspecified gastroenteritis, with K52.9 reserved for cases determined to be non-infectious. The effect of this change is that A09.9 has replaced K52.9 as the unspecific code used to document the vast majority of routine cases in primary care. Failure to account for this would constitute a major error in medical or epidemiological research.
 
 
 ## Test whether a string represents an ICD-10-GM code
@@ -133,7 +135,7 @@ read_html("https://www.dimdi.de/static/de/klassifikationen/icd/icd-10-gm/kode-su
   filter(icd_sub >= "A10") %>% 
   arrange(icd_sub) %>% 
   left_join(
-    ICD10gm::get_icd_labels(year = 2018)[, c("icd_sub", "icd_normcode", "label")],
+    get_icd_labels(year = 2018)[, c("icd_sub", "icd_normcode", "label")],
     by = "icd_sub") %>% 
   select(icd_normcode, label) %>% 
   knitr::kable(row.names = FALSE,
@@ -148,7 +150,16 @@ The function `icd_expand` takes a data.frame containing ICD codes and optional m
 
 ### Example
 
-_To do_
+Irritable bowel syndrome is coded either using the three-digit code K58 (conceiving IBS as the somatic condition) or the code F45.32 (focussing on IBS as a psychosomatic condition). We can retrieve all subcodes in the year 2019 as follows:
+
+```{r}
+icd_k58 <- data.frame(DIAG_GROUP = c("IBS", "IBS"), ICD_SPEC = c("K58", "F45.32")) %>% 
+  icd_expand(col_icd = "ICD_SPEC", year = 2019, col_meta = "DIAG_GROUP")
+  
+knitr::kable(icd_k58)
+```
+
+Note that the `data.frame` containing thet specification would normally be stored as a separate metadata file (eg. csv or Excel format) to facilitate maintenance and sharing of the specification. The column `DIAG_GROUP` is a label that can be allocated to one or multiple rows of the specification and is useful when aggregating diagnoses. This is similar to the concept of diagnosis groupers used, for example, in risk adjustment schemes (e.g. as operated by the [German Federal Social Insurance Office](https://www.bundesversicherungsamt.de/risikostrukturausgleich.html)). In this case, we may want to treat the two alternative codes as equivalent by allocating the label "IBS" to both. In this way, we overcome the common problem that, in practice, multiple codes are used to document the same underlying disease.
 
 
 ## Historise an ICD specification
@@ -157,7 +168,15 @@ The function `icd_history` takes the result of `icd_expand`, specified for a par
 
 ## Example
 
-_To do_
+We historise the code K58, specified for the year 2019, backwards to obtain the corresponding codes for the years 2017 to 2019:
+
+```{r}
+icd_history(icd_k58, years = 2017:2019) %>% 
+  select(icd_spec, DIAG_GROUP, year, icd_code) %>% 
+  arrange(year, icd_code)
+```
+
+
 
 # Copyright
 
@@ -180,7 +199,7 @@ The underlying ICD-10-GM metadata is copyright of the [German Instutite of Medic
 
 The ICD10gm package provides a convenient means of accessing and manipulating the German modification of the ICD-10 classification. It is designed for use in medical, epidemiological and health services research.
 
-To the authors knowledge, this package represents the only publically available respsitory of pre-processed metadata for the ICD-10-GM. Indeed, a key contribution of the package is the compilation and processing of the metadata provided by DIMDI, which is designed more for the needs of operational use than for the purpose of longitidinal secondary data analysis.
+To the author's knowledge, this package represents the only publically available respsitory of pre-processed metadata for the ICD-10-GM. Indeed, a key contribution of the package is the compilation and processing of the metadata provided by DIMDI, which is designed more for the needs of operational use than for the purpose of longitidinal secondary data analysis.
 
 Building on the metadata, the ICD10gm package provides various functions to facilite the analysis of ICD-10 data. Possible uses include:
 

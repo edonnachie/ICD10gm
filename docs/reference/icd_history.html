@@ -66,7 +66,7 @@ Only automatic transitions are followed." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ICD10gm</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.94</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.0</span>
       </span>
     </div>
 
@@ -130,7 +130,7 @@ Only automatic transitions are followed.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>icd_history</span>(<span class='no'>icd_expand</span>, <span class='no'>years</span>)</pre>
+    <pre class="usage"><span class='fu'>icd_history</span>(<span class='no'>icd_expand</span>, <span class='no'>years</span>, <span class='kw'>custom_transitions</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -142,6 +142,10 @@ Only automatic transitions are followed.</p>
     <tr>
       <th>years</th>
       <td><p>Years to historize (e.g. 2005:2014)</p></td>
+    </tr>
+    <tr>
+      <th>custom_transitions</th>
+      <td><p>(Optional) A data.frame containing custom transitions to complement the official transitions provided by <code>icd_meta_transition</code>.</p></td>
     </tr>
     </table>
     

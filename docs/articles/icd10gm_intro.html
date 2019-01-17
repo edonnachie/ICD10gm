@@ -29,7 +29,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ICD10gm</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.94</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.0</span>
       </span>
     </div>
 
@@ -77,10 +77,10 @@
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1>Introduction to the ICD10gm Package</h1>
-            <h3 class="subtitle">Status: Draft, incomplete</h3>
+            <h3 class="subtitle">Motivation, Basic Usage and Examples</h3>
                         <h4 class="author">Ewan Donnachie</h4>
             
-            <h4 class="date">2018-08-25</h4>
+            <h4 class="date">2019-01-17</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/edonnachie/ICD10gm/blob/master/vignettes/icd10gm_intro.Rmd"><code>vignettes/icd10gm_intro.Rmd</code></a></small>
       <div class="hidden name"><code>icd10gm_intro.Rmd</code></div>
@@ -93,17 +93,21 @@
 <h1 class="hasAnchor">
 <a href="#introduction" class="anchor"></a>Introduction</h1>
 <p>ICD10gm is an R Package for working with the German Modification of the International Statistical Classification of Diseases and Related Health Problems (ICD-10-GM).</p>
-<p>The ICD-10 classification is an international standard for the coding of health service data, widely used to document morbidity in healthcare systems, usually in the context of remuneration claims. It is also used to encode <a href="http://www.who.int/healthinfo/mortality_data/en/">mortality statistics</a>. In Germany, the <a href="https://www.dimdi.de">German Instutite of Medical Documentation and Information (DIMDI)</a> releases a German Modification (ICD-10-GM) of the classification that forms a compulsory part of all remuneration claims in the ambulatory and hospital sectors. Further information and historical context can be found in, for example, <a href="https://doi.org/10.1007/s00103-007-0283-x">Graubner (2007)</a> or <a href="https://www.jstor.org/stable/25767019">Jetté <em>et al</em> (2010)</a>.</p>
+<p>The ICD-10 classification is an international standard for the coding of health service data. It is used widely both to document morbidity in healthcare systems, usually in the context of remuneration claims, and to encode <a href="http://www.who.int/healthinfo/mortality_data/en/">mortality statistics</a>. In Germany, the <a href="https://www.dimdi.de">German Instutite of Medical Documentation and Information (DIMDI)</a> releases a German Modification (ICD-10-GM) of the classification that forms a compulsory part of all remuneration claims in the ambulatory and hospital sectors. Further information and historical context can be found in, for example, <a href="https://doi.org/10.1007/s00103-007-0283-x">Graubner (2007)</a> or <a href="https://www.jstor.org/stable/25767019">Jetté <em>et al</em> (2010)</a>.</p>
+<div id="aims" class="section level2">
+<h2 class="hasAnchor">
+<a href="#aims" class="anchor"></a>Aims</h2>
 <p>This package was created to facilitate the analysis of data coded using the ICD-10-GM. In particular, it has the following aims:</p>
 <ol style="list-style-type: decimal">
 <li>Provide convenient access to the extended ICD-10-GM metadata</li>
 <li>Identify and extract ICD-10 codes from character strings</li>
 <li>Facilitate the specification of ICD codes for analysis, utilising the ICD hierarchy (e.g. given the specification “A0” return all subcodes in the range “A01” to “A09”)</li>
-<li>Enable the historization of ICD specifications by applying the automatic code transitions provided by DIMDI, identifying potentially problematic codes</li>
+<li>Enable the historization of ICD specifications when analysing longitudinal claims data, applying the automatic code transitions provided by DIMDI, identifying potentially problematic codes and enabling the specification of custom transitions</li>
 </ol>
 <p>ICD10gm is designed for use in the context of medical and health services research using routinely collected claims data. It is not suitable for use in operative coding as it does not include all relevant metadata (e.g. inclusion and exclusion notes and the detailed definitions of psychiatric diagnoses). The metadata provided in the ICD10gm package is not intended to replace the <a href="https://www.dimdi.de/dynamic/de/klassifikationen/icd/icd-10-gm/">official DIMDI documentation</a>, which should always be consulted when specifying ICD codes for analysis.</p>
 <p>The following presents an overview of the basic functionality provided by the ICD10gm package, illustrate by means of simple examples. To access this vignette in R, type:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">vignette</span>(<span class="st">"icd10gm_intro"</span>, <span class="dt">package =</span> <span class="st">"ICD10gm"</span>)</code></pre></div>
+</div>
 </div>
 <div id="basic-use" class="section level1">
 <h1 class="hasAnchor">
@@ -245,9 +249,9 @@
 </table>
 <p>Diagnoses that, prior to 2009, were coded as K52.9 are now coded as A09.9. We can investigate exactly what changed by looking the relevant codes for the years 2009 and 2010:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/get_icd_labels.html">get_icd_labels</a></span>(<span class="dt">icd3 =</span> <span class="kw">c</span>(<span class="st">"A09"</span>, <span class="st">"K52"</span>), <span class="dt">year =</span> <span class="dv">2009</span><span class="op">:</span><span class="dv">2010</span>) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span>(year, icd_sub) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(icd_sub <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">"K529"</span>) <span class="op">|</span><span class="st"> </span>icd3 <span class="op">==</span><span class="st"> "A09"</span>) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/select.html">select</a></span>(year, icd_normcode, label) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span>(year, icd_sub) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(icd_sub <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">"K529"</span>) <span class="op">|</span><span class="st"> </span>icd3 <span class="op">==</span><span class="st"> "A09"</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span>(year, icd_normcode, label) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span>knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="dt">row.names =</span> <span class="ot">FALSE</span>)</code></pre></div>
 <table class="table">
 <thead><tr class="header">
@@ -288,7 +292,7 @@
 </tr>
 </tbody>
 </table>
-<p>Prior to 2010, A09 had been reserved for gastroenteritis of presumed infectious origin (<em>vermutlich infektiösen Ursprungs</em>), with unspecified gastroenteritis coded by K52.9. Since 2010, A09.9 codes any unspecified gastroenteritis, with K52.9 reserved for cases determined to be non-infectious. The effect of this change is that A09.9 has replaced K52.9 as the unspecific code used to document the vast majority of routine cases in primary care. Failure to account for this would constitute a major error in medical or epidemiological research.</p>
+<p>Prior to 2010, A09 had been reserved for gastroenteritis of presumed infectious origin (German: <em>vermutlich infektiösen Ursprungs</em>), with unspecified gastroenteritis coded by K52.9. Since 2010, A09.9 codes any unspecified gastroenteritis, with K52.9 reserved for cases determined to be non-infectious. The effect of this change is that A09.9 has replaced K52.9 as the unspecific code used to document the vast majority of routine cases in primary care. Failure to account for this would constitute a major error in medical or epidemiological research.</p>
 </div>
 </div>
 <div id="test-whether-a-string-represents-an-icd-10-gm-code" class="section level2">
@@ -316,14 +320,14 @@
 <span class="kw">read_html</span>(<span class="st">"https://www.dimdi.de/static/de/klassifikationen/icd/icd-10-gm/kode-suche/htmlgm2018/block-a00-a09.htm"</span>) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/rvest/topics/html_text">html_text</a></span>() <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw"><a href="../reference/icd_parse.html">icd_parse</a></span>(<span class="dt">type =</span> <span class="st">"bounded"</span>) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/select.html">select</a></span>(<span class="op">-</span>icd_spec) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span>(<span class="op">-</span>icd_spec) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">unique</span>() <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(icd_sub <span class="op">&gt;=</span><span class="st"> "A10"</span>) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span>(icd_sub) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/join.html">left_join</a></span>(
-    ICD10gm<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/ICD10gm/topics/get_icd_labels">get_icd_labels</a></span>(<span class="dt">year =</span> <span class="dv">2018</span>)[, <span class="kw">c</span>(<span class="st">"icd_sub"</span>, <span class="st">"icd_normcode"</span>, <span class="st">"label"</span>)],
+<span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(icd_sub <span class="op">&gt;=</span><span class="st"> "A10"</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span>(icd_sub) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/join.html">left_join</a></span>(
+    <span class="kw"><a href="../reference/get_icd_labels.html">get_icd_labels</a></span>(<span class="dt">year =</span> <span class="dv">2018</span>)[, <span class="kw">c</span>(<span class="st">"icd_sub"</span>, <span class="st">"icd_normcode"</span>, <span class="st">"label"</span>)],
     <span class="dt">by =</span> <span class="st">"icd_sub"</span>) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/select.html">select</a></span>(icd_normcode, label) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span>(icd_normcode, label) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span>knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="dt">row.names =</span> <span class="ot">FALSE</span>,
                <span class="dt">caption =</span> <span class="st">"Additional ICD-10 codes referred to in block A00-A09 (Intestional infectious diseases) of the ICD-10-GM (2018)."</span>)</code></pre></div>
 <table class="table">
@@ -436,7 +440,86 @@
 <div id="example-1" class="section level3">
 <h3 class="hasAnchor">
 <a href="#example-1" class="anchor"></a>Example</h3>
-<p><em>To do</em></p>
+<p>Irritable bowel syndrome is coded either using the three-digit code K58 (conceiving IBS as the somatic condition) or the code F45.32 (focussing on IBS as a psychosomatic condition). We can retrieve all subcodes in the year 2019 as follows:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">icd_k58 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">DIAG_GROUP =</span> <span class="kw">c</span>(<span class="st">"IBS"</span>, <span class="st">"IBS"</span>), <span class="dt">ICD_SPEC =</span> <span class="kw">c</span>(<span class="st">"K58"</span>, <span class="st">"F45.32"</span>)) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="../reference/icd_expand.html">icd_expand</a></span>(<span class="dt">col_icd =</span> <span class="st">"ICD_SPEC"</span>, <span class="dt">year =</span> <span class="dv">2019</span>, <span class="dt">col_meta =</span> <span class="st">"DIAG_GROUP"</span>)
+  
+knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(icd_k58)</code></pre></div>
+<table class="table">
+<thead><tr class="header">
+<th align="left">icd_spec</th>
+<th align="left">DIAG_GROUP</th>
+<th align="right">year</th>
+<th align="left">icd3</th>
+<th align="left">icd_code</th>
+<th align="left">icd_normcode</th>
+<th align="left">icd_sub</th>
+<th align="left">label</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">K58</td>
+<td align="left">IBS</td>
+<td align="right">2019</td>
+<td align="left">K58</td>
+<td align="left">K58.-</td>
+<td align="left">K58</td>
+<td align="left">K58</td>
+<td align="left">Reizdarmsyndrom</td>
+</tr>
+<tr class="even">
+<td align="left">K58</td>
+<td align="left">IBS</td>
+<td align="right">2019</td>
+<td align="left">K58</td>
+<td align="left">K58.1</td>
+<td align="left">K58.1</td>
+<td align="left">K581</td>
+<td align="left">Reizdarmsyndrom, Diarrhoe-prädominant [RDS-D]</td>
+</tr>
+<tr class="odd">
+<td align="left">K58</td>
+<td align="left">IBS</td>
+<td align="right">2019</td>
+<td align="left">K58</td>
+<td align="left">K58.2</td>
+<td align="left">K58.2</td>
+<td align="left">K582</td>
+<td align="left">Reizdarmsyndrom, Obstipations-prädominant [RDS-O]</td>
+</tr>
+<tr class="even">
+<td align="left">K58</td>
+<td align="left">IBS</td>
+<td align="right">2019</td>
+<td align="left">K58</td>
+<td align="left">K58.3</td>
+<td align="left">K58.3</td>
+<td align="left">K583</td>
+<td align="left">Reizdarmsyndrom mit wechselnden (gemischten) Stuhlgewohnheiten [RDS-M]</td>
+</tr>
+<tr class="odd">
+<td align="left">K58</td>
+<td align="left">IBS</td>
+<td align="right">2019</td>
+<td align="left">K58</td>
+<td align="left">K58.8</td>
+<td align="left">K58.8</td>
+<td align="left">K588</td>
+<td align="left">Sonstiges und nicht näher bezeichnetes Reizdarmsyndrom</td>
+</tr>
+<tr class="even">
+<td align="left">F4532</td>
+<td align="left">IBS</td>
+<td align="right">2019</td>
+<td align="left">F45</td>
+<td align="left">F45.32</td>
+<td align="left">F45.32</td>
+<td align="left">F4532</td>
+<td align="left">Somatoforme autonome Funktionsstörung: Unteres Verdauungssystem</td>
+</tr>
+</tbody>
+</table>
+<p>Note that the <code>data.frame</code> containing thet specification would normally be stored as a separate metadata file (eg. csv or Excel format) to facilitate maintenance and sharing of the specification. The column <code>DIAG_GROUP</code> is a label that can be allocated to one or multiple rows of the specification and is useful when aggregating diagnoses. This is similar to the concept of diagnosis groupers used, for example, in risk adjustment schemes (e.g. as operated by the <a href="https://www.bundesversicherungsamt.de/risikostrukturausgleich.html">German Federal Social Insurance Office</a>). In this case, we may want to treat the two alternative codes as equivalent by allocating the label “IBS” to both. In this way, we overcome the common problem that, in practice, multiple codes are used to document the same underlying disease.</p>
 </div>
 </div>
 <div id="historise-an-icd-specification" class="section level2">
@@ -447,7 +530,25 @@
 <div id="example-2" class="section level2">
 <h2 class="hasAnchor">
 <a href="#example-2" class="anchor"></a>Example</h2>
-<p><em>To do</em></p>
+<p>We historise the code K58, specified for the year 2019, backwards to obtain the corresponding codes for the years 2017 to 2019:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/icd_history.html">icd_history</a></span>(icd_k58, <span class="dt">years =</span> <span class="dv">2017</span><span class="op">:</span><span class="dv">2019</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span>(icd_spec, DIAG_GROUP, year, icd_code) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span>(year, icd_code)
+<span class="co">#&gt; # A tibble: 12 x 4</span>
+<span class="co">#&gt;    icd_spec DIAG_GROUP  year icd_code</span>
+<span class="co">#&gt;    &lt;chr&gt;    &lt;fct&gt;      &lt;int&gt; &lt;chr&gt;   </span>
+<span class="co">#&gt;  1 F4532    IBS         2017 F45.32  </span>
+<span class="co">#&gt;  2 K58      IBS         2017 K58.0   </span>
+<span class="co">#&gt;  3 K58      IBS         2017 K58.9   </span>
+<span class="co">#&gt;  4 F4532    IBS         2018 F45.32  </span>
+<span class="co">#&gt;  5 K58      IBS         2018 K58.0   </span>
+<span class="co">#&gt;  6 K58      IBS         2018 K58.9   </span>
+<span class="co">#&gt;  7 F4532    IBS         2019 F45.32  </span>
+<span class="co">#&gt;  8 K58      IBS         2019 K58.-   </span>
+<span class="co">#&gt;  9 K58      IBS         2019 K58.1   </span>
+<span class="co">#&gt; 10 K58      IBS         2019 K58.2   </span>
+<span class="co">#&gt; 11 K58      IBS         2019 K58.3   </span>
+<span class="co">#&gt; 12 K58      IBS         2019 K58.8</span></code></pre></div>
 </div>
 </div>
 <div id="copyright" class="section level1">
@@ -467,7 +568,7 @@
 <h1 class="hasAnchor">
 <a href="#summary" class="anchor"></a>Summary</h1>
 <p>The ICD10gm package provides a convenient means of accessing and manipulating the German modification of the ICD-10 classification. It is designed for use in medical, epidemiological and health services research.</p>
-<p>To the authors knowledge, this package represents the only publically available respsitory of pre-processed metadata for the ICD-10-GM. Indeed, a key contribution of the package is the compilation and processing of the metadata provided by DIMDI, which is designed more for the needs of operational use than for the purpose of longitidinal secondary data analysis.</p>
+<p>To the author’s knowledge, this package represents the only publically available respsitory of pre-processed metadata for the ICD-10-GM. Indeed, a key contribution of the package is the compilation and processing of the metadata provided by DIMDI, which is designed more for the needs of operational use than for the purpose of longitidinal secondary data analysis.</p>
 <p>Building on the metadata, the ICD10gm package provides various functions to facilite the analysis of ICD-10 data. Possible uses include:</p>
 <ul>
 <li><p>Calculating the administrative prevalence of diseases over time, accounting for changes to the ICD-10-GM classification.</p></li>
@@ -486,17 +587,17 @@
 <span class="co">#&gt; </span>
 <span class="co">#&gt; To cite package 'ICD10gm' in publications use:</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt;   Ewan Donnachie (2018). ICD10gm: Metadata processing for the</span>
+<span class="co">#&gt;   Ewan Donnachie (2019). ICD10gm: Metadata processing for the</span>
 <span class="co">#&gt;   German modification of the ICD-10 coding system. R package</span>
-<span class="co">#&gt;   version 0.94. https://github.com/edonnachie/ICD10gm</span>
+<span class="co">#&gt;   version 1.0. https://github.com/edonnachie/ICD10gm</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; A BibTeX entry for LaTeX users is</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt;   @Manual{,</span>
 <span class="co">#&gt;     title = {ICD10gm: Metadata processing for the German modification of the ICD-10 coding system},</span>
 <span class="co">#&gt;     author = {Ewan Donnachie},</span>
-<span class="co">#&gt;     year = {2018},</span>
-<span class="co">#&gt;     note = {R package version 0.94},</span>
+<span class="co">#&gt;     year = {2019},</span>
+<span class="co">#&gt;     note = {R package version 1.0},</span>
 <span class="co">#&gt;     url = {https://github.com/edonnachie/ICD10gm},</span>
 <span class="co">#&gt;   }</span></code></pre></div>
 </div>
@@ -508,7 +609,11 @@
       <h2 class="hasAnchor">
 <a href="#tocnav" class="anchor"></a>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
-<li><a href="#introduction">Introduction</a></li>
+<li>
+<a href="#introduction">Introduction</a><ul class="nav nav-pills nav-stacked">
+<li><a href="#aims">Aims</a></li>
+      </ul>
+</li>
       <li>
 <a href="#basic-use">Basic Use</a><ul class="nav nav-pills nav-stacked">
 <li><a href="#access-icd-10-gm-metadata">Access ICD-10-GM metadata</a></li>

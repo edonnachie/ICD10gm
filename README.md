@@ -23,7 +23,7 @@ The packge is functional and is in active use, but minor bugs may be present. In
 
 The package is not (yet) available from CRAN but can be installed from github as follows:
 
-```{r eval = FALSE}
+```{r}
 # Install the devtools package if not already installed
 if (!("devtools" %in% .packages(all.available=TRUE))) install.package("devtools")
 

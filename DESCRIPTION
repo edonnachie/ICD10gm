@@ -5,7 +5,7 @@ Date: 2019-01-17
 Authors@R: c(
     person("Ewan", "Donnachie", , "ewan@donnachie.net", c("aut", "cre"), , comment = c(ORCID = "0000-0002-0668-0049"))
   )
-Description: The ICD10gm package provides convenient access to the German modification of the International Classification of Diagnoses, 10th revision (ICD-10-GM). It provides functionality to aid in the identification, specification and historisation of ICD-10 codes. Its intended use is the analysis of routinely collected data in the context of epidemiology, medical research and health services research. The underlying metadata are released by the German Institute for Medical Documentation and Information (www.dimdi.de), and are redistributed in accordance with their license.
+Description: The ICD10gm package provides convenient access to the German modification of the International Classification of Diagnoses, 10th revision (ICD-10-GM). It provides functionality to aid in the identification, specification and historisation of ICD-10 codes. Its intended use is the analysis of routinely collected data in the context of epidemiology, medical research and health services research. The underlying metadata are released by the German Institute for Medical Documentation and Information <https://www.dimdi.de>, and are redistributed in accordance with their license.
 Depends:
     R (>= 3.1.2)
 License: MIT + file LICENSE

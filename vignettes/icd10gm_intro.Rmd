@@ -35,7 +35,7 @@ This package was created to facilitate the analysis of data coded using the ICD-
 
 ICD10gm is designed for use in the context of medical and health services research using routinely collected claims data. It is not suitable for use in operative coding as it does not include all relevant metadata (e.g. inclusion and exclusion notes and the detailed definitions of psychiatric diagnoses). The metadata provided in the ICD10gm package is not intended to replace the [official DIMDI documentation](https://www.dimdi.de/dynamic/de/klassifikationen/icd/icd-10-gm/), which should always be consulted when specifying ICD codes for analysis.
 
-The following presents an overview of the basic functionality provided by the ICD10gm package, illustrate by means of simple examples. To access this vignette in R, type:
+The following presents an overview of the basic functionality provided by the ICD10gm package, illustrated by means of simple examples. To access this vignette in R, type:
 
 ```{r, eval = FALSE}
 vignette("icd10gm_intro", package = "ICD10gm")

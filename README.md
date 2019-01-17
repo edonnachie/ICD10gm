@@ -1,6 +1,8 @@
 # ICD10gm
 
-[![Travis build status](https://travis-ci.org/edonnachie/ICD10gm.svg?branch=master)](https://travis-ci.org/edonnachie/ICD10gm) [![CRAN status](https://www.r-pkg.org/badges/version/ICD10gm)](https://cran.r-project.org/package=ICD10gm)
+[![Travis build status](https://travis-ci.org/edonnachie/ICD10gm.svg?branch=master)](https://travis-ci.org/edonnachie/ICD10gm) [![CRAN status](https://www.r-pkg.org/badges/version/ICD10gm)](https://cran.r-project.org/package=ICD10gm)  [![DOI](https://zenodo.org/badge/52161087.svg)](https://zenodo.org/badge/latestdoi/52161087)
+
+
 
 An R Package for Working with the German Modification of the International Statistical Classification of Diseases and Related Health Problems
 
@@ -17,7 +19,6 @@ This package was created to facilitate the analysis of data coded using the ICD-
 
 ICD10gm is designed for use in the context of medical and health services research using routinely collected claims data. It is not suitable for use in operative coding as it does not include all relevant metadata (e.g. inclusion and exclusion notes and the detailed definitions of psychiatric diagnoses). The metadata provided in the ICD10gm package is not intended to replace the [official DIMDI documentation](https://www.dimdi.de/dynamic/de/klassifikationen/icd/icd-10-gm/), which should always be consulted when specifying ICD codes for analysis.
 
-The packge is functional and is in active use, but minor bugs may be present. In preparation for a possible CRAN release, current effort is focussed on documentation, testing and minor convenience features.
 
 ## Getting Started
 
@@ -33,7 +34,7 @@ devtools::install_github("edonnache/ICD10gm")
 
 ## Basic Use
 
-The core functionality of the package is demonstrated in the [accompanying vignette](https://edonnachie.github.io/ICD10gm/articles/icd10gm-intro.Rmd).
+The core functionality of the package is demonstrated in the [accompanying vignette](https://edonnachie.github.io/ICD10gm/docs/articles/icd10gm-intro.Rmd).
 
 
 ## Copyright

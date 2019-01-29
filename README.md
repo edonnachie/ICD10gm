@@ -34,7 +34,7 @@ devtools::install_github("edonnache/ICD10gm")
 
 ## Basic Use
 
-The core functionality of the package is demonstrated in the [accompanying vignette](https://edonnachie.github.io/ICD10gm/docs/articles/icd10gm-intro.Rmd).
+The core functionality of the package is demonstrated in the [accompanying vignette](https://edonnachie.github.io/ICD10gm/articles/icd10gm_intro.html).
 
 
 ## Copyright
@@ -57,4 +57,4 @@ The underlying ICD-10-GM metadata is copyright of the [German Instutite of Medic
 
 ## Related Packages
 
-The [icd package](https://cran.r-project.org/web/packages/icd/) on CRAN has similar aims but has a slightly different approach and focusses on the US version of the ICD-10 system.
+The [icd package](https://CRAN.R-project.org/package=icd) on CRAN has similar aims but has a slightly different approach and focusses on the US version of the ICD-10 system.

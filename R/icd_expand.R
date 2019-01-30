@@ -77,7 +77,7 @@ icd_expand <- function (icd_in,
   do_expand <- function(icd_spec, icd_labels){
     # Return all codes that match the parsed icd_sub
     i <- grep(icd_spec, icd_labels$icd_sub)
-    if (is.na(i) || length(i) == 0){
+    if (length(i) == 0){
       # This shouldn't occur if ignore_icd_errors == FALSE (default)
       return(data.frame())
     } else {

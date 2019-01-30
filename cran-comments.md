@@ -1,3 +1,7 @@
+## Resubmission
+
+This is a resubmission which now passes win-builder devel check.
+
 ## Test environments
 * local Ubuntu 14.04 install: R 3.4.4
 * ubuntu 14.04 (on travis-ci): Rdevel, R 3.5.1, R 3.4.4

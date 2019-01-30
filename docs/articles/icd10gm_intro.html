@@ -29,7 +29,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ICD10gm</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.0</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.0.2</span>
       </span>
     </div>
 
@@ -80,7 +80,7 @@
             <h3 class="subtitle">Motivation, Basic Usage and Examples</h3>
                         <h4 class="author">Ewan Donnachie</h4>
             
-            <h4 class="date">2019-01-17</h4>
+            <h4 class="date">2019-01-30</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/edonnachie/ICD10gm/blob/master/vignettes/icd10gm_intro.Rmd"><code>vignettes/icd10gm_intro.Rmd</code></a></small>
       <div class="hidden name"><code>icd10gm_intro.Rmd</code></div>
@@ -127,8 +127,8 @@
 <code>icd_meta_transitions</code>: The “crosswalk” table specifying old and new ICD-10-GM codes for successive annual versions.</li>
 </ul>
 <p>Documentation for the individual datasets can be accessed using the R help system by typing, for example, either <code>help("icd_meta_codes", package = "ICD10gm")</code> or simply <code><a href="../reference/icd_meta_codes.html">?icd_meta_codes</a></code>.</p>
-<p>While column names have been translated into English, the ICD-10-GM labels are written in German.</p>
-<p>In addition to the data.frames, several utility functions are provided to perform common queries on the metadata:</p>
+<p>While column names have been translated into English, the ICD-10-GM labels are in German with UTF-8 character encoding throughout.</p>
+<p>In addition to this tabular data, several utility functions are provided to perform common queries on the metadata:</p>
 <ul>
 <li>
 <code>get_icd_labels</code> queries <code>icd_meta_codes</code> and returns only the ICD subcodes and labels for specified codes and years.</li>
@@ -310,7 +310,7 @@
 <div id="extracting-icd-codes-from-a-string" class="section level2">
 <h2 class="hasAnchor">
 <a href="#extracting-icd-codes-from-a-string" class="anchor"></a>Extracting ICD codes from a string</h2>
-<p>The function <code>icd_parse</code> extracts all ICD-10 codes from an arbitrary character vector. On the one hand, this may be used as in the <code>icd_expand</code> function to convert ICD-10 codes to a standardised format or extract parts of the code. On the other hand, it may be used to extract potentially many ICD-10 codes from any document that can be converted to text format (perhaps using the <a href="https://cran.r-project.org/web/packages/pdftools/"><code>pdftools</code> package</a> to scrape a PDF document or <a href="https://cran.r-project.org/web/packages/rvest/"><code>rvest</code></a> to scrape a website).</p>
+<p>The function <code>icd_parse</code> extracts all ICD-10 codes from an arbitrary character vector. On the one hand, this may be used as in the <code>icd_expand</code> function to convert ICD-10 codes to a standardised format or extract parts of the code. On the other hand, it may be used to extract potentially many ICD-10 codes from any document that can be converted to text format (perhaps using the <a href="https://CRAN.R-project.org/package=pdftools"><code>pdftools</code> package</a> to scrape a PDF document or <a href="https://CRAN.R-project.org/package=rvest"><code>rvest</code></a> to scrape a website).</p>
 <div id="example-scraping-codes-from-a-website" class="section level3">
 <h3 class="hasAnchor">
 <a href="#example-scraping-codes-from-a-website" class="anchor"></a>Example: Scraping codes from a website</h3>
@@ -440,7 +440,7 @@
 <div id="example-1" class="section level3">
 <h3 class="hasAnchor">
 <a href="#example-1" class="anchor"></a>Example</h3>
-<p>Irritable bowel syndrome is coded either using the three-digit code K58 (conceiving IBS as the somatic condition) or the code F45.32 (focussing on IBS as a psychosomatic condition). We can retrieve all subcodes in the year 2019 as follows:</p>
+<p>Irritable bowel syndrome is coded using either the three-digit code K58 (conceiving IBS as the somatic condition) or the code F45.32 (focussing on IBS as a psychosomatic condition). We can retrieve all subcodes in the year 2019 as follows:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">icd_k58 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">DIAG_GROUP =</span> <span class="kw">c</span>(<span class="st">"IBS"</span>, <span class="st">"IBS"</span>), <span class="dt">ICD_SPEC =</span> <span class="kw">c</span>(<span class="st">"K58"</span>, <span class="st">"F45.32"</span>)) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw"><a href="../reference/icd_expand.html">icd_expand</a></span>(<span class="dt">col_icd =</span> <span class="st">"ICD_SPEC"</span>, <span class="dt">year =</span> <span class="dv">2019</span>, <span class="dt">col_meta =</span> <span class="st">"DIAG_GROUP"</span>)
   
@@ -519,13 +519,13 @@ knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentati
 </tr>
 </tbody>
 </table>
-<p>Note that the <code>data.frame</code> containing thet specification would normally be stored as a separate metadata file (eg. csv or Excel format) to facilitate maintenance and sharing of the specification. The column <code>DIAG_GROUP</code> is a label that can be allocated to one or multiple rows of the specification and is useful when aggregating diagnoses. This is similar to the concept of diagnosis groupers used, for example, in risk adjustment schemes (e.g. as operated by the <a href="https://www.bundesversicherungsamt.de/risikostrukturausgleich.html">German Federal Social Insurance Office</a>). In this case, we may want to treat the two alternative codes as equivalent by allocating the label “IBS” to both. In this way, we overcome the common problem that, in practice, multiple codes are used to document the same underlying disease.</p>
+<p>Note that the <code>data.frame</code> containing thet specification should normally be stored as a separate metadata file (eg. csv or Excel format) to facilitate maintenance and sharing of the specification. The column <code>DIAG_GROUP</code> is a label that can be allocated to one or multiple rows of the specification and is useful when aggregating diagnoses. This is similar to the concept of diagnosis groupers used, for example, in risk adjustment schemes (e.g. as operated by the <a href="https://www.bundesversicherungsamt.de/risikostrukturausgleich.html">German Federal Social Insurance Office</a>). In this case, we may want to treat the two alternative codes as equivalent by allocating the label “IBS” to both. In this way, we overcome the common problem that, in practice, multiple codes are used to document the same underlying disease.</p>
 </div>
 </div>
 <div id="historise-an-icd-specification" class="section level2">
 <h2 class="hasAnchor">
 <a href="#historise-an-icd-specification" class="anchor"></a>Historise an ICD specification</h2>
-<p>The function <code>icd_history</code> takes the result of <code>icd_expand</code>, specified for a particular year, and returns a data.frame containing all corresponding codes for the specified years (from 2003). To do this, it applies the ICD-10-GM transition tables to map codes between successive ICD-10-GM versions. Only automatic transitions are followed.</p>
+<p>The function <code>icd_history</code> takes the result of <code>icd_expand</code>, specified for a particular year, and returns a data.frame containing all corresponding codes for the specified years (from 2003). To do this, it applies the ICD-10-GM transition tables to map codes between successive ICD-10-GM versions. Only automatic transitions are followed to ensure that the specification retains its meaning. Custom transitions, tailored to the needs of the project at hand, can be specified to yield a more complete history.</p>
 </div>
 <div id="example-2" class="section level2">
 <h2 class="hasAnchor">
@@ -578,7 +578,7 @@ knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentati
 <div id="related-packages" class="section level2">
 <h2 class="hasAnchor">
 <a href="#related-packages" class="anchor"></a>Related Packages</h2>
-<p>The <a href="https://cran.r-project.org/web/packages/icd/">icd package</a> has similar aims but has a slightly different approach and focusses on the US version of the ICD-10 system.</p>
+<p>The <a href="https://CRAN.R-project.org/package=icd">icd package</a> has similar aims but has a slightly different approach and focusses on the US version of the ICD-10 system.</p>
 </div>
 <div id="cite" class="section level2">
 <h2 class="hasAnchor">
@@ -587,18 +587,20 @@ knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentati
 <span class="co">#&gt; </span>
 <span class="co">#&gt; To cite package 'ICD10gm' in publications use:</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt;   Ewan Donnachie (2019). ICD10gm: Metadata processing for the</span>
-<span class="co">#&gt;   German modification of the ICD-10 coding system.</span>
+<span class="co">#&gt;   Ewan Donnachie (2019). ICD10gm: Metadata Processing for the</span>
+<span class="co">#&gt;   German Modification of the ICD-10 Coding System.</span>
 <span class="co">#&gt;   https://github.com/edonnachie/ICD10gm,</span>
 <span class="co">#&gt;   https://doi.org/10.5281/zenodo.2542833.</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; A BibTeX entry for LaTeX users is</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt;   @Manual{,</span>
-<span class="co">#&gt;     title = {ICD10gm: Metadata processing for the German modification of the ICD-10 coding system},</span>
+<span class="co">#&gt;     title = {ICD10gm: Metadata Processing for the German Modification of the ICD-10</span>
+<span class="co">#&gt; Coding System},</span>
 <span class="co">#&gt;     author = {Ewan Donnachie},</span>
 <span class="co">#&gt;     year = {2019},</span>
-<span class="co">#&gt;     note = {https://github.com/edonnachie/ICD10gm, https://doi.org/10.5281/zenodo.2542833},</span>
+<span class="co">#&gt;     note = {https://github.com/edonnachie/ICD10gm,</span>
+<span class="co">#&gt; https://doi.org/10.5281/zenodo.2542833},</span>
 <span class="co">#&gt;   }</span></code></pre></div>
 </div>
 </div>

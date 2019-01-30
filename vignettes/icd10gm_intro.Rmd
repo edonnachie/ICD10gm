@@ -56,9 +56,9 @@ The ICD-10-GM metadata are provided by four data.frames that form the core of th
 
 Documentation for the individual datasets can be accessed using the R help system by typing, for example, either `help("icd_meta_codes", package = "ICD10gm")` or simply `?icd_meta_codes`.
 
-While column names have been translated into English, the ICD-10-GM labels are written in German.
+While column names have been translated into English, the ICD-10-GM labels are in German with UTF-8 character encoding throughout.
 
-In addition to the data.frames, several utility functions are provided to perform common queries on the metadata:
+In addition to this tabular data, several utility functions are provided to perform common queries on the metadata:
 
 - `get_icd_labels` queries `icd_meta_codes` and returns only the ICD subcodes and labels for specified codes and years.
 - `get_icd_history` queries `icd_meta_transitions` and returns only the mappings for specified codes and years.
@@ -118,7 +118,7 @@ is_icd_code(c("E10.1", "E101", "E10.1-", "J44", "This is not an ICD code"))
 
 ## Extracting ICD codes from a string
 
-The function `icd_parse` extracts all ICD-10 codes from an arbitrary character vector. On the one hand, this may be used as in the `icd_expand` function to convert ICD-10 codes to a standardised format or extract parts of the code. On the other hand, it may be used to extract potentially many ICD-10 codes from any document that can be converted to text format (perhaps using the [`pdftools` package](https://cran.r-project.org/web/packages/pdftools/) to scrape a PDF document or [`rvest`](https://cran.r-project.org/web/packages/rvest/) to scrape a website).
+The function `icd_parse` extracts all ICD-10 codes from an arbitrary character vector. On the one hand, this may be used as in the `icd_expand` function to convert ICD-10 codes to a standardised format or extract parts of the code. On the other hand, it may be used to extract potentially many ICD-10 codes from any document that can be converted to text format (perhaps using the [`pdftools` package](https://CRAN.R-project.org/package=pdftools) to scrape a PDF document or [`rvest`](https://CRAN.R-project.org/package=rvest) to scrape a website).
 
 ### Example: Scraping codes from a website
 
@@ -150,7 +150,7 @@ The function `icd_expand` takes a data.frame containing ICD codes and optional m
 
 ### Example
 
-Irritable bowel syndrome is coded either using the three-digit code K58 (conceiving IBS as the somatic condition) or the code F45.32 (focussing on IBS as a psychosomatic condition). We can retrieve all subcodes in the year 2019 as follows:
+Irritable bowel syndrome is coded using either the three-digit code K58 (conceiving IBS as the somatic condition) or the code F45.32 (focussing on IBS as a psychosomatic condition). We can retrieve all subcodes in the year 2019 as follows:
 
 ```{r}
 icd_k58 <- data.frame(DIAG_GROUP = c("IBS", "IBS"), ICD_SPEC = c("K58", "F45.32")) %>% 
@@ -159,12 +159,12 @@ icd_k58 <- data.frame(DIAG_GROUP = c("IBS", "IBS"), ICD_SPEC = c("K58", "F45.32"
 knitr::kable(icd_k58)
 ```
 
-Note that the `data.frame` containing thet specification would normally be stored as a separate metadata file (eg. csv or Excel format) to facilitate maintenance and sharing of the specification. The column `DIAG_GROUP` is a label that can be allocated to one or multiple rows of the specification and is useful when aggregating diagnoses. This is similar to the concept of diagnosis groupers used, for example, in risk adjustment schemes (e.g. as operated by the [German Federal Social Insurance Office](https://www.bundesversicherungsamt.de/risikostrukturausgleich.html)). In this case, we may want to treat the two alternative codes as equivalent by allocating the label "IBS" to both. In this way, we overcome the common problem that, in practice, multiple codes are used to document the same underlying disease.
+Note that the `data.frame` containing thet specification should normally be stored as a separate metadata file (eg. csv or Excel format) to facilitate maintenance and sharing of the specification. The column `DIAG_GROUP` is a label that can be allocated to one or multiple rows of the specification and is useful when aggregating diagnoses. This is similar to the concept of diagnosis groupers used, for example, in risk adjustment schemes (e.g. as operated by the [German Federal Social Insurance Office](https://www.bundesversicherungsamt.de/risikostrukturausgleich.html)). In this case, we may want to treat the two alternative codes as equivalent by allocating the label "IBS" to both. In this way, we overcome the common problem that, in practice, multiple codes are used to document the same underlying disease.
 
 
 ## Historise an ICD specification
 
-The function `icd_history` takes the result of `icd_expand`, specified for a particular year, and returns a data.frame containing all corresponding codes for the specified years (from 2003). To do this, it applies the ICD-10-GM transition tables to map codes between successive ICD-10-GM versions. Only automatic transitions are followed.
+The function `icd_history` takes the result of `icd_expand`, specified for a particular year, and returns a data.frame containing all corresponding codes for the specified years (from 2003). To do this, it applies the ICD-10-GM transition tables to map codes between successive ICD-10-GM versions. Only automatic transitions are followed to ensure that the specification retains its meaning. Custom transitions, tailored to the needs of the project at hand, can be specified to yield a more complete history.
 
 ## Example
 
@@ -213,7 +213,7 @@ Building on the metadata, the ICD10gm package provides various functions to faci
 
 ## Related Packages
 
-The [icd package](https://cran.r-project.org/web/packages/icd/) has similar aims but has a slightly different approach and focusses on the US version of the ICD-10 system.
+The [icd package](https://CRAN.R-project.org/package=icd) has similar aims but has a slightly different approach and focusses on the US version of the ICD-10 system.
 
 ## Cite
 

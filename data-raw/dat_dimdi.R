@@ -50,6 +50,10 @@ cleanup_utf8 <- function(str) {
   str <- gsub("\u0081", "ü", str)
   str <- gsub("\u009a", "Ü", str)
   str <- gsub("\u00e1", "ß", str)
+
+  # Now ensure all latin1 is converted to UTF-8
+  str[Encoding(str) == "latin1"] <- iconv(str, from = "latin1", to = "UTF-8")
+
   str
 }
 
@@ -74,7 +78,7 @@ icd_meta_transition <- within(icd_meta_transition, {
 })
 
 
-devtools::use_data(
+usethis::use_data(
   icd_meta_codes,
   icd_meta_blocks,
   icd_meta_chapters,

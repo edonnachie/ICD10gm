@@ -11,6 +11,12 @@
 #' @param years Years to historize (e.g. 2005:2014)
 #' @param custom_transitions (Optional) A data.frame containing custom transitions to complement the official transitions provided by `icd_meta_transition`.
 #' @return data.frame with columns YEAR, ICD_CODE, ICD_COMPRESSED, ICD_LABEL and, if specified, DIAG_GROUP
+#' @examples
+#' # Between 2018 and 2019, causalgia (G56.4) was reclassified
+#' # under G90 as a complex regional pain syndrome
+#' icd_meta <- data.frame(ICD = "G56.4", ICD_LABEL = "Causalgia")
+#' icd_meta_expanded <- icd_expand(icd_meta, year = 2018, col_meta = "ICD_LABEL")
+#' icd_history(icd_meta_expanded, years = 2018:2019)
 #' @export
 #' @importFrom dplyr bind_rows
 #' @importFrom tibble as_tibble

@@ -70,7 +70,7 @@ entire history is relatively large and rarely required in full." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ICD10gm</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.0.2</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.0.3</span>
       </span>
     </div>
 
@@ -163,6 +163,68 @@ entire history is relatively large and rarely required in full.</p>
     <p>data.frame(year, icd3, icd_code, icd_normcode, icd_sub, label), see icd_labels</p>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>get_icd_labels</span>(<span class='kw'>year</span> <span class='kw'>=</span> <span class='fl'>2019</span>, <span class='kw'>icd3</span> <span class='kw'>=</span> <span class='st'>"I25"</span>)</div><div class='output co'>#&gt;        year icd3 icd_code icd_normcode icd_sub
+#&gt; 238397 2019  I25    I25.-          I25     I25
+#&gt; 238398 2019  I25    I25.0        I25.0    I250
+#&gt; 238399 2019  I25   I25.1-        I25.1    I251
+#&gt; 238400 2019  I25   I25.10       I25.10   I2510
+#&gt; 238401 2019  I25   I25.11       I25.11   I2511
+#&gt; 238402 2019  I25   I25.12       I25.12   I2512
+#&gt; 238403 2019  I25   I25.13       I25.13   I2513
+#&gt; 238404 2019  I25   I25.14       I25.14   I2514
+#&gt; 238405 2019  I25   I25.15       I25.15   I2515
+#&gt; 238406 2019  I25   I25.16       I25.16   I2516
+#&gt; 238407 2019  I25   I25.19       I25.19   I2519
+#&gt; 238408 2019  I25   I25.2-        I25.2    I252
+#&gt; 238409 2019  I25   I25.20       I25.20   I2520
+#&gt; 238410 2019  I25   I25.21       I25.21   I2521
+#&gt; 238411 2019  I25   I25.22       I25.22   I2522
+#&gt; 238412 2019  I25   I25.29       I25.29   I2529
+#&gt; 238413 2019  I25    I25.3        I25.3    I253
+#&gt; 238414 2019  I25    I25.4        I25.4    I254
+#&gt; 238415 2019  I25    I25.5        I25.5    I255
+#&gt; 238416 2019  I25    I25.6        I25.6    I256
+#&gt; 238417 2019  I25    I25.8        I25.8    I258
+#&gt; 238418 2019  I25    I25.9        I25.9    I259
+#&gt;                                                                         label
+#&gt; 238397                                   Chronische ischämische Herzkrankheit
+#&gt; 238398            Atherosklerotische Herz-Kreislauf-Krankheit, so beschrieben
+#&gt; 238399                                       Atherosklerotische Herzkrankheit
+#&gt; 238400 Atherosklerotische Herzkrankheit: Ohne hämodynamisch wirksame Stenosen
+#&gt; 238401                 Atherosklerotische Herzkrankheit: Ein-Gefäß-Erkrankung
+#&gt; 238402                Atherosklerotische Herzkrankheit: Zwei-Gefäß-Erkrankung
+#&gt; 238403                Atherosklerotische Herzkrankheit: Drei-Gefäß-Erkrankung
+#&gt; 238404      Atherosklerotische Herzkrankheit: Stenose des linken Hauptstammes
+#&gt; 238405      Atherosklerotische Herzkrankheit: Mit stenosierten Bypass-Gefäßen
+#&gt; 238406              Atherosklerotische Herzkrankheit: Mit stenosierten Stents
+#&gt; 238407               Atherosklerotische Herzkrankheit: Nicht näher bezeichnet
+#&gt; 238408                                                   Alter Myokardinfarkt
+#&gt; 238409         Alter Myokardinfarkt: 29 Tage bis unter 4 Monate zurückliegend
+#&gt; 238410          Alter Myokardinfarkt: 4 Monate bis unter 1 Jahr zurückliegend
+#&gt; 238411                  Alter Myokardinfarkt: 1 Jahr und länger zurückliegend
+#&gt; 238412                           Alter Myokardinfarkt: Nicht näher bezeichnet
+#&gt; 238413                                                  Herz-(Wand-)Aneurysma
+#&gt; 238414                                               Koronararterienaneurysma
+#&gt; 238415                                            Ischämische Kardiomyopathie
+#&gt; 238416                                                 Stumme Myokardischämie
+#&gt; 238417             Sonstige Formen der chronischen ischämischen Herzkrankheit
+#&gt; 238418           Chronische ischämische Herzkrankheit, nicht näher bezeichnet</div><div class='input'><span class='fu'>get_icd_labels</span>(<span class='kw'>year</span> <span class='kw'>=</span> <span class='fl'>2019</span>, <span class='kw'>search</span> <span class='kw'>=</span> <span class='st'>"Asthma"</span>)</div><div class='output co'>#&gt;        year icd3 icd_code icd_normcode icd_sub
+#&gt; 239039 2019  J45    J45.-          J45     J45
+#&gt; 239040 2019  J45    J45.0        J45.0    J450
+#&gt; 239041 2019  J45    J45.1        J45.1    J451
+#&gt; 239042 2019  J45    J45.8        J45.8    J458
+#&gt; 239043 2019  J45    J45.9        J45.9    J459
+#&gt; 239044 2019  J46      J46          J46     J46
+#&gt; 248964 2019  T48    T48.6        T48.6    T486
+#&gt;                                                              label
+#&gt; 239039                                           Asthma bronchiale
+#&gt; 239040                   Vorwiegend allergisches Asthma bronchiale
+#&gt; 239041                         Nichtallergisches Asthma bronchiale
+#&gt; 239042                           Mischformen des Asthma bronchiale
+#&gt; 239043                   Asthma bronchiale, nicht näher bezeichnet
+#&gt; 239044                                          Status asthmaticus
+#&gt; 248964 Vergiftung: Antiasthmatika, anderenorts nicht klassifiziert</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -170,7 +232,9 @@ entire history is relatively large and rarely required in full.</p>
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

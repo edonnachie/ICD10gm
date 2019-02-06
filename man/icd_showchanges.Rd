@@ -7,7 +7,7 @@
 The output of icd_expand can be passed directly to this
 function to display relevant changes.}
 \usage{
-icd_showchanges(icd_in, col_icd = "ICD")
+icd_showchanges(icd_in, col_icd = "icd_sub")
 }
 \arguments{
 \item{icd_in}{Data frame defining ICD codes of interest}
@@ -22,4 +22,12 @@ Show all changes in ICD history relating to the
 3-digit codes contained in the data.frame icd_in.
 The output of icd_expand can be passed directly to this
 function to display relevant changes.
+}
+\examples{
+dat_icd <- icd_expand(
+   data.frame(ICD_SPEC = c("K52.9")),
+   col_icd = "ICD_SPEC",
+   year = 2019)
+icd_showchanges(dat_icd)
+
 }

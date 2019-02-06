@@ -7,10 +7,10 @@ year, ICD code and label. Optional arguments allow selection of
 entries by year or ICD code. This is beneficial because the
 entire history is relatively large and rarely required in full.}
 \usage{
-get_icd_history(year = NULL, icd3 = NULL)
+get_icd_history(years = NULL, icd3 = NULL)
 }
 \arguments{
-\item{year}{Year or years to get (numeric or character vector)}
+\item{years}{Year or years to get (numeric or character vector)}
 
 \item{icd3}{(optional) ICD codes to select (regular expression, matched exactly using grep)}
 }
@@ -22,4 +22,7 @@ Returns a data frame with ICD transition history, consisting of
 year, ICD code and label. Optional arguments allow selection of
 entries by year or ICD code. This is beneficial because the
 entire history is relatively large and rarely required in full.
+}
+\examples{
+get_icd_history(years = 2009:2010, icd3 = "K52")
 }

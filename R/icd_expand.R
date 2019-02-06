@@ -16,6 +16,17 @@
 #' @importFrom magrittr %>%
 #' @importFrom rlang .data
 #' @importFrom rlang !!!
+#' @examples
+#' # Incomplete or non-terminal codes expand to the right.
+#' # This is useful to specified code blocks in a compact manner
+#' icd_meta <- data.frame(ICD = "R1")
+#' icd_expand(icd_meta, year = 2019)
+#'
+#' # Optional metadata columns can be carried
+#' # through with the specification
+#' icd_meta <- data.frame(ICD = "M54", icd_label = "Back pain")
+#' icd_expand(icd_meta, year = 2019, col_meta = "icd_label")
+#'
 #' @export
 icd_expand <- function (icd_in,
                         year,

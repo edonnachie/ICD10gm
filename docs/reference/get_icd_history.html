@@ -70,7 +70,7 @@ entire history is relatively large and rarely required in full." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ICD10gm</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.0.2</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.0.3</span>
       </span>
     </div>
 
@@ -135,13 +135,13 @@ entire history is relatively large and rarely required in full.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>get_icd_history</span>(<span class='kw'>year</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>icd3</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>get_icd_history</span>(<span class='kw'>years</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>icd3</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>year</th>
+      <th>years</th>
       <td><p>Year or years to get (numeric or character vector)</p></td>
     </tr>
     <tr>
@@ -155,6 +155,47 @@ entire history is relatively large and rarely required in full.</p>
     <p>data.frame, see icd_hist</p>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>get_icd_history</span>(<span class='kw'>years</span> <span class='kw'>=</span> <span class='fl'>2009</span>:<span class='fl'>2010</span>, <span class='kw'>icd3</span> <span class='kw'>=</span> <span class='st'>"K52"</span>)</div><div class='output co'>#&gt;       year_from year_to icd_from icd_to automatic_forward automatic_backward
+#&gt; 70767      2009    2010    K52.0  K52.0                 A                  A
+#&gt; 70768      2009    2010    K52.1  K52.1                 A                  A
+#&gt; 70769      2009    2010    K52.2  K52.2                 A                  A
+#&gt; 70770      2009    2010    K52.8 K52.30                                    A
+#&gt; 70771      2009    2010    K52.8 K52.31                                    A
+#&gt; 70772      2009    2010    K52.8 K52.32                                    A
+#&gt; 70773      2009    2010    K52.8 K52.38                                    A
+#&gt; 70774      2009    2010    K52.8  K52.8                                    A
+#&gt; 70775      2009    2010    K52.9  A09.9                                     
+#&gt; 70776      2009    2010    K52.9  K52.9                                    A
+#&gt; 84223      2010    2011    K52.0  K52.0                 A                  A
+#&gt; 84224      2010    2011    K52.1  K52.1                 A                  A
+#&gt; 84225      2010    2011    K52.2  K52.2                 A                  A
+#&gt; 84226      2010    2011   K52.30 K52.30                 A                  A
+#&gt; 84227      2010    2011   K52.31 K52.31                 A                  A
+#&gt; 84228      2010    2011   K52.32 K52.32                 A                  A
+#&gt; 84229      2010    2011   K52.38 K52.38                 A                  A
+#&gt; 84230      2010    2011    K52.8  K52.8                 A                  A
+#&gt; 84231      2010    2011    K52.9  K52.9                 A                  A
+#&gt;       change_5 change_4 change_3 change icd3 icd_kapitel
+#&gt; 70767    FALSE     TRUE    FALSE  FALSE  K52           K
+#&gt; 70768    FALSE     TRUE    FALSE  FALSE  K52           K
+#&gt; 70769    FALSE     TRUE    FALSE  FALSE  K52           K
+#&gt; 70770    FALSE     TRUE    FALSE   TRUE  K52           K
+#&gt; 70771    FALSE     TRUE    FALSE   TRUE  K52           K
+#&gt; 70772    FALSE     TRUE    FALSE   TRUE  K52           K
+#&gt; 70773    FALSE     TRUE    FALSE   TRUE  K52           K
+#&gt; 70774    FALSE     TRUE    FALSE  FALSE  K52           K
+#&gt; 70775    FALSE    FALSE     TRUE   TRUE  A09           A
+#&gt; 70776    FALSE     TRUE    FALSE  FALSE  K52           K
+#&gt; 84223    FALSE     TRUE    FALSE  FALSE  K52           K
+#&gt; 84224    FALSE     TRUE    FALSE  FALSE  K52           K
+#&gt; 84225    FALSE     TRUE    FALSE  FALSE  K52           K
+#&gt; 84226    FALSE     TRUE    FALSE  FALSE  K52           K
+#&gt; 84227    FALSE     TRUE    FALSE  FALSE  K52           K
+#&gt; 84228    FALSE     TRUE    FALSE  FALSE  K52           K
+#&gt; 84229    FALSE     TRUE    FALSE  FALSE  K52           K
+#&gt; 84230    FALSE     TRUE    FALSE  FALSE  K52           K
+#&gt; 84231    FALSE     TRUE    FALSE  FALSE  K52           K</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -162,7 +203,9 @@ entire history is relatively large and rarely required in full.</p>
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

@@ -125,6 +125,9 @@
 #' @param search (optional) A string to search for in the label column using fuzzy matching (agrep)
 #' @param ... (optional) Further arguments passed to agrep when searching with icd_label
 #' @return data.frame(year, icd3, icd_code, icd_normcode, icd_sub, label), see icd_labels
+#' @examples
+#' get_icd_labels(year = 2019, icd3 = "I25")
+#' get_icd_labels(year = 2019, search = "Asthma")
 #' @export
 get_icd_labels <- function(year = NULL, icd3 = NULL, search = NULL, ...){
   out <- ICD10gm::icd_meta_codes[, c("year", "icd3", "icd_code",
@@ -147,15 +150,17 @@ get_icd_labels <- function(year = NULL, icd3 = NULL, search = NULL, ...){
 #' entries by year or ICD code. This is beneficial because the
 #' entire history is relatively large and rarely required in full.
 #'
-#' @param year Year or years to get (numeric or character vector)
+#' @param years Year or years to get (numeric or character vector)
 #' @param icd3 (optional) ICD codes to select (regular expression, matched exactly using grep)
 #' @return data.frame, see icd_hist
+#' @examples
+#' get_icd_history(years = 2009:2010, icd3 = "K52")
 #' @export
-get_icd_history <- function(year = NULL, icd3 = NULL){
+get_icd_history <- function(years = NULL, icd3 = NULL){
   out <- ICD10gm::icd_meta_transition
 
-  if(!is.null(year) & all(grepl("^\\d{4}$", year)))
-    out <- out[out$year %in% year, ]
+  if(!is.null(years) & all(grepl("^\\d{4}$", years)))
+    out <- out[out$year_from %in% years, ]
 
   if(!is.null(icd3) & all(grepl("^[A-Za-z]\\d{2}", icd3)))
     out <- out[grepl(icd3, out$icd_from) | grepl(icd3, out$icd_to), ]

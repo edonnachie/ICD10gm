@@ -30,3 +30,15 @@ are optional. Finally, in the ambulatory system, an
 additional letter G, V, Z or A may be appended to
 signify the status ("security") of the diagnosis.
 }
+\examples{
+is_icd_code("A09.9")
+is_icd_code("A099")
+is_icd_code("A09.9-")
+
+is_icd_code("AA9")
+
+# The following code is syntactically correct but
+# has never been in use
+is_icd_code("E15.9")
+
+}

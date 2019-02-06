@@ -65,7 +65,7 @@ four and five-digit codes beginning with E11)." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ICD10gm</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.0.2</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.0.3</span>
       </span>
     </div>
 
@@ -165,6 +165,42 @@ four and five-digit codes beginning with E11).</p>
     <p>data.frame with columns YEAR, ICD_CODE, ICD_COMPRESSED, ICD_LABEL and, if specified, columns specified by col_meta</p>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='co'># Incomplete or non-terminal codes expand to the right.</span>
+<span class='co'># This is useful to specified code blocks in a compact manner</span>
+<span class='no'>icd_meta</span> <span class='kw'>&lt;-</span> <span class='fu'>data.frame</span>(<span class='kw'>ICD</span> <span class='kw'>=</span> <span class='st'>"R1"</span>)
+<span class='fu'>icd_expand</span>(<span class='no'>icd_meta</span>, <span class='kw'>year</span> <span class='kw'>=</span> <span class='fl'>2019</span>)</div><div class='output co'>#&gt; # A tibble: 33 x 7
+#&gt;    icd_spec  year icd3  icd_code icd_normcode icd_sub label                     
+#&gt;    &lt;chr&gt;    &lt;int&gt; &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt;        &lt;chr&gt;   &lt;chr&gt;                     
+#&gt;  1 R1        2019 R10   R10.-    R10          R10     Bauch- und Beckenschmerzen
+#&gt;  2 R1        2019 R10   R10.0    R10.0        R100    Akutes Abdomen            
+#&gt;  3 R1        2019 R10   R10.1    R10.1        R101    Schmerzen im Bereich des …
+#&gt;  4 R1        2019 R10   R10.2    R10.2        R102    Schmerzen im Becken und a…
+#&gt;  5 R1        2019 R10   R10.3    R10.3        R103    Schmerzen mit Lokalisatio…
+#&gt;  6 R1        2019 R10   R10.4    R10.4        R104    Sonstige und nicht näher …
+#&gt;  7 R1        2019 R11   R11      R11          R11     Übelkeit und Erbrechen    
+#&gt;  8 R1        2019 R12   R12      R12          R12     Sodbrennen                
+#&gt;  9 R1        2019 R13   R13.-    R13          R13     Dysphagie                 
+#&gt; 10 R1        2019 R13   R13.0    R13.0        R130    Dysphagie mit Beaufsichti…
+#&gt; # … with 23 more rows</div><div class='input'>
+<span class='co'># Optional metadata columns can be carried</span>
+<span class='co'># through with the specification</span>
+<span class='no'>icd_meta</span> <span class='kw'>&lt;-</span> <span class='fu'>data.frame</span>(<span class='kw'>ICD</span> <span class='kw'>=</span> <span class='st'>"M54"</span>, <span class='kw'>icd_label</span> <span class='kw'>=</span> <span class='st'>"Back pain"</span>)
+<span class='fu'>icd_expand</span>(<span class='no'>icd_meta</span>, <span class='kw'>year</span> <span class='kw'>=</span> <span class='fl'>2019</span>, <span class='kw'>col_meta</span> <span class='kw'>=</span> <span class='st'>"icd_label"</span>)</div><div class='output co'>#&gt; # A tibble: 50 x 8
+#&gt;    icd_spec icd_label  year icd3  icd_code icd_normcode icd_sub label           
+#&gt;    &lt;chr&gt;    &lt;fct&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt;        &lt;chr&gt;   &lt;chr&gt;           
+#&gt;  1 M54      Back pain  2019 M54   M54.-    M54          M54     Rückenschmerzen 
+#&gt;  2 M54      Back pain  2019 M54   M54.0-   M54.0        M540    Pannikulitis in…
+#&gt;  3 M54      Back pain  2019 M54   M54.00   M54.00       M5400   Pannikulitis in…
+#&gt;  4 M54      Back pain  2019 M54   M54.01   M54.01       M5401   Pannikulitis in…
+#&gt;  5 M54      Back pain  2019 M54   M54.02   M54.02       M5402   Pannikulitis in…
+#&gt;  6 M54      Back pain  2019 M54   M54.03   M54.03       M5403   Pannikulitis in…
+#&gt;  7 M54      Back pain  2019 M54   M54.04   M54.04       M5404   Pannikulitis in…
+#&gt;  8 M54      Back pain  2019 M54   M54.05   M54.05       M5405   Pannikulitis in…
+#&gt;  9 M54      Back pain  2019 M54   M54.06   M54.06       M5406   Pannikulitis in…
+#&gt; 10 M54      Back pain  2019 M54   M54.07   M54.07       M5407   Pannikulitis in…
+#&gt; # … with 40 more rows</div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -172,7 +208,9 @@ four and five-digit codes beginning with E11).</p>
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

@@ -1,6 +1,9 @@
 ## Resubmission
 
-This is a resubmission which now passes win-builder devel check.
+This is a resubmission:
+
+- The Description has been changed according to CRAN guidelines (Deleted "The ICD10gm package")
+- Examples have been added to the Rd files
 
 ## Test environments
 * local Ubuntu 14.04 install: R 3.4.4

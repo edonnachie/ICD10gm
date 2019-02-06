@@ -3,6 +3,8 @@
 #'
 #' @param icd3 Vector of three-digit ICD codes
 #' @return data.frame with columns YEAR, ICD_CODE, ICD_LABEL and, if specified, DIAG_GROUP
+#' @examples
+#' icd_showchanges_icd3("A09")
 #' @export
 icd_showchanges_icd3 <- function(icd3){
 	out <- get_icd_history(icd3 = icd3)
@@ -17,8 +19,15 @@ icd_showchanges_icd3 <- function(icd3){
 #' @param icd_in Data frame defining ICD codes of interest
 #' @param col_icd Column of icd_in containing ICD codes (Default: ICD)
 #' @return data.frame with columns YEAR, ICD_CODE, ICD_LABEL and, if specified, DIAG_GROUP
+#' @examples
+#' dat_icd <- icd_expand(
+#'    data.frame(ICD_SPEC = c("K52.9")),
+#'    col_icd = "ICD_SPEC",
+#'    year = 2019)
+#' icd_showchanges(dat_icd)
+#'
 #' @export
-icd_showchanges <- function(icd_in, col_icd = "ICD"){
+icd_showchanges <- function(icd_in, col_icd = "icd_sub"){
 	icd3_in <- unique(substr(icd_in[, col_icd], 1, 3))
 	icd_showchanges_icd3(icd3_in)
 }

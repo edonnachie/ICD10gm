@@ -17,3 +17,6 @@ data.frame with columns YEAR, ICD_CODE, ICD_LABEL and, if specified, DIAG_GROUP
 Show all changes in ICD history relating to the
 3-digit codes contained in a given vector icd
 }
+\examples{
+icd_showchanges_icd3("A09")
+}

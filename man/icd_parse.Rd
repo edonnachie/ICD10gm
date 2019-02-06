@@ -42,3 +42,11 @@ This is particularly useful to retrieve the
 matches from each element of the \code{str} vector
 separately.
 }
+\examples{
+icd_parse("E11.7")
+icd_parse("Depression: F32")
+icd_parse(c(
+  "Backpain (M54.9) is one of the most common diagnoses in primary care",
+  "Codes for chronic pain include R52.1 and F45.4"
+  ))
+}

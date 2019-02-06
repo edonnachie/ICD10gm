@@ -46,6 +46,13 @@ regex_icd_only <- paste0("^", regex_icd, "$")
 #' @return data.frame (if bind_rows = TRUE) or matrix
 #' @importFrom stringi stri_match_all_regex
 #' @importFrom dplyr bind_rows
+#' @examples
+#' icd_parse("E11.7")
+#' icd_parse("Depression: F32")
+#' icd_parse(c(
+#'   "Backpain (M54.9) is one of the most common diagnoses in primary care",
+#'   "Codes for chronic pain include R52.1 and F45.4"
+#'   ))
 #' @export
 icd_parse <- function (str, type = "bounded", bind_rows = TRUE) {
   stopifnot(
@@ -62,11 +69,15 @@ icd_parse <- function (str, type = "bounded", bind_rows = TRUE) {
   out <- stringi::stri_match_all_regex(str, pattern = regex_icd_match)
 
   if (bind_rows) {
+    # Convert to data.frame
     out <- lapply(out, as.data.frame, stringsAsFactors = FALSE)
+    # Find out how many results per string so that
+    # icd_spec can be repeated appropriately
+    n_results <- lapply(out, nrow)
     out <- dplyr::bind_rows(out)
     names(out) <- c("icd_spec", "icd3", "icd_subcode",
                     "icd_security")
-    out[, "icd_spec"] <- str
+    out[, "icd_spec"] <- rep(str, times = n_results)
     # NA is reserved for strings that aree not ICD codes
     out$icd_subcode[is.na(out$icd_subcode) & !(out$icd3 == "")] <- ""
     out$icd_security[is.na(out$icd_security) & !(out$icd3 == "")] <- ""
@@ -103,6 +114,17 @@ icd_parse <- function (str, type = "bounded", bind_rows = TRUE) {
 #' @param year Year for which to test whether the specification is a valid code. Default: NULL (test whether `str` matches a code from any year since 2003)
 #' @param parse logical. Whether to first parse the input `str` using `icd_parse` (Default: TRUE). If FALSE, assumes that `str` is already formatted as `icd_sub` (i.e. without separating period or other punctuation)
 #' @return Logical vector the same length as the character input
+#' @examples
+#' is_icd_code("A09.9")
+#' is_icd_code("A099")
+#' is_icd_code("A09.9-")
+#'
+#' is_icd_code("AA9")
+#'
+#' # The following code is syntactically correct but
+#' # has never been in use
+#' is_icd_code("E15.9")
+#'
 #' @export
 is_icd_code <- function(str, year = NULL, parse = TRUE) {
   # First test whether str matches the pattern of a ICD code,

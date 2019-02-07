@@ -1,7 +1,7 @@
 #' Metadata for all ICD-10-GM codes
 #'
 #' DIMDI provide a CSV file with metadata on all valid codes. This table is
-#' read in with only minor modifications to facilitate changes betwen versions.
+#' read in with only minor modifications to facilitate changes between versions.
 #'
 #' This metadata is not suitable for operative coding and does not include all
 #' relevant information concerning the codes. For example, the file contains
@@ -19,14 +19,14 @@
 #'   \item{chapter_nr}{Chapter number (arabic digits 1-22)}
 #'   \item{icd_block_first}{First code in the respective ICD block, can be used to join with the table ICD10gm::icd_meta_blocks}
 #'   \item{icd_code}{Full icd code (up to 7 characters) with all symbols except the "dagger" (for aetiological codes that can be combined with an "asterisk" code to denote the manifestation)}
-#'   \item{icd_normcode}{The ICD "normcode", consisting of up to 6 characers and without all symbols except the period (e.g. E11.30)}
-#'   \item{icd_sub}{The ICD "normcode", consisting of up to 5 characers and without any symbols (e.g. E1130)}
+#'   \item{icd_normcode}{The ICD "normcode", consisting of up to 6 characters and without all symbols except the period (e.g. E11.30)}
+#'   \item{icd_sub}{The ICD "normcode", consisting of up to 5 characters and without any symbols (e.g. E1130)}
 #'   \item{label}{ICD label for the complete code.}
 #'   \item{label_icd3}{ICD label for the three-digit ICD code.}
 #'   \item{label_icd4}{ICD label for fourth digit of the ICD code.}
 #'   \item{label_icd5}{ICD label for the fifth digit of the ICD code.}
 #'   \item{usage_295}{Usage of the code in the ambulatory sector (Paragraph 295 SGB V) (P: primary code; O: only as a "star" code in conjunction with a "dagger" code for aetiology; Z: only an optional "!" code in conjunction with a primary code; V: not to be used for coding)}
-#'   \item{usage_301}{Usage of the code in the stationary (hostpital) sector (Paragraph 301 SGB V) (P: primary code; O: only as a "star" code in conjunction with a "dagger" code for aetiology; Z: only an optional "!" code in conjunction with a primary code; V: not to be used for coding)}
+#'   \item{usage_301}{Usage of the code in the stationary (hospital) sector (Paragraph 301 SGB V) (P: primary code; O: only as a "star" code in conjunction with a "dagger" code for aetiology; Z: only an optional "!" code in conjunction with a primary code; V: not to be used for coding)}
 #'   \item{mort_list1}{Key to join with the WHO mortality list 1}
 #'   \item{mort_list2}{Key to join with the WHO mortality list 2}
 #'   \item{mort_list3}{Key to join with the WHO mortality list 3}
@@ -37,7 +37,7 @@
 #'   \item{age_min}{Minimum age for which the diagnosis is plausible (T001: from one day; Y005: from five years)}
 #'   \item{age_max}{Maximum age for which the diagnosis is plausible (T010: up to 10 days; Y005: up to five years)}
 #'   \item{age_error_type}{Type of error resulting from implausible age (9: irrelevant; M: always an error ("Muss-Fehler"); K: possible error ("Kann-Fehler"))}
-#'   \item{rare_in_central_europe}{Indicates whether the diagnosis is rare in central europe (J: yes; N: no)}
+#'   \item{rare_in_central_europe}{Indicates whether the diagnosis is rare in Central Europe (J: yes; N: no)}
 #'   \item{code_with_content}{Indicates whether the code has content associated with it (J: yes; N: no, leads to an error)}
 #'   \item{notifiable}{Indicates whether the diagnosis is notifiable in Germany (J: yes; N: no)}
 #'   \item{notifiable_lab}{Indicates whether the diagnosis is notifiable for laboratories in Germany (J: yes; N: no)}
@@ -50,7 +50,7 @@
 
 #' Metadata for the ICD-10-GM code blocks
 #'
-#' The ICD blocks (German: "Gruppen") constitute a level in the heirarchy
+#' The ICD blocks (German: "Gruppen") constitute a level in the hierarchy
 #' between the chapters and the three-digit categories.
 #' Sequential codes are grouped to form 240 groups that
 #' represent similar aetiological diagnoses. Unlike other grouper systems,
@@ -100,8 +100,8 @@
 #'   \item{year_to}{Year of validity of the new code (from 2005)}
 #'   \item{icd_from}{Old ICD code}
 #'   \item{icd_to}{New ICD code}
-#'   \item{automatic_forward}{Whether the transition is automatic in the forward direction (i.e. the old code can always be converted to the new code). (A: autmatic, otherwise NA)}
-#'   \item{automatic_backward}{Whether the transition is automatic in the forward direction (i.e. the new code can always be converted to the old code) (A: autmatic, otherwise NA)}
+#'   \item{automatic_forward}{Whether the transition is automatic in the forward direction (i.e. the old code can always be converted to the new code). (A: automatic, otherwise NA)}
+#'   \item{automatic_backward}{Whether the transition is automatic in the forward direction (i.e. the new code can always be converted to the old code) (A: automatic, otherwise NA)}
 #'   \item{change_5}{Whether the change relates to the fifth digit of the ICD-10 code (TRUE/FALSE).}
 #'   \item{change_4}{Whether the change relates to the fourth digit of the ICD-10 code (TRUE/FALSE).}
 #'   \item{change_3}{Whether the change relates to the three-digit ICD-10 code (TRUE/FALSE).}

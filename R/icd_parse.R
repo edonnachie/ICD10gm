@@ -5,7 +5,7 @@ regex_icd <- paste0(
   # An optional one- or two-digit subcode (captured),
   # optionally with period (not captured)
   "(?:\\.?([0-9]{1,2}))?",
-  # Optional punctuation, not captured (hypthen, star, dagger)
+  # Optional punctuation, not captured (hyphen, star, dagger)
   "(?:\\.?-? ?[*!\U2020]?)?",
   # Optional security code G, V, A, Z,
   # but not the start of a new word
@@ -24,7 +24,7 @@ regex_icd_only <- paste0("^", regex_icd, "$")
 #' (cross "*", dagger "U2020" or
 #' exclamation mark "!"). Both the period
 #' separating the three-digit code from the subcode,
-#' and the hypthen indicating an "incomplete" subcode,
+#' and the hyphen indicating an "incomplete" subcode,
 #' are optional. Finally, in the ambulatory system, an
 #' additional letter G, V, Z or A may be appended to
 #' signify the status ("security") of the diagnosis.
@@ -105,7 +105,7 @@ icd_parse <- function (str, type = "bounded", bind_rows = TRUE) {
 #' (cross "*", dagger "U2020" or
 #' exclamation mark "!"). Both the period
 #' separating the three-digit code from the subcode,
-#' and the hypthen indicating an "incomplete" subcode,
+#' and the hyphen indicating an "incomplete" subcode,
 #' are optional. Finally, in the ambulatory system, an
 #' additional letter G, V, Z or A may be appended to
 #' signify the status ("security") of the diagnosis.

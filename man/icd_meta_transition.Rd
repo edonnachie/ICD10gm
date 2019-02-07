@@ -24,8 +24,8 @@ transitioning forwards or backwards
 \item{year_to}{Year of validity of the new code (from 2005)}
 \item{icd_from}{Old ICD code}
 \item{icd_to}{New ICD code}
-\item{automatic_forward}{Whether the transition is automatic in the forward direction (i.e. the old code can always be converted to the new code). (A: autmatic, otherwise NA)}
-\item{automatic_backward}{Whether the transition is automatic in the forward direction (i.e. the new code can always be converted to the old code) (A: autmatic, otherwise NA)}
+\item{automatic_forward}{Whether the transition is automatic in the forward direction (i.e. the old code can always be converted to the new code). (A: automatic, otherwise NA)}
+\item{automatic_backward}{Whether the transition is automatic in the forward direction (i.e. the new code can always be converted to the old code) (A: automatic, otherwise NA)}
 \item{change_5}{Whether the change relates to the fifth digit of the ICD-10 code (TRUE/FALSE).}
 \item{change_4}{Whether the change relates to the fourth digit of the ICD-10 code (TRUE/FALSE).}
 \item{change_3}{Whether the change relates to the three-digit ICD-10 code (TRUE/FALSE).}

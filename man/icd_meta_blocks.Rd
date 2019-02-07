@@ -14,7 +14,7 @@ See also \url{https://www.dimdi.de/dynamic/en/classifications/icd/icd-10-gm/tabu
 icd_meta_blocks
 }
 \description{
-The ICD blocks (German: "Gruppen") constitute a level in the heirarchy
+The ICD blocks (German: "Gruppen") constitute a level in the hierarchy
 between the chapters and the three-digit categories.
 Sequential codes are grouped to form 240 groups that
 represent similar aetiological diagnoses. Unlike other grouper systems,

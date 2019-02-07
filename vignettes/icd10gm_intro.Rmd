@@ -5,7 +5,7 @@ author: "Ewan Donnachie"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{Introduction to the ICD10gm Package}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -75,7 +75,7 @@ library(tidyr)
 library(ICD10gm)
 ```
 
-By way of example, we examine the coding of unspecific gastroenteritis (i.e. without identification of a specic cause), a very common diagnosis in primary care. This is currently classified under the ICD-10 code "A09", which we can lookup for the year 2018 as follows:
+By way of example, we examine the coding of unspecific gastroenteritis (i.e. without identification of a specific cause), a very common diagnosis in primary care. This is currently classified under the ICD-10 code "A09", which we can lookup for the year 2018 as follows:
 
 ```{r}
 get_icd_labels("A09", year = 2018) %>%
@@ -122,9 +122,11 @@ The function `icd_parse` extracts all ICD-10 codes from an arbitrary character v
 
 ### Example: Scraping codes from a website
 
-As an example of how ICD10gm can be used to extract ICD codes from arbitrary text, the following code uses the rvest package to scrape the code block "A00-A09" from the online version of the DIMDI ICD-10-GM reference. We the filter to see which other codes are reference from this block.
+As an example of how ICD10gm can be used to extract ICD codes from arbitrary text, the following code uses the rvest package to scrape the code block "A00-A09" from the online version of the DIMDI ICD-10-GM reference. We apply the filter to exclude codes below A10, thus revealing which other ICD-10 codes are reference from this block. To simply the package building process, the code has not been evaluated. This is left as an exercise to the reader.
 
-```{r, message = FALSE}
+
+```{r, message = FALSE, eval = FALSE}
+library(dplyr)
 library(rvest)
 
 read_html("https://www.dimdi.de/static/de/klassifikationen/icd/icd-10-gm/kode-suche/htmlgm2018/block-a00-a09.htm") %>% 
@@ -159,7 +161,7 @@ icd_k58 <- data.frame(DIAG_GROUP = c("IBS", "IBS"), ICD_SPEC = c("K58", "F45.32"
 knitr::kable(icd_k58)
 ```
 
-Note that the `data.frame` containing thet specification should normally be stored as a separate metadata file (eg. csv or Excel format) to facilitate maintenance and sharing of the specification. The column `DIAG_GROUP` is a label that can be allocated to one or multiple rows of the specification and is useful when aggregating diagnoses. This is similar to the concept of diagnosis groupers used, for example, in risk adjustment schemes (e.g. as operated by the [German Federal Social Insurance Office](https://www.bundesversicherungsamt.de/risikostrukturausgleich.html)). In this case, we may want to treat the two alternative codes as equivalent by allocating the label "IBS" to both. In this way, we overcome the common problem that, in practice, multiple codes are used to document the same underlying disease.
+Note that the `data.frame` containing the specification should normally be stored as a separate metadata file (eg. csv or Excel format) to facilitate maintenance and sharing of the specification. The column `DIAG_GROUP` is a label that can be allocated to one or multiple rows of the specification and is useful when aggregating diagnoses. This is similar to the concept of diagnosis groupers used, for example, in risk adjustment schemes (e.g. as operated by the [German Federal Social Insurance Office](https://www.bundesversicherungsamt.de/risikostrukturausgleich.html)). In this case, we may want to treat the two alternative codes as equivalent by allocating the label "IBS" to both. In this way, we overcome the common problem that, in practice, multiple codes are used to document the same underlying disease.
 
 
 ## Historise an ICD specification
@@ -199,9 +201,9 @@ The underlying ICD-10-GM metadata is copyright of the [German Instutite of Medic
 
 The ICD10gm package provides a convenient means of accessing and manipulating the German modification of the ICD-10 classification. It is designed for use in medical, epidemiological and health services research.
 
-To the author's knowledge, this package represents the only publically available respsitory of pre-processed metadata for the ICD-10-GM. Indeed, a key contribution of the package is the compilation and processing of the metadata provided by DIMDI, which is designed more for the needs of operational use than for the purpose of longitidinal secondary data analysis.
+To the author's knowledge, this package represents the only publicly available repository of pre-processed metadata for the ICD-10-GM. Indeed, a key contribution of the package is the compilation and processing of the metadata provided by DIMDI, which is designed more for the needs of operational use than for the purpose of longitudinal secondary data analysis.
 
-Building on the metadata, the ICD10gm package provides various functions to facilite the analysis of ICD-10 data. Possible uses include:
+Building on the metadata, the ICD10gm package provides various functions to facilitate the analysis of ICD-10 data. Possible uses include:
 
 - Calculating the administrative prevalence of diseases over time, accounting for changes to the ICD-10-GM classification.
 

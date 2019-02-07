@@ -25,7 +25,7 @@ by a two digit subcode, selected punctuation symbols
 (cross "*", dagger "U2020" or
 exclamation mark "!"). Both the period
 separating the three-digit code from the subcode,
-and the hypthen indicating an "incomplete" subcode,
+and the hyphen indicating an "incomplete" subcode,
 are optional. Finally, in the ambulatory system, an
 additional letter G, V, Z or A may be appended to
 signify the status ("security") of the diagnosis.

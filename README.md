@@ -1,6 +1,6 @@
 # ICD10gm
 
-[![Travis build status](https://travis-ci.org/edonnachie/ICD10gm.svg?branch=master)](https://travis-ci.org/edonnachie/ICD10gm) [![CRAN status](https://www.r-pkg.org/badges/version/ICD10gm)](https://cran.r-project.org/package=ICD10gm)  [![DOI](https://zenodo.org/badge/52161087.svg)](https://zenodo.org/badge/latestdoi/52161087)
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active) [![Travis build status](https://travis-ci.org/edonnachie/ICD10gm.svg?branch=master)](https://travis-ci.org/edonnachie/ICD10gm) [![CRAN status](https://www.r-pkg.org/badges/version/ICD10gm)](https://cran.r-project.org/package=ICD10gm)  [![DOI](https://zenodo.org/badge/52161087.svg)](https://zenodo.org/badge/latestdoi/52161087)
 
 
 
@@ -22,14 +22,10 @@ ICD10gm is designed for use in the context of medical and health services resear
 
 ## Getting Started
 
-The package is not (yet) available from CRAN but can be installed from github as follows:
+The ICD10gm package can be installed from CRAN in the usual manner:
 
 ```{r}
-# Install the devtools package if not already installed
-if (!("devtools" %in% .packages(all.available=TRUE))) install.package("devtools")
-
-# Install ICD10gm package from github
-devtools::install_github("edonnache/ICD10gm")
+install.packages("ICD10gm")
 ```
 
 ## Basic Use

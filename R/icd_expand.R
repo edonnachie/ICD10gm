@@ -100,11 +100,11 @@ icd_expand <- function (icd_in,
   # The tidy evaluation with group_by is taken from here:
   # https://stackoverflow.com/questions/47993471/tidyeval-with-list-of-column-names-in-a-function
   icd_expand <- icd_in %>%
-    dplyr::group_by(!!!rlang::syms(as.list(cols_keep))) %>%
-    tidyr::nest() %>%
+    dplyr::select(tidyselect::one_of(cols_keep)) %>%
+    dplyr::distinct() %>%
     dplyr::mutate(data = purrr::map(.data$icd_spec, do_expand,
                                     icd_labels = icd_labels)) %>%
     tidyr::unnest()
 
-  return(icd_expand)
+  return(tibble::as_tibble(icd_expand))
 }

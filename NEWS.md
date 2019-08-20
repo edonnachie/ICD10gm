@@ -1,3 +1,7 @@
+# ICD10gm 1.0.4
+
+Minor updates in preparation for tidyr 1.0, primarily ensuring consistency of type.
+
 # ICD10gm 1.0.3
 
 CRAN resubmission:

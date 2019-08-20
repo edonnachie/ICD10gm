@@ -57,7 +57,7 @@ icd_history <- function(icd_expand, years, custom_transitions = NULL){
 	  !(names(icd_expand) %in% c("icd_spec", "year", "icd3", "icd_code",
 	                             "icd_normcode", "icd_sub", "label"))
 	  ]
-	spec_meta <- unique(icd_expand[, c("icd_spec", col_meta)])
+	spec_meta <- unique(icd_expand[, c("icd_spec", col_meta), drop = FALSE])
 
 
   # Make sure icd_expand is not a tibble, otherwise merge might return error

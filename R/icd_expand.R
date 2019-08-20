@@ -15,7 +15,7 @@
 #' @return data.frame with columns YEAR, ICD_CODE, ICD_COMPRESSED, ICD_LABEL and, if specified, columns specified by col_meta
 #' @importFrom magrittr %>%
 #' @importFrom rlang .data
-#' @importFrom rlang !!!
+#' @importFrom tidyselect one_of
 #' @examples
 #' # Incomplete or non-terminal codes expand to the right.
 #' # This is useful to specified code blocks in a compact manner

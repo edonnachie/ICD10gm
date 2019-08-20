@@ -18,6 +18,7 @@ Imports: magrittr,
     dplyr,
     purrr,
     tidyr,
+    tidyselect,
     stringi,
     rlang,
     tibble

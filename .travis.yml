@@ -8,14 +8,12 @@ matrix:
     - os: linux
       r: oldrel
       name: linux-old
-      before_script: Rscript -e "remotes::install_github('tidyverse/tidyr')"
     - os: linux
       r: release
       name: linux-release
     - os: linux
       r: devel
       name: linux-devel
-      before_script: Rscript -e "remotes::install_github('tidyverse/tidyr')"
     - os: linux
       r: release
       name: tidyr-devel

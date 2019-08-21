@@ -97,14 +97,24 @@ icd_expand <- function (icd_in,
   }
 
   # Expand each specified code in turn
-  # The tidy evaluation with group_by is taken from here:
-  # https://stackoverflow.com/questions/47993471/tidyeval-with-list-of-column-names-in-a-function
+  # Due to breaking changes in tidyr 1.0,
+  # we need two versions of unnest,
+  # implemented in the following function
+  # See https://tidyr.tidyverse.org/dev/articles/in-packages.html
+  unnest_icd_expand <- function(df) {
+    if (utils::packageVersion("tidyr") > "0.8.99") {
+      tidyr::unnest(df, cols = tidyselect::one_of("data"))
+    } else {
+      tidyr::unnest(df)
+    }
+  }
+
   icd_expand <- icd_in %>%
     dplyr::select(tidyselect::one_of(cols_keep)) %>%
     dplyr::distinct() %>%
     dplyr::mutate(data = purrr::map(.data$icd_spec, do_expand,
-                                    icd_labels = icd_labels)) %>%
-    tidyr::unnest(cols = tidyselect::one_of("data"))
+                                   icd_labels = icd_labels)) %>%
+    unnest_icd_expand()
 
   return(tibble::as_tibble(icd_expand))
 }

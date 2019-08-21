@@ -1,7 +1,7 @@
 source(here::here("data-raw/lib_dimdi_import.R"))
 
 ## Read in files ----
-purrr::walk(2004:2019, extract_icd_meta_files)
+#purrr::walk(2004:2019, extract_icd_meta_files)
 icd_meta_codes <- purrr::map_df(2004:2019, read_icd_codes)
 icd_meta_blocks <- purrr::map_df(2004:2019, read_icd_blocks)
 icd_meta_chapters <- purrr::map_df(2004:2019, read_icd_chapters)
@@ -11,7 +11,10 @@ icd_meta_transition <- purrr::map_df(2005:2019, read_icd_transitions)
 icd_meta_chapters <- within(icd_meta_chapters, chapter_roman <- as.roman(chapter))[, c(1, 2, 4, 3)]
 
 icd_meta_blocks <- within(icd_meta_blocks,
-                          group_id <- paste(icd_block_first, icd_block_last, sep = "-"))
+                          group_id <- ifelse(!is.na(icd_block_last),
+                                             paste(icd_block_first, icd_block_last, sep = "-"),
+                                             icd_block_first)
+                          )
 
 icd_meta_codes <- within(icd_meta_codes, icd3 <- substr(icd_sub, 1, 3))
 

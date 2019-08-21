@@ -144,13 +144,17 @@ read_icd_blocks <- function(version) {
   )
   # Version 2004 does not have chapter
   if (version == 2004) {
-    out <- cbind(out[, 1:2], data.frame("chapter" = NA), out[, 3])
+    out <- dplyr::bind_cols(
+      out[, 1:2],
+      tibble::tibble("chapter" = rep(NA_integer_, times = nrow(out))),
+      out[, 3, drop = FALSE]
+      )
   }
   # Versions prior to 2007 do not have icd_block_last
   if (version < 2007) {
-    out <- cbind(
+    out <- dplyr::bind_cols(
       out[, 1:2],
-      data.frame("icd_block_last" = NA),
+      tibble::tibble("icd_block_last" = rep(NA_character_, times = nrow(out))),
       out[, 3:4]
     )
   }

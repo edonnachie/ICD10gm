@@ -104,7 +104,7 @@ icd_expand <- function (icd_in,
     dplyr::distinct() %>%
     dplyr::mutate(data = purrr::map(.data$icd_spec, do_expand,
                                     icd_labels = icd_labels)) %>%
-    tidyr::unnest(cols = data)
+    tidyr::unnest(cols = tidyselect::one_of("data"))
 
   return(tibble::as_tibble(icd_expand))
 }

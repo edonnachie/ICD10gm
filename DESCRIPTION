@@ -1,7 +1,7 @@
 Package: ICD10gm
 Title: Metadata Processing for the German Modification of the ICD-10 Coding System
-Version: 1.0.4
-Date: 2019-08-21
+Version: 1.0.5
+Date: 2019-10-25
 Authors@R: c(
     person("Ewan", "Donnachie", , "ewan@donnachie.net", c("aut", "cre"), , comment = c(ORCID = "0000-0002-0668-0049"))
   )

@@ -2,10 +2,7 @@
 % Please edit documentation in R/data.R
 \name{get_icd_labels}
 \alias{get_icd_labels}
-\title{Returns a data frame with ICD metadata, consisting of
-year, ICD code and label. Optional arguments allow selection of
-entries by year, code or label. This is beneficial because the
-entire history is relatively large and rarely required in full.}
+\title{Get ICD-10 metadata}
 \usage{
 get_icd_labels(year = NULL, icd3 = NULL, search = NULL, ...)
 }
@@ -22,6 +19,9 @@ get_icd_labels(year = NULL, icd3 = NULL, search = NULL, ...)
 data.frame(year, icd3, icd_code, icd_normcode, icd_sub, label), see icd_labels
 }
 \description{
+A utility function to query \link{icd_meta_codes}.
+}
+\details{
 Returns a data frame with ICD metadata, consisting of
 year, ICD code and label. Optional arguments allow selection of
 entries by year, code or label. This is beneficial because the

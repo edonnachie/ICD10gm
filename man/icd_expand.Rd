@@ -4,8 +4,14 @@
 \alias{icd_expand}
 \title{Expand list of ICD codes to include all possible subcodes}
 \usage{
-icd_expand(icd_in, year, col_icd = "ICD", col_meta = NULL,
-  type = "strict", ignore_icd_errors = FALSE)
+icd_expand(
+  icd_in,
+  year,
+  col_icd = "ICD",
+  col_meta = NULL,
+  type = "strict",
+  ignore_icd_errors = FALSE
+)
 }
 \arguments{
 \item{icd_in}{Data frame defining ICD codes of interest}
@@ -41,4 +47,7 @@ icd_expand(icd_meta, year = 2019)
 icd_meta <- data.frame(ICD = "M54", icd_label = "Back pain")
 icd_expand(icd_meta, year = 2019, col_meta = "icd_label")
 
+}
+\seealso{
+\code{\link[=icd_history]{icd_history()}} to historize the output
 }

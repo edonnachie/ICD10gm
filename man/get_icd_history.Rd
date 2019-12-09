@@ -2,10 +2,7 @@
 % Please edit documentation in R/data.R
 \name{get_icd_history}
 \alias{get_icd_history}
-\title{Returns a data frame with ICD transition history, consisting of
-year, ICD code and label. Optional arguments allow selection of
-entries by year or ICD code. This is beneficial because the
-entire history is relatively large and rarely required in full.}
+\title{Get ICD history metadata}
 \usage{
 get_icd_history(years = NULL, icd3 = NULL)
 }
@@ -18,6 +15,9 @@ get_icd_history(years = NULL, icd3 = NULL)
 data.frame, see icd_hist
 }
 \description{
+A utility function to query \link{icd_meta_transition}.
+}
+\details{
 Returns a data frame with ICD transition history, consisting of
 year, ICD code and label. Optional arguments allow selection of
 entries by year or ICD code. This is beneficial because the

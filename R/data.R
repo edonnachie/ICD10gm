@@ -115,6 +115,10 @@
 "icd_meta_transition"
 
 
+#' Get ICD-10 metadata
+#'
+#' A utility function to query [icd_meta_codes].
+#'
 #' Returns a data frame with ICD metadata, consisting of
 #' year, ICD code and label. Optional arguments allow selection of
 #' entries by year, code or label. This is beneficial because the
@@ -145,6 +149,10 @@ get_icd_labels <- function(year = NULL, icd3 = NULL, search = NULL, ...){
    return(out)
 }
 
+#' Get ICD history metadata
+#'
+#' A utility function to query [icd_meta_transition].
+#'
 #' Returns a data frame with ICD transition history, consisting of
 #' year, ICD code and label. Optional arguments allow selection of
 #' entries by year or ICD code. This is beneficial because the

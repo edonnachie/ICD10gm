@@ -2,10 +2,7 @@
 % Please edit documentation in R/icd_showchanges.R
 \name{icd_showchanges}
 \alias{icd_showchanges}
-\title{Show all changes in ICD history relating to the
-3-digit codes contained in the data.frame icd_in.
-The output of icd_expand can be passed directly to this
-function to display relevant changes.}
+\title{Show historical changes to selected ICD-10-GM codes}
 \usage{
 icd_showchanges(icd_in, col_icd = "icd_sub")
 }
@@ -30,4 +27,7 @@ dat_icd <- icd_expand(
    year = 2019)
 icd_showchanges(dat_icd)
 
+}
+\seealso{
+\code{\link[=icd_showchanges_icd3]{icd_showchanges_icd3()}} to provide one oe more three-digit codes as input
 }

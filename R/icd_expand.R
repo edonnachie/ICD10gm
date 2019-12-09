@@ -16,6 +16,7 @@
 #' @importFrom magrittr %>%
 #' @importFrom rlang .data
 #' @importFrom tidyselect one_of
+#' @seealso [icd_history()] to historize the output
 #' @examples
 #' # Incomplete or non-terminal codes expand to the right.
 #' # This is useful to specified code blocks in a compact manner

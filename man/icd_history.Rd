@@ -15,6 +15,7 @@ icd_history(icd_expand, years, custom_transitions = NULL)
 }
 \value{
 data.frame with columns YEAR, ICD_CODE, ICD_COMPRESSED, ICD_LABEL and, if specified, DIAG_GROUP
+#' @seealso \code{\link[=icd_expand]{icd_expand()}} to generate the necessary input
 }
 \description{
 The function \code{icd_history} takes the result of \code{icd_expand},

@@ -44,8 +44,7 @@ regex_icd_only <- paste0("^", regex_icd, "$")
 #' @param type A character string determining how strictly matching should be performed. This must be one of "strict" (`str` contains a ICD code with no extraneous characters), `bounded` (`str` contains an ICD code with a word boundary on both sides) or `weak` (ICD codes are extracted even if they are contained within a word, e.g. "E10Diabetes" would return "E10"). Default: `bounded`.
 #' @param bind_rows logical. Whether to convert the matrix output of `stirngi::stri_match_all` to a data.frame, with additional `icd_sub` to uniquely represent the code and allow lookup of the code
 #' @return data.frame (if bind_rows = TRUE) or matrix
-#' @importFrom stringi stri_match_all_regex
-#' @importFrom dplyr bind_rows
+#' @seealso [is_icd_code()]
 #' @examples
 #' icd_parse("E11.7")
 #' icd_parse("Depression: F32")
@@ -114,6 +113,7 @@ icd_parse <- function (str, type = "bounded", bind_rows = TRUE) {
 #' @param year Year for which to test whether the specification is a valid code. Default: NULL (test whether `str` matches a code from any year since 2003)
 #' @param parse logical. Whether to first parse the input `str` using `icd_parse` (Default: TRUE). If FALSE, assumes that `str` is already formatted as `icd_sub` (i.e. without separating period or other punctuation)
 #' @return Logical vector the same length as the character input
+#' @seealso [icd_parse()]
 #' @examples
 #' is_icd_code("A09.9")
 #' is_icd_code("A099")

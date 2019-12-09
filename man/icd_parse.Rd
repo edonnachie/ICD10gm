@@ -50,3 +50,6 @@ icd_parse(c(
   "Codes for chronic pain include R52.1 and F45.4"
   ))
 }
+\seealso{
+\code{\link[=is_icd_code]{is_icd_code()}}
+}

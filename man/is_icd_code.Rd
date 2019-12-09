@@ -42,3 +42,6 @@ is_icd_code("AA9")
 is_icd_code("E15.9")
 
 }
+\seealso{
+\code{\link[=icd_parse]{icd_parse()}}
+}

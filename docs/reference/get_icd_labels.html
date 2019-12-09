@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get ICD-10 metadata — get_icd_labels • ICD10gm</title>
+<title>Get or query ICD-10 labels — get_icd_labels • ICD10gm</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,9 @@
 
 
 
-<meta property="og:title" content="Get ICD-10 metadata — get_icd_labels" />
-<meta property="og:description" content="A utility function to query icd_meta_codes." />
+<meta property="og:title" content="Get or query ICD-10 labels — get_icd_labels" />
+<meta property="og:description" content="A utility function to get or query icd_meta_codes,
+returning a limited selection of ICD-10 codes and labels." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -120,13 +121,14 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Get ICD-10 metadata</h1>
+    <h1>Get or query ICD-10 labels</h1>
     <small class="dont-index">Source: <a href='https://github.com/edonnachie/ICD10gm/blob/master/R/data.R'><code>R/data.R</code></a></small>
     <div class="hidden name"><code>get_icd_labels.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>A utility function to query <a href='icd_meta_codes.html'>icd_meta_codes</a>.</p>
+    <p>A utility function to get or query <a href='icd_meta_codes.html'>icd_meta_codes</a>,
+returning a limited selection of ICD-10 codes and labels.</p>
     </div>
 
     <pre class="usage"><span class='fu'>get_icd_labels</span>(<span class='kw'>year</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>icd3</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>search</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>...</span>)</pre>
@@ -157,7 +159,11 @@
     <p>data.frame(year, icd3, icd_code, icd_normcode, icd_sub, label), see icd_labels</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Returns a data frame with ICD metadata, consisting of
+    <p>If an ICD code is provided as argument <code>icd3</code>, all
+corresponding codes and subcodes are returned. If a search
+term is provided, all codes are returned whose label matches
+the string approximately.</p>
+<p>Returns a data frame with ICD metadata, consisting of
 year, ICD code and label. Optional arguments allow selection of
 entries by year, code or label. This is beneficial because the
 entire history is relatively large and rarely required in full.</p>

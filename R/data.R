@@ -1,4 +1,4 @@
-#' Metadata for all ICD-10-GM codes
+#' `data.frame` containing metadata for all ICD-10-GM codes
 #'
 #' DIMDI provide a CSV file with metadata on all valid codes. This table is
 #' read in with only minor modifications to facilitate changes between versions.
@@ -48,7 +48,7 @@
 #' See also \url{https://www.dimdi.de/dynamic/en/classifications/icd/icd-10-gm/tabular-list/#metadata}
 "icd_meta_codes"
 
-#' Metadata for the ICD-10-GM code blocks
+#' `data.frame` containing metadata for the ICD-10-GM code blocks
 #'
 #' The ICD blocks (German: "Gruppen") constitute a level in the hierarchy
 #' between the chapters and the three-digit categories.
@@ -73,7 +73,7 @@
 "icd_meta_blocks"
 
 
-#' Metadata for the ICD-10-GM chapters
+#' `data.frame` containing metadata for the ICD-10-GM chapters
 #'
 #' The ICD chapters group codes according to their aetiology.
 #'
@@ -89,9 +89,10 @@
 #' See also \url{https://www.dimdi.de/dynamic/en/classifications/icd/icd-10-gm/tabular-list/structure/}
 "icd_meta_chapters"
 
-#' Transition between ICD-10-GM versions
+#' `data.frame` detailling the changes in ICD-10-GM codes between versions
 #'
-#' A data.frame providing old and new ICD codes (identical if no changes)
+#' A data.frame providing old and new ICD codes
+#' (identical if no changes)
 #' and information as to whether the transition is automatic when
 #' transitioning forwards or backwards
 #'
@@ -115,9 +116,15 @@
 "icd_meta_transition"
 
 
-#' Get ICD-10 metadata
+#' Get or query ICD-10 labels
 #'
-#' A utility function to query [icd_meta_codes].
+#' A utility function to get or query [icd_meta_codes],
+#' returning a limited selection of ICD-10 codes and labels.
+#'
+#' If an ICD code is provided as argument `icd3`, all
+#' corresponding codes and subcodes are returned. If a search
+#' term is provided, all codes are returned whose label matches
+#' the string approximately.
 #'
 #' Returns a data frame with ICD metadata, consisting of
 #' year, ICD code and label. Optional arguments allow selection of
@@ -151,7 +158,7 @@ get_icd_labels <- function(year = NULL, icd3 = NULL, search = NULL, ...){
 
 #' Get ICD history metadata
 #'
-#' A utility function to query [icd_meta_transition].
+#' A utility function to query the [icd_meta_transition] table.
 #'
 #' Returns a data frame with ICD transition history, consisting of
 #' year, ICD code and label. Optional arguments allow selection of

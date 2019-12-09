@@ -3,7 +3,7 @@
 \docType{data}
 \name{icd_meta_transition}
 \alias{icd_meta_transition}
-\title{Transition between ICD-10-GM versions}
+\title{\code{data.frame} detailling the changes in ICD-10-GM codes between versions}
 \format{An object of class \code{data.frame} with 215033 rows and 12 columns.}
 \source{
 The source data was downloaded from the official download centre
@@ -14,7 +14,8 @@ See also \url{https://www.dimdi.de/dynamic/en/classifications/icd/icd-10-gm/tabu
 icd_meta_transition
 }
 \description{
-A data.frame providing old and new ICD codes (identical if no changes)
+A data.frame providing old and new ICD codes
+(identical if no changes)
 and information as to whether the transition is automatic when
 transitioning forwards or backwards
 }

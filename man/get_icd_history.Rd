@@ -15,7 +15,7 @@ get_icd_history(years = NULL, icd3 = NULL)
 data.frame, see icd_hist
 }
 \description{
-A utility function to query \link{icd_meta_transition}.
+A utility function to query the \link{icd_meta_transition} table.
 }
 \details{
 Returns a data frame with ICD transition history, consisting of

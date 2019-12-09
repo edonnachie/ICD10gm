@@ -3,7 +3,7 @@
 \docType{data}
 \name{icd_meta_codes}
 \alias{icd_meta_codes}
-\title{Metadata for all ICD-10-GM codes}
+\title{\code{data.frame} containing metadata for all ICD-10-GM codes}
 \format{A data.frame containing the following variables:
 \describe{
 \item{year}{Year of validity (from 2004)}

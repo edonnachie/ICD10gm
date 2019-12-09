@@ -2,7 +2,7 @@
 % Please edit documentation in R/data.R
 \name{get_icd_labels}
 \alias{get_icd_labels}
-\title{Get ICD-10 metadata}
+\title{Get or query ICD-10 labels}
 \usage{
 get_icd_labels(year = NULL, icd3 = NULL, search = NULL, ...)
 }
@@ -19,9 +19,15 @@ get_icd_labels(year = NULL, icd3 = NULL, search = NULL, ...)
 data.frame(year, icd3, icd_code, icd_normcode, icd_sub, label), see icd_labels
 }
 \description{
-A utility function to query \link{icd_meta_codes}.
+A utility function to get or query \link{icd_meta_codes},
+returning a limited selection of ICD-10 codes and labels.
 }
 \details{
+If an ICD code is provided as argument \code{icd3}, all
+corresponding codes and subcodes are returned. If a search
+term is provided, all codes are returned whose label matches
+the string approximately.
+
 Returns a data frame with ICD metadata, consisting of
 year, ICD code and label. Optional arguments allow selection of
 entries by year, code or label. This is beneficial because the

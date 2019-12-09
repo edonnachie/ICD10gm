@@ -3,7 +3,7 @@
 \docType{data}
 \name{icd_meta_blocks}
 \alias{icd_meta_blocks}
-\title{Metadata for the ICD-10-GM code blocks}
+\title{\code{data.frame} containing metadata for the ICD-10-GM code blocks}
 \format{An object of class \code{data.frame} with 4071 rows and 6 columns.}
 \source{
 The source data was downloaded from the official download centre

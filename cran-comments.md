@@ -2,8 +2,7 @@
 
 This is a minor update:
 
-- Minor reworking to ensure compatibility with the upcoming release of tidyr 1.0
-- Minor improvements in the handling of historic data from 2004 (avoid NA in strings)
+- Added new ICD-10-GM data for the year 2020
 
 
 ## Test environments

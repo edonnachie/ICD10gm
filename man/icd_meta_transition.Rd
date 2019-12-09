@@ -3,7 +3,7 @@
 \docType{data}
 \name{icd_meta_transition}
 \alias{icd_meta_transition}
-\title{\code{data.frame} detailling the changes in ICD-10-GM codes between versions}
+\title{data.frame detailling the changes in ICD-10-GM codes between versions}
 \format{An object of class \code{data.frame} with 215033 rows and 12 columns.}
 \source{
 The source data was downloaded from the official download centre
@@ -34,4 +34,11 @@ transitioning forwards or backwards
 \item{icd_chapter}{The first character of \code{icd_from} (i.e. the letter denoting the chapter).}
 }
 }
+\seealso{
+Other ICD-10-GM metadata: 
+\code{\link{icd_meta_blocks}},
+\code{\link{icd_meta_chapters}},
+\code{\link{icd_meta_codes}}
+}
+\concept{ICD-10-GM metadata}
 \keyword{datasets}

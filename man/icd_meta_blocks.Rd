@@ -3,7 +3,7 @@
 \docType{data}
 \name{icd_meta_blocks}
 \alias{icd_meta_blocks}
-\title{\code{data.frame} containing metadata for the ICD-10-GM code blocks}
+\title{data.frame containing metadata for the ICD-10-GM code blocks}
 \format{An object of class \code{data.frame} with 4071 rows and 6 columns.}
 \source{
 The source data was downloaded from the official download centre
@@ -32,4 +32,11 @@ the ICD classification, for example chronic pain as a unspecific symptom
 \item{block_id}{Short label for the block in format "A00-A09"}
 }
 }
+\seealso{
+Other ICD-10-GM metadata: 
+\code{\link{icd_meta_chapters}},
+\code{\link{icd_meta_codes}},
+\code{\link{icd_meta_transition}}
+}
+\concept{ICD-10-GM metadata}
 \keyword{datasets}

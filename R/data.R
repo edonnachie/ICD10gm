@@ -1,4 +1,4 @@
-#' `data.frame` containing metadata for all ICD-10-GM codes
+#' data.frame containing metadata for all ICD-10-GM codes
 #'
 #' DIMDI provide a CSV file with metadata on all valid codes. This table is
 #' read in with only minor modifications to facilitate changes between versions.
@@ -43,12 +43,13 @@
 #'   \item{notifiable_lab}{Indicates whether the diagnosis is notifiable for laboratories in Germany (J: yes; N: no)}
 #' }
 #'
+#' @family ICD-10-GM metadata
 #' @source The source data was downloaded from the official download centre
 #' of the German Institute for Medical Documentation and Information (DIMDI).
 #' See also \url{https://www.dimdi.de/dynamic/en/classifications/icd/icd-10-gm/tabular-list/#metadata}
 "icd_meta_codes"
 
-#' `data.frame` containing metadata for the ICD-10-GM code blocks
+#' data.frame containing metadata for the ICD-10-GM code blocks
 #'
 #' The ICD blocks (German: "Gruppen") constitute a level in the hierarchy
 #' between the chapters and the three-digit categories.
@@ -67,13 +68,14 @@
 #'   \item{block_id}{Short label for the block in format "A00-A09"}
 #' }
 #'
+#' @family ICD-10-GM metadata
 #' @source The source data was downloaded from the official download centre
 #' of the German Institute for Medical Documentation and Information (DIMDI).
 #' See also \url{https://www.dimdi.de/dynamic/en/classifications/icd/icd-10-gm/tabular-list/structure/}
 "icd_meta_blocks"
 
 
-#' `data.frame` containing metadata for the ICD-10-GM chapters
+#' data.frame containing metadata for the ICD-10-GM chapters
 #'
 #' The ICD chapters group codes according to their aetiology.
 #'
@@ -84,12 +86,13 @@
 #'   \item{chapter_label}{Label for the chapter}
 #' }
 #'
+#' @family ICD-10-GM metadata
 #' @source The source data was downloaded from the official download centre
 #' of the German Institute for Medical Documentation and Information (DIMDI).
 #' See also \url{https://www.dimdi.de/dynamic/en/classifications/icd/icd-10-gm/tabular-list/structure/}
 "icd_meta_chapters"
 
-#' `data.frame` detailling the changes in ICD-10-GM codes between versions
+#' data.frame detailling the changes in ICD-10-GM codes between versions
 #'
 #' A data.frame providing old and new ICD codes
 #' (identical if no changes)
@@ -110,6 +113,7 @@
 #'   \item{icd_chapter}{The first character of `icd_from` (i.e. the letter denoting the chapter).}
 #' }
 #
+#' @family ICD-10-GM metadata
 #' @source The source data was downloaded from the official download centre
 #' of the German Institute for Medical Documentation and Information (DIMDI).
 #' See also \url{https://www.dimdi.de/dynamic/en/classifications/icd/icd-10-gm/tabular-list/#crosswalks}

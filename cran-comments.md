@@ -3,6 +3,7 @@
 This is a minor update:
 
 - Added new ICD-10-GM data for the year 2020
+- Minor improvements to documentation and cross-referencing of functions
 
 
 ## Test environments

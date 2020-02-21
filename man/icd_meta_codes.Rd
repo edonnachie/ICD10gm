@@ -14,7 +14,7 @@
 \item{icd_block_first}{First code in the respective ICD block, can be used to join with the table ICD10gm::icd_meta_blocks}
 \item{icd_code}{Full icd code (up to 7 characters) with all symbols except the "dagger" (for aetiological codes that can be combined with an "asterisk" code to denote the manifestation)}
 \item{icd_normcode}{The ICD "normcode", consisting of up to 6 characters and without all symbols except the period (e.g. E11.30)}
-\item{icd_sub}{The ICD "normcode", consisting of up to 5 characters and without any symbols (e.g. E1130)}
+\item{icd_sub}{Complete ICD code without any symbols or punctuation, consisting of up to 5 characters  (e.g. E1130)}
 \item{label}{ICD label for the complete code.}
 \item{label_icd3}{ICD label for the three-digit ICD code.}
 \item{label_icd4}{ICD label for fourth digit of the ICD code.}

@@ -1,0 +1,27 @@
+url: https://edonnachie.github.io/ICD10gm
+destination: docs
+reference:
+  - title: "Data"
+    desc: >
+      Data frames containing the underlying ICD-10-GM metadata
+      and utility functions to perform common queries.
+    contents:
+      - icd_meta_codes
+      - icd_meta_blocks
+      - icd_meta_chapters
+      - icd_meta_transition
+      - get_icd_labels
+      - get_icd_history
+      - icd_showchanges
+      - icd_showchanges_icd3
+  - title: "Specification"
+    desc: >
+      Specify and historize ICD-10 codes.
+    contents:
+      - icd_expand
+      - icd_history
+  - title: "Parsing"
+    desc: "Parsing and testing for ICD-10 codes"
+    contents:
+      - icd_parse
+      - is_icd_code

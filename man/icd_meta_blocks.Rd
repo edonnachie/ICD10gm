@@ -15,12 +15,12 @@ icd_meta_blocks
 }
 \description{
 The ICD blocks (German: "Gruppen") constitute a level in the hierarchy
-between the chapters and the three-digit categories.
-Sequential codes are grouped to form 240 groups that
-represent similar aetiological diagnoses. Unlike other grouper systems,
-the ICD blocks do not consider similar diagnoses from different chapters of
-the ICD classification, for example chronic pain as a unspecific symptom
-(R52.1) and as a somatoform disorder (F45.4).
+between the chapters and the three-digit codes. The three-digit code are
+grouped in sequence to form 240 groups that represent similar aetiological
+diagnoses. Unlike some other grouper systems, the ICD blocks do not consider
+similar diagnoses from different chapters of the ICD classification, for
+example chronic pain coded as a unspecific symptom (R52.1) and as a
+somatoform disorder (F45.4).
 }
 \details{
 \describe{

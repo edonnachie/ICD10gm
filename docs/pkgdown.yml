@@ -3,4 +3,7 @@ pkgdown: 1.4.1
 pkgdown_sha: ~
 articles:
   icd10gm_intro: icd10gm_intro.html
+urls:
+  reference: https://edonnachie.github.io/ICD10gm/reference
+  article: https://edonnachie.github.io/ICD10gm/articles
 

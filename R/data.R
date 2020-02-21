@@ -20,7 +20,7 @@
 #'   \item{icd_block_first}{First code in the respective ICD block, can be used to join with the table ICD10gm::icd_meta_blocks}
 #'   \item{icd_code}{Full icd code (up to 7 characters) with all symbols except the "dagger" (for aetiological codes that can be combined with an "asterisk" code to denote the manifestation)}
 #'   \item{icd_normcode}{The ICD "normcode", consisting of up to 6 characters and without all symbols except the period (e.g. E11.30)}
-#'   \item{icd_sub}{The ICD "normcode", consisting of up to 5 characters and without any symbols (e.g. E1130)}
+#'   \item{icd_sub}{Complete ICD code without any symbols or punctuation, consisting of up to 5 characters  (e.g. E1130)}
 #'   \item{label}{ICD label for the complete code.}
 #'   \item{label_icd3}{ICD label for the three-digit ICD code.}
 #'   \item{label_icd4}{ICD label for fourth digit of the ICD code.}
@@ -52,12 +52,12 @@
 #' data.frame containing metadata for the ICD-10-GM code blocks
 #'
 #' The ICD blocks (German: "Gruppen") constitute a level in the hierarchy
-#' between the chapters and the three-digit categories.
-#' Sequential codes are grouped to form 240 groups that
-#' represent similar aetiological diagnoses. Unlike other grouper systems,
-#' the ICD blocks do not consider similar diagnoses from different chapters of
-#' the ICD classification, for example chronic pain as a unspecific symptom
-#' (R52.1) and as a somatoform disorder (F45.4).
+#' between the chapters and the three-digit codes. The three-digit code are
+#' grouped in sequence to form 240 groups that represent similar aetiological
+#' diagnoses. Unlike some other grouper systems, the ICD blocks do not consider
+#' similar diagnoses from different chapters of the ICD classification, for
+#' example chronic pain coded as a unspecific symptom (R52.1) and as a
+#' somatoform disorder (F45.4).
 #'
 #' \describe{
 #'   \item{year}{Year of validity (from 2004)}

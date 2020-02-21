@@ -8,6 +8,13 @@
 
 <title>data.frame containing metadata for all ICD-10-GM codes — icd_meta_codes • ICD10gm</title>
 
+<!-- favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -38,6 +45,7 @@
 <meta property="og:title" content="data.frame containing metadata for all ICD-10-GM codes — icd_meta_codes" />
 <meta property="og:description" content="DIMDI provide a CSV file with metadata on all valid codes. This table is
 read in with only minor modifications to facilitate changes between versions." />
+<meta property="og:image" content="https://edonnachie.github.io/ICD10gm/logo.png" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -102,12 +110,7 @@ read in with only minor modifications to facilitate changes between versions." /
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a href="https://github.com/edonnachie/ICD10gm">
-    <span class="fab fa fab fa-github fa-lg"></span>
-     
-  </a>
-</li>
+        
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -122,7 +125,7 @@ read in with only minor modifications to facilitate changes between versions." /
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>data.frame containing metadata for all ICD-10-GM codes</h1>
-    <small class="dont-index">Source: <a href='https://github.com/edonnachie/ICD10gm/blob/master/R/data.R'><code>R/data.R</code></a></small>
+    
     <div class="hidden name"><code>icd_meta_codes.Rd</code></div>
     </div>
 
@@ -145,7 +148,7 @@ read in with only minor modifications to facilitate changes between versions.</p
 <dt>icd_block_first</dt><dd><p>First code in the respective ICD block, can be used to join with the table ICD10gm::icd_meta_blocks</p></dd>
 <dt>icd_code</dt><dd><p>Full icd code (up to 7 characters) with all symbols except the "dagger" (for aetiological codes that can be combined with an "asterisk" code to denote the manifestation)</p></dd>
 <dt>icd_normcode</dt><dd><p>The ICD "normcode", consisting of up to 6 characters and without all symbols except the period (e.g. E11.30)</p></dd>
-<dt>icd_sub</dt><dd><p>The ICD "normcode", consisting of up to 5 characters and without any symbols (e.g. E1130)</p></dd>
+<dt>icd_sub</dt><dd><p>Complete ICD code without any symbols or punctuation, consisting of up to 5 characters  (e.g. E1130)</p></dd>
 <dt>label</dt><dd><p>ICD label for the complete code.</p></dd>
 <dt>label_icd3</dt><dd><p>ICD label for the three-digit ICD code.</p></dd>
 <dt>label_icd4</dt><dd><p>ICD label for fourth digit of the ICD code.</p></dd>

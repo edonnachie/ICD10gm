@@ -1,8 +1,10 @@
-# ICD10gm 1.0.5
+# ICD10gm 1.1
 This is a minor update:
 
 - Added new ICD-10-GM data for the year 2020
-- Minor improvements to documentation and cross-referencing of functions
+- Add reserved codes that are defined as needed after release of download files (e.g. COVID-19)
+- Improvements to documentation and cross-referencing of functions
+- New hex logo
 
 
 # ICD10gm 1.0.4

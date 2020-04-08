@@ -54,6 +54,17 @@ relevant information concerning the codes. For example, the file contains
 neither the inclusion and exclusion notes nor the detailed definitions
 (where present, mainly in Chapter V). DIMDI provide additional reference
 material for operative coding and detailed research.
+
+The block U00-U49 contains reserved codes that can be allocated quickly for
+the documentation of new diseases or epidemiological phenomena. Such usage
+is allowed only when mandated by DIMDI. In particular, the codes may not be
+utilised on the initiative of other parties, for example, for clinical trials
+or contractual purposes. Notable uses of the reserved codes are for the Zika
+and COVID-19 viruses. These are included in the DIMDI online documentation,
+but not in the download files. They are therefore added manually to this
+data set as documented in the \href{https://github.com/edonnachie/ICD10gm/blob/master/data-raw/additions/icd_meta_codes_additions.json}{package source}.
+
+Die Schlüsselnummern U05.0-U05.9 dieser Kategorie sollen ein schnelles Reagieren auf aktuelle epidemiologische Phänomene ermöglichen. Sie dürfen nur zusätzlich benutzt werden, um einen anderenorts klassifizierten Zustand besonders zu kennzeichnen. Die Schlüsselnummern dieser Kategorie dürfen nur über das Deutsche Institut für Medizinische Dokumentation und Information (DIMDI) mit Inhalten belegt werden; eine Anwendung für andere Zwecke ist nicht erlaubt. DIMDI wird den Anwendungszeitraum solcher Schlüsselnummern bei Bedarf bekannt geben.
 }
 \seealso{
 Other ICD-10-GM metadata: 

@@ -81,6 +81,29 @@ icd_meta_transition <- within(icd_meta_transition, {
 })
 
 
+## Additions not included in the official download file ----
+
+## Read and prepare list of code additions
+icd_meta_codes_additions <- jsonlite::read_json(
+  here::here("data-raw/additions/icd_meta_codes_additions.json"),
+  simplifyVector = TRUE) %>%
+  tidyr::nest(meta = -c(year, icd_sub))
+
+## Function to update codes
+update_codes <- function(code_additions, icd_meta_codes) {
+  for (i in 1:nrow(code_additions)) {
+    meta_code <- code_additions[i, "meta"][[1]][[1]]
+    i_code <- which(paste(icd_meta_codes$year, icd_meta_codes$icd_sub) ==
+                      paste(code_additions[i, "year"], code_additions[i, "icd_sub"]))
+    icd_meta_codes[i_code, names(meta_code)] <- meta_code
+  }
+  return(icd_meta_codes)
+}
+icd_meta_codes <- update_codes(icd_meta_codes_additions, icd_meta_codes)
+
+### Note: Transitions are included in the official downloads
+
+## Save ----
 usethis::use_data(
   icd_meta_codes,
   icd_meta_blocks,

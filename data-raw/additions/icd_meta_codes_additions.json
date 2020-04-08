@@ -1,0 +1,47 @@
+[
+ {
+ "year": 2016,
+ "icd_sub": "U069",
+ "label": "Zika-Viruskrankheit",
+ "label_icd4": "Zika-Viruskrankheit, nicht näher bezeichnet",
+ "usage_295": "P",
+ "usage_301": "P",
+ "notifiable": "J"
+ },
+  {
+ "year": 2019,
+ "icd_sub": "U070",
+ "label": "Gesundheitsstörung im Zusammenhang mit dem Gebrauch von E-Zigaretten [Vaporizer]",
+ "label_icd4": "Gesundheitsstörung im Zusammenhang mit dem Gebrauch von E-Zigaretten [Vaporizer]",
+ "usage_295": "Z",
+ "usage_301": "Z",
+ "notifiable": "N"
+ },
+  {
+ "year": 2020,
+ "icd_sub": "U070",
+ "label": "Gesundheitsstörung im Zusammenhang mit dem Gebrauch von E-Zigaretten [Vaporizer]",
+ "label_icd4": "Gesundheitsstörung im Zusammenhang mit dem Gebrauch von E-Zigaretten [Vaporizer]",
+ "usage_295": "Z",
+ "usage_301": "Z",
+ "notifiable": "N"
+ },
+ {
+ "year": 2020,
+ "icd_sub": "U071",
+ "label": "COVID-19, Virus nachgewiesen",
+ "label_icd4": "COVID-19, Virus nachgewiesen",
+ "usage_295": "Z",
+ "usage_301": "Z",
+ "notifiable": "J"
+ },
+ {
+ "year": 2020,
+ "icd_sub": "U072",
+ "label": "COVID-19, Virus nicht nachgewiesen",
+ "label_icd4": "COVID-19, Virus nicht nachgewiesen",
+ "usage_295": "Z",
+ "usage_301": "Z",
+ "notifiable": "J"
+ }
+]

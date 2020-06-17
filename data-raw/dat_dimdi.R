@@ -86,8 +86,9 @@ icd_meta_transition <- within(icd_meta_transition, {
 ## Read and prepare list of code additions
 icd_meta_codes_additions <- jsonlite::read_json(
   here::here("data-raw/additions/icd_meta_codes_additions.json"),
-  simplifyVector = TRUE) %>%
-  tidyr::nest(meta = -c(year, icd_sub))
+  simplifyVector = TRUE)
+icd_meta_codes_additions <- tidyr::nest(icd_meta_codes_additions,
+                                        meta = -c(year, icd_sub))
 
 ## Function to update codes
 update_codes <- function(code_additions, icd_meta_codes) {

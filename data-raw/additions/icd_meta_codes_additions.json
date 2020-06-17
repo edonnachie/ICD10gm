@@ -43,5 +43,14 @@
  "usage_295": "Z",
  "usage_301": "Z",
  "notifiable": "J"
+ },
+ {
+ "year": 2020,
+ "icd_sub": "U990",
+ "label": "Spezielle Verfahren zur Untersuchung auf SARS-CoV-2",
+ "label_icd4": "Spezielle Verfahren zur Untersuchung auf SARS-CoV-2",
+ "usage_295": "Z",
+ "usage_301": "Z",
+ "notifiable": "J"
  }
 ]

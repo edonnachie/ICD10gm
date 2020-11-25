@@ -4,7 +4,9 @@
 \name{icd_meta_transition}
 \alias{icd_meta_transition}
 \title{data.frame detailling the changes in ICD-10-GM codes between versions}
-\format{An object of class \code{data.frame} with 215033 rows and 12 columns.}
+\format{
+An object of class \code{data.frame} with 228848 rows and 12 columns.
+}
 \source{
 The source data was downloaded from the official download centre
 of the German Institute for Medical Documentation and Information (DIMDI).

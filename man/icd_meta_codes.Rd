@@ -4,7 +4,8 @@
 \name{icd_meta_codes}
 \alias{icd_meta_codes}
 \title{data.frame containing metadata for all ICD-10-GM codes}
-\format{A data.frame containing the following variables:
+\format{
+A data.frame containing the following variables:
 \describe{
 \item{year}{Year of validity (from 2004)}
 \item{level}{Level of the hierarchy (3, 4 or 5 digits)}
@@ -35,7 +36,8 @@
 \item{code_with_content}{Indicates whether the code has content associated with it (J: yes; N: no, leads to an error)}
 \item{notifiable}{Indicates whether the diagnosis is notifiable in Germany (J: yes; N: no)}
 \item{notifiable_lab}{Indicates whether the diagnosis is notifiable for laboratories in Germany (J: yes; N: no)}
-}}
+}
+}
 \source{
 The source data was downloaded from the official download centre
 of the German Institute for Medical Documentation and Information (DIMDI).

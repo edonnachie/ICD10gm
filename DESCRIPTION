@@ -12,7 +12,7 @@ License: MIT + file LICENSE
 URL: https://edonnachie.github.io/ICD10gm, https://doi.org/10.5281/zenodo.2542833
 BugReports: https://github.com/edonnachie/ICD10gm/issues
 LazyData: true
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.1
 Roxygen: list(markdown = TRUE)
 Imports: magrittr,
     dplyr,

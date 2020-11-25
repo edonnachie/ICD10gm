@@ -1,0 +1,68 @@
+---
+title: "Coding the Covid-19 Pandemic in Germany"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Designated Codes Related to Covid-19}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup, eval = FALSE, include = FALSE}
+library(ICD10gm)
+library(dplyr)
+```
+
+In order to document the Covid-19 pandemic, a number of emergency codes were introduced in the course of 2020. These are incorporated in the `ICD10gm` package. This vignette describes the usage of these codes with links to the official documentation mandating their use in Germany.
+
+It should be noted that, in the ambulatory system in Germany, diagnoses are complemented by an additional flag denoting its status (G: secured, V: suspected, A: excluded, Z: condition following diagnosis). Regardless of formal coding rules, the presence of these flags should be considered when analysing German ambulatory data.
+
+In 2020, there are differences between the ICD-10-GM and the WHO version (see [WHO: Emergency use ICD codes for COVID-19 disease outbreak](https://www.who.int/standards/classifications/classification-of-diseases/emergency-use-icd-codes-for-covid-19-disease-outbreak)). For 2021, the ICD-10-GM largely followed the WHO version, leading to a number of code transitions.
+
+This document is a work in progress.
+
+
+## ICD-10-GM 2020
+
+### U07.1: COVID-19 (virus identified)
+
+Introduced on 13 February 2020, U07.1 codes Covid-19 cases confirmed by laboratory testing. Although a primary code in the WHO version of the ICD-10, it was included as a secondary code in the ICD-10-GM. This means that it should always be accompanied by a primary code denoting the manifestation (e.g. J06.9 or J12.8 for symptomatic patients; Z20.8 when testing contacts of confirmed cases).
+
+[17 February 2020: ICD-10 (WHO und GM): U07.1 kodiert COVID-19, Coronavirus-Krankheit-2019](https://www.dimdi.de/dynamic/de/das-dimdi/aktuelles/meldung/icd-10-who-und-gm-u07.1-kodiert-covid-19-coronavirus-krankheit-2019/)
+
+### U07.2: COVID-19 (virus not identified)
+
+[23 March 2020: ICD-10 (WHO und GM): U07.2 kodiert Verdacht auf COVID-19](https://www.dimdi.de/dynamic/de/das-dimdi/aktuelles/meldung/icd-10-who-und-gm-u07.2-kodiert-verdacht-auf-covid-19/)
+
+### U07.3, U07.4, U07.5
+
+On 11 November 2020 (i.e. during the second wave in Germany), three further codes were published:
+
+- U07.3 COVID-19 in der Eigenanamnese, nicht näher bezeichnet
+- U07.4! Post-COVID-19-Zustand, nicht näher bezeichnet
+- U07.5 Multisystemisches Entzündungssyndrom in Verbindung mit COVID-19, nicht näher bezeichnet
+
+
+[ICD-10-GM 2020: Weitere neue U-Kodes im Zusammenhang mit COVID-19 publiziert](https://www.dimdi.de/dynamic/de/das-dimdi/aktuelles/meldung/icd-10-gm-2020-weitere-neue-u-kodes-im-zusammenhang-mit-covid-19-publiziert/)
+
+### U99.0: Test procedures for SARS-Cov-19
+
+[25 May 2020: ICD-10-GM 2020: Neuer U-Kode U99.0! und neue Kodierfrage zu Testung auf SARS-CoV-2](ICD-10-GM 2020: Neuer U-Kode U99.0! und neue Kodierfrage zu Testung auf SARS-CoV-2)
+
+### Coding Guidelines
+
+Guidelines for use in the ambulatory system:
+
+- [KBV Coding Guidlines](https://www.kbv.de/media/sp/PraxisInfo_Coronavirus_Kodieren.pdf)
+- [KBV Coding Overview](https://www.kbv.de/media/sp/KBV_Schaubild_Kodierung_SARS_CoV_2.pdf)
+
+Official FAQ entries:
+
+- [Ist U07.2! bei Personen zu kodieren, bei denen kein Verdacht auf eine Infektion mit SARS-CoV-2 besteht, jedoch ein Test auf SARS-CoV-2 durchgeführt wurde, welcher negativ ausfällt? (ICD-10-GM Nr. 1019)](https://www.dimdi.de/dynamic/de/klassifikationen/kodierfrage/gm-1019/)
+- [Wie sind im Zusammenhang mit COVID-19 die Zusatzschlüsselnummern U07.1! und U07.2! sowie U99.0! zu verwenden? (ICD-10-GM Nr. 1018)](https://www.dimdi.de/dynamic/de/klassifikationen/kodierfrage/gm-1018/)

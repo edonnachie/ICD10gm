@@ -1,6 +1,11 @@
 ## Extract required files ----
 define_meta_files <- function(version) {
-  if (as.numeric(version) >= 2019) {
+  if (as.numeric(version) == 2021) {
+    zip_transition <- here::here(glue::glue("data-raw/dimdi/ueberleitung/icd10gm{version}syst-ueberl-20201111.zip"))
+    files_transition <- glue::glue("Klassifikationsdateien/icd10gm{version}syst_umsteiger_{as.numeric(version)-1}_{version}.txt")
+    zip_meta <- here::here(glue::glue("data-raw/dimdi/systematik/icd10gm{version}syst-meta-20201111.zip"))
+    files_meta <- paste0("Klassifikationsdateien/icd10gm", version, "syst_", c("kodes", "kapitel", "gruppen"), ".txt")
+  } else if (as.numeric(version) >= 2019) {
     zip_transition <- here::here(glue::glue("data-raw/dimdi/ueberleitung/icd10gm{version}syst-ueberl.zip"))
     files_transition <- glue::glue("Klassifikationsdateien/icd10gm{version}syst_umsteiger_{as.numeric(version)-1}_{version}.txt")
     zip_meta <- here::here(glue::glue("data-raw/dimdi/systematik/icd10gm{version}syst-meta.zip"))

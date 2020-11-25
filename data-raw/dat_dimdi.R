@@ -1,11 +1,13 @@
 source(here::here("data-raw/lib_dimdi_import.R"))
 
+year_range <- 2004:2021
+
 ## Read in files ----
-purrr::walk(2004:2020, extract_icd_meta_files)
-icd_meta_codes <- purrr::map_df(2004:2020, read_icd_codes)
-icd_meta_blocks <- purrr::map_df(2004:2020, read_icd_blocks)
-icd_meta_chapters <- purrr::map_df(2004:2020, read_icd_chapters)
-icd_meta_transition <- purrr::map_df(2005:2020, read_icd_transitions)
+purrr::walk(year_range, extract_icd_meta_files)
+icd_meta_codes <- purrr::map_df(year_range, read_icd_codes)
+icd_meta_blocks <- purrr::map_df(year_range, read_icd_blocks)
+icd_meta_chapters <- purrr::map_df(year_range, read_icd_chapters)
+icd_meta_transition <- purrr::map_df(year_range[-1], read_icd_transitions)
 
 # Create new fields
 icd_meta_chapters <- within(icd_meta_chapters, chapter_roman <- as.roman(chapter))[, c(1, 2, 4, 3)]

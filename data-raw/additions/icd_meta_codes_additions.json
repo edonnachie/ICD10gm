@@ -46,6 +46,33 @@
  },
  {
  "year": 2020,
+ "icd_sub": "U073",
+ "label": "COVID-19 in der Eigenanamnese, nicht näher bezeichnet",
+ "label_icd4": "COVID-19 in der Eigenanamnese, nicht näher bezeichnet",
+ "usage_295": "Z",
+ "usage_301": "Z",
+ "notifiable": "J"
+ },
+ {
+ "year": 2020,
+ "icd_sub": "U074",
+ "label": "Post-COVID-19-Zustand, nicht näher bezeichnet",
+ "label_icd4": "Post-COVID-19-Zustand, nicht näher bezeichnet",
+ "usage_295": "Z",
+ "usage_301": "Z",
+ "notifiable": "J"
+ },
+ {
+ "year": 2020,
+ "icd_sub": "U075",
+ "label": "Multisystemisches Entzündungssyndrom in Verbindung mit COVID-19, nicht näher bezeichnet",
+ "label_icd4": "Multisystemisches Entzündungssyndrom in Verbindung mit COVID-19, nicht näher bezeichnet",
+ "usage_295": "Z",
+ "usage_301": "Z",
+ "notifiable": "N"
+ },
+ {
+ "year": 2020,
  "icd_sub": "U990",
  "label": "Spezielle Verfahren zur Untersuchung auf SARS-CoV-2",
  "label_icd4": "Spezielle Verfahren zur Untersuchung auf SARS-CoV-2",

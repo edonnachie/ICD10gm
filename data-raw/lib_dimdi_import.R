@@ -143,7 +143,7 @@ read_icd_blocks <- function(version) {
 
   out <- cbind(
     year = version,
-    read.csv2(f_gruppen, skip = 1, header = FALSE,
+    read.csv2(f_gruppen, skip = 0, header = FALSE,
               stringsAsFactors = FALSE,
               encoding = ifelse(version < 2010, "latin1", "UTF-8"))
   )
@@ -175,7 +175,7 @@ read_icd_chapters <- function(version) {
 
   out <- cbind(
     year = version,
-    read.csv2(f_kapitel, skip = 1, header = FALSE,
+    read.csv2(f_kapitel, skip = 0, header = FALSE,
               stringsAsFactors = FALSE,
               encoding = ifelse(version < 2010, "latin1", "UTF-8"))
   )

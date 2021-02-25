@@ -31,6 +31,18 @@ icd_meta_codes <- within(icd_meta_codes, icd3 <- substr(icd_sub, 1, 3))
 # https://www.utf8-zeichentabelle.de/unicode-utf8-table.pl?unicodeinhtml=hex
 
 cleanup_utf8 <- function(str) {
+  # Now ensure all latin1 is converted to UTF-8
+  str[Encoding(str) == "latin1"] <- iconv(str, from = "latin1", to = "UTF-8")
+
+  # ANSI with \u00
+  str <- gsub("\u0084", "ä", str)
+  str <- gsub("\u008e", "Ä", str)
+  str <- gsub("\u0094", "ö", str)
+  str <- gsub("\u0099", "Ö", str)
+  str <- gsub("\u0081", "ü", str)
+  str <- gsub("\u009a", "Ü", str)
+  str <- gsub("\u00e1", "ß", str)
+
   # ANSI
   str <- gsub("\x84", "ä", str)
   str <- gsub("\x8e", "Ä", str)
@@ -47,17 +59,6 @@ cleanup_utf8 <- function(str) {
   str <- gsub("\xfc", "ü", str)
   str <- gsub("\xdc", "Ü", str)
   str <- gsub("\xdf", "ß", str)
-  # ANSI with \u00
-  str <- gsub("\u0084", "ä", str)
-  str <- gsub("\u008e", "Ä", str)
-  str <- gsub("\u0094", "ö", str)
-  str <- gsub("\u0099", "Ö", str)
-  str <- gsub("\u0081", "ü", str)
-  str <- gsub("\u009a", "Ü", str)
-  str <- gsub("\u00e1", "ß", str)
-
-  # Now ensure all latin1 is converted to UTF-8
-  str[Encoding(str) == "latin1"] <- iconv(str, from = "latin1", to = "UTF-8")
 
   str
 }

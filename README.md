@@ -1,6 +1,6 @@
 # ICD10gm <img src="man/figures/logo.png" align="right" width="20%" height = "20%" />
 
-[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active) [![Travis build status](https://travis-ci.org/edonnachie/ICD10gm.svg?branch=master)](https://travis-ci.org/edonnachie/ICD10gm) [![CRAN status](https://www.r-pkg.org/badges/version/ICD10gm)](https://cran.r-project.org/package=ICD10gm)  [![DOI](https://zenodo.org/badge/52161087.svg)](https://zenodo.org/badge/latestdoi/52161087)
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active) [![R-CMD-check](https://github.com/edonnachie/ICD10gm/workflows/R-CMD-check/badge.svg)](https://github.com/edonnachie/ICD10gm/actions) [![CRAN status](https://www.r-pkg.org/badges/version/ICD10gm)](https://cran.r-project.org/package=ICD10gm)  [![DOI](https://zenodo.org/badge/52161087.svg)](https://zenodo.org/badge/latestdoi/52161087)
 
 
 
@@ -8,7 +8,7 @@ An R Package for Working with the German Modification of the International Stati
 
 ## About this Package
 
-The ICD-10 classification of diseases and related health problems (ICD-10) is an international standard for the coding of health service data. In Germany, the [German Instutite of Medical Documentation and Information (DIMDI)](https://www.dimdi.de) releases a German Modification (ICD-10-GM) of the classification that forms a compulsory part of all remuneration claims in the ambulatory and hospital sectors.
+The ICD-10 classification of diseases and related health problems (ICD-10) is an international standard for the coding of health service data. In Germany, the [Federal Institute for Drugs and Medical Devices](https://www.dimdi.de) releases a German Modification (ICD-10-GM) of the classification that forms a compulsory part of all remuneration claims in the ambulatory and hospital sectors.
 
 This package was created to facilitate the analysis of data coded using the ICD-10-GM. In particular, it has the following aims:
 

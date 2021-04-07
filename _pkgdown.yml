@@ -1,5 +1,11 @@
 url: https://edonnachie.github.io/ICD10gm
 destination: docs
+articles:
+- title: Vignettes
+  navbar: ~
+  contents:
+  - icd10gm_intro
+  - coding_covid-19
 reference:
   - title: "Data"
     desc: >
@@ -25,3 +31,8 @@ reference:
     contents:
       - icd_parse
       - is_icd_code
+template:
+  opengraph:
+    twitter:
+      creator: "@ERDonnachie"
+      card: summary_large_image

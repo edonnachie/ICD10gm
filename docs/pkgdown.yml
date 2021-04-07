@@ -4,7 +4,7 @@ pkgdown_sha: ~
 articles:
   coding_covid-19: coding_covid-19.html
   icd10gm_intro: icd10gm_intro.html
-last_built: 2020-11-25T23:36Z
+last_built: 2021-04-07T22:32Z
 urls:
   reference: https://edonnachie.github.io/ICD10gm/reference
   article: https://edonnachie.github.io/ICD10gm/articles

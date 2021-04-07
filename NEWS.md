@@ -1,3 +1,13 @@
+# ICD10gm 1.2
+This is a minor update:
+
+- Added new ICD-10-GM data for the year 2021
+- Lazy data are now compressed using the xy algorithm (#15)
+- Corrected `ìcd_meta_chapters` table (missing chapter 1, #14)
+- Added new codes introduced for Covid-19 to the 2020 and 2021 versions
+- New vignette "Coding the Covid-19 pandemic in Germany"
+
+
 # ICD10gm 1.1
 This is a minor update:
 

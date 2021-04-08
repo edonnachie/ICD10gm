@@ -28,7 +28,7 @@ in the context of the German ICD-10-GM is unclear.
 
 \describe{
 \item{Condition}{Disease entity}
-\item{}
+\item{Weight}{Controbition of the disease entity towords the combined comorbidity index}
 \item{ICD_10_AM}{Secification of the corresponding ICD-10 codes, suitable for input to \link{icd_expand}}
 }
 }

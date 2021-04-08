@@ -234,7 +234,7 @@ get_icd_history <- function(years = NULL, icd3 = NULL){
 #'
 #' \describe{
 #'   \item{Condition}{Disease entity}
-#'   \item{}
+#'   \item{Weight}{Controbition of the disease entity towords the combined comorbidity index}
 #'   \item{ICD_10_AM}{Secification of the corresponding ICD-10 codes, suitable for input to [icd_expand]}
 #'   }
 #' @family Charlson

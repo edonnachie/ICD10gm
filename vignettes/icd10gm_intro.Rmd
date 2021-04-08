@@ -22,7 +22,7 @@ knitr::opts_chunk$set(
 
 ICD10gm is an R Package for working with the German Modification of the International Statistical Classification of Diseases and Related Health Problems (ICD-10-GM).
 
-The ICD-10 classification is an international standard for the coding of health service data. It is used widely both to document morbidity in healthcare systems, usually in the context of remuneration claims, and to encode [mortality statistics](http://www.who.int/healthinfo/mortality_data/en/). In Germany, the [German Instutite of Medical Documentation and Information (DIMDI)](https://www.dimdi.de) releases a German Modification (ICD-10-GM) of the classification that forms a compulsory part of all remuneration claims in the ambulatory and hospital sectors. Further information and historical context can be found in, for example, [Graubner (2007)](https://doi.org/10.1007/s00103-007-0283-x) or [Jetté _et al_ (2010)](https://www.jstor.org/stable/25767019).
+The ICD-10 classification is an international standard for the coding of health service data. It is used widely both to document morbidity in healthcare systems, usually in the context of remuneration claims, and to encode [mortality statistics](https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates). In Germany, the [German Instutite of Medical Documentation and Information (DIMDI)](https://www.dimdi.de) releases a German Modification (ICD-10-GM) of the classification that forms a compulsory part of all remuneration claims in the ambulatory and hospital sectors. Further information and historical context can be found in, for example, [Graubner (2007)](https://doi.org/10.1007/s00103-007-0283-x) or [Jetté _et al_ (2010)](https://www.jstor.org/stable/25767019).
 
 ## Aims
 
@@ -66,7 +66,7 @@ In addition to this tabular data, several utility functions are provided to perf
 
 ### Example
 
-First, we load the ICD10gm package alongside some [tidyverse packages](https://tidyverse.org):
+First, we load the ICD10gm package alongside some [tidyverse packages](https://www.tidyverse.org):
 
 ```{r, message = FALSE}
 library(dplyr)
@@ -161,7 +161,7 @@ icd_k58 <- data.frame(DIAG_GROUP = c("IBS", "IBS"), ICD_SPEC = c("K58", "F45.32"
 knitr::kable(icd_k58)
 ```
 
-Note that the `data.frame` containing the specification should normally be stored as a separate metadata file (eg. csv or Excel format) to facilitate maintenance and sharing of the specification. The column `DIAG_GROUP` is a label that can be allocated to one or multiple rows of the specification and is useful when aggregating diagnoses. This is similar to the concept of diagnosis groupers used, for example, in risk adjustment schemes (e.g. as operated by the [German Federal Social Insurance Office](https://www.bundesversicherungsamt.de/risikostrukturausgleich.html)). In this case, we may want to treat the two alternative codes as equivalent by allocating the label "IBS" to both. In this way, we overcome the common problem that, in practice, multiple codes are used to document the same underlying disease.
+Note that the `data.frame` containing the specification should normally be stored as a separate metadata file (eg. csv or Excel format) to facilitate maintenance and sharing of the specification. The column `DIAG_GROUP` is a label that can be allocated to one or multiple rows of the specification and is useful when aggregating diagnoses. This is similar to the concept of diagnosis groupers used, for example, in risk adjustment schemes (e.g. as operated by the [German Federal Social Insurance Office](https://www.bundesamtsozialesicherung.de/de/themen/risikostrukturausgleich/ueberblick/)). In this case, we may want to treat the two alternative codes as equivalent by allocating the label "IBS" to both. In this way, we overcome the common problem that, in practice, multiple codes are used to document the same underlying disease.
 
 
 ## Historise an ICD specification

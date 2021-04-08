@@ -19,7 +19,7 @@ library(ICD10gm)
 library(dplyr)
 ```
 
-In order to document the Covid-19 pandemic, a number of emergency codes were introduced in the course of 2020. These are incorporated in the `ICD10gm` package, both as additions to the 2020 version and via use of the updated 2021 version. This vignette describes the usage of these codes with links to the official documentation mandating their use in Germany.
+In order to document the Covid-19 pandemic, a number of emergency codes were introduced in the course of 2020 and 2021. These are incorporated in the `ICD10gm` package, both as additions to the official 2020 and 2021 versions and by incorporating mid-year changes into the dataset. This vignette describes the usage of these codes with links to the official documentation mandating their use in Germany.
 
 It should be noted that, in the ambulatory system in Germany, diagnoses are complemented by an additional flag denoting its status (G: secured, V: suspected, A: excluded, Z: condition following diagnosis). Regardless of formal coding rules, the presence of these flags should be considered when analysing German ambulatory data.
 
@@ -64,7 +64,7 @@ This code was carried through unchanged into the 2021 version of the ICD-10-GM.
 
 The code U99.0 denotes that a test for the SARS-COv-2 virus was conducted. It does not indicate the result of the test.
 
-[25 May 2020: ICD-10-GM 2020: Neuer U-Kode U99.0! und neue Kodierfrage zu Testung auf SARS-CoV-2](ICD-10-GM 2020: Neuer U-Kode U99.0! und neue Kodierfrage zu Testung auf SARS-CoV-2)
+[25 May 2020: ICD-10-GM 2020: Neuer U-Kode U99.0! und neue Kodierfrage zu Testung auf SARS-CoV-2](https://www.dimdi.de/dynamic/de/das-dimdi/aktuelles/meldung/icd-10-gm-2020-neuer-u-kode-u99.0-und-neue-kodierfrage-zu-testung-auf-sars-cov-2/)
 
 
 Further information:

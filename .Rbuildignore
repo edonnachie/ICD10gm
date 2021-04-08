@@ -11,4 +11,5 @@
 ^cran-comments\.md$
 ^_pkgdown\.yml$
 ^pkgdown$
-.gitignore
+^.gitignore
+^.github

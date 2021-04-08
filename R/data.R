@@ -196,3 +196,47 @@ get_icd_history <- function(years = NULL, icd3 = NULL){
 
    return(out)
 }
+
+
+#' Charlson Comorbidities (Royal College of Surgeons)
+#'
+#' Specification of the Charlson comorbidity index
+#' in the version of the Royal College of Surgeons (2010).
+#'
+#' The specification can be expanded using the [icd_expand]
+#' function to return all corresponding ICD-10-GM codes.
+#'
+#' This table was created on the basis of the publication
+#' referenced below. It is provided as is with no guarantee
+#' of accuracy. Furthermore, the applicability of the codes
+#' in the context of the German ICD-10-GM is unclear.
+#'
+#' \describe{
+#'   \item{Condition}{Disease entity}
+#'   \item{ICD_SPEC}{Secification of the corresponding ICD-10 codes, suitable for input to [icd_expand]}
+#'   }
+#' @family Charlson
+#' @source \url{https://doi.org/10.1002/bjs.6930}
+"charlson_rcs"
+
+#' Charlson Comorbidities (Sundararajan)
+#'
+#' Specification of the Charlson comorbidity index
+#' in the version of Sunhararahan et al. (2004).
+#'
+#' The specification can be expanded using the [icd_expand]
+#' function to return all corresponding ICD-10-GM codes.
+#'
+#' This table was created on the basis of the publication
+#' referenced below. It is provided as is with no guarantee
+#' of accuracy. Furthermore, the applicability of the codes
+#' in the context of the German ICD-10-GM is unclear.
+#'
+#' \describe{
+#'   \item{Condition}{Disease entity}
+#'   \item{}
+#'   \item{ICD_10_AM}{Secification of the corresponding ICD-10 codes, suitable for input to [icd_expand]}
+#'   }
+#' @family Charlson
+#' @source \url{https://doi.org/10.1016/j.jclinepi.2004.03.012}
+"charlson_sundararajan"

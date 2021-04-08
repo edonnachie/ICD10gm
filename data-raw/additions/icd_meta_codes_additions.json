@@ -49,8 +49,8 @@
  "icd_sub": "U073",
  "label": "COVID-19 in der Eigenanamnese, nicht näher bezeichnet",
  "label_icd4": "COVID-19 in der Eigenanamnese, nicht näher bezeichnet",
- "usage_295": "Z",
- "usage_301": "Z",
+ "usage_295": "P",
+ "usage_301": "P",
  "notifiable": "J"
  },
  {
@@ -67,8 +67,8 @@
  "icd_sub": "U075",
  "label": "Multisystemisches Entzündungssyndrom in Verbindung mit COVID-19, nicht näher bezeichnet",
  "label_icd4": "Multisystemisches Entzündungssyndrom in Verbindung mit COVID-19, nicht näher bezeichnet",
- "usage_295": "Z",
- "usage_301": "Z",
+ "usage_295": "P",
+ "usage_301": "P",
  "notifiable": "N"
  },
  {
@@ -79,5 +79,23 @@
  "usage_295": "Z",
  "usage_301": "Z",
  "notifiable": "J"
+ },
+ {
+ "year": 2021,
+ "icd_sub": "U119",
+ "label": "Notwendigkeit der Impfung gegen COVID-19, nicht näher bezeichnet",
+ "label_icd4": "Notwendigkeit der Impfung gegen COVID-19, nicht näher bezeichnet",
+ "usage_295": "P",
+ "usage_301": "P",
+ "notifiable": "N"
+ },
+ {
+ "year": 2021,
+ "icd_sub": "U129",
+ "label": "Unerwünschte Nebenwirkungen bei der Anwendung von COVID-19-Impfstoffen, nicht näher bezeichnet",
+ "label_icd4": "Unerwünschte Nebenwirkungen bei der Anwendung von COVID-19-Impfstoffen, nicht näher bezeichnet",
+ "usage_295": "Z",
+ "usage_301": "Z",
+ "notifiable": "N"
  }
 ]

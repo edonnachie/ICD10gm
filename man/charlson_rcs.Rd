@@ -8,7 +8,7 @@
 An object of class \code{spec_tbl_df} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 121 rows and 2 columns.
 }
 \source{
-\url{10.1002/bjs.6930}
+\doi{10.1002/bjs.6930}
 }
 \usage{
 charlson_rcs

@@ -8,7 +8,7 @@
 An object of class \code{spec_tbl_df} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 17 rows and 3 columns.
 }
 \source{
-\url{https://doi.org/10.1016/j.jclinepi.2004.03.012}
+\doi{10.1016/j.jclinepi.2004.03.012}
 }
 \usage{
 charlson_sundararajan

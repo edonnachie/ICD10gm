@@ -216,7 +216,7 @@ get_icd_history <- function(years = NULL, icd3 = NULL){
 #'   \item{ICD_SPEC}{Secification of the corresponding ICD-10 codes, suitable for input to [icd_expand]}
 #'   }
 #' @family Charlson
-#' @source \url{10.1002/bjs.6930}
+#' @source \doi{10.1002/bjs.6930}
 "charlson_rcs"
 
 #' Charlson Comorbidities (Sundararajan)

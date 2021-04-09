@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Show historical changes to selected ICD-10-GM codes — icd_showchanges • ICD10gm</title>
+<title>Charlson Comorbidities (Sundararajan) — charlson_sundararajan • ICD10gm</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,11 +46,9 @@
 
 
 
-<meta property="og:title" content="Show historical changes to selected ICD-10-GM codes — icd_showchanges" />
-<meta property="og:description" content="Show all changes in ICD history relating to the
-3-digit codes contained in the data.frame icd_in.
-The output of icd_expand can be passed directly to this
-function to display relevant changes." />
+<meta property="og:title" content="Charlson Comorbidities (Sundararajan) — charlson_sundararajan" />
+<meta property="og:description" content="Specification of the Charlson comorbidity index
+in the version of Sunhararahan et al. (2004)." />
 <meta property="og:image" content="https://edonnachie.github.io/ICD10gm/logo.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:creator" content="@ERDonnachie" />
@@ -140,59 +138,45 @@ function to display relevant changes." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Show historical changes to selected ICD-10-GM codes</h1>
-    <small class="dont-index">Source: <a href='https://github.com/edonnachie/ICD10gm/blob/master/R/icd_showchanges.R'><code>R/icd_showchanges.R</code></a></small>
-    <div class="hidden name"><code>icd_showchanges.Rd</code></div>
+    <h1>Charlson Comorbidities (Sundararajan)</h1>
+    <small class="dont-index">Source: <a href='https://github.com/edonnachie/ICD10gm/blob/master/R/data.R'><code>R/data.R</code></a></small>
+    <div class="hidden name"><code>charlson_sundararajan.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Show all changes in ICD history relating to the
-3-digit codes contained in the data.frame icd_in.
-The output of icd_expand can be passed directly to this
-function to display relevant changes.</p>
+    <p>Specification of the Charlson comorbidity index
+in the version of Sunhararahan et al. (2004).</p>
     </div>
 
-    <pre class="usage"><span class='fu'>icd_showchanges</span><span class='op'>(</span><span class='va'>icd_in</span>, col_icd <span class='op'>=</span> <span class='st'>"icd_sub"</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='va'>charlson_sundararajan</span></pre>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>icd_in</th>
-      <td><p>Data frame defining ICD codes of interest</p></td>
-    </tr>
-    <tr>
-      <th>col_icd</th>
-      <td><p>Column of icd_in containing ICD codes (Default: ICD)</p></td>
-    </tr>
-    </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>data.frame with columns YEAR, ICD_CODE, ICD_LABEL and, if specified, DIAG_GROUP</p>
+    <p>An object of class <code>spec_tbl_df</code> (inherits from <code>tbl_df</code>, <code>tbl</code>, <code>data.frame</code>) with 17 rows and 3 columns.</p>
+    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
+
+    <p>doi: <a href='https://doi.org/10.1016/j.jclinepi.2004.03.012'>10.1016/j.jclinepi.2004.03.012</a></p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>The specification can be expanded using the <a href='icd_expand.html'>icd_expand</a>
+function to return all corresponding ICD-10-GM codes.</p>
+<p>This table was created on the basis of the publication
+referenced below. It is provided as is with no guarantee
+of accuracy. Furthermore, the applicability of the codes
+in the context of the German ICD-10-GM is unclear.</p>
+<dl>
+<dt>Condition</dt><dd><p>Disease entity</p></dd>
+<dt>Weight</dt><dd><p>Controbition of the disease entity towords the combined comorbidity index</p></dd>
+<dt>ICD_10_AM</dt><dd><p>Secification of the corresponding ICD-10 codes, suitable for input to <a href='icd_expand.html'>icd_expand</a></p></dd>
+
+</dl>
+
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='icd_showchanges_icd3.html'>icd_showchanges_icd3()</a></code> to provide one oe more three-digit codes as input</p></div>
+    <div class='dont-index'><p>Other Charlson: 
+<code><a href='charlson_rcs.html'>charlson_rcs</a></code></p></div>
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='va'>dat_icd</span> <span class='op'>&lt;-</span> <span class='fu'><a href='icd_expand.html'>icd_expand</a></span><span class='op'>(</span>
-   <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span>ICD_SPEC <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"K52.9"</span><span class='op'>)</span><span class='op'>)</span>,
-   col_icd <span class='op'>=</span> <span class='st'>"ICD_SPEC"</span>,
-   year <span class='op'>=</span> <span class='fl'>2019</span><span class='op'>)</span>
-<span class='fu'>icd_showchanges</span><span class='op'>(</span><span class='va'>dat_icd</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;       year_from year_to icd_from icd_to automatic_forward automatic_backward
-#&gt; 70770      2009    2010    K52.8 K52.30                                    A
-#&gt; 70771      2009    2010    K52.8 K52.31                                    A
-#&gt; 70772      2009    2010    K52.8 K52.32                                    A
-#&gt; 70773      2009    2010    K52.8 K52.38                                    A
-#&gt; 70775      2009    2010    K52.9  A09.9                                     
-#&gt;       change_5 change_4 change_3 change icd3 icd_kapitel
-#&gt; 70770    FALSE     TRUE    FALSE   TRUE  K52           K
-#&gt; 70771    FALSE     TRUE    FALSE   TRUE  K52           K
-#&gt; 70772    FALSE     TRUE    FALSE   TRUE  K52           K
-#&gt; 70773    FALSE     TRUE    FALSE   TRUE  K52           K
-#&gt; 70775    FALSE    FALSE     TRUE   TRUE  A09           A</div><div class='input'>
-</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

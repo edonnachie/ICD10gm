@@ -41,7 +41,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ICD10gm</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.9</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.2.2</span>
       </span>
     </div>
 
@@ -99,7 +99,7 @@
             <h3 class="subtitle">Motivation, Basic Usage and Examples</h3>
                         <h4 class="author">Ewan Donnachie</h4>
             
-            <h4 class="date">2021-04-08</h4>
+            <h4 class="date">2021-04-09</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/edonnachie/ICD10gm/blob/master/vignettes/icd10gm_intro.Rmd"><code>vignettes/icd10gm_intro.Rmd</code></a></small>
       <div class="hidden name"><code>icd10gm_intro.Rmd</code></div>
@@ -112,7 +112,7 @@
 <h1 class="hasAnchor">
 <a href="#introduction" class="anchor"></a>Introduction</h1>
 <p>ICD10gm is an R Package for working with the German Modification of the International Statistical Classification of Diseases and Related Health Problems (ICD-10-GM).</p>
-<p>The ICD-10 classification is an international standard for the coding of health service data. It is used widely both to document morbidity in healthcare systems, usually in the context of remuneration claims, and to encode <a href="http://www.who.int/healthinfo/mortality_data/en/">mortality statistics</a>. In Germany, the <a href="https://www.dimdi.de">German Instutite of Medical Documentation and Information (DIMDI)</a> releases a German Modification (ICD-10-GM) of the classification that forms a compulsory part of all remuneration claims in the ambulatory and hospital sectors. Further information and historical context can be found in, for example, <a href="https://doi.org/10.1007/s00103-007-0283-x">Graubner (2007)</a> or <a href="https://www.jstor.org/stable/25767019">Jetté <em>et al</em> (2010)</a>.</p>
+<p>The ICD-10 classification is an international standard for the coding of health service data. It is used widely both to document morbidity in healthcare systems, usually in the context of remuneration claims, and to encode <a href="https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates">mortality statistics</a>. In Germany, the <a href="https://www.dimdi.de">German Instutite of Medical Documentation and Information (DIMDI)</a> releases a German Modification (ICD-10-GM) of the classification that forms a compulsory part of all remuneration claims in the ambulatory and hospital sectors. Further information and historical context can be found in, for example, <a href="https://doi.org/10.1007/s00103-007-0283-x">Graubner (2007)</a> or <a href="https://www.jstor.org/stable/25767019">Jetté <em>et al</em> (2010)</a>.</p>
 <div id="aims" class="section level2">
 <h2 class="hasAnchor">
 <a href="#aims" class="anchor"></a>Aims</h2>
@@ -160,12 +160,12 @@
 <div id="example" class="section level3">
 <h3 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h3>
-<p>First, we load the ICD10gm package alongside some <a href="https://tidyverse.org">tidyverse packages</a>:</p>
+<p>First, we load the ICD10gm package alongside some <a href="https://www.tidyverse.org">tidyverse packages</a>:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://purrr.tidyverse.org">purrr</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://edonnachie.github.io/ICD10gm">ICD10gm</a></span><span class="op">)</span></code></pre></div>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://edonnachie.github.io/ICD10gm/">ICD10gm</a></span><span class="op">)</span></code></pre></div>
 <p>By way of example, we examine the coding of unspecific gastroenteritis (i.e. without identification of a specific cause), a very common diagnosis in primary care. This is currently classified under the ICD-10 code “A09”, which we can lookup for the year 2018 as follows:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/get_icd_labels.html">get_icd_labels</a></span><span class="op">(</span><span class="st">"A09"</span>, year <span class="op">=</span> <span class="fl">2018</span><span class="op">)</span> <span class="op">%&gt;%</span>
@@ -483,7 +483,7 @@
 </tr>
 </tbody>
 </table>
-<p>Note that the <code>data.frame</code> containing the specification should normally be stored as a separate metadata file (eg. csv or Excel format) to facilitate maintenance and sharing of the specification. The column <code>DIAG_GROUP</code> is a label that can be allocated to one or multiple rows of the specification and is useful when aggregating diagnoses. This is similar to the concept of diagnosis groupers used, for example, in risk adjustment schemes (e.g. as operated by the <a href="https://www.bundesversicherungsamt.de/risikostrukturausgleich.html">German Federal Social Insurance Office</a>). In this case, we may want to treat the two alternative codes as equivalent by allocating the label “IBS” to both. In this way, we overcome the common problem that, in practice, multiple codes are used to document the same underlying disease.</p>
+<p>Note that the <code>data.frame</code> containing the specification should normally be stored as a separate metadata file (eg. csv or Excel format) to facilitate maintenance and sharing of the specification. The column <code>DIAG_GROUP</code> is a label that can be allocated to one or multiple rows of the specification and is useful when aggregating diagnoses. This is similar to the concept of diagnosis groupers used, for example, in risk adjustment schemes (e.g. as operated by the <a href="https://www.bundesamtsozialesicherung.de/de/themen/risikostrukturausgleich/ueberblick/">German Federal Social Insurance Office</a>). In this case, we may want to treat the two alternative codes as equivalent by allocating the label “IBS” to both. In this way, we overcome the common problem that, in practice, multiple codes are used to document the same underlying disease.</p>
 </div>
 </div>
 <div id="historise-an-icd-specification" class="section level2">
@@ -555,7 +555,7 @@
 <span class="co">#&gt; </span>
 <span class="co">#&gt;   Ewan Donnachie (2021). ICD10gm: Metadata Processing for the German</span>
 <span class="co">#&gt;   Modification of the ICD-10 Coding System.</span>
-<span class="co">#&gt;   https://edonnachie.github.io/ICD10gm,</span>
+<span class="co">#&gt;   https://edonnachie.github.io/ICD10gm/,</span>
 <span class="co">#&gt;   https://doi.org/10.5281/zenodo.2542833.</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; A BibTeX entry for LaTeX users is</span>
@@ -564,7 +564,7 @@
 <span class="co">#&gt;     title = {ICD10gm: Metadata Processing for the German Modification of the ICD-10 Coding System},</span>
 <span class="co">#&gt;     author = {Ewan Donnachie},</span>
 <span class="co">#&gt;     year = {2021},</span>
-<span class="co">#&gt;     note = {https://edonnachie.github.io/ICD10gm, https://doi.org/10.5281/zenodo.2542833},</span>
+<span class="co">#&gt;     note = {https://edonnachie.github.io/ICD10gm/, https://doi.org/10.5281/zenodo.2542833},</span>
 <span class="co">#&gt;   }</span></code></pre></div>
 </div>
 </div>

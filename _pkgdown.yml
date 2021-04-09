@@ -7,7 +7,7 @@ articles:
   - icd10gm_intro
   - coding_covid-19
 reference:
-  - title: "Data"
+  - title: "ICD-10-GM Metadata"
     desc: >
       Data frames containing the underlying ICD-10-GM metadata
       and utility functions to perform common queries.
@@ -31,6 +31,11 @@ reference:
     contents:
       - icd_parse
       - is_icd_code
+  - title: "Comorbidity Groupers"
+    desc: "Specification of various comorbidity groupers"
+    contents:
+      - charlson_rcs
+      - charlson_sundararajan
 template:
   opengraph:
     twitter:

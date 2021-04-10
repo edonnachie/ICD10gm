@@ -33,6 +33,9 @@ install.packages("ICD10gm")
 The core functionality of the package is demonstrated in the [accompanying vignette](https://edonnachie.github.io/ICD10gm/articles/icd10gm_intro.html).
 
 
+An introductory presentation in German was given at the [AGENS Methodenworkshop 2021](https://agens.group/index.php/methodenworkshop/methodenworkshop-2021). <a href="https://edonnachie.github.io/ICD10gm/2021-03-AGENS_ICD10gm/Donnachie_ICD10gm.html" target = "_blank">The slides are available online</a> and give a brief overview of the package rationale and suggested workflow. (use left/right arrows to navigate).
+
+
 ## Copyright
 
 Program code is released under the [MIT license](https://edonnachie.github.io/ICD10gm/LICENSE-text.html).

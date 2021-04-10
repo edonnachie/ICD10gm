@@ -1,4 +1,4 @@
-# ICD10gm 1.2
+# ICD10gm 1.2.2
 This is a minor update:
 
 - Added new ICD-10-GM data for the year 2021

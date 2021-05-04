@@ -126,8 +126,8 @@ In addition to the newly-introduced codes, physicians may choose to use existing
 - R43: Disturbances of smell and taste
 - R50: Fever
 
-As long covid (U09.9!) is a secondary code, it should be accompanied by a primary code specifying the nature of the complaint. In practice, this may be a symptom, a disease resulting from the infection, or a code relating to a functional or psychiatric condition, for example:
+As post covid syndrome (U09.9!) is a secondary code, it should be accompanied by a primary code specifying the nature of the complaint. In practice, this may be a symptom, a disease resulting from the infection, or a code relating to a functional or psychiatric condition, for example:
 
 - F48.0: Neurasthenia
-- G83.3: Chronic fatigue syndrome
+- G93.3: Chronic fatigue syndrome
 - F41: Anxiety

@@ -5,7 +5,7 @@
 \alias{charlson_rcs}
 \title{Charlson Comorbidities (Royal College of Surgeons)}
 \format{
-An object of class \code{spec_tbl_df} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 121 rows and 2 columns.
+An object of class \code{spec_tbl_df} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 124 rows and 2 columns.
 }
 \source{
 \doi{10.1002/bjs.6930}

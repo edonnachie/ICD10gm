@@ -26,7 +26,10 @@ Cerebrovascular disease;G45
 Cerebrovascular disease;G46
 Cerebrovascular disease;I6
 Dementia;A810
-Dementia;F00–F03
+Dementia;F00
+Dementia;F01
+Dementia;F02
+Dementia;F03
 Dementia;F051
 Dementia;G30
 Dementia;G31

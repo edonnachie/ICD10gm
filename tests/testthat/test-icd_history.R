@@ -1,6 +1,3 @@
-context("test-icd_history.R")
-
-
 dat_custom_transition <- data.frame(
   year_from = 2009,
   year_to = 2010,

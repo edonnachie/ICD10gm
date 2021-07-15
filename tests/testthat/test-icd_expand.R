@@ -1,7 +1,3 @@
-context("test-icd_expand.R")
-
-
-
 test_that("ICD code can be specified as E103, E10.3 or E10.3-", {
 
   # The following should be identical except for the icd_spec

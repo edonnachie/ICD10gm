@@ -1,6 +1,3 @@
-context("test-icd_parse.R")
-
-
 test_that("Correctly identifies ICD codes", {
   expect_true(is_icd_code("R10"))
   expect_true(is_icd_code("R104"))

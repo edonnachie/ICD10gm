@@ -4,12 +4,12 @@
 \alias{icd_showchanges}
 \title{Show historical changes to selected ICD-10-GM codes}
 \usage{
-icd_showchanges(icd_in, years)
+icd_showchanges(icd_in, years = NULL)
 }
 \arguments{
-\item{icd_in}{Data frame defining ICD codes of interest}
+\item{icd_in}{Data frame created by  \code{\link[=icd_expand]{icd_expand()}}, containing codes to check}
 
-\item{col_icd}{Column of icd_in containing ICD codes (Default: ICD)}
+\item{years}{Years to check, corresponding to the variable \code{year_from} in \code{icd_meta_transition}}
 }
 \value{
 data.frame, as \code{icd_meta_transition}, with labels icd_from_label and icd_to_label

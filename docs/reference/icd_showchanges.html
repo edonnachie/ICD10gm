@@ -86,7 +86,7 @@ function to display relevant changes." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ICD10gm</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.2.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.2.2.99</span>
       </span>
     </div>
 
@@ -152,27 +152,27 @@ The output of icd_expand can be passed directly to this
 function to display relevant changes.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>icd_showchanges</span><span class='op'>(</span><span class='va'>icd_in</span>, col_icd <span class='op'>=</span> <span class='st'>"icd_sub"</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>icd_showchanges</span><span class='op'>(</span><span class='va'>icd_in</span>, years <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>icd_in</th>
-      <td><p>Data frame defining ICD codes of interest</p></td>
+      <td><p>Data frame created by  <code><a href='icd_expand.html'>icd_expand()</a></code>, containing codes to check</p></td>
     </tr>
     <tr>
-      <th>col_icd</th>
-      <td><p>Column of icd_in containing ICD codes (Default: ICD)</p></td>
+      <th>years</th>
+      <td><p>Years to check, corresponding to the variable <code>year_from</code> in <code>icd_meta_transition</code></p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>data.frame with columns YEAR, ICD_CODE, ICD_LABEL and, if specified, DIAG_GROUP</p>
+    <p>data.frame, as <code>icd_meta_transition</code>, with labels icd_from_label and icd_to_label</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='icd_showchanges_icd3.html'>icd_showchanges_icd3()</a></code> to provide one oe more three-digit codes as input</p></div>
+    <div class='dont-index'><p><code><a href='icd_showchanges_icd3.html'>icd_showchanges_icd3()</a></code> to provide one or more three-digit codes as input</p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='va'>dat_icd</span> <span class='op'>&lt;-</span> <span class='fu'><a href='icd_expand.html'>icd_expand</a></span><span class='op'>(</span>
@@ -180,18 +180,14 @@ function to display relevant changes.</p>
    col_icd <span class='op'>=</span> <span class='st'>"ICD_SPEC"</span>,
    year <span class='op'>=</span> <span class='fl'>2019</span><span class='op'>)</span>
 <span class='fu'>icd_showchanges</span><span class='op'>(</span><span class='va'>dat_icd</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;       year_from year_to icd_from icd_to automatic_forward automatic_backward
-#&gt; 70770      2009    2010    K52.8 K52.30                                    A
-#&gt; 70771      2009    2010    K52.8 K52.31                                    A
-#&gt; 70772      2009    2010    K52.8 K52.32                                    A
-#&gt; 70773      2009    2010    K52.8 K52.38                                    A
-#&gt; 70775      2009    2010    K52.9  A09.9                                     
-#&gt;       change_5 change_4 change_3 change icd3 icd_kapitel
-#&gt; 70770    FALSE     TRUE    FALSE   TRUE  K52           K
-#&gt; 70771    FALSE     TRUE    FALSE   TRUE  K52           K
-#&gt; 70772    FALSE     TRUE    FALSE   TRUE  K52           K
-#&gt; 70773    FALSE     TRUE    FALSE   TRUE  K52           K
-#&gt; 70775    FALSE    FALSE     TRUE   TRUE  A09           A</div><div class='input'>
+</div><div class='output co'>#&gt;   year_from year_to icd_from icd_to automatic_forward automatic_backward
+#&gt; 1      2009    2010    K52.9  A09.9                                     
+#&gt;   change_5 change_4 change_3 change icd3 icd_kapitel
+#&gt; 1    FALSE    FALSE     TRUE   TRUE  A09           A
+#&gt;                                                        icd_from_label
+#&gt; 1 Nichtinfektiöse Gastroenteritis und Kolitis, nicht näher bezeichnet
+#&gt;                                                                                          icd_to_label
+#&gt; 1 Sonstige und nicht näher bezeichnete Gastroenteritis und Kolitis nicht näher bezeichneten Ursprungs</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

@@ -5,7 +5,7 @@
 \alias{icd_meta_chapters}
 \title{data.frame containing metadata for the ICD-10-GM chapters}
 \format{
-An object of class \code{data.frame} with 396 rows and 4 columns.
+An object of class \code{data.frame} with 418 rows and 4 columns.
 }
 \source{
 The source data was downloaded from the official download centre

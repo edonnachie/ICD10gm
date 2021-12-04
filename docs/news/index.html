@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">ICD10gm</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.2.3</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.2.4</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,6 +51,14 @@
       <small>Source: <a href="https://github.com/edonnachie/ICD10gm/blob/HEAD/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="1.2.4" id="icd10gm-124">ICD10gm 1.2.4<a class="anchor" aria-label="anchor" href="#icd10gm-124"></a></h2>
+<p>This is a minor update:</p>
+<ul><li>Data for the year 2022</li>
+<li>Corrected <code>charlson_rcs</code> specification (F00-F03 on separate lines, <a href="https://github.com/edonnachie/ICD10gm/issues/16" class="external-link">#16</a>)</li>
+<li>Replaced <code>icd_showchanges</code> with an equivalent query on <code>icd_meta_transitions</code>. The new function takes a data.frame created by <code>icd_expand</code>, extracts all code changes within a specified period (years), and adds labels for the old and new ICD-10-GM codes.</li>
+<li>(From 1.2.3): Corrected “no visible binding” error on icd_showchanges</li>
+</ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="1.2.3" id="icd10gm-123">ICD10gm 1.2.3<a class="anchor" aria-label="anchor" href="#icd10gm-123"></a></h2>
 <p>This is a minor update:</p>

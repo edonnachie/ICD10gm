@@ -2,11 +2,9 @@
 
 This is a minor update:
 
-- "LazyDataCompression: xz" added to the DESCRIPTION, decreasing package size considerably
-- ICD-10-GM data for the year 2021
-- Corrected `ìcd_meta_chapters` table (missing chapter 1)
-- New vignette "Coding the Covid-19 pandemic in Germany"
-- Added small supplementary datasets specifying two different versions of the Charlson comorbidities
+- Data for the year 2022
+- Corrected `charlson_rcs` specification (F00-F03 on separate lines, #16)
+- Replaced `icd_showchanges` with an equivalent query on `icd_meta_transitions`. The new function takes a data.frame created by `icd_expand`, extracts all code changes within a specified period (years), and adds labels for the old and new ICD-10-GM codes.
 
 
 ## Test environments

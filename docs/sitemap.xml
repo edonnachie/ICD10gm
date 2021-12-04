@@ -1,7 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://edonnachie.github.io/ICD10gm/2021-03-AGENS_ICD10gm/Donnachie_ICD10gm.html</loc>
+  </url>
+  <url>
+    <loc>https://edonnachie.github.io/ICD10gm/404.html</loc>
+  </url>
+  <url>
+    <loc>https://edonnachie.github.io/ICD10gm/LICENSE-text.html</loc>
+  </url>
+  <url>
+    <loc>https://edonnachie.github.io/ICD10gm/LICENSE.html</loc>
+  </url>
+  <url>
+    <loc>https://edonnachie.github.io/ICD10gm/articles/coding_covid-19.html</loc>
+  </url>
+  <url>
+    <loc>https://edonnachie.github.io/ICD10gm/articles/icd10gm_intro.html</loc>
+  </url>
+  <url>
+    <loc>https://edonnachie.github.io/ICD10gm/articles/index.html</loc>
+  </url>
+  <url>
+    <loc>https://edonnachie.github.io/ICD10gm/authors.html</loc>
+  </url>
+  <url>
     <loc>https://edonnachie.github.io/ICD10gm/index.html</loc>
+  </url>
+  <url>
+    <loc>https://edonnachie.github.io/ICD10gm/news/index.html</loc>
   </url>
   <url>
     <loc>https://edonnachie.github.io/ICD10gm/reference/charlson_rcs.html</loc>
@@ -43,12 +70,9 @@
     <loc>https://edonnachie.github.io/ICD10gm/reference/icd_showchanges_icd3.html</loc>
   </url>
   <url>
+    <loc>https://edonnachie.github.io/ICD10gm/reference/index.html</loc>
+  </url>
+  <url>
     <loc>https://edonnachie.github.io/ICD10gm/reference/is_icd_code.html</loc>
-  </url>
-  <url>
-    <loc>https://edonnachie.github.io/ICD10gm/articles/coding_covid-19.html</loc>
-  </url>
-  <url>
-    <loc>https://edonnachie.github.io/ICD10gm/articles/icd10gm_intro.html</loc>
   </url>
 </urlset>

@@ -4,7 +4,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="ICD10gm">
 <title>Introduction to the ICD10gm Package • ICD10gm</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
@@ -12,12 +13,11 @@
 <link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png">
 <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png">
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png">
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
-<script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="../deps/bootstrap-5.1.0/bootstrap.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.1.0/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="Introduction to the ICD10gm Package">
+<!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Introduction to the ICD10gm Package">
 <meta property="og:description" content="ICD10gm">
 <meta property="og:image" content="https://edonnachie.github.io/ICD10gm/logo.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -28,94 +28,77 @@
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
-<body data-spy="scroll" data-target="#toc">
-    <div class="container template-article">
-      <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">ICD10gm</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.2.2.99</span>
-      </span>
-    </div>
+<body>
+    <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
+    
 
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-<li>
-  <a href="../index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
+    <nav class="navbar fixed-top navbar-light navbar-expand-lg bg-light"><div class="container">
+    
+    <a class="navbar-brand me-2" href="../index.html">ICD10gm</a>
+
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.2.2.999</small>
+
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar" class="collapse navbar-collapse ms-2">
+      <ul class="navbar-nav me-auto">
+<li class="nav-item">
+  <a class="nav-link" href="../reference/index.html">Reference</a>
 </li>
-<li>
-  <a href="../reference/index.html">Reference</a>
-</li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Articles
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-<li>
-      <a href="../articles/icd10gm_intro.html">Introduction to the ICD10gm Package</a>
-    </li>
-    <li>
-      <a href="../articles/coding_covid-19.html">Coding the Covid-19 Pandemic in Germany</a>
-    </li>
-  </ul>
-</li>
-<li>
-  <a href="../news/index.html">Changelog</a>
-</li>
-      </ul>
-<ul class="nav navbar-nav navbar-right">
-<li>
-  <a href="https://github.com/edonnachie/ICD10gm/">
-    <span class="fab fa-github fa-lg"></span>
-     
-  </a>
-</li>
-      </ul>
-</div>
-<!--/.nav-collapse -->
+<li class="active nav-item dropdown">
+  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
+  <div class="dropdown-menu" aria-labelledby="dropdown-articles">
+    <a class="dropdown-item" href="../articles/icd10gm_intro.html">Introduction to the ICD10gm Package</a>
+    <a class="dropdown-item" href="../articles/coding_covid-19.html">Coding the Covid-19 Pandemic in Germany</a>
   </div>
-<!--/.container -->
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="../news/index.html">Changelog</a>
+</li>
+      </ul>
+<form class="form-inline my-2 my-lg-0" role="search">
+        <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off">
+</form>
+
+      <ul class="navbar-nav">
+<li class="nav-item">
+  <a class="external-link nav-link" href="https://github.com/edonnachie/ICD10gm/" aria-label="github">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
-<!--/.navbar -->
 
-      
+    
+  </div>
+</nav><div class="container template-article">
 
-      </header><script src="icd10gm_intro_files/header-attrs-2.8/header-attrs.js"></script><div class="row">
-  <div class="col-md-9 contents">
-    <div class="page-header toc-ignore">
-      <h1 data-toc-skip>Introduction to the ICD10gm Package</h1>
-            <h3 class="subtitle">Motivation, Basic Usage and Examples</h3>
-                        <h4 class="author">Ewan Donnachie</h4>
+<div class="row">
+  <main id="main"><div class="page-header">
+      <img src="../logo.png" class="logo" alt=""><h1>Introduction to the ICD10gm Package</h1>
+            <h3 data-toc-skip class="subtitle">Motivation, Basic Usage and Examples</h3>
+                        <h4 data-toc-skip class="author">Ewan Donnachie</h4>
             
-            <h4 class="date">2021-07-16</h4>
+            <h4 data-toc-skip class="date">2021-12-04</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/edonnachie/ICD10gm/blob/master/vignettes/icd10gm_intro.Rmd"><code>vignettes/icd10gm_intro.Rmd</code></a></small>
-      <div class="hidden name"><code>icd10gm_intro.Rmd</code></div>
-
+      <small class="dont-index">Source: <a href="https://github.com/edonnachie/ICD10gm/blob/HEAD/vignettes/icd10gm_intro.Rmd" class="external-link"><code>vignettes/icd10gm_intro.Rmd</code></a></small>
+      <div class="d-none name"><code>icd10gm_intro.Rmd</code></div>
     </div>
 
     
     
-<div id="introduction" class="section level1">
-<h1 class="hasAnchor">
-<a href="#introduction" class="anchor"></a>Introduction</h1>
+<div class="section level1">
+<h1 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h1>
 <p>ICD10gm is an R Package for working with the German Modification of the International Statistical Classification of Diseases and Related Health Problems (ICD-10-GM).</p>
-<p>The ICD-10 classification is an international standard for the coding of health service data. It is used widely both to document morbidity in healthcare systems, usually in the context of remuneration claims, and to encode <a href="https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates">mortality statistics</a>. In Germany, the <a href="https://www.dimdi.de">German Instutite of Medical Documentation and Information (DIMDI)</a> releases a German Modification (ICD-10-GM) of the classification that forms a compulsory part of all remuneration claims in the ambulatory and hospital sectors. Further information and historical context can be found in, for example, <a href="https://doi.org/10.1007/s00103-007-0283-x">Graubner (2007)</a> or <a href="https://www.jstor.org/stable/25767019">Jetté <em>et al</em> (2010)</a>.</p>
-<div id="aims" class="section level2">
-<h2 class="hasAnchor">
-<a href="#aims" class="anchor"></a>Aims</h2>
+<p>The ICD-10 classification is an international standard for the coding of health service data. It is used widely both to document morbidity in healthcare systems, usually in the context of remuneration claims, and to encode <a href="https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates" class="external-link">mortality statistics</a>. In Germany, the <a href="https://www.dimdi.de" class="external-link">German Instutite of Medical Documentation and Information (DIMDI)</a> releases a German Modification (ICD-10-GM) of the classification that forms a compulsory part of all remuneration claims in the ambulatory and hospital sectors. Further information and historical context can be found in, for example, <a href="https://doi.org/10.1007/s00103-007-0283-x" class="external-link">Graubner (2007)</a> or <a href="https://www.jstor.org/stable/25767019" class="external-link">Jetté <em>et al</em> (2010)</a>.</p>
+<div class="section level2">
+<h2 id="aims">Aims<a class="anchor" aria-label="anchor" href="#aims"></a>
+</h2>
 <p>This package was created to facilitate the analysis of data coded using the ICD-10-GM. In particular, it has the following aims:</p>
 <ol style="list-style-type: decimal">
 <li>Provide convenient access to the extended ICD-10-GM metadata</li>
@@ -123,18 +106,18 @@
 <li>Facilitate the specification of ICD codes for analysis, utilising the ICD hierarchy (e.g. given the specification “A0” return all subcodes in the range “A01” to “A09”)</li>
 <li>Enable the historization of ICD specifications when analysing longitudinal claims data, applying the automatic code transitions provided by DIMDI, identifying potentially problematic codes and enabling the specification of custom transitions</li>
 </ol>
-<p>ICD10gm is designed for use in the context of medical and health services research using routinely collected claims data. It is not suitable for use in operative coding as it does not include all relevant metadata (e.g. inclusion and exclusion notes and the detailed definitions of psychiatric diagnoses). The metadata provided in the ICD10gm package is not intended to replace the <a href="https://www.dimdi.de/dynamic/de/klassifikationen/icd/icd-10-gm/">official DIMDI documentation</a>, which should always be consulted when specifying ICD codes for analysis.</p>
+<p>ICD10gm is designed for use in the context of medical and health services research using routinely collected claims data. It is not suitable for use in operative coding as it does not include all relevant metadata (e.g. inclusion and exclusion notes and the detailed definitions of psychiatric diagnoses). The metadata provided in the ICD10gm package is not intended to replace the <a href="https://www.dimdi.de/dynamic/de/klassifikationen/icd/icd-10-gm/" class="external-link">official DIMDI documentation</a>, which should always be consulted when specifying ICD codes for analysis.</p>
 <p>The following presents an overview of the basic functionality provided by the ICD10gm package, illustrated by means of simple examples. To access this vignette in R, type:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/vignette.html">vignette</a></span><span class="op">(</span><span class="st">"icd10gm_intro"</span>, package <span class="op">=</span> <span class="st">"ICD10gm"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/vignette.html" class="external-link">vignette</a></span><span class="op">(</span><span class="st">"icd10gm_intro"</span>, package <span class="op">=</span> <span class="st">"ICD10gm"</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
-<div id="basic-use" class="section level1">
-<h1 class="hasAnchor">
-<a href="#basic-use" class="anchor"></a>Basic Use</h1>
-<div id="access-icd-10-gm-metadata" class="section level2">
-<h2 class="hasAnchor">
-<a href="#access-icd-10-gm-metadata" class="anchor"></a>Access ICD-10-GM metadata</h2>
+<div class="section level1">
+<h1 id="basic-use">Basic Use<a class="anchor" aria-label="anchor" href="#basic-use"></a>
+</h1>
+<div class="section level2">
+<h2 id="access-icd-10-gm-metadata">Access ICD-10-GM metadata<a class="anchor" aria-label="anchor" href="#access-icd-10-gm-metadata"></a>
+</h2>
 <p>The ICD-10-GM metadata are provided by four data.frames that form the core of the ICD10gm package:</p>
 <ul>
 <li>
@@ -157,19 +140,19 @@
 <li>
 <code>icd_showchanges</code> and <code>icd_showchanges_icd3</code> query <code>icd_meta_transitions</code> and return entries that are affected by changes in the ICD-10-GM versions.</li>
 </ul>
-<div id="example" class="section level3">
-<h3 class="hasAnchor">
-<a href="#example" class="anchor"></a>Example</h3>
-<p>First, we load the ICD10gm package alongside some <a href="https://www.tidyverse.org">tidyverse packages</a>:</p>
+<div class="section level3">
+<h3 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
+</h3>
+<p>First, we load the ICD10gm package alongside some <a href="https://www.tidyverse.org" class="external-link">tidyverse packages</a>:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://purrr.tidyverse.org">purrr</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://edonnachie.github.io/ICD10gm/">ICD10gm</a></span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="http://purrr.tidyverse.org" class="external-link">purrr</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org" class="external-link">tidyr</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://edonnachie.github.io/ICD10gm/">ICD10gm</a></span><span class="op">)</span></code></pre></div>
 <p>By way of example, we examine the coding of unspecific gastroenteritis (i.e. without identification of a specific cause), a very common diagnosis in primary care. This is currently classified under the ICD-10 code “A09”, which we can lookup for the year 2018 as follows:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/get_icd_labels.html">get_icd_labels</a></span><span class="op">(</span><span class="st">"A09"</span>, year <span class="op">=</span> <span class="fl">2018</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span>row.names <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="../reference/get_icd_labels.html">get_icd_labels</a></span><span class="op">(</span><span class="st">"A09"</span>, year <span class="op">=</span> <span class="fl">2018</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">kable</a></span><span class="op">(</span>row.names <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
 <table class="table">
 <colgroup>
 <col width="3%">
@@ -216,9 +199,9 @@
 </table>
 <p>Now, we check whether whether this code has been affected by code transitions in any revision since 2003:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/icd_showchanges_icd3.html">icd_showchanges_icd3</a></span><span class="op">(</span><span class="st">"A09"</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span>row.names <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
-<table class="table">
+<code class="sourceCode R"><span class="fu"><a href="../reference/icd_showchanges_icd3.html">icd_showchanges_icd3</a></span><span class="op">(</span><span class="st">"A09"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">kable</a></span><span class="op">(</span>row.names <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
+<table style="width:100%;" class="table">
 <colgroup>
 <col width="8%">
 <col width="6%">
@@ -294,11 +277,11 @@
 </table>
 <p>Diagnoses that, prior to 2009, were coded as K52.9 are now coded as A09.9. We can investigate exactly what changed by looking the relevant codes for the years 2009 and 2010:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/get_icd_labels.html">get_icd_labels</a></span><span class="op">(</span>icd3 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"A09"</span>, <span class="st">"K52"</span><span class="op">)</span>, year <span class="op">=</span> <span class="fl">2009</span><span class="op">:</span><span class="fl">2010</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">year</span>, <span class="va">icd_sub</span><span class="op">)</span> <span class="op">%&gt;%</span> 
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">icd_sub</span> <span class="op">%in%</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"K529"</span><span class="op">)</span> <span class="op">|</span> <span class="va">icd3</span> <span class="op">==</span> <span class="st">"A09"</span><span class="op">)</span> <span class="op">%&gt;%</span> 
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">year</span>, <span class="va">icd_normcode</span>, <span class="va">label</span><span class="op">)</span> <span class="op">%&gt;%</span> 
-  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span>row.names <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="../reference/get_icd_labels.html">get_icd_labels</a></span><span class="op">(</span>icd3 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"A09"</span>, <span class="st">"K52"</span><span class="op">)</span>, year <span class="op">=</span> <span class="fl">2009</span><span class="op">:</span><span class="fl">2010</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html" class="external-link">arrange</a></span><span class="op">(</span><span class="va">year</span>, <span class="va">icd_sub</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">icd_sub</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"K529"</span><span class="op">)</span> <span class="op">|</span> <span class="va">icd3</span> <span class="op">==</span> <span class="st">"A09"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">year</span>, <span class="va">icd_normcode</span>, <span class="va">label</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
+  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">kable</a></span><span class="op">(</span>row.names <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
 <table class="table">
 <colgroup>
 <col width="3%">
@@ -346,59 +329,59 @@
 <p>Prior to 2010, A09 had been reserved for gastroenteritis of presumed infectious origin (German: <em>vermutlich infektiösen Ursprungs</em>), with unspecified gastroenteritis coded by K52.9. Since 2010, A09.9 codes any unspecified gastroenteritis, with K52.9 reserved for cases determined to be non-infectious. The effect of this change is that A09.9 has replaced K52.9 as the unspecific code used to document the vast majority of routine cases in primary care. Failure to account for this would constitute a major error in medical or epidemiological research.</p>
 </div>
 </div>
-<div id="test-whether-a-string-represents-an-icd-10-gm-code" class="section level2">
-<h2 class="hasAnchor">
-<a href="#test-whether-a-string-represents-an-icd-10-gm-code" class="anchor"></a>Test whether a string represents an ICD-10-GM code</h2>
+<div class="section level2">
+<h2 id="test-whether-a-string-represents-an-icd-10-gm-code">Test whether a string represents an ICD-10-GM code<a class="anchor" aria-label="anchor" href="#test-whether-a-string-represents-an-icd-10-gm-code"></a>
+</h2>
 <p>The function <code>is_icd_code</code> tests whether a character vector represents a valid ICD-10-GM code (i.e. a code listed in the data.frame <code>icd_meta_codes</code>, allowing for alternative code specifications). The test may be limited to a particular version of the ICD-10-GM by specifying the <code>year</code> argument.</p>
-<div id="examples" class="section level3">
-<h3 class="hasAnchor">
-<a href="#examples" class="anchor"></a>Examples</h3>
+<div class="section level3">
+<h3 id="examples">Examples<a class="anchor" aria-label="anchor" href="#examples"></a>
+</h3>
 <p>The function <code>is_icd_code</code> recognises ICD codes regardless of their formatting, returning <code>TRUE</code> if the string is recognised as an ICD code and <code>FALSE</code> otherwise:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/is_icd_code.html">is_icd_code</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"E10.1"</span>, <span class="st">"E101"</span>, <span class="st">"E10.1-"</span>, <span class="st">"J44"</span>, <span class="st">"This is not an ICD code"</span><span class="op">)</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="../reference/is_icd_code.html">is_icd_code</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"E10.1"</span>, <span class="st">"E101"</span>, <span class="st">"E10.1-"</span>, <span class="st">"J44"</span>, <span class="st">"This is not an ICD code"</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; [1]  TRUE  TRUE  TRUE  TRUE FALSE</span></code></pre></div>
 </div>
 </div>
-<div id="extracting-icd-codes-from-a-string" class="section level2">
-<h2 class="hasAnchor">
-<a href="#extracting-icd-codes-from-a-string" class="anchor"></a>Extracting ICD codes from a string</h2>
-<p>The function <code>icd_parse</code> extracts all ICD-10 codes from an arbitrary character vector. On the one hand, this may be used as in the <code>icd_expand</code> function to convert ICD-10 codes to a standardised format or extract parts of the code. On the other hand, it may be used to extract potentially many ICD-10 codes from any document that can be converted to text format (perhaps using the <a href="https://CRAN.R-project.org/package=pdftools"><code>pdftools</code> package</a> to scrape a PDF document or <a href="https://CRAN.R-project.org/package=rvest"><code>rvest</code></a> to scrape a website).</p>
-<div id="example-scraping-codes-from-a-website" class="section level3">
-<h3 class="hasAnchor">
-<a href="#example-scraping-codes-from-a-website" class="anchor"></a>Example: Scraping codes from a website</h3>
+<div class="section level2">
+<h2 id="extracting-icd-codes-from-a-string">Extracting ICD codes from a string<a class="anchor" aria-label="anchor" href="#extracting-icd-codes-from-a-string"></a>
+</h2>
+<p>The function <code>icd_parse</code> extracts all ICD-10 codes from an arbitrary character vector. On the one hand, this may be used as in the <code>icd_expand</code> function to convert ICD-10 codes to a standardised format or extract parts of the code. On the other hand, it may be used to extract potentially many ICD-10 codes from any document that can be converted to text format (perhaps using the <a href="https://CRAN.R-project.org/package=pdftools" class="external-link"><code>pdftools</code> package</a> to scrape a PDF document or <a href="https://CRAN.R-project.org/package=rvest" class="external-link"><code>rvest</code></a> to scrape a website).</p>
+<div class="section level3">
+<h3 id="example-scraping-codes-from-a-website">Example: Scraping codes from a website<a class="anchor" aria-label="anchor" href="#example-scraping-codes-from-a-website"></a>
+</h3>
 <p>As an example of how ICD10gm can be used to extract ICD codes from arbitrary text, the following code uses the rvest package to scrape the code block “A00-A09” from the online version of the DIMDI ICD-10-GM reference. We apply the filter to exclude codes below A10, thus revealing which other ICD-10 codes are reference from this block. To simply the package building process, the code has not been evaluated. This is left as an exercise to the reader.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rvest.tidyverse.org/">rvest</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rvest.tidyverse.org/" class="external-link">rvest</a></span><span class="op">)</span>
 
-<span class="fu"><a href="http://xml2.r-lib.org/reference/read_xml.html">read_html</a></span><span class="op">(</span><span class="st">"https://www.dimdi.de/static/de/klassifikationen/icd/icd-10-gm/kode-suche/htmlgm2018/block-a00-a09.htm"</span><span class="op">)</span> <span class="op">%&gt;%</span> 
-  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_text.html">html_text</a></span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/icd_parse.html">icd_parse</a></span><span class="op">(</span>type <span class="op">=</span> <span class="st">"bounded"</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="op">-</span><span class="va">icd_spec</span><span class="op">)</span> <span class="op">%&gt;%</span> 
-  <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span> 
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">icd_sub</span> <span class="op">&gt;=</span> <span class="st">"A10"</span><span class="op">)</span> <span class="op">%&gt;%</span> 
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">icd_sub</span><span class="op">)</span> <span class="op">%&gt;%</span> 
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span>
-    <span class="fu"><a href="../reference/get_icd_labels.html">get_icd_labels</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2018</span><span class="op">)</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"icd_sub"</span>, <span class="st">"icd_normcode"</span>, <span class="st">"label"</span><span class="op">)</span><span class="op">]</span>,
-    by <span class="op">=</span> <span class="st">"icd_sub"</span><span class="op">)</span> <span class="op">%&gt;%</span> 
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">icd_normcode</span>, <span class="va">label</span><span class="op">)</span> <span class="op">%&gt;%</span> 
-  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span>row.names <span class="op">=</span> <span class="cn">FALSE</span>,
+<span class="fu"><a href="http://xml2.r-lib.org/reference/read_xml.html" class="external-link">read_html</a></span><span class="op">(</span><span class="st">"https://www.dimdi.de/static/de/klassifikationen/icd/icd-10-gm/kode-suche/htmlgm2018/block-a00-a09.htm"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
+  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_text.html" class="external-link">html_text</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu"><a href="../reference/icd_parse.html">icd_parse</a></span><span class="op">(</span>type <span class="op">=</span> <span class="st">"bounded"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="op">-</span><span class="va">icd_spec</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
+  <span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">icd_sub</span> <span class="op">&gt;=</span> <span class="st">"A10"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html" class="external-link">arrange</a></span><span class="op">(</span><span class="va">icd_sub</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="external-link">left_join</a></span><span class="op">(</span>
+    <span class="fu"><a href="../reference/get_icd_labels.html">get_icd_labels</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2018</span><span class="op">)</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"icd_sub"</span>, <span class="st">"icd_normcode"</span>, <span class="st">"label"</span><span class="op">)</span><span class="op">]</span>,
+    by <span class="op">=</span> <span class="st">"icd_sub"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">icd_normcode</span>, <span class="va">label</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
+  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">kable</a></span><span class="op">(</span>row.names <span class="op">=</span> <span class="cn">FALSE</span>,
                caption <span class="op">=</span> <span class="st">"Additional ICD-10 codes referred to in block A00-A09 (Intestional infectious diseases) of the ICD-10-GM (2018)."</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
-<div id="expand-a-icd-specification-down-the-hierarchy" class="section level2">
-<h2 class="hasAnchor">
-<a href="#expand-a-icd-specification-down-the-hierarchy" class="anchor"></a>Expand a ICD specification down the hierarchy</h2>
+<div class="section level2">
+<h2 id="expand-a-icd-specification-down-the-hierarchy">Expand a ICD specification down the hierarchy<a class="anchor" aria-label="anchor" href="#expand-a-icd-specification-down-the-hierarchy"></a>
+</h2>
 <p>The function <code>icd_expand</code> takes a data.frame containing ICD codes and optional metadata as input. It returns a data.frame containing all ICD codes at or below the specified level of the hierarchy (e.g. the specification “E11” is expanded to include all three, four and five-digit codes beginning with E11). Expansion is done within a specified version of the ICD-10-GM (e.g. year 2018).</p>
-<div id="example-1" class="section level3">
-<h3 class="hasAnchor">
-<a href="#example-1" class="anchor"></a>Example</h3>
+<div class="section level3">
+<h3 id="example-1">Example<a class="anchor" aria-label="anchor" href="#example-1"></a>
+</h3>
 <p>Irritable bowel syndrome is coded using either the three-digit code K58 (conceiving IBS as the somatic condition) or the code F45.32 (focussing on IBS as a psychosomatic condition). We can retrieve all subcodes in the year 2019 as follows:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">icd_k58</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>DIAG_GROUP <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"IBS"</span>, <span class="st">"IBS"</span><span class="op">)</span>, ICD_SPEC <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"K58"</span>, <span class="st">"F45.32"</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+<code class="sourceCode R"><span class="va">icd_k58</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>DIAG_GROUP <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"IBS"</span>, <span class="st">"IBS"</span><span class="op">)</span>, ICD_SPEC <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"K58"</span>, <span class="st">"F45.32"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
   <span class="fu"><a href="../reference/icd_expand.html">icd_expand</a></span><span class="op">(</span>col_icd <span class="op">=</span> <span class="st">"ICD_SPEC"</span>, year <span class="op">=</span> <span class="fl">2019</span>, col_meta <span class="op">=</span> <span class="st">"DIAG_GROUP"</span><span class="op">)</span>
   
-<span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="va">icd_k58</span><span class="op">)</span></code></pre></div>
+<span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">kable</a></span><span class="op">(</span><span class="va">icd_k58</span><span class="op">)</span></code></pre></div>
 <table class="table">
 <colgroup>
 <col width="6%">
@@ -483,44 +466,44 @@
 </tr>
 </tbody>
 </table>
-<p>Note that the <code>data.frame</code> containing the specification should normally be stored as a separate metadata file (eg. csv or Excel format) to facilitate maintenance and sharing of the specification. The column <code>DIAG_GROUP</code> is a label that can be allocated to one or multiple rows of the specification and is useful when aggregating diagnoses. This is similar to the concept of diagnosis groupers used, for example, in risk adjustment schemes (e.g. as operated by the <a href="https://www.bundesamtsozialesicherung.de/de/themen/risikostrukturausgleich/ueberblick/">German Federal Social Insurance Office</a>). In this case, we may want to treat the two alternative codes as equivalent by allocating the label “IBS” to both. In this way, we overcome the common problem that, in practice, multiple codes are used to document the same underlying disease.</p>
+<p>Note that the <code>data.frame</code> containing the specification should normally be stored as a separate metadata file (eg. csv or Excel format) to facilitate maintenance and sharing of the specification. The column <code>DIAG_GROUP</code> is a label that can be allocated to one or multiple rows of the specification and is useful when aggregating diagnoses. This is similar to the concept of diagnosis groupers used, for example, in risk adjustment schemes (e.g. as operated by the <a href="https://www.bundesamtsozialesicherung.de/de/themen/risikostrukturausgleich/ueberblick/" class="external-link">German Federal Social Insurance Office</a>). In this case, we may want to treat the two alternative codes as equivalent by allocating the label “IBS” to both. In this way, we overcome the common problem that, in practice, multiple codes are used to document the same underlying disease.</p>
 </div>
 </div>
-<div id="historise-an-icd-specification" class="section level2">
-<h2 class="hasAnchor">
-<a href="#historise-an-icd-specification" class="anchor"></a>Historise an ICD specification</h2>
+<div class="section level2">
+<h2 id="historise-an-icd-specification">Historise an ICD specification<a class="anchor" aria-label="anchor" href="#historise-an-icd-specification"></a>
+</h2>
 <p>The function <code>icd_history</code> takes the result of <code>icd_expand</code>, specified for a particular year, and returns a data.frame containing all corresponding codes for the specified years (from 2003). To do this, it applies the ICD-10-GM transition tables to map codes between successive ICD-10-GM versions. Only automatic transitions are followed to ensure that the specification retains its meaning. Custom transitions, tailored to the needs of the project at hand, can be specified to yield a more complete history.</p>
 </div>
-<div id="example-2" class="section level2">
-<h2 class="hasAnchor">
-<a href="#example-2" class="anchor"></a>Example</h2>
+<div class="section level2">
+<h2 id="example-2">Example<a class="anchor" aria-label="anchor" href="#example-2"></a>
+</h2>
 <p>We historise the code K58, specified for the year 2019, backwards to obtain the corresponding codes for the years 2017 to 2019:</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/icd_history.html">icd_history</a></span><span class="op">(</span><span class="va">icd_k58</span>, years <span class="op">=</span> <span class="fl">2017</span><span class="op">:</span><span class="fl">2019</span><span class="op">)</span> <span class="op">%&gt;%</span> 
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">icd_spec</span>, <span class="va">DIAG_GROUP</span>, <span class="va">year</span>, <span class="va">icd_code</span><span class="op">)</span> <span class="op">%&gt;%</span> 
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">year</span>, <span class="va">icd_code</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 12 x 4</span>
+<code class="sourceCode R"><span class="fu"><a href="../reference/icd_history.html">icd_history</a></span><span class="op">(</span><span class="va">icd_k58</span>, years <span class="op">=</span> <span class="fl">2017</span><span class="op">:</span><span class="fl">2019</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">icd_spec</span>, <span class="va">DIAG_GROUP</span>, <span class="va">year</span>, <span class="va">icd_code</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html" class="external-link">arrange</a></span><span class="op">(</span><span class="va">year</span>, <span class="va">icd_code</span><span class="op">)</span>
+<span class="co">#&gt; <span style="color: #949494;"># A tibble: 12 × 4</span></span>
 <span class="co">#&gt;    icd_spec DIAG_GROUP  year icd_code</span>
-<span class="co">#&gt;    &lt;chr&gt;    &lt;chr&gt;      &lt;int&gt; &lt;chr&gt;   </span>
-<span class="co">#&gt;  1 F4532    IBS         2017 F45.32  </span>
-<span class="co">#&gt;  2 K58      IBS         2017 K58.0   </span>
-<span class="co">#&gt;  3 K58      IBS         2017 K58.9   </span>
-<span class="co">#&gt;  4 F4532    IBS         2018 F45.32  </span>
-<span class="co">#&gt;  5 K58      IBS         2018 K58.0   </span>
-<span class="co">#&gt;  6 K58      IBS         2018 K58.9   </span>
-<span class="co">#&gt;  7 F4532    IBS         2019 F45.32  </span>
-<span class="co">#&gt;  8 K58      IBS         2019 K58.-   </span>
-<span class="co">#&gt;  9 K58      IBS         2019 K58.1   </span>
-<span class="co">#&gt; 10 K58      IBS         2019 K58.2   </span>
-<span class="co">#&gt; 11 K58      IBS         2019 K58.3   </span>
-<span class="co">#&gt; 12 K58      IBS         2019 K58.8</span></code></pre></div>
+<span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> F4532    IBS         <span style="text-decoration: underline;">2</span>017 F45.32  </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> K58      IBS         <span style="text-decoration: underline;">2</span>017 K58.0   </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> K58      IBS         <span style="text-decoration: underline;">2</span>017 K58.9   </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> F4532    IBS         <span style="text-decoration: underline;">2</span>018 F45.32  </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> K58      IBS         <span style="text-decoration: underline;">2</span>018 K58.0   </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> K58      IBS         <span style="text-decoration: underline;">2</span>018 K58.9   </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> F4532    IBS         <span style="text-decoration: underline;">2</span>019 F45.32  </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> K58      IBS         <span style="text-decoration: underline;">2</span>019 K58.-   </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> K58      IBS         <span style="text-decoration: underline;">2</span>019 K58.1   </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;">10</span> K58      IBS         <span style="text-decoration: underline;">2</span>019 K58.2   </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;">11</span> K58      IBS         <span style="text-decoration: underline;">2</span>019 K58.3   </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;">12</span> K58      IBS         <span style="text-decoration: underline;">2</span>019 K58.8</span></code></pre></div>
 </div>
 </div>
-<div id="copyright" class="section level1">
-<h1 class="hasAnchor">
-<a href="#copyright" class="anchor"></a>Copyright</h1>
+<div class="section level1">
+<h1 id="copyright">Copyright<a class="anchor" aria-label="anchor" href="#copyright"></a>
+</h1>
 <p>Program code is released under the <a href="https://edonnachie.github.io/ICD10gm/LICENSE-text.html">MIT license</a>.</p>
-<p>The underlying ICD-10-GM metadata is copyright of the <a href="https://www.dimdi.de">German Instutite of Medical Documentation and Information (DIMDI)</a>. The source files are available free of charge from the <a href="https://www.dimdi.de/dynamic/de/klassifikationen/downloads/?dir=icd-10-gm">DIMDI Download Centre</a>. I believe that their use in this package is compatible with the copyright restrictions. In particular:</p>
+<p>The underlying ICD-10-GM metadata is copyright of the <a href="https://www.dimdi.de" class="external-link">German Instutite of Medical Documentation and Information (DIMDI)</a>. The source files are available free of charge from the <a href="https://www.dimdi.de/dynamic/de/klassifikationen/downloads/?dir=icd-10-gm" class="external-link">DIMDI Download Centre</a>. I believe that their use in this package is compatible with the copyright restrictions. In particular:</p>
 <ul>
 <li><p>The distribution of an “added-value product” derived from the original DIMDI classification files is expressly permitted.</p></li>
 <li><p>Distribution of the original classification files is forbidden. Consequently, this package distributes only the code required to process these files. Those wishing to compile the data from scratch must download the files from the DIMDI download centre and agree to the copyright restrictions.</p></li>
@@ -529,9 +512,9 @@
 <li><p>The source of the data is clearly stated, both here and in the main package documentation.</p></li>
 </ul>
 </div>
-<div id="summary" class="section level1">
-<h1 class="hasAnchor">
-<a href="#summary" class="anchor"></a>Summary</h1>
+<div class="section level1">
+<h1 id="summary">Summary<a class="anchor" aria-label="anchor" href="#summary"></a>
+</h1>
 <p>The ICD10gm package provides a convenient means of accessing and manipulating the German modification of the ICD-10 classification. It is designed for use in medical, epidemiological and health services research.</p>
 <p>To the author’s knowledge, this package represents the only publicly available repository of pre-processed metadata for the ICD-10-GM. Indeed, a key contribution of the package is the compilation and processing of the metadata provided by DIMDI, which is designed more for the needs of operational use than for the purpose of longitudinal secondary data analysis.</p>
 <p>Building on the metadata, the ICD10gm package provides various functions to facilitate the analysis of ICD-10 data. Possible uses include:</p>
@@ -540,16 +523,16 @@
 <li><p>The extraction of ICD-10 codes for the purposes of text mining.</p></li>
 <li><p>The implementation of diagnoses grouping systems for the representation of patient morbidity.</p></li>
 </ul>
-<div id="related-packages" class="section level2">
-<h2 class="hasAnchor">
-<a href="#related-packages" class="anchor"></a>Related Packages</h2>
-<p>The <a href="https://CRAN.R-project.org/package=icd">icd package</a> has similar aims but has a slightly different approach and focusses on the US version of the ICD-10 system.</p>
+<div class="section level2">
+<h2 id="related-packages">Related Packages<a class="anchor" aria-label="anchor" href="#related-packages"></a>
+</h2>
+<p>The <a href="https://CRAN.R-project.org/package=icd" class="external-link">icd package</a> has similar aims but has a slightly different approach and focusses on the US version of the ICD-10 system.</p>
 </div>
-<div id="cite" class="section level2">
-<h2 class="hasAnchor">
-<a href="#cite" class="anchor"></a>Cite</h2>
+<div class="section level2">
+<h2 id="cite">Cite<a class="anchor" aria-label="anchor" href="#cite"></a>
+</h2>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/citation.html">citation</a></span><span class="op">(</span>package <span class="op">=</span> <span class="st">"ICD10gm"</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/citation.html" class="external-link">citation</a></span><span class="op">(</span>package <span class="op">=</span> <span class="st">"ICD10gm"</span><span class="op">)</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; To cite package 'ICD10gm' in publications use:</span>
 <span class="co">#&gt; </span>
@@ -558,7 +541,7 @@
 <span class="co">#&gt;   https://edonnachie.github.io/ICD10gm/,</span>
 <span class="co">#&gt;   https://doi.org/10.5281/zenodo.2542833.</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; Ein BibTeX-Eintrag für LaTeX-Benutzer ist</span>
+<span class="co">#&gt; A BibTeX entry for LaTeX users is</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt;   @Manual{,</span>
 <span class="co">#&gt;     title = {ICD10gm: Metadata Processing for the German Modification of the ICD-10 Coding System},</span>
@@ -568,31 +551,28 @@
 <span class="co">#&gt;   }</span></code></pre></div>
 </div>
 </div>
-  </div>
-
-  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
-
-        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
-    </nav>
-</div>
-
+  </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
+    </nav></aside>
 </div>
 
 
 
-      <footer><div class="copyright">
-  <p>Developed by Ewan Donnachie.</p>
+    <footer><div class="pkgdown-footer-left">
+  <p></p>
+<p>Developed by Ewan Donnachie.</p>
 </div>
 
-<div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+<div class="pkgdown-footer-right">
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
 </div>
 
-      </footer>
+    </footer>
 </div>
 
   
 
+  
 
   </body>
 </html>

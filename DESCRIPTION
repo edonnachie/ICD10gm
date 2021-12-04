@@ -13,7 +13,7 @@ URL: https://edonnachie.github.io/ICD10gm/, https://doi.org/10.5281/zenodo.25428
 BugReports: https://github.com/edonnachie/ICD10gm/issues/
 LazyData: true
 LazyDataCompression: xz
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 Roxygen: list(markdown = TRUE)
 Imports: magrittr,
     dplyr,

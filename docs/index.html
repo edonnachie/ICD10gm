@@ -36,7 +36,7 @@
     
     <a class="navbar-brand me-2" href="index.html">ICD10gm</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.2.2.999</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.2.3</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -87,7 +87,7 @@
 <div class="section level2">
 <h2 id="about-this-package">About this Package<a class="anchor" aria-label="anchor" href="#about-this-package"></a>
 </h2>
-<p>The ICD-10 classification of diseases and related health problems (ICD-10) is an international standard for the coding of health service data. In Germany, the <a href="https://www.dimdi.de" class="external-link">Federal Institute for Drugs and Medical Devices</a> releases a German Modification (ICD-10-GM) of the classification that forms a compulsory part of all remuneration claims in the ambulatory and hospital sectors.</p>
+<p>The ICD-10 classification of diseases and related health problems (ICD-10) is an international standard for the coding of health service data. In Germany, the <a href="https://www.bfarm.de" class="external-link">Federal Institute for Drugs and Medical Devices</a> releases a German Modification (ICD-10-GM) of the classification that forms a compulsory part of all remuneration claims in the ambulatory and hospital sectors.</p>
 <p>This package was created to facilitate the analysis of data coded using the ICD-10-GM. In particular, it has the following aims:</p>
 <ol style="list-style-type: decimal">
 <li>Provide convenient access to the extended ICD-10-GM metadata</li>
@@ -95,7 +95,7 @@
 <li>Facilitate the specification of ICD codes for analysis, utilising the ICD hierarchy (e.g. given the specification “A0” return all subcodes in the range “A01” to “A09”)</li>
 <li>Enable the historization of ICD specifications by applying the automatic code transitions provided by DIMDI, identifying potentially problematic codes</li>
 </ol>
-<p>ICD10gm is designed for use in the context of medical and health services research using routinely collected claims data. It is not suitable for use in operative coding as it does not include all relevant metadata (e.g. inclusion and exclusion notes and the detailed definitions of psychiatric diagnoses). The metadata provided in the ICD10gm package is not intended to replace the <a href="https://www.dimdi.de/dynamic/de/klassifikationen/icd/icd-10-gm/" class="external-link">official DIMDI documentation</a>, which should always be consulted when specifying ICD codes for analysis.</p>
+<p>ICD10gm is designed for use in the context of medical and health services research using routinely collected claims data. It is not suitable for use in operative coding as it does not include all relevant metadata (e.g. inclusion and exclusion notes and the detailed definitions of psychiatric diagnoses). The metadata provided in the ICD10gm package is not intended to replace the <a href="https://www.dimdi.de/dynamic/de/klassifikationen/icd/icd-10-gm/" class="external-link">official documentation</a>, which should always be consulted when specifying ICD codes for analysis.</p>
 </div>
 <div class="section level2">
 <h2 id="getting-started">Getting Started<a class="anchor" aria-label="anchor" href="#getting-started"></a>
@@ -113,10 +113,10 @@
 <h2 id="copyright">Copyright<a class="anchor" aria-label="anchor" href="#copyright"></a>
 </h2>
 <p>Program code is released under the <a href="https://edonnachie.github.io/ICD10gm/LICENSE-text.html">MIT license</a>.</p>
-<p>The underlying ICD-10-GM metadata is copyright of the <a href="https://www.dimdi.de" class="external-link">German Instutite of Medical Documentation and Information (DIMDI)</a>. The source files are available free of charge from the <a href="https://www.dimdi.de/dynamic/de/klassifikationen/downloads/?dir=icd-10-gm" class="external-link">DIMDI Download Centre</a>. I believe that their use in this package is compatible with the copyright restrictions. In particular:</p>
+<p>The underlying ICD-10-GM metadata is copyright of the <a href="https://www.bfarm.de" class="external-link">Federal Institute for Drugs and Medical Devices</a>. The source files are available free of charge from their <a href="https://www.dimdi.de/dynamic/de/klassifikationen/downloads/?dir=icd-10-gm" class="external-link">Download Centre</a>. I believe that their use in this package is compatible with the copyright restrictions. In particular:</p>
 <ul>
 <li><p>The distribution of an “added-value product” derived from the original DIMDI classification files is expressly permitted.</p></li>
-<li><p>Distribution of the original classification files is forbidden. Consequently, this package distributes only the code required to process these files. Those wishing to compile the data from scratch must download the files from the DIMDI download centre and agree to the copyright restrictions.</p></li>
+<li><p>Distribution of the original classification files is forbidden. Consequently, this package distributes only the code required to process these files. Those wishing to compile the data from scratch must download the files from the BfArM download centre and agree to the copyright restrictions.</p></li>
 <li><p>The package does not modify the ICD-10-GM codes, texts or other metadata in any way other than to restructure the data into a convenient form.</p></li>
 <li><p>The package does not contain any commercial advertising.</p></li>
 <li><p>The source of the data is clearly stated, both here and in the package documentation.</p></li>
@@ -125,7 +125,7 @@
 <div class="section level2">
 <h2 id="related-packages">Related Packages<a class="anchor" aria-label="anchor" href="#related-packages"></a>
 </h2>
-<p>The <a href="https://CRAN.R-project.org/package=icd" class="external-link">icd package</a> on CRAN has similar aims but has a slightly different approach and focusses on the US version of the ICD-10 system.</p>
+<p>The <a href="https://CRAN.R-project.org/package=icd" class="external-link">icd package</a> on CRAN has similar aims but has a slightly different approach and focusses on the US version of the ICD-10 system. (This package has now been archived and is not currently available on CRAN).</p>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">

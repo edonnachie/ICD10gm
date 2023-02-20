@@ -1,6 +1,11 @@
 ## Extract required files ----
 define_meta_files <- function(version) {
-  if (as.numeric(version) == 2021) {
+  if (as.numeric(version) == 2023) {
+    zip_transition <- here::here(glue::glue("data-raw/dimdi/ueberleitung/icd10gm2023syst-ueberl_20221206.zip"))
+    files_transition <- glue::glue("Klassifikationsdateien/icd10gm{version}syst_umsteiger_{as.numeric(version)-1}_{version}_20221206.txt")
+    zip_meta <- here::here(glue::glue("data-raw/dimdi/systematik/icd10gm2023syst-meta_20221206.zip"))
+    files_meta <- paste0("Klassifikationsdateien/icd10gm", version, "syst_", c("kodes_20221206", "kapitel", "gruppen"), ".txt")
+  } else if (as.numeric(version) == 2021) {
     zip_transition <- here::here(glue::glue("data-raw/dimdi/ueberleitung/icd10gm{version}syst-ueberl-20201111.zip"))
     files_transition <- glue::glue("Klassifikationsdateien/icd10gm{version}syst_umsteiger_{as.numeric(version)-1}_{version}.txt")
     zip_meta <- here::here(glue::glue("data-raw/dimdi/systematik/icd10gm{version}syst-meta-20201111.zip"))
@@ -100,6 +105,9 @@ read_icd_codes <- function(version) {
 
   f_codes <- basename(f[grep("[kc]odes", f, ignore.case = TRUE)])
   f_codes <- here::here(paste0("data-raw/", version ,"/", f_codes))
+
+  if (!file.exists(f_codes))
+    stop("Cannot find file", f_codes)
 
   out <- cbind(
     year = version,

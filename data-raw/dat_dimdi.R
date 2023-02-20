@@ -1,6 +1,6 @@
 source(here::here("data-raw/lib_dimdi_import.R"))
 
-year_range <- 2004:2022
+year_range <- 2004:2023
 
 ## Read in files ----
 purrr::walk(year_range, extract_icd_meta_files)

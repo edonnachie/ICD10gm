@@ -2,25 +2,15 @@
 
 This is a minor update:
 
-- Data for the year 2022
-- Corrected `charlson_rcs` specification (F00-F03 on separate lines, #16)
-- Replaced `icd_showchanges` with an equivalent query on `icd_meta_transitions`. The new function takes a data.frame created by `icd_expand`, extracts all code changes within a specified period (years), and adds labels for the old and new ICD-10-GM codes.
-- (From 1.2.3): Corrected "no visible binding" error on icd_showchanges
+- Data for the year 2023
+- New function `icd_lookup` to enable display the label for a given code or codes
+- New function `icd_browse` to open the official documentation for a 3-digit code in a browser
+- Replaced outdated URLs in the "Coding the Pandemic" vignette with archive.org snapshots
 
-There are two NOTEs with URLS, both of which are well-formed and valid:
-
-  URL: https://www.bfarm.de
-    From: README.md
-    Status: 400
-    Message: Bad Request
-  URL: https://www.jstor.org/stable/25767019
-    From: inst/doc/icd10gm_intro.html
-    Status: 403
-    Message: Forbidden
 
 
 ## Test environments
-* local Ubuntu 18.04 install: R 4.0.5
+* local Ubuntu 22.04 install: R 4.2.2
 * CI using Github Actions (window + macOS release, Ubuntu release + devel)
 * rhub (debian, ubuntu, macos, windows)
 * winbuilder (devel, release)

@@ -1,3 +1,11 @@
+# ICD10gm 1.2.5
+This is a minor update:
+
+- Data for the year 2023
+- New function `icd_lookup` to enable display the label for a given code or codes
+- New function `icd_browse` to open the official documentation for a 3-digit code in a browser
+- Replaced outdated URLs in the "Coding the Pandemic" vignette with archive.org snapshots
+
 # ICD10gm 1.2.4
 This is a minor update:
 

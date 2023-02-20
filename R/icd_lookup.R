@@ -12,6 +12,7 @@
 #'
 #' @return A tibble with three columns: (year, icd_sub, label) and one row for each result
 #' @export
+#' @seealso [icd_browse()] to browse the official BfArM documentation in a browser
 #'
 #' @examples
 #' icd_lookup("E10.9")
@@ -40,7 +41,7 @@ icd_lookup <- function(icd, year = NULL, expand = TRUE) {
 }
 
 
-#' Look up a 3-digit ICD-10-GM code in the official BfArM browser
+#' Lookup a 3-digit ICD-10-GM code in the official BfArM browser
 #'
 #' Given a 3-digit ICD-10-GM code, this function will generate the URL of the
 #' corresponding page of the BfArM ICD-10-GM browser, and use `browseURL()` to
@@ -56,6 +57,7 @@ icd_lookup <- function(icd, year = NULL, expand = TRUE) {
 #' @param year ICD-10-GM version (default: most recent available version). Only works for year >= 2009.
 #'
 #' @return Called for side-effect, will return any output from `browseURL()`
+#' @seealso [icd_lookup()] to lookup one or more codes in the R console
 #' @export
 #'
 #' @examples

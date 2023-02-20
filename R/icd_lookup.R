@@ -33,10 +33,10 @@ icd_lookup <- function(icd, year = NULL, expand = TRUE) {
   }
 
   ICD10gm::icd_meta_codes %>%
-    dplyr::select(year, icd_sub, label) %>%
+    dplyr::select("year", "icd_sub", "label") %>%
     dplyr::filter(
-      icd_sub %in% icd_codes$icd_sub,
-      year == year_lookup
+      .data$icd_sub %in% icd_codes$icd_sub,
+      .data$year == year_lookup
     )
 }
 
@@ -78,13 +78,13 @@ icd_browse <- function(icd3, year = NULL) {
 
   icd <- ICD10gm::icd_meta_codes %>%
     dplyr::filter(
-      icd3 == icd,
-      level == 3,
-      year == year_lookup
+      .data$icd3 == icd,
+      .data$level == 3,
+      .data$year == year_lookup
     ) |>
     dplyr::inner_join(ICD10gm::icd_meta_blocks,
                       by = c("icd_block_first", "year")) |>
-    dplyr::select(year, icd3, group_id)
+    dplyr::select("year", "icd3", "group_id")
 
   if (nrow(icd) == 0) stop("ICD-10 code not found")
 

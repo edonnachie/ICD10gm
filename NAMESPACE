@@ -2,8 +2,10 @@
 
 export(get_icd_history)
 export(get_icd_labels)
+export(icd_browse)
 export(icd_expand)
 export(icd_history)
+export(icd_lookup)
 export(icd_parse)
 export(icd_showchanges)
 export(icd_showchanges_icd3)

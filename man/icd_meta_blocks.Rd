@@ -5,7 +5,7 @@
 \alias{icd_meta_blocks}
 \title{data.frame containing metadata for the ICD-10-GM code blocks}
 \format{
-An object of class \code{data.frame} with 4570 rows and 6 columns.
+An object of class \code{data.frame} with 4813 rows and 6 columns.
 }
 \source{
 The source data was downloaded from the official download centre

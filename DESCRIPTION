@@ -1,7 +1,7 @@
 Package: ICD10gm
 Title: Metadata Processing for the German Modification of the ICD-10 Coding System
-Version: 1.2.4
-Date: 2021-12-04
+Version: 1.2.4.999
+Date: 2023-02-20
 Authors@R: c(
     person("Ewan", "Donnachie", , "ewan@donnachie.net", c("aut", "cre"), , comment = c(ORCID = "0000-0002-0668-0049"))
   )
@@ -13,7 +13,7 @@ URL: https://edonnachie.github.io/ICD10gm/, https://doi.org/10.5281/zenodo.25428
 BugReports: https://github.com/edonnachie/ICD10gm/issues/
 LazyData: true
 LazyDataCompression: xz
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.3
 Roxygen: list(markdown = TRUE)
 Imports: magrittr,
     dplyr,

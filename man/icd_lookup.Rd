@@ -28,3 +28,6 @@ This is a convenience function intended for interactive use.
 icd_lookup("E10.9")
 
 }
+\seealso{
+\code{\link[=icd_browse]{icd_browse()}} to browse the official BfArM documentation in a browser
+}

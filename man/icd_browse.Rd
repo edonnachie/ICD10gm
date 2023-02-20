@@ -2,7 +2,7 @@
 % Please edit documentation in R/icd_lookup.R
 \name{icd_browse}
 \alias{icd_browse}
-\title{Look up a 3-digit ICD-10-GM code in the official BfArM browser}
+\title{Lookup a 3-digit ICD-10-GM code in the official BfArM browser}
 \usage{
 icd_browse(icd3, year = NULL)
 }
@@ -12,7 +12,7 @@ icd_browse(icd3, year = NULL)
 \item{year}{ICD-10-GM version (default: most recent available version). Only works for year >= 2009.}
 }
 \value{
-Called for side-effect, will return any output from \code{browseURL()}
+Called for side-effect, but returns the URL invisibly
 }
 \description{
 Given a 3-digit ICD-10-GM code, this function will generate the URL of the
@@ -28,4 +28,7 @@ This is a convenience function intended for interactive use.
 }
 \examples{
 icd_browse("E10")
+}
+\seealso{
+\code{\link[=icd_lookup]{icd_lookup()}} to lookup one or more codes in the R console
 }

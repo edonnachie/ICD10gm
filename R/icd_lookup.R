@@ -56,7 +56,7 @@ icd_lookup <- function(icd, year = NULL, expand = TRUE) {
 #' @param icd3 3-digit ICD-10-GM code (e.g. "A01")
 #' @param year ICD-10-GM version (default: most recent available version). Only works for year >= 2009.
 #'
-#' @return Called for side-effect, will return any output from `browseURL()`
+#' @return Called for side-effect, but returns the URL invisibly
 #' @seealso [icd_lookup()] to lookup one or more codes in the R console
 #' @export
 #'
@@ -88,10 +88,16 @@ icd_browse <- function(icd3, year = NULL) {
 
   if (nrow(icd) == 0) stop("ICD-10 code not found")
 
-  url <- glue::glue("https://www.dimdi.de/static/de/klassifikationen/icd/icd-10-gm/kode-suche/htmlgm{year_lookup}/block-{tolower(icd$group_id)}.htm#{icd$icd3}")
+  url <- paste0(
+    "https://www.dimdi.de/static/de/klassifikationen/icd/icd-10-gm/kode-suche/htmlgm",
+    year_lookup,
+    "/block-",
+    tolower(icd$group_id),
+    ".htm#{icd$icd3}")
 
   if (is.null(url) | is.na(url)) {
     stop("Cannot generate URL")
   }
-  browseURL(url)
+  utils::browseURL(url)
+  invisible(url)
 }

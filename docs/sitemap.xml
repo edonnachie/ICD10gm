@@ -43,10 +43,16 @@
     <loc>https://edonnachie.github.io/ICD10gm/reference/get_icd_labels.html</loc>
   </url>
   <url>
+    <loc>https://edonnachie.github.io/ICD10gm/reference/icd_browse.html</loc>
+  </url>
+  <url>
     <loc>https://edonnachie.github.io/ICD10gm/reference/icd_expand.html</loc>
   </url>
   <url>
     <loc>https://edonnachie.github.io/ICD10gm/reference/icd_history.html</loc>
+  </url>
+  <url>
+    <loc>https://edonnachie.github.io/ICD10gm/reference/icd_lookup.html</loc>
   </url>
   <url>
     <loc>https://edonnachie.github.io/ICD10gm/reference/icd_meta_blocks.html</loc>
@@ -62,6 +68,9 @@
   </url>
   <url>
     <loc>https://edonnachie.github.io/ICD10gm/reference/icd_parse.html</loc>
+  </url>
+  <url>
+    <loc>https://edonnachie.github.io/ICD10gm/reference/icd_search.html</loc>
   </url>
   <url>
     <loc>https://edonnachie.github.io/ICD10gm/reference/icd_showchanges.html</loc>

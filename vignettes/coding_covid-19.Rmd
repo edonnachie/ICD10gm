@@ -31,8 +31,8 @@ This document is a work in progress.
 
 For the ambulatory sector, the National Association of Statutory Health Insurance Physicians (_Kassenärztliche Bundesvereinigung_, KBV) has released a guideline for Corona-related diagnoses:
 
-- [KBV Coding Guidlines](https://www.kbv.de/media/sp/PraxisInfo_Coronavirus_Kodieren.pdf)
-- [KBV Coding Overview](https://www.kbv.de/media/sp/KBV_Schaubild_Kodierung_SARS_CoV_2.pdf)
+- [KBV Coding Guidlines](https://web.archive.org/web/20230122151627/https://www.kbv.de/media/sp/PraxisInfo_Coronavirus_Kodieren.pdf)
+- [KBV Coding Overview](https://web.archive.org/web/20210126031118/https://www.kbv.de/media/sp/KBV_Schaubild_Kodierung_SARS_CoV_2.pdf)
 
 A [flyer illustrating various coding scenarios](https://www.zi.de/fileadmin/images/content/Kodierhilfe/COVID-Flyer_Kodierhilfe_2021-03-16.pdf) has also been issued by Zi, the health services research institute of the KBV.
 
@@ -50,7 +50,7 @@ The flag "A" (German _Ausschluss_, English _excluded_) can be used to denote tha
 
 This code was carried through unchanged into the 2021 version of the ICD-10-GM.
 
-[17 February 2020: ICD-10 (WHO und GM): U07.1 kodiert COVID-19, Coronavirus-Krankheit-2019](https://www.dimdi.de/dynamic/de/das-dimdi/aktuelles/meldung/icd-10-who-und-gm-u07.1-kodiert-covid-19-coronavirus-krankheit-2019/)
+[17 February 2020: ICD-10 (WHO und GM): U07.1 kodiert COVID-19, Coronavirus-Krankheit-2019](https://web.archive.org/web/20210101045232/https://www.dimdi.de/dynamic/de/das-dimdi/aktuelles/meldung/icd-10-who-und-gm-u07.1-kodiert-covid-19-coronavirus-krankheit-2019/)
 
 
 ### U07.2!: COVID-19 (virus not identified)
@@ -59,7 +59,7 @@ This code was introduced on 23 Match 2020 to denote a "clinical epidemiological"
 
 This code was carried through unchanged into the 2021 version of the ICD-10-GM.
 
-[23 March 2020: ICD-10 (WHO und GM): U07.2 kodiert Verdacht auf COVID-19](https://www.dimdi.de/dynamic/de/das-dimdi/aktuelles/meldung/icd-10-who-und-gm-u07.2-kodiert-verdacht-auf-covid-19/)
+[23 March 2020: ICD-10 (WHO und GM): U07.2 kodiert Verdacht auf COVID-19](https://web.archive.org/web/20210106070031/https://www.dimdi.de/dynamic/de/das-dimdi/aktuelles/meldung/icd-10-who-und-gm-u07.2-kodiert-verdacht-auf-covid-19/)
 
 
 ### U99.0!: Test procedures for SARS-Cov-19
@@ -68,13 +68,13 @@ The code U99.0 denotes that a test for the SARS-CoV-2 virus was conducted. It do
 
 This code was carried through unchanged into the 2021 version of the ICD-10-GM.
 
-[25 May 2020: ICD-10-GM 2020: Neuer U-Kode U99.0! und neue Kodierfrage zu Testung auf SARS-CoV-2](https://www.dimdi.de/dynamic/de/das-dimdi/aktuelles/meldung/icd-10-gm-2020-neuer-u-kode-u99.0-und-neue-kodierfrage-zu-testung-auf-sars-cov-2/)
+[25 May 2020: ICD-10-GM 2020: Neuer U-Kode U99.0! und neue Kodierfrage zu Testung auf SARS-CoV-2](https://web.archive.org/web/20210122154144/https://www.dimdi.de/dynamic/de/das-dimdi/aktuelles/meldung/icd-10-gm-2020-neuer-u-kode-u99.0-und-neue-kodierfrage-zu-testung-auf-sars-cov-2/)
 
 
 Further information:
 
-- [Ist U07.2! bei Personen zu kodieren, bei denen kein Verdacht auf eine Infektion mit SARS-CoV-2 besteht, jedoch ein Test auf SARS-CoV-2 durchgeführt wurde, welcher negativ ausfällt? (ICD-10-GM Nr. 1019)](https://www.dimdi.de/dynamic/de/klassifikationen/kodierfrage/gm-1019/)
-- [Wie sind im Zusammenhang mit COVID-19 die Zusatzschlüsselnummern U07.1! und U07.2! sowie U99.0! zu verwenden? (ICD-10-GM Nr. 1018)](https://www.dimdi.de/dynamic/de/klassifikationen/kodierfrage/gm-1018/)
+- [Ist U07.2! bei Personen zu kodieren, bei denen kein Verdacht auf eine Infektion mit SARS-CoV-2 besteht, jedoch ein Test auf SARS-CoV-2 durchgeführt wurde, welcher negativ ausfällt? (ICD-10-GM Nr. 1019)](https://web.archive.org/web/20210122171115/https://www.dimdi.de/dynamic/de/klassifikationen/kodierfrage/gm-1019/)
+- [Wie sind im Zusammenhang mit COVID-19 die Zusatzschlüsselnummern U07.1! und U07.2! sowie U99.0! zu verwenden? (ICD-10-GM Nr. 1018)](https://web.archive.org/web/20210122155059/https://www.dimdi.de/dynamic/de/klassifikationen/kodierfrage/gm-1018/)
 
 
 
@@ -86,7 +86,7 @@ On 11 November 2020 (the middle of the second wave in Germany), three further co
 - U07.4!: Post COVID-19 condition
 - U07.5: Multisystem inflammatory syndrome associated with COVID-19
 
-[ICD-10-GM 2020: Weitere neue U-Kodes im Zusammenhang mit COVID-19 publiziert](https://www.dimdi.de/dynamic/de/das-dimdi/aktuelles/meldung/icd-10-gm-2020-weitere-neue-u-kodes-im-zusammenhang-mit-covid-19-publiziert/)
+[ICD-10-GM 2020: Weitere neue U-Kodes im Zusammenhang mit COVID-19 publiziert](https://web.archive.org/web/20210125172229/https://www.dimdi.de/dynamic/de/das-dimdi/aktuelles/meldung/icd-10-gm-2020-weitere-neue-u-kodes-im-zusammenhang-mit-covid-19-publiziert/)
 
 
 These codes differed from those introduced by the WHO. As a result, the codes were reallocated in the ICD-10-GM 2021 as follows:
@@ -95,7 +95,7 @@ These codes differed from those introduced by the WHO. As a result, the codes we
 - U09.9!: Post COVID-19 condition
 - U10.9: Multisystem inflammatory syndrome associated with COVID-19
 
-[ICD-10-GM 2021: Dateiaustausch wegen neuer Kodes U08-U10 im Zusammenhang mit COVID-19](https://www.dimdi.de/dynamic/de/das-dimdi/aktuelles/meldung/icd-10-gm-2021-dateiaustausch-wegen-neuer-kodes-u08-u10-im-zusammenhang-mit-covid-19)
+[ICD-10-GM 2021: Dateiaustausch wegen neuer Kodes U08-U10 im Zusammenhang mit COVID-19](https://web.archive.org/web/20210122151406/https://www.dimdi.de/dynamic/de/das-dimdi/aktuelles/meldung/icd-10-gm-2021-dateiaustausch-wegen-neuer-kodes-u08-u10-im-zusammenhang-mit-covid-19/)
 
 
 These codes may be found alongside the primary code Z09.88 ("Follow-up examination"). 
@@ -114,7 +114,7 @@ These codes correspond to the official WHO version of the ICD-10.
 In the ambulatory sector, the code U12.9 may be used alongside the flags "G" (German _gesichert_, English _secured_), "V" (German _Verdacht auf_, English _suspected_), "A" (German _Ausschluss von_, English _excluded_) or "Z" (German _Zustand nach_, English _status following_) to describe more precisely the nature of the (assumed) adverse effects.
 
 
-[ICD-10-GM 2021: Neue U-Kodes im Zusammenhang mit Impfungen gegen COVID-19 publiziert](https://www.dimdi.de/dynamic/de/das-dimdi/aktuelles/meldung/icd-10-gm-2021-neue-u-kodes-im-zusammenhang-mit-impfungen-gegen-covid-19-publiziert/)
+[ICD-10-GM 2021: Neue U-Kodes im Zusammenhang mit Impfungen gegen COVID-19 publiziert](https://web.archive.org/web/20210312075936/https://www.dimdi.de/dynamic/de/das-dimdi/aktuelles/meldung/icd-10-gm-2021-neue-u-kodes-im-zusammenhang-mit-impfungen-gegen-covid-19-publiziert/)
 
 
 ## Codes Relating to Covid-19 Symptoms and Sequalae

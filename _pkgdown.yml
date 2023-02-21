@@ -7,6 +7,12 @@ articles:
   - icd10gm_intro
   - coding_covid-19
 reference:
+  - title: "Interactive lookup"
+    desc: "Convenience functions to search for and look up ICD-10-GM codes"
+    contents:
+      - icd_lookup
+      - icd_browse
+      - icd_search
   - title: "ICD-10-GM Metadata"
     desc: >
       Data frames containing the underlying ICD-10-GM metadata

@@ -1,4 +1,4 @@
-#' Lookup an ICD-10 code
+#' Lookup an ICD-10 code in R
 #'
 #' This is a convenience function to quickly look up the label associated with
 #' one or more ICD-10 codes. By default, it performs the lookup using the most

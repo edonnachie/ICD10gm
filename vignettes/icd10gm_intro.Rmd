@@ -58,11 +58,11 @@ Documentation for the individual datasets can be accessed using the R help syste
 
 While column names have been translated into English, the ICD-10-GM labels are in German with UTF-8 character encoding throughout.
 
-In addition to this tabular data, several utility functions are provided to perform common queries on the metadata:
+In addition to this tabular data, several utility functions are provided to perform common queries on the metadata.
 
-- `get_icd_labels` queries `icd_meta_codes` and returns only the ICD subcodes and labels for specified codes and years.
-- `get_icd_history` queries `icd_meta_transitions` and returns only the mappings for specified codes and years.
-- `icd_showchanges` and `icd_showchanges_icd3` query `icd_meta_transitions` and return entries that are affected by changes in the ICD-10-GM versions.
+- __Interactive code lookup:__ `icd_lookup` (lookup ICD-10 code in console), `icd_browse` (lookup ICD-10-GM in the official Online documentation) and `icd_search` (search through the ICD-10-GM labels).
+- __Manual code history validation:__ `icd_showchanges` and `icd_showchanges_icd3` query `icd_meta_transitions` and return entries that are affected by changes in the ICD-10-GM versions.
+
 
 ### Example
 
@@ -75,12 +75,19 @@ library(tidyr)
 library(ICD10gm)
 ```
 
-By way of example, we examine the coding of unspecific gastroenteritis (i.e. without identification of a specific cause), a very common diagnosis in primary care. This is currently classified under the ICD-10 code "A09", which we can lookup for the year 2018 as follows:
+By way of example, we examine the coding of unspecific gastroenteritis (i.e. without identification of a specific cause), a very common diagnosis in primary care. We can look up the appropriate code as follows:
 
 ```{r}
-get_icd_labels("A09", year = 2018) %>%
-  knitr::kable(row.names = FALSE)
+icd_search("gastroenteritis", level = 3)
 ```
+
+We see that A09 is used for infectious gastroenteritis, whereas K52 corresponds to non-infectious gastroenteritis. We are interested in A09, but might wish to read up on the details in the official documentation:
+
+```{r, eval = FALSE}
+icd_browse("A09")
+```
+
+This will open the documentation in our system's default browser.
 
 Now, we check whether whether this code has been affected by code transitions in any revision since 2003:
 

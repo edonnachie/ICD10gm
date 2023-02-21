@@ -4,15 +4,19 @@
 \alias{icd_browse}
 \title{Lookup a 3-digit ICD-10-GM code in the official BfArM browser}
 \usage{
-icd_browse(icd3, year = NULL)
+icd_browse(icd3, year = NULL, open_browser = TRUE)
 }
 \arguments{
 \item{icd3}{3-digit ICD-10-GM code (e.g. "A01")}
 
 \item{year}{ICD-10-GM version (default: most recent available version). Only works for year >= 2009.}
+
+\item{open_browser}{Whether to open the ICD-10-GM documentation in the default browser (Default: TRUE, as this is the primary intention of the function)}
 }
 \value{
 Called for side-effect, but returns the URL invisibly
+\code{\link[=icd_search]{icd_search()}} to search for a string in the ICD-10-GM labels
+\code{\link[=icd_lookup]{icd_lookup()}} to lookup an ICD-10-GM code in the console
 }
 \description{
 Given a 3-digit ICD-10-GM code, this function will generate the URL of the
@@ -27,8 +31,5 @@ it is possible that the URL schema will change in the near future.
 This is a convenience function intended for interactive use.
 }
 \examples{
-icd_browse("E10")
-}
-\seealso{
-\code{\link[=icd_lookup]{icd_lookup()}} to lookup one or more codes in the R console
+icd_browse("R50", open_browser = FALSE)
 }

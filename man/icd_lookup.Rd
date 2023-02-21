@@ -2,7 +2,7 @@
 % Please edit documentation in R/icd_lookup.R
 \name{icd_lookup}
 \alias{icd_lookup}
-\title{Lookup an ICD-10 code}
+\title{Lookup an ICD-10 code in R}
 \usage{
 icd_lookup(icd, year = NULL, expand = TRUE)
 }
@@ -22,12 +22,15 @@ one or more ICD-10 codes. By default, it performs the lookup using the most
 recent version of the ICD-10-GM available.
 }
 \details{
-This is a convenience function intended for interactive use.
+This is a convenience function intended for interactive use. The browser will
+only be opened if R is being used interactively. The function always returns
+invisibly the URL of the page to be opened.
 }
 \examples{
 icd_lookup("E10.9")
 
 }
 \seealso{
-\code{\link[=icd_browse]{icd_browse()}} to browse the official BfArM documentation in a browser
+\code{\link[=icd_search]{icd_search()}} to search for a string in the ICD-10-GM labels
+\code{\link[=icd_browse]{icd_browse()}} to lookup an ICD-10-GM code in the official BfArM documentation, opening the page in a browser
 }

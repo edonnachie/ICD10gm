@@ -7,3 +7,5 @@ data-raw/dimdi
 ..Rcheck
 inst/doc
 ICD10gm.Rcheck
+/doc/
+/Meta/

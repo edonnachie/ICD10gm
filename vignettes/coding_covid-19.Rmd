@@ -34,8 +34,6 @@ For the ambulatory sector, the National Association of Statutory Health Insuranc
 - [KBV Coding Guidlines](https://web.archive.org/web/20230122151627/https://www.kbv.de/media/sp/PraxisInfo_Coronavirus_Kodieren.pdf)
 - [KBV Coding Overview](https://web.archive.org/web/20210126031118/https://www.kbv.de/media/sp/KBV_Schaubild_Kodierung_SARS_CoV_2.pdf)
 
-A [flyer illustrating various coding scenarios](https://www.zi.de/fileadmin/images/content/Kodierhilfe/COVID-Flyer_Kodierhilfe_2021-03-16.pdf) has also been issued by Zi, the health services research institute of the KBV.
-
 
 In the ambulatory system, all codes must be accompanied by an additional flag for the diagnostic status (German: _Zusatzzeichen für die Diagnosesicherheit_). The KBV guidance states that, in general, only the flag "G" (German _gesichert_, English _secured_) should be used. There are however cases in which this flag can and should be used, see below.
 

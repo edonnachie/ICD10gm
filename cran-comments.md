@@ -16,4 +16,9 @@ This is a minor update:
 
 ## R CMD check results
 
-0 errors | 0 warnings | 0 notes
+0 errors | 0 warnings | 1 note
+
+I provide a link to the data provider BfArM at https://www.bfarm.de.
+Unfortunately, this redirects to a page within the domain, resulting in
+a CRAN note. Similarly, CRAN is unable to check a JSTOR URL, and I am unable
+to find an alternative.

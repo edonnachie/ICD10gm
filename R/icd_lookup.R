@@ -24,7 +24,7 @@ icd_lookup <- function(icd, year = NULL, expand = TRUE) {
   if (is.null(year))
     year_lookup <- max(ICD10gm::icd_meta_codes$year)
 
-  if (!is_icd_code(icd, year = year_lookup))
+  if (!ICD10gm::is_icd_code(icd, year = year_lookup))
     stop("Please input one or more ICD-10 codes")
 
   icd_codes <- icd_parse(icd)
@@ -35,12 +35,13 @@ icd_lookup <- function(icd, year = NULL, expand = TRUE) {
                             col_icd = "icd_sub")
   }
 
-  ICD10gm::icd_meta_codes %>%
-    dplyr::select("year", "icd_sub", "label") %>%
-    dplyr::filter(
-      .data$icd_sub %in% icd_codes$icd_sub,
-      .data$year == year_lookup
-    )
+  return_which <- which(
+    ICD10gm::icd_meta_codes$icd_sub %in% icd_codes$icd_sub &
+      ICD10gm::icd_meta_codes$year == year_lookup
+  )
+
+  icd_meta_codes[return_which,
+                 c("year", "icd_sub", "label")]
 }
 
 
@@ -81,15 +82,17 @@ icd_browse <- function(icd3, year = NULL, open_browser = TRUE) {
 
   icd <- icd3
 
-  icd <- ICD10gm::icd_meta_codes %>%
-    dplyr::filter(
-      .data$icd3 == icd,
-      .data$level == 3,
-      .data$year == year_lookup
-    ) |>
-    dplyr::inner_join(ICD10gm::icd_meta_blocks,
-                      by = c("icd_block_first", "year")) |>
-    dplyr::select("year", "icd3", "group_id")
+
+  return_which <- which(
+    ICD10gm::icd_meta_codes$icd3 == icd &
+      ICD10gm::icd_meta_codes$level == 3 &
+      ICD10gm::icd_meta_codes$year == year_lookup)
+
+  icd <- merge(
+    ICD10gm::icd_meta_codes[return_which,],
+    ICD10gm::icd_meta_blocks,
+    by = c("icd_block_first", "year")
+  )[, c("year", "icd3", "group_id")]
 
   if (nrow(icd) == 0) stop("ICD-10 code not found")
 

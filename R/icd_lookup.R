@@ -97,7 +97,7 @@ icd_browse <- function(icd3, year = NULL, open_browser = TRUE) {
   if (nrow(icd) == 0) stop("ICD-10 code not found")
 
   url <- paste0(
-    "https://www.dimdi.de/static/de/klassifikationen/icd/icd-10-gm/kode-suche/htmlgm",
+    "https://klassifikationen.bfarm.de/icd-10-gm/kode-suche/htmlgm",
     year_lookup,
     "/block-",
     tolower(icd$group_id),

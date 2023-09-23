@@ -1,6 +1,6 @@
 source(here::here("data-raw/lib_dimdi_import.R"))
 
-year_range <- 2004:2023
+year_range <- 2004:2024
 
 ## Read in files ----
 purrr::walk(year_range, extract_icd_meta_files)
@@ -35,30 +35,30 @@ cleanup_utf8 <- function(str) {
   str[Encoding(str) == "latin1"] <- iconv(str, from = "latin1", to = "UTF-8")
 
   # ANSI with \u00
-  str <- gsub("\u0084", "ä", str)
-  str <- gsub("\u008e", "Ä", str)
-  str <- gsub("\u0094", "ö", str)
-  str <- gsub("\u0099", "Ö", str)
-  str <- gsub("\u0081", "ü", str)
-  str <- gsub("\u009a", "Ü", str)
-  str <- gsub("\u00e1", "ß", str)
+  str <- gsub("\u0084", "ä", str, useBytes = TRUE)
+  str <- gsub("\u008e", "Ä", str, useBytes = TRUE)
+  str <- gsub("\u0094", "ö", str, useBytes = TRUE)
+  str <- gsub("\u0099", "Ö", str, useBytes = TRUE)
+  str <- gsub("\u0081", "ü", str, useBytes = TRUE)
+  str <- gsub("\u009a", "Ü", str, useBytes = TRUE)
+  str <- gsub("\u00e1", "ß", str, useBytes = TRUE)
 
   # ANSI
-  str <- gsub("\x84", "ä", str)
-  str <- gsub("\x8e", "Ä", str)
-  str <- gsub("\x94", "ö", str)
-  str <- gsub("\x99", "Ö", str)
-  str <- gsub("\x81", "ü", str)
-  str <- gsub("\x9a", "Ü", str)
-  str <- gsub("\xe1", "ß", str)
+  str <- gsub("\x84", "ä", str, useBytes = TRUE)
+  str <- gsub("\x8e", "Ä", str, useBytes = TRUE)
+  str <- gsub("\x94", "ö", str, useBytes = TRUE)
+  str <- gsub("\x99", "Ö", str, useBytes = TRUE)
+  str <- gsub("\x81", "ü", str, useBytes = TRUE)
+  str <- gsub("\x9a", "Ü", str, useBytes = TRUE)
+  str <- gsub("\xe1", "ß", str, useBytes = TRUE)
   # UTF-8
-  str <- gsub("\xe4", "ä", str)
-  str <- gsub("\xc4", "Ä", str)
-  str <- gsub("\xf6", "ö", str)
-  str <- gsub("\xd6", "Ö", str)
-  str <- gsub("\xfc", "ü", str)
-  str <- gsub("\xdc", "Ü", str)
-  str <- gsub("\xdf", "ß", str)
+  str <- gsub("\xe4", "ä", str, useBytes = TRUE)
+  str <- gsub("\xc4", "Ä", str, useBytes = TRUE)
+  str <- gsub("\xf6", "ö", str, useBytes = TRUE)
+  str <- gsub("\xd6", "Ö", str, useBytes = TRUE)
+  str <- gsub("\xfc", "ü", str, useBytes = TRUE)
+  str <- gsub("\xdc", "Ü", str, useBytes = TRUE)
+  str <- gsub("\xdf", "ß", str, useBytes = TRUE)
 
   str
 }

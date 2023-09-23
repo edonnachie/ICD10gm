@@ -1,63 +1,68 @@
 ## Extract required files ----
 define_meta_files <- function(version) {
-  if (as.numeric(version) == 2023) {
-    zip_transition <- here::here(glue::glue("data-raw/dimdi/ueberleitung/icd10gm2023syst-ueberl_20221206.zip"))
-    files_transition <- glue::glue("Klassifikationsdateien/icd10gm{version}syst_umsteiger_{as.numeric(version)-1}_{version}_20221206.txt")
-    zip_meta <- here::here(glue::glue("data-raw/dimdi/systematik/icd10gm2023syst-meta_20221206.zip"))
-    files_meta <- paste0("Klassifikationsdateien/icd10gm", version, "syst_", c("kodes_20221206", "kapitel", "gruppen"), ".txt")
-  } else if (as.numeric(version) == 2021) {
-    zip_transition <- here::here(glue::glue("data-raw/dimdi/ueberleitung/icd10gm{version}syst-ueberl-20201111.zip"))
-    files_transition <- glue::glue("Klassifikationsdateien/icd10gm{version}syst_umsteiger_{as.numeric(version)-1}_{version}.txt")
-    zip_meta <- here::here(glue::glue("data-raw/dimdi/systematik/icd10gm{version}syst-meta-20201111.zip"))
+  if (as.numeric(version) == 2024) {
+    zip_transition <- here::here(glue::glue("data-raw/dimdi/ueberleitung/icd10gm2024syst-ueberl.zip"))
+    files_transition <- glue::glue("Klassifikationsdateien/icd10gm{version}syst_umsteiger_{as.numeric(version)-1}_20221206_{version}.txt")
+    zip_meta <- here::here(glue::glue("data-raw/dimdi/systematik/icd10gm2024syst-meta.zip"))
     files_meta <- paste0("Klassifikationsdateien/icd10gm", version, "syst_", c("kodes", "kapitel", "gruppen"), ".txt")
-  } else if (as.numeric(version) >= 2019) {
-    zip_transition <- here::here(glue::glue("data-raw/dimdi/ueberleitung/icd10gm{version}syst-ueberl.zip"))
-    files_transition <- glue::glue("Klassifikationsdateien/icd10gm{version}syst_umsteiger_{as.numeric(version)-1}_{version}.txt")
-    zip_meta <- here::here(glue::glue("data-raw/dimdi/systematik/icd10gm{version}syst-meta.zip"))
-    files_meta <- paste0("Klassifikationsdateien/icd10gm", version, "syst_", c("kodes", "kapitel", "gruppen"), ".txt")
-  } else if (as.numeric(version) >= 2015) {
-    zip_transition <- here::here(glue::glue("data-raw/dimdi/ueberleitung/x1gut{version}.zip"))
-    files_transition <- glue::glue("Klassifikationsdateien/icd10gm{version}syst_umsteiger_{as.numeric(version)-1}_{version}.txt")
-    zip_meta <- here::here(glue::glue("data-raw/dimdi/systematik/x1gmt{version}.zip"))
-    files_meta <- paste0("Klassifikationsdateien/icd10gm", version, "syst_", c("kodes", "kapitel", "gruppen"), ".txt")
-  } else if (as.numeric(version) >= 2013) {
-    zip_transition <- here::here(glue::glue("data-raw/dimdi/ueberleitung/x1gua{version}.zip"))
-    files_transition <- glue::glue("Klassifikationsdateien/icd10gm{version}syst_umsteiger_{as.numeric(version)-1}_{version}.txt")
-    zip_meta <- here::here(glue::glue("data-raw/dimdi/systematik/x1gma{version}.zip"))
-    files_meta <- paste0("Klassifikationsdateien/icd10gm", version, "syst_", c("kodes", "kapitel", "gruppen"), ".txt")
-  } else if (as.numeric(version) >= 2009) {
-    zip_transition <- here::here(glue::glue("data-raw/dimdi/ueberleitung/x1ueb{as.numeric(version) - 1}_{version}.zip"))
-    files_transition <- glue::glue("Klassifikationsdateien/umsteiger_icd10gmsyst{as.numeric(version)-1}_icd10gmsyst{version}.txt")
-    zip_meta <- here::here(glue::glue("data-raw/dimdi/systematik/x1gma{version}.zip"))
-    files_meta <- paste0("Klassifikationsdateien/icd10gmsyst_", c("kodes", "kapitel", "gruppen"), version, ".txt")
-  } else if (as.numeric(version) == 2008) {
-    zip_transition <- here::here(glue::glue("data-raw/dimdi/ueberleitung/x1ueb{as.numeric(version) - 1}_{version}.zip"))
-    files_transition <- glue::glue("Klassifikationsdateien/umsteiger{as.numeric(version)-1}{version}.txt")
-    zip_meta <- here::here(glue::glue("data-raw/dimdi/systematik/x1gma{version}.zip"))
-    files_meta <- paste0("Klassifikationsdateien/", c("codes", "kapitel", "gruppen"), version, ".txt")
-  } else if (as.numeric(version) == 2007) {
-    zip_transition <- here::here(glue::glue("data-raw/dimdi/ueberleitung/x1ueb{as.numeric(version) - 1}_{version}.zip"))
-    files_transition <- glue::glue("Klassifikationsdateien/Umsteiger.txt")
-    zip_meta <- here::here(glue::glue("data-raw/dimdi/systematik/x1gma{version}.zip"))
-    files_meta <- paste0("Klassifikationsdateien/", c("CODES", "KAPITEL", "GRUPPEN"), ".txt")
-  } else if (as.numeric(version) == 2006) {
-    zip_transition <- here::here(glue::glue("data-raw/dimdi/ueberleitung/x1ueb{as.numeric(version) - 1}_{version}.zip"))
-    files_transition <- glue::glue("umsteiger.txt")
-    zip_meta <- here::here(glue::glue("data-raw/dimdi/systematik/x1gma{version}.zip"))
-    files_meta <- paste0(c("codes", "kapitel", "gruppen"), ".txt")
-  } else if (as.numeric(version) == 2005) {
-    zip_transition <- here::here(glue::glue("data-raw/dimdi/ueberleitung/x1ueb{as.numeric(version) - 1}_{version}.zip"))
-    files_transition <- glue::glue("umsteiger.txt")
-    zip_meta <- here::here(glue::glue("data-raw/dimdi/systematik/x1gma{version}.zip"))
-    files_meta <- paste0(c("CODES", "KAPITEL", "GRUPPEN"), ".txt")
-  } else if (as.numeric(version) == 2004) {
-    zip_transition <- ""
-    files_transition <- ""
-    zip_meta <- here::here(glue::glue("data-raw/dimdi/systematik/x1gma{version}.zip"))
-    files_meta <- paste0(c("codes", "Kapitel", "gruppen"), ".txt")
-  } else {
-    stop(paste("Procedure not defined for version", version))
-  }
+  } else if (as.numeric(version) == 2023) {
+      zip_transition <- here::here(glue::glue("data-raw/dimdi/ueberleitung/icd10gm2023syst-ueberl_20221206.zip"))
+      files_transition <- glue::glue("Klassifikationsdateien/icd10gm{version}syst_umsteiger_{as.numeric(version)-1}_{version}_20221206.txt")
+      zip_meta <- here::here(glue::glue("data-raw/dimdi/systematik/icd10gm2023syst-meta_20221206.zip"))
+      files_meta <- paste0("Klassifikationsdateien/icd10gm", version, "syst_", c("kodes_20221206", "kapitel", "gruppen"), ".txt")
+    } else if (as.numeric(version) == 2021) {
+      zip_transition <- here::here(glue::glue("data-raw/dimdi/ueberleitung/icd10gm{version}syst-ueberl-20201111.zip"))
+      files_transition <- glue::glue("Klassifikationsdateien/icd10gm{version}syst_umsteiger_{as.numeric(version)-1}_{version}.txt")
+      zip_meta <- here::here(glue::glue("data-raw/dimdi/systematik/icd10gm{version}syst-meta-20201111.zip"))
+      files_meta <- paste0("Klassifikationsdateien/icd10gm", version, "syst_", c("kodes", "kapitel", "gruppen"), ".txt")
+    } else if (as.numeric(version) >= 2019) {
+      zip_transition <- here::here(glue::glue("data-raw/dimdi/ueberleitung/icd10gm{version}syst-ueberl.zip"))
+      files_transition <- glue::glue("Klassifikationsdateien/icd10gm{version}syst_umsteiger_{as.numeric(version)-1}_{version}.txt")
+      zip_meta <- here::here(glue::glue("data-raw/dimdi/systematik/icd10gm{version}syst-meta.zip"))
+      files_meta <- paste0("Klassifikationsdateien/icd10gm", version, "syst_", c("kodes", "kapitel", "gruppen"), ".txt")
+    } else if (as.numeric(version) >= 2015) {
+      zip_transition <- here::here(glue::glue("data-raw/dimdi/ueberleitung/x1gut{version}.zip"))
+      files_transition <- glue::glue("Klassifikationsdateien/icd10gm{version}syst_umsteiger_{as.numeric(version)-1}_{version}.txt")
+      zip_meta <- here::here(glue::glue("data-raw/dimdi/systematik/x1gmt{version}.zip"))
+      files_meta <- paste0("Klassifikationsdateien/icd10gm", version, "syst_", c("kodes", "kapitel", "gruppen"), ".txt")
+    } else if (as.numeric(version) >= 2013) {
+      zip_transition <- here::here(glue::glue("data-raw/dimdi/ueberleitung/x1gua{version}.zip"))
+      files_transition <- glue::glue("Klassifikationsdateien/icd10gm{version}syst_umsteiger_{as.numeric(version)-1}_{version}.txt")
+      zip_meta <- here::here(glue::glue("data-raw/dimdi/systematik/x1gma{version}.zip"))
+      files_meta <- paste0("Klassifikationsdateien/icd10gm", version, "syst_", c("kodes", "kapitel", "gruppen"), ".txt")
+    } else if (as.numeric(version) >= 2009) {
+      zip_transition <- here::here(glue::glue("data-raw/dimdi/ueberleitung/x1ueb{as.numeric(version) - 1}_{version}.zip"))
+      files_transition <- glue::glue("Klassifikationsdateien/umsteiger_icd10gmsyst{as.numeric(version)-1}_icd10gmsyst{version}.txt")
+      zip_meta <- here::here(glue::glue("data-raw/dimdi/systematik/x1gma{version}.zip"))
+      files_meta <- paste0("Klassifikationsdateien/icd10gmsyst_", c("kodes", "kapitel", "gruppen"), version, ".txt")
+    } else if (as.numeric(version) == 2008) {
+      zip_transition <- here::here(glue::glue("data-raw/dimdi/ueberleitung/x1ueb{as.numeric(version) - 1}_{version}.zip"))
+      files_transition <- glue::glue("Klassifikationsdateien/umsteiger{as.numeric(version)-1}{version}.txt")
+      zip_meta <- here::here(glue::glue("data-raw/dimdi/systematik/x1gma{version}.zip"))
+      files_meta <- paste0("Klassifikationsdateien/", c("codes", "kapitel", "gruppen"), version, ".txt")
+    } else if (as.numeric(version) == 2007) {
+      zip_transition <- here::here(glue::glue("data-raw/dimdi/ueberleitung/x1ueb{as.numeric(version) - 1}_{version}.zip"))
+      files_transition <- glue::glue("Klassifikationsdateien/Umsteiger.txt")
+      zip_meta <- here::here(glue::glue("data-raw/dimdi/systematik/x1gma{version}.zip"))
+      files_meta <- paste0("Klassifikationsdateien/", c("CODES", "KAPITEL", "GRUPPEN"), ".txt")
+    } else if (as.numeric(version) == 2006) {
+      zip_transition <- here::here(glue::glue("data-raw/dimdi/ueberleitung/x1ueb{as.numeric(version) - 1}_{version}.zip"))
+      files_transition <- glue::glue("umsteiger.txt")
+      zip_meta <- here::here(glue::glue("data-raw/dimdi/systematik/x1gma{version}.zip"))
+      files_meta <- paste0(c("codes", "kapitel", "gruppen"), ".txt")
+    } else if (as.numeric(version) == 2005) {
+      zip_transition <- here::here(glue::glue("data-raw/dimdi/ueberleitung/x1ueb{as.numeric(version) - 1}_{version}.zip"))
+      files_transition <- glue::glue("umsteiger.txt")
+      zip_meta <- here::here(glue::glue("data-raw/dimdi/systematik/x1gma{version}.zip"))
+      files_meta <- paste0(c("CODES", "KAPITEL", "GRUPPEN"), ".txt")
+    } else if (as.numeric(version) == 2004) {
+      zip_transition <- ""
+      files_transition <- ""
+      zip_meta <- here::here(glue::glue("data-raw/dimdi/systematik/x1gma{version}.zip"))
+      files_meta <- paste0(c("codes", "Kapitel", "gruppen"), ".txt")
+    } else {
+      stop(paste("Procedure not defined for version", version))
+    }
 
   list("version" = version,
        "zip_transition" = zip_transition,
@@ -161,7 +166,7 @@ read_icd_blocks <- function(version) {
       out[, 1:2],
       tibble::tibble("chapter" = rep(NA_integer_, times = nrow(out))),
       out[, 3, drop = FALSE]
-      )
+    )
   }
   # Versions prior to 2007 do not have icd_block_last
   if (version < 2007) {
